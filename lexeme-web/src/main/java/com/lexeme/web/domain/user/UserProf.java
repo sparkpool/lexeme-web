@@ -1,4 +1,4 @@
-package com.lexeme.web.common.user;
+package com.lexeme.web.domain.user;
 
 import java.io.Serializable;
 
