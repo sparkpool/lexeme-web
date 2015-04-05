@@ -56,7 +56,6 @@ public class User implements Serializable {
 
 	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
 	private UserProf userProf;
-	
 
 	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
 	private UserEdu userEdu;

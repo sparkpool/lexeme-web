@@ -1,42 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 
 	<context:annotation-config />
 	<context:component-scan base-package="com.lexeme.web.*" />
 
-	<bean id="transactionTemplate"
-		class="org.springframework.transaction.support.TransactionTemplate"
-		lazy-init="true">
-		<property name="transactionManager">
-			<ref bean="transactionManager" />
-		</property>
+	<tx:annotation-driven transaction-manager="txManager" />
+
+	<bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
 	</bean>
 
 	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 		<property name="nestedTransactionAllowed" value="true" />
 	</bean>
 
-	<bean id="lobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler" />
-
 	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 
 		<property name="dataSource">
 			<ref bean="dataSource" />
-		</property>
-
-		<property name="lobHandler">
-			<ref bean="lobHandler" />
 		</property>
 
 		<property name="packagesToScan">
@@ -48,10 +44,10 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
-				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.connection.release_mode">on_close</prop>
 				<prop key="hibernate.connection.isolation">2</prop>
-                <prop key="hibernate.bytecode.use_reflection_optimizer">true</prop>
+				<prop key="hibernate.bytecode.use_reflection_optimizer">true</prop>
 			</props>
 		</property>
 	</bean>
@@ -88,11 +84,21 @@
 		</property>
 	</bean>
 
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/pages/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>classpath:/${platform_name}/project.properties</value>
+				<value>classpath:/dev/project.properties</value>
 			</list>
 		</property>
 	</bean>
