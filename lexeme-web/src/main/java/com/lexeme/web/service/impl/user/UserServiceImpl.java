@@ -65,6 +65,7 @@ public class UserServiceImpl implements IUserService{
 	}
 
 	@Override
+	@Transactional
 	public UserPojo login(UserPojo userPojo) {
 		if(userPojo == null){
 			throw new InvalidParameterException("USER POJO CAN NOT BE NULL");
