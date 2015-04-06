@@ -10,6 +10,7 @@ public class UserPojo {
 	private String middleName;
 	private String lastName;
 	private String phoneNo;
+	private String msg;
 
 	public UserPojo(){}
 	
@@ -22,6 +23,13 @@ public class UserPojo {
 		this.lastName = lastName;
 		this.phoneNo = phoneNo;
 		this.password = password;
+	}
+	
+	public boolean validateLoginParams(){
+		if(email == null || password == null){
+			return false;
+		}
+		return true;
 	}
 	
 	public String getEmail() {
@@ -76,13 +84,21 @@ public class UserPojo {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "UserPojo [id=" + id + ", email=" + email + ", password="
 				+ password + ", userName=" + userName + ", firstName="
 				+ firstName + ", middleName=" + middleName + ", lastName="
 				+ lastName + ", phoneNo=" + phoneNo + "]";
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
 	}
 	
 	

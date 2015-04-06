@@ -4,6 +4,7 @@ import java.security.InvalidParameterException;
 import java.util.Date;
 
 import org.apache.log4j.Logger;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,7 @@ import com.lexeme.web.util.LexemeUtil;
 public class UserServiceImpl implements IUserService{
 
 	private static final Logger logger = Logger.getLogger(UserServiceImpl.class);
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -60,6 +62,25 @@ public class UserServiceImpl implements IUserService{
 
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
+	}
+
+	@Override
+	public UserPojo login(UserPojo userPojo) {
+		if(userPojo == null){
+			throw new InvalidParameterException("USER POJO CAN NOT BE NULL");
+		}
+		String password = getHashPassword(userPojo.getPassword());
+		
+		Query query = getSessionFactory().getCurrentSession().getNamedQuery("USER.LOGIN")
+		.setString(1, userPojo.getEmail()).setString(2, password);
+		
+		User user = (User) query.uniqueResult();
+		if(user!=null && user.getId()!=null){
+			userPojo.setId(user.getId());
+		}else{
+			userPojo.setMsg("Invalid Email Or Password");
+		}
+		return userPojo;
 	}
 
 }
