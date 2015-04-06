@@ -124,7 +124,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>lexweb</finalName>
+		<finalName>lwb</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
