@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -16,6 +18,11 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "USER")
+
+@NamedQueries({
+    	@NamedQuery(name = "USER.LOGIN", query = "SELECT U FROM USER U WHERE U.email = :email AND U.password = :password")
+})
+
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 3891759651424252922L;
@@ -56,7 +63,6 @@ public class User implements Serializable {
 
 	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
 	private UserProf userProf;
-	
 
 	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
 	private UserEdu userEdu;
