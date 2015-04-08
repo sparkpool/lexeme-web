@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
 @Table(name = "USER")
 
 @NamedQueries({
-    	@NamedQuery(name = "USER.LOGIN", query = "SELECT U FROM USER U WHERE U.email = :email AND U.password = :password")
+    	@NamedQuery(name = "USER.LOGIN", query = "select u from User u where u.email = :email and u.password = :password")
 })
 
 public class User implements Serializable {

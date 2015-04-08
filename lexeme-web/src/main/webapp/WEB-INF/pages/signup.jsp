@@ -10,7 +10,7 @@
 <body>
    <h1>Welcome To SignUp Page</h1>
    
-   <form action="/${pageContext.request.contextPath}/user/signup" method="POST">
+   <form action="${pageContext.request.contextPath}/user/signup" method="POST">
      Password : <input type="text" name="password" /> * <br />
      Email : <input type="text" name="email" /> * <br />
      UserName : <input type="text" name="userName" /> * <br />
