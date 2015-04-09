@@ -9,12 +9,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=0">
 	
 		<!--Angular script for UI/DO Rendering-->
-		<script src="resources/js/angular.min.js"></script>
-		<script src="resources/js/angular-route.min.js"></script>
-	
-	
-		 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/angular-route.min.js"></script>
 	
 	
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -25,42 +21,42 @@
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,700italic,400,700" rel="stylesheet" type="text/css">
 		<!--Company css-->
 	
-		<link href="resources/css/lexememain.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/css/lexememain.css" rel="stylesheet">
 	   <!-- Responsive CSS Styles  -->
-		<link rel="stylesheet" type="text/css" href="resources/css/responsive.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/responsive.css" media="screen">
 	
 		<!-- Css3 Transitions Styles  -->
-		<link rel="stylesheet" type="text/css" href="resources/css/animate.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/animate.css" media="screen">
 
 	   <!-- Color CSS Styles  -->
-		<link rel="stylesheet" type="text/css" href="resources/css/colors/red.css" title="red" media="screen" />
-		<link rel="stylesheet" type="text/css" href="resources/css/colors/jade.css" title="jade" media="screen" />
-		<link rel="stylesheet" type="text/css" href="resources/css/colors/green.css" title="green" media="screen" />
-		<link rel="stylesheet" type="text/css" href="resources/css/colors/blue.css" title="blue" media="screen" />
-		<link rel="stylesheet" type="text/css" href="resources/css/colors/beige.css" title="beige" media="screen" />
-		<link rel="stylesheet" type="text/css" href="resources/css/colors/cyan.css" title="cyan" media="screen" />
-		<link rel="stylesheet" type="text/css" href="resources/css/colors/orange.css" title="orange" media="screen" />
-		<link rel="stylesheet" type="text/css" href="resources/css/colors/peach.css" title="peach" media="screen" />
-		<link rel="stylesheet" type="text/css" href="resources/css/colors/pink.css" title="pink" media="screen" />
-		<link rel="stylesheet" type="text/css" href="resources/css/colors/purple.css" title="purple" media="screen" />
-		<link rel="stylesheet" type="text/css" href="resources/css/colors/sky-blue.css" title="sky-blue" media="screen" />
-		<link rel="stylesheet" type="text/css" href="resources/css/colors/yellow.css" title="yellow" media="screen" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/colors/red.css" title="red" media="screen" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/colors/jade.css" title="jade" media="screen" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/colors/green.css" title="green" media="screen" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/colors/blue.css" title="blue" media="screen" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/colors/beige.css" title="beige" media="screen" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/colors/cyan.css" title="cyan" media="screen" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/colors/orange.css" title="orange" media="screen" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/colors/peach.css" title="peach" media="screen" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/colors/pink.css" title="pink" media="screen" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/colors/purple.css" title="purple" media="screen" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/colors/sky-blue.css" title="sky-blue" media="screen" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/colors/yellow.css" title="yellow" media="screen" />
 
-    <script type="text/javascript" src="resources/js/jquery.migrate.js"></script>
-    <script type="text/javascript" src="resources/js/modernizrr.js"></script>
-    <script type="text/javascript" src="resources/asset/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="resources/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="resources/js/nivo-lightbox.min.js"></script>
-    <script type="text/javascript" src="resources/js/jquery.isotope.min.js"></script>
-    <script type="text/javascript" src="resources/js/jquery.appear.js"></script>
-    <script type="text/javascript" src="resources/js/count-to.js"></script>
-    <script type="text/javascript" src="resources/js/jquery.textillate.js"></script>
-    <script type="text/javascript" src="resources/js/jquery.lettering.js"></script>
-    <script type="text/javascript" src="resources/js/jquery.easypiechart.min.js"></script>
-    <script type="text/javascript" src="resources/js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="resources/js/jquery.parallax.js"></script>
-    <script type="text/javascript" src="resources/js/mediaelement-and-player.js"></script>
-    <script type="text/javascript" src="resources/js/script.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.migrate.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/modernizrr.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.appear.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/count-to.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/mediaelement-and-player.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/script.js"></script>
 	
 	</head>
 	<body>
