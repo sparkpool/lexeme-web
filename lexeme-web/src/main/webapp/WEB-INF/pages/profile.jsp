@@ -1,12 +1,48 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Profile</title>
-</head>
-<body>
 
-</body>
-</html>
+		<hr />
+
+<div class="page-content">
+  
+    <div class="row">
+        <div class="col-xs-6 col-md-3"  >
+			<!---Image--->
+			<div class="media">
+			<a href="#">
+      			<img src="images/mukul.jpg" height="150" width="150" class="thumbnail" >    		</a>			</div>
+			
+			 
+    	</div>
+		<div class="col-sm-6">
+			<div class="tabpanel">
+			<!-------------------------------------
+				1. About
+				2. Area of Expertise
+				3. Skill Graph
+				4. Payment Deatsils
+				5. Experience
+				------------------------------------>
+				<ul class="nav nav-tabs nav-justified" >
+				  <li ><a class="#tabs-min-1">About</a></li>
+				  <li ><a href="#tabs-min-2">Skill</a></li>
+				  <li ><a href="#tabs-min-3 >My Question</a></li>
+				  <li><a href="#tabs-min-4"  target="#earnings">Earnings</a></li>
+				  
+				</ul>
+				</div>
+		</div>
+	</div>		
+</div>		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<!-- /.page-content -->
