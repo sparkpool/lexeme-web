@@ -1,8 +1,11 @@
 	<!--Header--->
 	<%@ include file="header.jsp" %>
 <div class="container">
-	<h4 class="header blue lighter bigger">
+
+
+<h4 class="header blue lighter bigger">
   	<i class="icon-coffee green"></i>Login </h4>
+
 	<div class="col-6-lg" align="center">
 	<form name="loginForm" class="form-horizontal" role="form" >
     	<!--Email Address-->
@@ -43,6 +46,12 @@
         </form>
 </form>
 
+
+
+
+
+
+
 </div><!-- /widget-main -->
  
-	<%@ include file="footer.jsp" %>
+<%@ include file="footer.jsp" %>

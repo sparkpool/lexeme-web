@@ -1,17 +1,16 @@
+	<%@ include file="header.jsp" %>
+<div class="container">
 
-		<hr />
-
+<hr />
 <div class="page-content">
-  
     <div class="row">
         <div class="col-xs-6 col-md-3"  >
 			<!---Image--->
 			<div class="media">
 			<a href="#">
       			<img src="images/mukul.jpg" height="150" width="150" class="thumbnail" >    		</a>			</div>
-			
-			 
-    	</div>
+	    	</div>
+	
 		<div class="col-sm-6">
 			<div class="tabpanel">
 			<!-------------------------------------
@@ -38,6 +37,9 @@
 		
 		
 		
+</div><!-- /widget-main -->
+ 
+<%@ include file="footer.jsp" %>
 		
 		
 		

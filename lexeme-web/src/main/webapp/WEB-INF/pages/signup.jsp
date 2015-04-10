@@ -1,4 +1,5 @@
-	<%@ include file="header.jsp" %>
+<%@ include file="header.jsp" %>
+
 	<div class="container">
 		<div class="col-6-lg" align="center">
 			Create An Account
@@ -21,6 +22,8 @@
                             <div class="form-group">
                                 <label class="col-sm-5 control-label no-padding-right" for="password2">Confirm Password</label>
                                 <div class="col-sm-7">
+                                <input type="password" class="form-control" name = "password" placeholder="Password" />
+ 
                                 </div>
                             </div>
                             <div class="form-group">
