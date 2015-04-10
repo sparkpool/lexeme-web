@@ -28,6 +28,16 @@ public class UserController {
 	public String login() {
 		return "login";
 	}
+	
+	@RequestMapping(value = "/fp", method = RequestMethod.GET)
+	public String forgotPassword(){
+		return "forgotPassword";
+	}
+	
+	@RequestMapping(value = "/profile", method = RequestMethod.GET)
+	public String profile(){
+		return "profile";
+	}
 
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public ModelAndView signup(UserPojo userPojo) {
