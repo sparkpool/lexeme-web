@@ -125,5 +125,10 @@
 
 	<!--ng-view for Container rendering---->
 	<div class="container"  style="margin-top:20px;  ">
+	<div ng-view>
+	
+	<a href="#/route1">Route 1</a><br/>
+	</div>
+	
 	</div>
 	<%@ include file="footer.jsp" %>

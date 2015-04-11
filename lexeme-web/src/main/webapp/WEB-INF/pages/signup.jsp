@@ -1,47 +1,92 @@
 <%@ include file="header.jsp" %>
 
-	<div class="container">
-		<div class="col-6-lg" align="center">
-			Create An Account
-                        <form name="${pageContext.request.contextPath}/user/signup" class="form-horizontal" role="form" action="POST">
+	<br />
+	<br />
+	<div class="container-fluid">
+		<div class="row" align="center">
+			<div class="col-md-12" align="center">
+				<h1>Create An Account</h1>
+				<br />
+				<br />
+				
+                        <form name="signupForm" class="form-horizontal" role="form" action="POST" ng-app="myApp"  ng-controller="validateCtrl" novalidate>
                             <div class="form-group">
-                                <label class="col-sm-5 control-label no-padding-right" for="email">Email</label>
-                                <div class="col-sm-7">
+                                <label class="col-sm-4 control-label no-padding-right" for="email">Email</label>
+                                <div class="col-sm-4">
                                     <span class="block input-icon input-icon-right">
-                                        <input type="text" class="form-control" placeholder="Email" name="email"  focus/>
-                                    </span>
+                 									<input type="email" class="form-control" placeholder="Email " name="email" ng-model="text"  required focus/>
+									   </span>
+										<span style="color:red" ng-show="signupForm.email.$dirty && signupForm.email.$invalid">
+										  <span ng-show="signupForm.email.$error.required">Email is required.</span>
+										  <span ng-show="signupForm.email.$error.email">Invalid email address.</span>
+                       			<span ng-show="signupForm.email.$error.unique">
+    								Email address already exists.
+  								</span>		
+										</span>
                                 </div>
                             </div>
+
                             <div class="form-group">
-                                <label class="col-sm-5 control-label no-padding-right" for="password">Password</label>
-                                <div class="col-sm-7">
-                                    <span class="block input-icon input-icon-right">
-                                <input type="password" class="form-control" name = "password" placeholder="Password" />
+                                <label class="col-sm-4 control-label no-padding-right" for="password">Password</label>
+                                <div class="col-sm-4">
+                                 <span class="block input-icon input-icon-right">
+                                <input type="password" class="form-control" name = "password" placeholder="Password"   
+								ng-model="password" ng-minlength="6" ng-maxlength="20" 
+								ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required />
+								
+								<!--Error Message-->
+								
+								<span style="color:red" ng-show="signupForm.password.$dirty && signupForm.password.$invalid">
+										
+								<span  ng-show=" signupForm.password.$error.minlength 
+												|| signupForm.password.$error.maxlength">Passwords must be between 6 and 20 characters.
+								</span>
+								
+								<span ng-show="signupForm.password.$error.pattern 
+												&& signupForm.password.$dirty">
+								Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)
+								</span>
+								</span>
                                 </div>
                             </div>
+
                             <div class="form-group">
-                                <label class="col-sm-5 control-label no-padding-right" for="password2">Confirm Password</label>
-                                <div class="col-sm-7">
-                                <input type="password" class="form-control" name = "password" placeholder="Password" />
- 
-                                </div>
-                            </div>
+                                <label class="col-sm-4 control-label no-padding-right" for="password2">Confirm Password</label>
+                                <div class="col-sm-4">
+                                <input type="password" class="form-control" name = "confirmPassword" placeholder="confirmPassword" password-match="password"  ng-model="confirmPassword" required/>
+								 <span style="color:red" ng-show="signupForm.confirmPassword.$dirty && signupForm.confirmPassword.$invalid">
+										
+								 <span style="color:red" ng-show="signupForm.confirmPassword.$error.required">This is required.</span>
+								 <span  style="color:red" ng-show="signupForm.confirmPassword.$error.unique">Passwords do not match.</span>
+								 </span>
+								 </div>
+																
+							</div>
                             <div class="form-group">
-                                <label class="col-sm-5 control-label no-padding-right" for="name">User Name</label>
-                                <div class="col-sm-7">
+                                <label class="col-sm-4 control-label no-padding-right" for="name">User Name</label>
+                                <div class="col-sm-4">
                                     <span class="block input-icon input-icon-right">
-                                <input type="text" class="form-control" name="userName" placeholder="Name" />
-                            </span>
-                                </div>
+                                <input type="text" class="form-control" ng-minlength="8" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]{4,10}$/" name="userName" placeholder="Name" ng-model="text"  required />
+								 <span style="color:red" ng-show="signupForm.userName.$dirty && signupForm.userName.$invalid">
+								 <span  ng-show="signupForm.userName.$error.required">This is required.</span>
+								<span  ng-show=" !signupForm.userName.$error.minlength 
+												|| !signupForm.userName.$error.maxlength">Username must be between 8 and 16 characters.
+								</span>
+								
+								<span ng-show="signupForm.userName.$error.unique">
+    								Username already exists.
+  								</span>
+								</span>
+								   </div>
                             </div>
 							
                             <div class="form-group">
 							
-                                <label class="col-sm-5 control-label no-padding-right" for="group_id">Account Type</label>
-                                <div class="col-sm-7">
+                                <label class="col-sm-4 control-label no-padding-right" for="group_id" >Account Type</label>
+                                <div class="col-sm-4">
                                   <span class="block input-icon input-icon-right">
 							
-							<select  class="form-control" name="account" >
+							<select  class="form-control" name="account" required >
 								<option>Account type</option>
 								<option value="5">Tutor</option>
 								<option value="6">Student</option>
@@ -56,19 +101,19 @@
 
 
                             <div class="form-group">
-                                <span class="lbl col-sm-5"> </span>
+                                <span class="lbl col-sm-4"> </span>
 
-                                <div class="col-sm-7">
+                                <div class="col-sm-4">
 							     <input type="submit" name="SAVE" />
                                 </div>
                             </div>
-                            </fieldset>
-                            <span class="lbl col-sm-5"> </span>
-                            <div class="col-sm-7">Already have an account? <a href="${pageContext.request.contextPath}/user/login">SignIn</a>
+                            <span class="lbl col-sm-4"> </span>
+                            <div class="col-sm-4">Already have an account? <a href="${pageContext.request.contextPath}/user/login">SignIn</a>
                             </div>
 
                     </div>
                             </form>
 							</div>
+	</div>
 	</div>
 	<%@ include file="footer.jsp" %>

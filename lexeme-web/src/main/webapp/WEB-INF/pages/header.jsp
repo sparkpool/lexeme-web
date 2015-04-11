@@ -1,5 +1,5 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	<html>
+	<html ng-app="myApp">
 	
 	<head>
 	   <!-- Full Body Container -->
@@ -58,6 +58,11 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/mediaelement-and-player.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/script.js"></script>
 	
+	<!--Angular Js-->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/angular/app.js"></script>
+	
 	</head>
 			
 			
@@ -71,61 +76,6 @@
 			<header class="clearfix">
 				
 				<!-- Start Top Bar -->
-				<div class="top-bar">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-7">
-								<!-- Start Contact Info -->
-								<ul class="contact-details">
-									<li><a href="#"><i class="fa fa-map-marker"></i> A-88, Sector-4, Noida, India</a>
-									</li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i> info@lexeme.com</a>
-									</li>
-									<li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a>
-									</li>
-								</ul>
-								<!-- End Contact Info -->
-							</div><!-- .col-md-6 -->
-							<div class="col-md-5">
-								<!-- Start Social Links -->
-								<ul class="social-list">
-									<li>
-										<a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-									</li>
-									<li>
-										<a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-									</li>
-									<li>
-										<a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a>
-									</li>
-									<li>
-										<a class="dribbble itl-tooltip" data-placement="bottom" title="Dribble" href="#"><i class="fa fa-dribbble"></i></a>
-									</li>
-									<li>
-										<a class="linkdin itl-tooltip" data-placement="bottom" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-									</li>
-									<li>
-										<a class="flickr itl-tooltip" data-placement="bottom" title="Flickr" href="#"><i class="fa fa-flickr"></i></a>
-									</li>
-									<li>
-										<a class="tumblr itl-tooltip" data-placement="bottom" title="Tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-									</li>
-									<li>
-										<a class="instgram itl-tooltip" data-placement="bottom" title="Instagram" href="#"><i class="fa fa-instagram"></i></a>
-									</li>
-									<li>
-										<a class="vimeo itl-tooltip" data-placement="bottom" title="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-									</li>
-									<li>
-										<a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a>
-									</li>
-								</ul>
-								<!-- End Social Links -->
-							</div><!-- .col-md-6 -->
-						</div><!-- .row -->
-					</div><!-- .container -->
-				</div><!-- .top-bar -->
-				<!-- End Top Bar -->
 		 
 		<nav class="navbar navbar-default navbar-static-top">
 			<div class="container">
@@ -144,7 +94,7 @@
 				<ul class="nav navbar-nav navbar-right" >
 						<li><a href="${pageContext.request.contextPath}/user/login" ><i class="glyphicon glyphicon-cloud"></i> Login</a></li>
 						<li><a href="${pageContext.request.contextPath}/user/signup" >Sign up</a></li>
-						<li><a href="${pageContext.request.contextPath}/pages/profile.jsp" >Profile</a></li>
+						<li><a href="${pageContext.request.contextPath}/user/profile" >Profile</a></li>
 
 				 </ul>
 			</div>
