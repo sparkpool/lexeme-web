@@ -1,8 +1,5 @@
-
-		<hr />
-
-<div class="page-content">
-  
+<%@ include file="header.jsp" %>
+<div class="container-fluid">
     <div class="row">
         <div class="col-xs-6 col-md-3"  >
 			<!---Image--->
@@ -12,6 +9,7 @@
 			
 			 
     	</div>
+		
 		<div class="col-sm-6">
 			<div class="tabpanel">
 			<!-------------------------------------
@@ -30,5 +28,8 @@
 				</ul>
 				</div>
 		</div>
+		
 	</div>		
 </div>		
+ 
+<%@ include file="footer.jsp" %>
