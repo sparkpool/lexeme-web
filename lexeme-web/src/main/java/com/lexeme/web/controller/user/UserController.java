@@ -44,7 +44,7 @@ public class UserController {
 		logger.info("User Pojo is : " + userPojo);
 		ModelAndView model = new ModelAndView();
 		try {
-			if (!userPojo.validateLoginParams()) {
+			if (!userPojo.validateSignUpParams()) {
 				model.addObject("errorMsg", "Please Enter Email And Password");
 				model.setViewName("signup");
 			} else {
@@ -72,8 +72,8 @@ public class UserController {
 		logger.info("User Pojo is : " + userPojo);
 		ModelAndView model = new ModelAndView();
 		try {
-			if (!userPojo.validateLoginParams()) {
-				model.addObject("errorMsg", "Please Enter Email And Password");
+			if (!userPojo.validateLogiInParams()) {
+				model.addObject("errorMsg", "Please Enter Email Or UserName And Password");
 				model.setViewName("login");
 			} else {
 				userPojo = getUserService().signupUser(userPojo);

@@ -13,12 +13,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import com.lexeme.web.domain.user.User;
 
 @Entity
 @Table (name="ROLES")
+@NamedQueries({
+    @NamedQuery(name="ROLE.NAME",query="select r from Roles r where r.name = :name")
+})
 public class Roles implements Serializable {
 
 	private static final long serialVersionUID = -8261711572347293852L;
@@ -29,7 +34,7 @@ public class Roles implements Serializable {
 	private Long id;
 
 	
-	@Column(name="NAME", length=50)
+	@Column(name="NAME", length=50, nullable = false)
 	private String name;
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

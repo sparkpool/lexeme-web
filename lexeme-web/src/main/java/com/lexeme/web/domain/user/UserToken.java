@@ -1,4 +1,4 @@
-package com.lexeme.web.controller.user;
+package com.lexeme.web.domain.user;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -24,9 +24,9 @@ import com.lexeme.web.domain.user.User;
 		@UniqueConstraint(columnNames = "TOKEN")
 })
 
-@NamedQueries({
-	@NamedQuery(name = "", query= "")
-})
+//@NamedQueries({
+//	@NamedQuery(name = "", query= "")
+//})
 public class UserToken implements Serializable{
 
 	private static final long serialVersionUID = -6338743166955178316L;

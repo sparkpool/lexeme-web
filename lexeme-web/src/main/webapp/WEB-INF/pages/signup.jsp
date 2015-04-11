@@ -9,12 +9,12 @@
 				<br />
 				<br />
 				
-                        <form name="signupForm" class="form-horizontal" role="form" action="POST" ng-app="myApp"  ng-controller="validateCtrl" novalidate>
+                        <form name="signupForm" action="${pageContext.request.contextPath}/user/signup" class="form-horizontal" role="form" ng-app="myApp"  ng-controller="validateCtrl" novalidate>
                             <div class="form-group">
                                 <label class="col-sm-4 control-label no-padding-right" for="email">Email</label>
                                 <div class="col-sm-4">
                                     <span class="block input-icon input-icon-right">
-                 									<input type="email" class="form-control" placeholder="Email " name="email" ng-model="text"  required focus/>
+                 									<input type="email" class="form-control" placeholder="Email " name="email" ng-model="email"  required focus/>
 									   </span>
 										<span style="color:red" ng-show="signupForm.email.$dirty && signupForm.email.$invalid">
 										  <span ng-show="signupForm.email.$error.required">Email is required.</span>
@@ -66,7 +66,8 @@
                                 <label class="col-sm-4 control-label no-padding-right" for="name">User Name</label>
                                 <div class="col-sm-4">
                                     <span class="block input-icon input-icon-right">
-                                <input type="text" class="form-control" ng-minlength="8" ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]{4,10}$/" name="userName" placeholder="Name" ng-model="text"  required />
+                                <input type="text" class="form-control" ng-minlength="8" 
+                                ng-maxlength="16" ng-pattern="/^[a-zA-Z0-9]{4,10}$/" name="userName" placeholder="Name" ng-model="userName"  required />
 								 <span style="color:red" ng-show="signupForm.userName.$dirty && signupForm.userName.$invalid">
 								 <span  ng-show="signupForm.userName.$error.required">This is required.</span>
 								<span  ng-show=" !signupForm.userName.$error.minlength 

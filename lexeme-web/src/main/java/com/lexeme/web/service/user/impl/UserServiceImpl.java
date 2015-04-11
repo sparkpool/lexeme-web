@@ -2,6 +2,8 @@ package com.lexeme.web.service.user.impl;
 
 import java.security.InvalidParameterException;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
@@ -10,7 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.lexeme.web.domain.acl.Roles;
 import com.lexeme.web.domain.user.User;
+import com.lexeme.web.enums.EnumRoles;
 import com.lexeme.web.pojo.user.UserPojo;
 import com.lexeme.web.service.user.IUserService;
 import com.lexeme.web.util.LexemeUtil;
@@ -35,11 +39,23 @@ public class UserServiceImpl implements IUserService{
 			throw new InvalidParameterException("INVALID PASSWORD");
 		}
 		user.setPassword(password);
+		setRolesOnSignUp(user);
 		Long id = (Long) sessionFactory.getCurrentSession().save(user);
 		if(id!=null){
 			userPojo.setId(id);
 		}
 		return userPojo;
+	}
+	
+	@Transactional
+	private void setRolesOnSignUp(User user){
+		Set<Roles> roles = new HashSet<Roles>();
+		Query query = getSessionFactory().getCurrentSession().getNamedQuery("ROLE.NAME")
+				.setString("name", EnumRoles.STUDENT.getRole());
+		Roles role = (Roles)query.uniqueResult();
+		logger.info("Role from DB is " + role);
+		roles.add(role);				
+		user.setRoles(roles);
 	}
 	
 	private String getHashPassword(String password){
@@ -73,7 +89,7 @@ public class UserServiceImpl implements IUserService{
 		String password = getHashPassword(userPojo.getPassword());
 		
 		Query query = getSessionFactory().getCurrentSession().getNamedQuery("USER.LOGIN")
-		.setString(1, userPojo.getEmail()).setString(2, password);
+		.setString("email", userPojo.getEmail()).setString("password", password);
 		
 		User user = (User) query.uniqueResult();
 		if(user!=null && user.getId()!=null){

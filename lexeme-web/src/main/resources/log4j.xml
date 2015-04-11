@@ -33,7 +33,7 @@
      <level value="off"/>  
    </logger>
    
-    <logger name="com.paytm" additivity="true" >   
+    <logger name="com.lexeme" additivity="true" >   
 
      	<level value="ALL" />
 
