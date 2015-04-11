@@ -1,4 +1,4 @@
-package com.lexeme.web.service.impl.user;
+package com.lexeme.web.service.user.impl;
 
 import java.security.InvalidParameterException;
 import java.util.Date;

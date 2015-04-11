@@ -24,7 +24,7 @@ public class Permissions implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "roles")
+	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "permissions")
 	private Set<Roles> roles;
 	
 	@Column(name="NAME", length=50)

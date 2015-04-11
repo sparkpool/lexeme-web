@@ -20,14 +20,14 @@ import javax.persistence.UniqueConstraint;
 import com.lexeme.web.domain.user.User;
 
 @Entity
-@Table(name = "USER_FP_TOKEN", uniqueConstraints = {
+@Table(name = "USER_TOKEN", uniqueConstraints = {
 		@UniqueConstraint(columnNames = "TOKEN")
 })
 
 @NamedQueries({
 	@NamedQuery(name = "", query= "")
 })
-public class UserFPToken implements Serializable{
+public class UserToken implements Serializable{
 
 	private static final long serialVersionUID = -6338743166955178316L;
 	
@@ -45,7 +45,10 @@ public class UserFPToken implements Serializable{
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "CREATE_DT", nullable = false, updatable = false)
 	private Date createDt;
-
+	
+	@Column(name = "TOKEN_TYPE_ID", nullable = false)
+	private Long tokenTypeId;
+	
 	public Long getId() {
 		return id;
 	}
@@ -94,13 +97,21 @@ public class UserFPToken implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		UserFPToken other = (UserFPToken) obj;
+		UserToken other = (UserToken) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public Long getTokenTypeId() {
+		return tokenTypeId;
+	}
+
+	public void setTokenTypeId(Long tokenTypeId) {
+		this.tokenTypeId = tokenTypeId;
 	}
 	
 }

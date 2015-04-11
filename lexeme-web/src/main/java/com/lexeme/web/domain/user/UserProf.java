@@ -58,6 +58,9 @@ public class UserProf implements Serializable {
 	@JoinColumn(name = "USER_ID", nullable = false)
 	private User user;
 
+	@Column(name = "SEX", nullable = false, length = 10)
+	private String sex;
+	
 	public void setUser(User user) {
 		this.user = user;
 	}
@@ -144,6 +147,14 @@ public class UserProf implements Serializable {
 
 	public String getOther() {
 		return other;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 
 	

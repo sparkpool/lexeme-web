@@ -16,14 +16,12 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
-import com.lexeme.web.controller.user.UserFPToken;
 import com.lexeme.web.domain.acl.Roles;
 import com.lexeme.web.domain.course.Course;
 
@@ -98,9 +96,6 @@ public class User implements Serializable {
 			inverseJoinColumns = { @JoinColumn(name = "COURSE_ID", 
 			nullable = false, updatable = false) })
 	private Set<Course> courses;
-	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "")
-	private Set<UserFPToken> tokens;
 	
 	public Long getId() {
 		return id;
@@ -221,14 +216,6 @@ public class User implements Serializable {
 
 	public void setCourses(Set<Course> courses) {
 		this.courses = courses;
-	}
-
-	public Set<UserFPToken> getTokens() {
-		return tokens;
-	}
-
-	public void setTokens(Set<UserFPToken> tokens) {
-		this.tokens = tokens;
 	}
 
 	@Override
