@@ -2,22 +2,37 @@ package com.lexeme.web.domain.user;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
+
+import com.lexeme.web.controller.user.UserFPToken;
+import com.lexeme.web.domain.acl.Roles;
+import com.lexeme.web.domain.course.Course;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "USER",
+uniqueConstraints = {
+		@UniqueConstraint(columnNames = "EMAIL"),
+		@UniqueConstraint(columnNames = "USER_NAME")
+})
 
 @NamedQueries({
     	@NamedQuery(name = "USER.LOGIN", query = "select u from User u where u.email = :email and u.password = :password")
@@ -69,7 +84,24 @@ public class User implements Serializable {
 
 	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
 	private UserExp userExp;
-
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "USER_HAS_ROLES", joinColumns = {
+			@JoinColumn(name = "USER_ID", nullable = false, updatable = false)}, 
+			inverseJoinColumns = { @JoinColumn(name = "ROLE_ID", 
+			nullable = false, updatable = false) })
+	private Set<Roles> roles;
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "USER_HAS_COURSE", joinColumns = {
+			@JoinColumn(name = "USER_ID", nullable = false, updatable = false)}, 
+			inverseJoinColumns = { @JoinColumn(name = "COURSE_ID", 
+			nullable = false, updatable = false) })
+	private Set<Course> courses;
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "")
+	private Set<UserFPToken> tokens;
+	
 	public Long getId() {
 		return id;
 	}
@@ -173,6 +205,55 @@ public class User implements Serializable {
 
 	public UserExp getUserExp() {
 		return userExp;
+	}
+
+	public Set<Roles> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Roles> roles) {
+		this.roles = roles;
+	}
+
+	public Set<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(Set<Course> courses) {
+		this.courses = courses;
+	}
+
+	public Set<UserFPToken> getTokens() {
+		return tokens;
+	}
+
+	public void setTokens(Set<UserFPToken> tokens) {
+		this.tokens = tokens;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
 
 }
