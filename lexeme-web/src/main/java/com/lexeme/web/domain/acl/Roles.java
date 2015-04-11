@@ -33,7 +33,7 @@ public class Roles implements Serializable {
 	private String name;
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "ROLES_HAS_PERMISSION", joinColumns = {
+	@JoinTable(name = "ROLES_HAS_PERMISSIONS", joinColumns = {
 			@JoinColumn(name = "ROLE_ID", nullable = false, updatable = false)}, 
 			inverseJoinColumns = { @JoinColumn(name = "PERMISSION_ID", 
 			nullable = false, updatable = false) })
