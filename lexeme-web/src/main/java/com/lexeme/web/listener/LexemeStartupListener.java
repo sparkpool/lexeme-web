@@ -26,7 +26,6 @@ public class LexemeStartupListener implements ServletContextListener{
 		
 		String profile = System.getProperty("platform_name");
 		String projectProFileName = profile + "/project.properties";
-		System.out.println("Profile Name is " + profile);
 		PropertiesUtil.setProjectProperties(getProperties("/" + projectProFileName));
 		logger.info("Lexeme Startup Servlet Listener Completed");
 	}
@@ -35,11 +34,10 @@ public class LexemeStartupListener implements ServletContextListener{
 		
 		Properties properties = new Properties();
 		InputStream fis = LexemeStartupListener.class.getResourceAsStream(fileName);
-		System.out.println("File Input Stream is " + fis);
 		try {
 			properties.load(fis);
 		} catch (IOException ex) {
-			System.out.println("Exception occurred in loading propeties" + ex);
+			logger.error("Exception occurred in loading propeties" + ex);
 		} finally{
 			try {
 				if(fis!=null){

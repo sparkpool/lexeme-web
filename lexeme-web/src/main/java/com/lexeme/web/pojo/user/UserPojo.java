@@ -1,5 +1,7 @@
 package com.lexeme.web.pojo.user;
 
+import org.apache.commons.lang.StringUtils;
+
 public class UserPojo {
 
 	private Long id;
@@ -25,11 +27,18 @@ public class UserPojo {
 		this.password = password;
 	}
 	
-	public boolean validateLoginParams(){
-		if(email == null || password == null){
+	public boolean validateSignUpParams(){
+		if(StringUtils.isBlank(email) || StringUtils.isBlank(password) || StringUtils.isBlank(userName)){
 			return false;
 		}
 		return true;
+	}
+	
+	public boolean validateLogiInParams(){
+		if(StringUtils.isNotBlank(password) && (StringUtils.isNotBlank(email) || StringUtils.isNotBlank(userName))){
+			return true;
+		}
+		return false;
 	}
 	
 	public String getEmail() {
