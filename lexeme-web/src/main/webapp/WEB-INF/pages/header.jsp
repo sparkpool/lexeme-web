@@ -26,14 +26,13 @@
 		<!--Company css-->
 	
 		<link href="${pageContext.request.contextPath}/resources/semantic/css/semantic.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/semantic/css/semantic.min.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/semantic/css/card.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/semantic/css/card.min.css" rel="stylesheet">
+
 		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.min.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/validate-form.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/tablesort.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/ace.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/easing.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/history.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/waypoints.js"></script>
 
 		<link href="${pageContext.request.contextPath}/resources/semantic/css/semantic.min.css" rel="stylesheet">
 	

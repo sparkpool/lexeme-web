@@ -129,5 +129,29 @@ $.fn.api.settings.api = {
     $('.ui.form')
     .form('submit');
 
-  })
-;
+    
+    
+    
+ //card api
+    
+    $icon = $('.card .corner.label'),
+    handler
+  ;
+
+  handler = {
+
+
+  };
+
+  $('.ui.rating')
+    .rating()
+  ;
+
+  $icon
+    .state()
+  ;
+  });
+  
+  $('.special.cards .image').dimmer({
+  on: 'hover'
+});
