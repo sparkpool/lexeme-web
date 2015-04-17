@@ -7,8 +7,8 @@
 			<!--Company--->
 			<div class="col-md-3">
 				<h4><b>Comapny</b></h4>
-					About Us</br>
-					Team </br>
+					<a href="${pageContext.request.contextPath}/aboutUs">About Us</a></br>
+					<a href="${pageContext.request.contextPath}/team">Team </a></br>
 					Vision</br>
 			</div>
 
@@ -23,9 +23,9 @@
 			<!---Support-->
 			<div class="col-md-3">
 				<h4><b>Support</b></h4>
-					Contact Us</br>
-					Team </br>
-					Privacy Terms</br>
+					<a href="${pageContext.request.contextPath}/team">Contact Us</a></br>
+					<a href="${pageContext.request.contextPath}/team">Team </a></br>
+					<a href="${pageContext.request.contextPath}/policy">Privacy Terms</a></br>
 			</div>
 
 			<!--Social Reach-->

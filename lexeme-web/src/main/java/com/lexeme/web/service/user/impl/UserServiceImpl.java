@@ -47,7 +47,6 @@ public class UserServiceImpl implements IUserService{
 		return userPojo;
 	}
 	
-	@Transactional
 	private void setRolesOnSignUp(User user){
 		Set<Roles> roles = new HashSet<Roles>();
 		Query query = getSessionFactory().getCurrentSession().getNamedQuery("ROLE.NAME")

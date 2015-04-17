@@ -39,6 +39,7 @@ public class UserController {
 		return "profile";
 	}
 
+	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public ModelAndView signup(UserPojo userPojo) {
 		logger.info("User Pojo is : " + userPojo);
@@ -76,7 +77,7 @@ public class UserController {
 				model.addObject("errorMsg", "Please Enter Email Or UserName And Password");
 				model.setViewName("login");
 			} else {
-				userPojo = getUserService().signupUser(userPojo);
+				userPojo = getUserService().login(userPojo);
 				if (userPojo != null && userPojo.getId() != null) {
 					model.setViewName("home");
 				} else {
