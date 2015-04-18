@@ -13,13 +13,28 @@
 		<script src="${pageContext.request.contextPath}/resources/js/angular-route.min.js"></script>
 	
 	
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	
+		<!-- Semantic-ui -->
+	
+		
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,700italic,400,700" rel="stylesheet" type="text/css">
 		<!--Company css-->
+	
+		<link href="${pageContext.request.contextPath}/resources/semantic/css/semantic.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/semantic/css/semantic.min.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/semantic/css/card.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/resources/semantic/css/card.min.css" rel="stylesheet">
+
+		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.min.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/validate-form.js"></script>
+
+		<link href="${pageContext.request.contextPath}/resources/semantic/css/semantic.min.css" rel="stylesheet">
 	
 		<link href="${pageContext.request.contextPath}/resources/css/lexememain.css" rel="stylesheet">
 	   <!-- Responsive CSS Styles  -->
@@ -62,11 +77,15 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/angular/app.js"></script>
-	
+	<script>
+	$(function () {
+		  $('[data-toggle="popover"]').popover()
+		})
+	</script>
 	</head>
 			
 			
-				<body>
+	<body>
 	
 	
 			
@@ -101,4 +120,3 @@
 		</div>
 		</nav>
 	 </header> 
-	 

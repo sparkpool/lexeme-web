@@ -44,6 +44,7 @@ public class UserController {
 		return "profile";
 	}
 
+	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public ModelAndView signup(UserPojo userPojo) {
 		logger.info("User Pojo is : " + userPojo);

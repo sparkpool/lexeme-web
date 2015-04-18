@@ -1,12 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>About Us Page</title>
-</head>
-<body>
-    <h1>About US</h1>
-</body>
-</html>
+
+<!--Header--->
+<%@ include file="header.jsp"%>
+<br/>
+<br/>
+<div class="ui center aligned three column grid">
+
+	<div class="column">
+		
+		<h1>Login</h1>
+			<form class="ui form" >
+
+				<!-- Email-address -->
+				<div class="field">
+					<label>Email</label> <input placeholder="Email" name="email"
+						type="email">
+				</div>
+
+
+				<!-- Password -->
+				<div class="field">
+					<label>Password</label> <input name="password" type="password" placeholder="Password ">
+				</div>
+
+
+				<!-- Choose Account Type -->
+				<div class="field"></div>
+				
+				<div class="inline field">
+				
+				<input name="terms" type="checkbox">
+					<p>Already have an account? 
+					<a href="${pageContext.request.contextPath}/user/login">SignIn</a>
+					</p>
+
+				</div>
+				<input class="ui blue submit button" type="submit" name="SAVE"></div>
+		
+		</form>
+	
+	</div>
+</div>
+<%@ include file="footer.jsp"%>
