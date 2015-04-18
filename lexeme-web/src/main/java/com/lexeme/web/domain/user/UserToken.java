@@ -23,10 +23,6 @@ import com.lexeme.web.domain.user.User;
 @Table(name = "USER_TOKEN", uniqueConstraints = {
 		@UniqueConstraint(columnNames = "TOKEN")
 })
-
-//@NamedQueries({
-//	@NamedQuery(name = "", query= "")
-//})
 public class UserToken implements Serializable{
 
 	private static final long serialVersionUID = -6338743166955178316L;

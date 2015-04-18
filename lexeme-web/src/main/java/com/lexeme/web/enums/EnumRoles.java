@@ -3,7 +3,9 @@ package com.lexeme.web.enums;
 public enum EnumRoles {
 
 	STUDENT("STUDENT"),
+	STUDENT_UNVERIFIED("STUDENT_UNVERIFIED"),
 	TUTOR("TUTOR"),
+	TUTOR_UNVERIFIED("TUTOR_UNVERIFIED"),
 	MODERATOR("MODERATOR"),
 	ADMIN("ADMIN"),
 	;

@@ -2,8 +2,7 @@ package com.lexeme.web.enums;
 
 public enum EnumTokenType {
 
-	SUV(101L, "STUDENT_UNVERIFIED"),
-	TUV(102L, "TEACHER_UNVERIFIED"),
+	UV(101L, "UNVERIFIED"),
 	FP(103L, "FORGOT_PASSWORD"),
 	;
 	

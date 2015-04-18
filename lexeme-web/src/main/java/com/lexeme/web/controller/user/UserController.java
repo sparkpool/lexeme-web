@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lexeme.web.constants.MessageConstants;
 import com.lexeme.web.pojo.user.UserPojo;
 import com.lexeme.web.service.user.IUserService;
+import com.lexeme.web.service.user.IUserValidationService;
 
 @Controller
 @RequestMapping("/user")
@@ -19,6 +21,9 @@ public class UserController {
 	@Autowired
 	private IUserService userService;
 
+	@Autowired
+	private IUserValidationService userValidationService;
+	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signup() {
 		return "signup";
@@ -45,18 +50,28 @@ public class UserController {
 		ModelAndView model = new ModelAndView();
 		try {
 			if (!userPojo.validateSignUpParams()) {
-				model.addObject("errorMsg", "Please Enter Email And Password");
+				model.addObject("errorMsg", "Please Enter All MAndatory Params");
 				model.setViewName("signup");
 			} else {
-				userPojo = getUserService().signupUser(userPojo);
-				if (userPojo != null && userPojo.getId() != null) {
-					model.addObject("message",
-							"Thanks for SignUp. Please Login to Continue !!");
-					model.setViewName("login");
-				} else {
+				String errorMessage = userPojo.validateSignUpUsingRegex();
+				if(errorMessage!=null){
+					model.addObject("errorMsg", errorMessage);
 					model.setViewName("signup");
-					model.addObject("errorMsg",
-							"Something Wrong, please try again!!");
+				}else{
+					String validateUser = getUserValidationService().validateUserNameOrEmail(userPojo.getUserName(), userPojo.getEmail());
+					if(validateUser!=null){
+						model.addObject("errorMsg", validateUser);
+						model.setViewName("signup");
+					}else{
+						userPojo = getUserService().signupUser(userPojo);
+						if (userPojo != null && userPojo.getId() != null) {
+							model.addObject("message",MessageConstants.SIGNUP_SUCCESS);
+							model.setViewName("login");
+						} else {
+							model.setViewName("signup");
+							model.addObject("errorMsg",MessageConstants.SOMETHING_WRONG);
+						}						
+					}
 				}
 			}
 		} catch (Exception e) {
@@ -72,11 +87,11 @@ public class UserController {
 		logger.info("User Pojo is : " + userPojo);
 		ModelAndView model = new ModelAndView();
 		try {
-			if (!userPojo.validateLogiInParams()) {
+			if (!userPojo.validateLogInParams()) {
 				model.addObject("errorMsg", "Please Enter Email Or UserName And Password");
 				model.setViewName("login");
 			} else {
-				userPojo = getUserService().signupUser(userPojo);
+				userPojo = getUserService().login(userPojo);
 				if (userPojo != null && userPojo.getId() != null) {
 					model.setViewName("home");
 				} else {
@@ -95,4 +110,8 @@ public class UserController {
 		return userService;
 	}
 
+	public IUserValidationService getUserValidationService() {
+		return userValidationService;
+	}
+	
 }

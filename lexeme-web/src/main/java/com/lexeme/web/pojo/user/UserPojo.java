@@ -2,6 +2,9 @@ package com.lexeme.web.pojo.user;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.lexeme.web.constants.MessageConstants;
+import com.lexeme.web.util.LexemeUtil;
+
 public class UserPojo {
 
 	private Long id;
@@ -34,7 +37,23 @@ public class UserPojo {
 		return true;
 	}
 	
-	public boolean validateLogiInParams(){
+	public String validateSignUpUsingRegex(){
+		boolean valid = LexemeUtil.validateEmail(this.email);
+		if(!valid){
+			return MessageConstants.EMAIL_ERROR;
+		}
+		valid = LexemeUtil.validateUserName(this.userName);
+		if(!valid){
+			return MessageConstants.USERNAME_ERROR;
+		}
+		valid = LexemeUtil.validatePassword(this.password);
+		if(!valid){
+			return MessageConstants.PASSWORD_ERROR;
+		}
+		return null;
+	}
+	
+	public boolean validateLogInParams(){
 		if(StringUtils.isNotBlank(password) && (StringUtils.isNotBlank(email) || StringUtils.isNotBlank(userName))){
 			return true;
 		}

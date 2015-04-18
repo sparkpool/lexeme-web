@@ -1,8 +1,8 @@
 package com.lexeme.web.service.user.impl;
 
 import java.security.InvalidParameterException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -14,9 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.lexeme.web.domain.acl.Roles;
 import com.lexeme.web.domain.user.User;
-import com.lexeme.web.enums.EnumRoles;
 import com.lexeme.web.pojo.user.UserPojo;
+import com.lexeme.web.service.acl.IACLService;
+import com.lexeme.web.service.email.IEmailManager;
 import com.lexeme.web.service.user.IUserService;
+import com.lexeme.web.service.user.IUserTokenService;
 import com.lexeme.web.util.LexemeUtil;
 
 @Service
@@ -27,45 +29,45 @@ public class UserServiceImpl implements IUserService{
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	@Autowired
+	private IACLService aclService;
+
+	@Autowired
+	private IEmailManager emailManager;
+	
+	@Autowired
+	private IUserTokenService userTokenService;
+	
 	@Override
 	@Transactional
-	public UserPojo signupUser(UserPojo userPojo) {
+	public UserPojo signupUser(UserPojo userPojo) throws NoSuchAlgorithmException {
 		if(userPojo == null){
 			throw new InvalidParameterException("USER POJO CAN NOT BE NULL");
 		}
 		User user = createUserFromPojo(userPojo);
 		String password = getHashPassword(userPojo.getPassword());
-		if(password == null){
-			throw new InvalidParameterException("INVALID PASSWORD");
-		}
 		user.setPassword(password);
-		setRolesOnSignUp(user);
+		user.setRoles(getRolesForSignUp());
 		Long id = (Long) sessionFactory.getCurrentSession().save(user);
+		logger.info("Sign Up Of user from DB result is " + id);
 		if(id!=null){
 			userPojo.setId(id);
+			user.setId(id);
+			getEmailManager().sendSignUpEmail(user, getUserTokenService().insertUserTokenAndReturnActivationLink(user));
 		}
 		return userPojo;
 	}
 	
-	@Transactional
-	private void setRolesOnSignUp(User user){
-		Set<Roles> roles = new HashSet<Roles>();
-		Query query = getSessionFactory().getCurrentSession().getNamedQuery("ROLE.NAME")
-				.setString("name", EnumRoles.STUDENT.getRole());
-		Roles role = (Roles)query.uniqueResult();
-		logger.info("Role from DB is " + role);
-		roles.add(role);				
-		user.setRoles(roles);
+	private Set<Roles> getRolesForSignUp(){
+		Set<Roles> roles = getAclService().getRolesForSignUp();
+		if(roles == null || roles.size() == 0){
+			throw new InvalidParameterException("INVALID ROLE FROM DB");
+		}
+		return roles;
 	}
 	
-	private String getHashPassword(String password){
-		String hashPassword = null;
-		try{
-		 hashPassword = LexemeUtil.getHashOfString(password);
-		}catch(Exception e){
-			logger.error("Excepion Occured " + e.getMessage());
-		}
-		return hashPassword;
+	private String getHashPassword(String password) throws NoSuchAlgorithmException{
+		return LexemeUtil.getHashOfString(password);
 	}
 	
 	private User createUserFromPojo(UserPojo userPojo){
@@ -82,7 +84,7 @@ public class UserServiceImpl implements IUserService{
 
 	@Override
 	@Transactional
-	public UserPojo login(UserPojo userPojo) {
+	public UserPojo login(UserPojo userPojo) throws NoSuchAlgorithmException {
 		if(userPojo == null){
 			throw new InvalidParameterException("USER POJO CAN NOT BE NULL");
 		}
@@ -98,6 +100,18 @@ public class UserServiceImpl implements IUserService{
 			userPojo.setMsg("Invalid Email Or Password");
 		}
 		return userPojo;
+	}
+
+	public IACLService getAclService() {
+		return aclService;
+	}
+
+	public IEmailManager getEmailManager() {
+		return emailManager;
+	}
+
+	public IUserTokenService getUserTokenService() {
+		return userTokenService;
 	}
 
 }
