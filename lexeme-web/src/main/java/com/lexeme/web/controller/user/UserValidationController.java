@@ -30,7 +30,7 @@ public class UserValidationController {
 			if (StringUtils.isBlank(email) && StringUtils.isBlank(userName)) {
 				return MessageConstants.INVALID_USERNAME_EMAIL;
 			}
-			return getUserValidationService().validateUserNameOrEmail(userName, email);
+			return getUserValidationService().validateUserNameOrEmailForSignUp(userName, email);
 		} catch (Exception e) {
 			logger.error("Exception Occured : " + e.getMessage());
 			return e.getMessage();

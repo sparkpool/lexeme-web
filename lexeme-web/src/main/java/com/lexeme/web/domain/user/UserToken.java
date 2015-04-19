@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -20,6 +22,9 @@ import com.lexeme.web.domain.user.User;
 @Entity
 @Table(name = "USER_TOKEN", uniqueConstraints = {
 		@UniqueConstraint(columnNames = "TOKEN")
+})
+@NamedQueries({
+    @NamedQuery(name="TOKEN.VALIDATE", query="select ut from UserToken ut where ut.token = :token and ut.tokenTypeId = :tokenTypeId")		
 })
 public class UserToken implements Serializable{
 
@@ -35,13 +40,13 @@ public class UserToken implements Serializable{
 	
 	@Column(name = "TOKEN", length = 256, nullable = false)
 	private String token;
+
+	@Column(name = "TOKEN_TYPE_ID", nullable = false)
+	private Long tokenTypeId;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "CREATE_DT", nullable = false, updatable = false)
 	private Date createDt;
-	
-	@Column(name = "TOKEN_TYPE_ID", nullable = false)
-	private Long tokenTypeId;
 	
 	public Long getId() {
 		return id;
@@ -106,6 +111,12 @@ public class UserToken implements Serializable{
 
 	public void setTokenTypeId(Long tokenTypeId) {
 		this.tokenTypeId = tokenTypeId;
+	}
+
+	@Override
+	public String toString() {
+		return "UserToken [id=" + id + ", token=" + token + ", tokenTypeId="
+				+ tokenTypeId + ", createDt=" + createDt + "]";
 	}
 	
 }

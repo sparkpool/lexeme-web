@@ -103,5 +103,10 @@ public class Roles implements Serializable {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Roles [id=" + id + ", name=" + name + "]";
+	}
 	
 }

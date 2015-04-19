@@ -1,6 +1,7 @@
 package com.lexeme.web.service.user.impl;
 
 import java.security.InvalidParameterException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.lexeme.web.constants.MessageConstants;
 import com.lexeme.web.domain.user.User;
+import com.lexeme.web.service.user.IUserTokenService;
 import com.lexeme.web.service.user.IUserValidationService;
 
 @Service
@@ -23,16 +25,19 @@ public class UserValidationServiceImpl implements IUserValidationService{
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	@Autowired
+	private IUserTokenService userTokenService;
+	
 	@Override
 	@Transactional
-	public String validateUserNameOrEmail(String userName, String email) {
+	public String validateUserNameOrEmailForSignUp(String userName, String email) {
 		if(StringUtils.isBlank(userName) && StringUtils.isBlank(email)){
 			throw new InvalidParameterException(MessageConstants.INVALID_USERNAME_EMAIL);
 		}
-	  return validateUser(email, userName);
+	  return validateUserAndReturnMsg(email, userName);
 	}
 
-	private String validateUser(String email, String userName){
+	private String validateUserAndReturnMsg(String email, String userName){
 		if(StringUtils.isNotBlank(userName) && StringUtils.isNotBlank(email)){
 			List<User> results = validateUserOrEmail(email, userName);
 			logger.info("Results from DB for User Validation is " + results);
@@ -51,6 +56,25 @@ public class UserValidationServiceImpl implements IUserValidationService{
 			if(user!=null){
 				return MessageConstants.USERNAME_EXIST;
 			}
+		}
+		return null;
+	}
+	
+	private User validateUser(String email, String userName){
+		if(StringUtils.isNotBlank(userName) && StringUtils.isNotBlank(email)){
+			List<User> results = validateUserOrEmail(email, userName);
+			logger.info("Results from DB for User Validation is " + results);
+			if(results != null && results.size() > 0){
+				results.get(0);
+			}
+		}else if(StringUtils.isNotBlank(email)){
+			User user = validateEmail(email);
+			logger.info("Results from DB for User Validation is " + user);
+			return user;
+		}else{
+			User user = validateUserName(userName);
+			logger.info("Results from DB for User Validation is " + user);
+			return user;
 		}
 		return null;
 	}
@@ -76,6 +100,23 @@ public class UserValidationServiceImpl implements IUserValidationService{
 
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
+	}
+
+	@Override
+	@Transactional
+	public boolean validateUserAndFPLink(String userName, String email, String contextPath) throws NoSuchAlgorithmException {
+		User user = validateUser(email, userName);
+		if(user != null){
+			String activationLink = getUserTokenService().insertFPTokenAndReturnActivationLink(user, contextPath);
+			if(activationLink != null){
+				
+			}
+		}
+		return false;
+	}
+
+	public IUserTokenService getUserTokenService() {
+		return userTokenService;
 	}
 
 }

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.lexeme.web.constants.MessageConstants;
 import com.lexeme.web.domain.acl.Roles;
 import com.lexeme.web.domain.user.User;
 import com.lexeme.web.pojo.user.UserPojo;
@@ -40,26 +41,26 @@ public class UserServiceImpl implements IUserService{
 	
 	@Override
 	@Transactional
-	public UserPojo signupUser(UserPojo userPojo) throws NoSuchAlgorithmException {
+	public UserPojo signupUser(UserPojo userPojo, String contextPath) throws NoSuchAlgorithmException {
 		if(userPojo == null){
 			throw new InvalidParameterException("USER POJO CAN NOT BE NULL");
 		}
 		User user = createUserFromPojo(userPojo);
 		String password = getHashPassword(userPojo.getPassword());
 		user.setPassword(password);
-		user.setRoles(getRolesForSignUp());
+		user.setRoles(getRolesForSignUp(userPojo.getRole()));
 		Long id = (Long) sessionFactory.getCurrentSession().save(user);
 		logger.info("Sign Up Of user from DB result is " + id);
 		if(id!=null){
 			userPojo.setId(id);
 			user.setId(id);
-			getEmailManager().sendSignUpEmail(user, getUserTokenService().insertUserTokenAndReturnActivationLink(user));
+			getEmailManager().sendSignUpEmail(user, getUserTokenService().insertNewUserTokenAndReturnActivationLink(user, contextPath));
 		}
 		return userPojo;
 	}
 	
-	private Set<Roles> getRolesForSignUp(){
-		Set<Roles> roles = getAclService().getRolesForSignUp();
+	private Set<Roles> getRolesForSignUp(String role){
+		Set<Roles> roles = getAclService().getRolesForSignUp(role);
 		if(roles == null || roles.size() == 0){
 			throw new InvalidParameterException("INVALID ROLE FROM DB");
 		}
@@ -97,7 +98,7 @@ public class UserServiceImpl implements IUserService{
 		if(user!=null && user.getId()!=null){
 			userPojo.setId(user.getId());
 		}else{
-			userPojo.setMsg("Invalid Email Or Password");
+			userPojo.setMsg(MessageConstants.INVALID_LOGIN);
 		}
 		return userPojo;
 	}

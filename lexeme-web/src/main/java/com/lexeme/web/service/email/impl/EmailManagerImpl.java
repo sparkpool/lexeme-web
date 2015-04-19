@@ -1,10 +1,7 @@
 package com.lexeme.web.service.email.impl;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.mail.MessagingException;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +11,6 @@ import com.lexeme.web.domain.user.User;
 import com.lexeme.web.service.email.IEmailManager;
 import com.lexeme.web.service.email.IEmailSentService;
 import com.lexeme.web.util.PropertiesUtil;
-
-import freemarker.template.TemplateException;
 
 @Service
 public class EmailManagerImpl implements IEmailManager{
@@ -39,7 +34,7 @@ public class EmailManagerImpl implements IEmailManager{
     		values.put("emailAddress", user.getEmail());
 
 			getEmailSentService().sentEmail(values, user.getEmail(), getSignUpSubjectFromProperties(), "SignUp");
-		} catch (IOException | TemplateException | MessagingException e) {
+		} catch (Exception e) {
 			logger.error("Exception occured during sending email " + e.getMessage());
 		}		
 	}

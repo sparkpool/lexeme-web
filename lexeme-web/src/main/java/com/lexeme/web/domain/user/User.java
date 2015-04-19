@@ -246,4 +246,13 @@ public class User implements Serializable {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", email=" + email + ", userName=" + userName
+				+ ", firstName=" + firstName + ", middleName=" + middleName
+				+ ", lastName=" + lastName + ", phoneNo=" + phoneNo
+				+ ", createDt=" + createDt + ", modifiedDt=" + modifiedDt
+				+ ", roles=" + roles + "]";
+	}
+
 }

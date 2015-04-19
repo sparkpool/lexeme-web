@@ -88,7 +88,7 @@ $.fn.api.settings.api = {
         }
       ]
     },
-    passwordConfirm: {
+    confirmPassword: {
       identifier : 'password-confirm',
       rules: [
         {

@@ -44,7 +44,7 @@ public class LexemeUtil {
 	}
 	
 	public static boolean validateEmail(String email){
-		if(email.length() > 50){
+		if(email.length() > 1 && email.length() <= 50){
 			Matcher matcher = emailPattern.matcher(email);
 			return matcher.matches();	
 		}

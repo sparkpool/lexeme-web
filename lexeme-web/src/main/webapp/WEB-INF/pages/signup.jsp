@@ -1,5 +1,6 @@
 
 <!--Header--->
+<%@page import="com.lexeme.web.enums.EnumRoles"%>
 <%@ include file="header.jsp"%>
 
 <div class="main container">
@@ -46,7 +47,7 @@
 
 					<!-- Confirm Password -->
 					<div class="field">
-						<label>Confirm Password</label> <input name="password"
+						<label>Confirm Password</label> <input name="confirmPassword"
 							type="password" id="password-confirm"
 							placeholder="Confirm Password">
 					</div>
@@ -56,10 +57,11 @@
 
 
 					<div class=" two field">
-						<label>Account Type</label> <select class="ui search dropdown">
-							<option value="">Expert</option>
-							<option value="AL">Student</option>
-
+						<label>Account Type</label> 
+						<select name="role" class="ui search dropdown">
+							<c:forEach items="<%=EnumRoles.getRolesForSignUP() %>" var="role">
+								<option value="${role.role}">${role.displayName}</option>							
+							</c:forEach>
 						</select>
 					</div>
 

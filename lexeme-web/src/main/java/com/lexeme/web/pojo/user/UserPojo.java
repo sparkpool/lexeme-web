@@ -3,6 +3,7 @@ package com.lexeme.web.pojo.user;
 import org.apache.commons.lang.StringUtils;
 
 import com.lexeme.web.constants.MessageConstants;
+import com.lexeme.web.domain.user.User;
 import com.lexeme.web.util.LexemeUtil;
 
 public class UserPojo {
@@ -10,34 +11,39 @@ public class UserPojo {
 	private Long id;
 	private String email;
 	private String password;
+	private String confirmPassword;
 	private String userName;
 	private String firstName;
 	private String middleName;
 	private String lastName;
 	private String phoneNo;
+	private String role;
 	private String msg;
 
 	public UserPojo(){}
 	
-	public UserPojo(String email, String userName, String firstName, String middleName
-			, String lastName, String phoneNo, String password){
-		this.email = email;
-		this.userName = userName;
-		this.firstName = firstName;
-		this.middleName = middleName;
-		this.lastName = lastName;
-		this.phoneNo = phoneNo;
-		this.password = password;
+	public UserPojo(User user){
+		this.email = user.getEmail();
+		this.id = user.getId();
+		this.userName = user.getUserName();
+		this.firstName = user.getFirstName();
+		this.lastName = user.getLastName();
+		this.phoneNo = user.getPhoneNo();
+		this.middleName = user.getMiddleName();
 	}
 	
 	public boolean validateSignUpParams(){
-		if(StringUtils.isBlank(email) || StringUtils.isBlank(password) || StringUtils.isBlank(userName)){
+		if(StringUtils.isBlank(email) || StringUtils.isBlank(password) || StringUtils.isBlank(userName)
+				|| StringUtils.isBlank(confirmPassword) || StringUtils.isBlank(role)){
 			return false;
 		}
 		return true;
 	}
 	
 	public String validateSignUpUsingRegex(){
+		if(!this.password.equals(this.confirmPassword)){
+			return MessageConstants.PASSWORD_MISMATCH_CONFIRMPASSWORD;
+		}
 		boolean valid = LexemeUtil.validateEmail(this.email);
 		if(!valid){
 			return MessageConstants.EMAIL_ERROR;
@@ -113,14 +119,6 @@ public class UserPojo {
 		this.id = id;
 	}
 	
-	@Override
-	public String toString() {
-		return "UserPojo [id=" + id + ", email=" + email + ", password="
-				+ password + ", userName=" + userName + ", firstName="
-				+ firstName + ", middleName=" + middleName + ", lastName="
-				+ lastName + ", phoneNo=" + phoneNo + "]";
-	}
-
 	public String getMsg() {
 		return msg;
 	}
@@ -128,6 +126,30 @@ public class UserPojo {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
 	
+	@Override
+	public String toString() {
+		return "UserPojo [id=" + id + ", email=" + email + ", password="
+				+ password + ", confirmPassword=" + confirmPassword
+				+ ", userName=" + userName + ", firstName=" + firstName
+				+ ", middleName=" + middleName + ", lastName=" + lastName
+				+ ", phoneNo=" + phoneNo + ", msg=" + msg + "]";
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 	
 }

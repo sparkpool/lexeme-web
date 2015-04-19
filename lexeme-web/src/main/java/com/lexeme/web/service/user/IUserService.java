@@ -6,6 +6,6 @@ import com.lexeme.web.pojo.user.UserPojo;
 
 public interface IUserService {
 
-	public UserPojo signupUser(UserPojo userPojo) throws NoSuchAlgorithmException;
+	public UserPojo signupUser(UserPojo userPojo, String contextPath) throws NoSuchAlgorithmException;
 	public UserPojo login(UserPojo userPojo) throws NoSuchAlgorithmException;
 }
