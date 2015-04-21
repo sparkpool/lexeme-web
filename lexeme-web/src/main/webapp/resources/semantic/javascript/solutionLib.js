@@ -54,29 +54,18 @@ $.fn.api.settings.api = {
         }
       ]
     },
-    userName: {
+    username: {
       identifier : 'userName',
-   
       rules: [
         {
           type   : 'empty',
           prompt : 'Please enter a username'
         },
-              
-       
         {
-        	  type:'length[6]',
-        	  prompt:'User name must be between 6  to 12 charcters long'
-        	  
-         },
-
-         {
-         	  type:'maxLength[12]',
-         	  prompt:'User name must be between 6  to 12 charcters long'
-         	  
+            type   : 'length[6]',
+            prompt : 'Username  must be at least 6 characters'
           }
-          
-        
+
       ]
     },
     email: {
@@ -100,16 +89,12 @@ $.fn.api.settings.api = {
           prompt : 'Please enter a password'
         },
         {
-          type   : 'length[8]',
-          prompt : 'Your password must be between 6 to 18 characters'
-        },
-         {
-         	  type:'maxLength[12]',
-              prompt : 'Your password must be between 6 to 18 characters'
-         }
+          type   : 'length[6]',
+          prompt : 'Your password must be at least 6 characters'
+        }
       ]
     },
-    confirmPassword: {
+    passwordConfirm: {
       identifier : 'password-confirm',
       rules: [
         {
@@ -147,10 +132,8 @@ $.fn.api.settings.api = {
       });
 
 
-   
-    
-    
-    
+    $('.ui.form')
+    .form('submit');
 
     
  
@@ -166,14 +149,6 @@ $.fn.api.settings.api = {
 
 
   };
-  
-  $('.menu .item')
-  .tab({
-	  
-	  history:true
-	  
-  });
-  
 
   $('.ui.rating')
     .rating()
@@ -182,11 +157,8 @@ $.fn.api.settings.api = {
   $icon
     .state()
   ;
- 
+  });
   
   $('.special.cards .image').dimmer({
-  on: 'hover'});
-  
- 
-  
- });
+  on: 'hover'
+});
