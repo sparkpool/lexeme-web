@@ -1,22 +1,31 @@
 
 <!--Header--->
 <%@ include file="header.jsp"%>
-
 <div class="main container">
 	<br /> <br /> <br />
 
 	<div class="ui two column middle aligned relaxed fitted stackable grid">
-
 		<div class="center aligned column">
 
 			<div class="huge green ui labeled icon button">
 				<i class="signup icon"></i> Sign In
 			</div>
+
+			<!-- WIll SHOW THE ERROR MESSAGE -->
+			<c:if test="${!empty errorMsg}">
+				<div class="error">${errorMsg}</div>
+			</c:if>
+
+			<c:if test="${!empty msg}">
+				<div class="msg">${msg}</div>
+			</c:if>
+
 		</div>
 
 		<!-- Vertical Divider -->
 		<div class="ui vertical divider">Or</div>
-		<!-- Signin column -->
+
+		<!-- Sign in column -->
 		<div class="left aligned column">
 
 
@@ -46,7 +55,7 @@
 
 					<!-- Confirm Password -->
 					<div class="field">
-						<label>Confirm Password</label> <input name="password"
+						<label>Confirm Password</label> <input name="passwordConfirm"
 							type="password" id="password-confirm"
 							placeholder="Confirm Password">
 					</div>

@@ -6,8 +6,9 @@
 
 <div class="main container">
 
-	<div class="ui three column grid">
-		<div class="column">
+	<div class="ui grid ">
+		<div class="three wide column">
+		
 			<div class="ui fluid card">
 				<div class="image">
 					<img
@@ -26,17 +27,33 @@
 				</div>
 			</div>
 		</div>
-		<div class="column">
-			<div class="ui pointing menu">
-				<a class="active item"> <i class="home icon"></i> Profile
-				</a> <a class="item"> <i class="mail icon"></i> Account info
-				</a> <a class="item"> <i class="user icon"></i> Edit infor
-				</a>
+		<div class="thirteen wide column">
+
+			<div class="ui pointing secondary menu">
+				<a class="active red item" data-tab="first">Student Profile</a> <a
+					class="item" data-tab="second">Account Information</a> 
+				<a
+					class="item" data-tab="third">Personal Information</a>
+
 			</div>
+
+
+			<div class="ui active tab" data-tab="first">
+				
+				Hello
+			</div>
+			<div class="ui bottom attached tab segment" data-tab="second">
+				<!-- Tab Content !-->
+				Welcome
+			</div>
+			
+			<div class="ui bottom attached  tab segment" data-tab="second">
+				<!-- Tab Content !-->
+				Fuck you!!
+			</div>
+
 		</div>
-		<div class="column">
-			<div class="ui fluid card"></div>
 		</div>
-	</div>
+
 </div>
 <%@ include file="footer.jsp"%>

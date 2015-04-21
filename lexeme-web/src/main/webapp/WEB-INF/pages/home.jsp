@@ -1,4 +1,5 @@
 	<!--Header--->
+	
 	<%@ include file="header.jsp" %>
 	 
 		<section id="home">
@@ -125,10 +126,19 @@
 
 	<!--ng-view for Container rendering---->
 	<div class="container"  style="margin-top:20px;  ">
+	<div class="ui inline cookie nag">
+  <span class="title">
+    Kindly activate your account.
+  </span>
+  <i class="close icon"></i>
+</div>
+
 	<div ng-view>
 	
 	<a href="#/route1">Route 1</a><br/>
 	</div>
+	
+	
 	
 	</div>
 	<%@ include file="footer.jsp" %>
