@@ -24,6 +24,7 @@
 		<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,700italic,400,700" rel="stylesheet" type="text/css">
 		<!--Company css-->
+		<script src="http://patrickgawron.com/wp/wp-content/uploads/2013/11/jquery.address.js"></script>
 	
 		<link href="${pageContext.request.contextPath}/resources/semantic/css/semantic.css" rel="stylesheet">
 		<link href="${pageContext.request.contextPath}/resources/semantic/css/semantic.min.css" rel="stylesheet">
@@ -32,8 +33,9 @@
 
 		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.min.js"></script>
-		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/validate-form.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/profile.js"></script>
+
+		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/validate-form.js"></script>
 
 		<link href="${pageContext.request.contextPath}/resources/semantic/css/semantic.min.css" rel="stylesheet">
 	

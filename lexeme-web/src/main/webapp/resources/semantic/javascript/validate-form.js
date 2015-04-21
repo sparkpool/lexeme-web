@@ -158,21 +158,11 @@ $.fn.api.settings.api = {
      * Card Api
      *********************************************************************/
     
-    $icon = $('.card .corner.label'),
-    handler
+    $icon = $('.card .corner.label')
   ;
 
-  handler = {
 
 
-  };
-  
-  $('.menu .item')
-  .tab({
-	  
-	  history:true
-	  
-  });
   
 
   $('.ui.rating')

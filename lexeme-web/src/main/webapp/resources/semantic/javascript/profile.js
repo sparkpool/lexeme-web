@@ -5,16 +5,15 @@ $(document)
 	  /****************************************************
 	   * Tab transition
 	   ****************************************************/
-	  $('.profile .menu .item').tab(
-			  
-			  {
-				
-				   
-			  }
-			  
-	  );
+	  $('.menu .item')
+	    .tab({
+	    	 context: '.profile',
+	    	 history:true
+	    		 
+	    })
+	  ;  
 	  
-	  
+	 
 	  $('.cookie.nag')
 	  .nag({
 	    key      : 'accepts-cookies',
