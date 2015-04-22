@@ -13,7 +13,6 @@
 		<script src="${pageContext.request.contextPath}/resources/js/angular-route.min.js"></script>
 	
 	
-	
 		<!-- Semantic-ui -->
 	
 		
@@ -34,6 +33,7 @@
 		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.min.js"></script>
 		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/profile.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/tablesort.min.js"></script>
 
 		<script src="${pageContext.request.contextPath}/resources/semantic/javascript/validate-form.js"></script>
 

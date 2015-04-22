@@ -34,18 +34,18 @@
 				<h1>Create An Account</h1>
 				<form class="ui form "
 					action="${pageContext.request.contextPath}/user/signup"
-					method="POST">
+					method="POST" ng-controller="validateCtrl" ng-app="myApp">
 
 					<!-- Email-address -->
 					<div class="field">
 						<label>Email</label> <input placeholder="Email" name="email"
-							type="email">
+							type="email" ng-model="email" >
 					</div>
 
 					<!-- UserName -->
 					<div class="field">
 						<label>Username</label> <input placeholder="Username"
-							name="userName" type="text">
+							name="userName" type="text" ng-model="userName">
 					</div>
 
 					<!-- Password -->
