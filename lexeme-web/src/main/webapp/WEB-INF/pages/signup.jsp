@@ -2,6 +2,9 @@
 <!--Header--->
 <%@page import="com.lexeme.web.enums.EnumRoles"%>
 <%@ include file="header.jsp"%>
+<script type="text/javascript">
+    var _contextPath = "${pageContext.request.contextPath}";
+</script>
 <div class="main container">
 	<br /> <br /> <br />
 
@@ -34,19 +37,22 @@
 				<h1>Create An Account</h1>
 				<form class="ui form "
 					action="${pageContext.request.contextPath}/user/signup"
-					method="POST" ng-controller="validateCtrl" ng-app="myApp">
+					method="POST" ng-controller="validateCtrl" ng-app="myApp" name="form">
 
 					<!-- Email-address -->
 					<div class="field">
 						<label>Email</label> <input placeholder="Email" name="email"
-							type="email" ng-model="email" >
+							type="email" ng-model="email" email-available-validator required >
 					</div>
 
 					<!-- UserName -->
 					<div class="field">
 						<label>Username</label> <input placeholder="Username"
-							name="userName" type="text" ng-model="userName">
-					</div>
+							name="userName" type="text" ng-model="userName" ng-change="userName" userName-available-validator required>
+							    <span ng-show="form.userName.$pending.userName">Checking if this name is available...</span>
+    							<span ng-show="form.userName.$error.userName">This username is already taken!</span>
+
+ 					</div>
 
 					<!-- Password -->
 					<div class="field">

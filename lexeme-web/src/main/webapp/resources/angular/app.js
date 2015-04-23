@@ -9,16 +9,50 @@ app.controller('validateCtrl', function($scope) {
 });
 
 //to check user name availibilty
-app.directive('usernameAvailableValidator', ['$http', function($http) {
+app.directive('usernameAvailableValidator', ['$http','$q', function($http,$q) {
 	  return {
 	    require : 'ngModel',
 	    link : function($scope, element, attrs, ngModel) {
-	      ngModel.$asyncValidators.usernameAvailable = function(username) {
-	        return $http.get('/api/username-exists?u='+ username);
+	      
+	    	ngModel.$asyncValidators.usernameAvailable = function(userName) {
+	    	  console.log(_contextPath);
+	    	  
+	        $http.get(_contextPath+'/validate/user?userName='+ userName).
+	        success(function(data, status, headers, config) {
+	            // this callback will be called asynchronously
+	            // when the response is available
+	        	console.log(status);
+	        	$q.defer().resolve();
+	        }).
+	          error(function(data, status, headers, config) {
+	            // called asynchronously if an error occurs
+	            // or server returns response with an error status.
+	        	  	
+	        	  	$q.defer().reject();
+		        	console.log("UserName already exists");
+		        	
+	          });
 	      };
 	    }
-	  }
-	}])
+	  };
+	}]);
+
+
+//check email avail
+app.directive('emailAvailableValidator', ['$http', function($http) {
+	  return {
+	    require : 'ngModel',
+	    link : function($scope, element, attrs, ngModel) {
+	      ngModel.$asyncValidators.usernameAvailable = function(email) {
+	        return $http.get(_contextPath+'/validate/user?email='+ email);
+	      };
+	    }
+	  };
+}]);
+
+
+
+
 
 
 
