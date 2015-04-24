@@ -24,8 +24,8 @@ public class UserValidationController {
 	
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	@ResponseBody
-	public String signup(@RequestParam("email") String email,
-			@RequestParam("userName") String userName) {
+	public String signup(@RequestParam(value = "email", required = false) String email,
+			@RequestParam(value = "userName", required = false) String userName) {
 		try {
 			if (StringUtils.isBlank(email) && StringUtils.isBlank(userName)) {
 				return MessageConstants.INVALID_USERNAME_EMAIL;
