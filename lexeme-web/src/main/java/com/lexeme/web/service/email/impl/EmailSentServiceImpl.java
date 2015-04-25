@@ -32,6 +32,7 @@ public class EmailSentServiceImpl implements IEmailSentService{
 	@Override
 	public void sentEmail(Map<String, Object> values, String toEmail,
 			String subject, String ftl) throws IOException, TemplateException, MessagingException {
+		logger.info("Inside Sent Email");
 		String content = getContentFromFTL(values, ftl);
 		sentEmail(subject, content, toEmail);
 	}
