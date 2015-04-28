@@ -34,13 +34,13 @@ public class UserTokenServiceImpl implements IUserTokenService{
 	@Override
     public String insertNewUserTokenAndReturnActivationLink(User user, String contextPath) throws NoSuchAlgorithmException{
 		logger.info("Inside Insert User Token And Return Activation Link");
-		String paramsHash = getHashOfParams(user);
+		String paramsHash = getHashOfParams(user, EnumTokenType.UV);
 		logger.info("Hash Of Params is " + paramsHash);
 		UserToken userToken = getUserTokenPojoFromUser(user, paramsHash, EnumTokenType.UV);
 		Long id= (Long)getSessionFactory().getCurrentSession().save(userToken);
         logger.info("Result from DB of User Token is " + id);
 		if(id != null){
-			return getActivationLink(paramsHash, contextPath);	
+			return getActivationLink(paramsHash, contextPath, PropertiesUtil.getProjectProperty("activation.email.suffix"));	
 		}
 		return null;
 	}
@@ -54,18 +54,17 @@ public class UserTokenServiceImpl implements IUserTokenService{
 		return userToken;
     }
 
-	private String getActivationLink(String hashOfParams, String contextPath) throws NoSuchAlgorithmException{
-		String activationLinkPrefix = PropertiesUtil.getProjectProperty("activation.email.prefix");
-		String activationLinkSuffix = PropertiesUtil.getProjectProperty("activation.email.suffix");
+	private String getActivationLink(String hashOfParams, String contextPath, String linkSuffix) throws NoSuchAlgorithmException{
+		String activationLinkPrefix = PropertiesUtil.getProjectProperty("email.prefix");
 		StringBuilder strBuilder = new StringBuilder();
-		strBuilder.append(activationLinkPrefix).append(contextPath).append(activationLinkSuffix).append(hashOfParams);
+		strBuilder.append(activationLinkPrefix).append(contextPath).append(linkSuffix).append(hashOfParams);
 		return strBuilder.toString();
 	}
 	
-	private String getHashOfParams(User user) throws NoSuchAlgorithmException{
+	private String getHashOfParams(User user, EnumTokenType enumTokenType) throws NoSuchAlgorithmException{
 		List<String> params = new ArrayList<String>();
 		params.add(user.getEmail());params.add(user.getUserName());
-		params.add(EnumTokenType.UV.getTokenType());
+		params.add(enumTokenType.getTokenType());
 		return LexemeUtil.createHashOfParameters(params);
 	}
 
@@ -100,19 +99,27 @@ public class UserTokenServiceImpl implements IUserTokenService{
 		return aclService;
 	}
 
-	//TODO# Check if already FP Link is present or not
 	@Override
 	public String insertFPTokenAndReturnActivationLink(User user,
 			String contextPath) throws NoSuchAlgorithmException {
-		String paramsHash = getHashOfParams(user);
+		String paramsHash = getHashOfParams(user, EnumTokenType.FP);
 		logger.info("Hash Of Params is " + paramsHash);
-		UserToken userToken = getUserTokenPojoFromUser(user, paramsHash, EnumTokenType.FP);
+		UserToken userToken = getUserToken(user.getEmail(), EnumTokenType.FP);
+		if(userToken!=null){
+			return userToken.getToken();
+		}
+		userToken = getUserTokenPojoFromUser(user, paramsHash, EnumTokenType.FP);
 		Long id= (Long)getSessionFactory().getCurrentSession().save(userToken);
         logger.info("Result from DB of User Token is " + id);
 		if(id != null){
-			return getActivationLink(paramsHash, contextPath);	
+			return getActivationLink(paramsHash, contextPath, PropertiesUtil.getProjectProperty("forgot.password.email.suffix"));	
 		}
 		return null;		
 	}
 	
+	private UserToken getUserToken(String email, EnumTokenType enumTokenType){
+		Query query = getSessionFactory().getCurrentSession().getNamedQuery("GET.TOKEN")
+			.setString("email", email).setLong("tokenTypeId", enumTokenType.getTokenTypeId());
+		return (UserToken)query.uniqueResult();
+	}
 }

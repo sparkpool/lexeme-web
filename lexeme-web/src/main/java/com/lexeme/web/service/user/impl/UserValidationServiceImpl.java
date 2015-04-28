@@ -60,19 +60,9 @@ public class UserValidationServiceImpl implements IUserValidationService{
 		return null;
 	}
 	
-	private User validateUser(String email, String userName){
-		if(StringUtils.isNotBlank(userName) && StringUtils.isNotBlank(email)){
-			List<User> results = validateUserOrEmail(email, userName);
-			logger.info("Results from DB for User Validation is " + results);
-			if(results != null && results.size() > 0){
-				results.get(0);
-			}
-		}else if(StringUtils.isNotBlank(email)){
+	private User validateUser(String email){
+		if(StringUtils.isNotBlank(email)){
 			User user = validateEmail(email);
-			logger.info("Results from DB for User Validation is " + user);
-			return user;
-		}else{
-			User user = validateUserName(userName);
 			logger.info("Results from DB for User Validation is " + user);
 			return user;
 		}
@@ -104,8 +94,8 @@ public class UserValidationServiceImpl implements IUserValidationService{
 
 	@Override
 	@Transactional
-	public boolean validateUserAndFPLink(String userName, String email, String contextPath) throws NoSuchAlgorithmException {
-		User user = validateUser(email, userName);
+	public boolean validateUserAndFPLink(String email, String contextPath) throws NoSuchAlgorithmException {
+		User user = validateUser(email);
 		if(user != null){
 			String activationLink = getUserTokenService().insertFPTokenAndReturnActivationLink(user, contextPath);
 			if(activationLink != null){

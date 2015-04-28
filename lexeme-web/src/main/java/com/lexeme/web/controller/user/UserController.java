@@ -52,10 +52,10 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/fp", method = RequestMethod.POST)
-	public ModelAndView forgotPassword(@RequestParam("email") String email, @RequestParam("userName") String userName){
+	public ModelAndView forgotPassword(@RequestParam("email") String email){
 	    ModelAndView model = new ModelAndView();
 		try {
-			boolean bool = getUserValidationService().validateUserAndFPLink(userName, email, getServletContext().getContextPath());
+			boolean bool = getUserValidationService().validateUserAndFPLink(email, getServletContext().getContextPath());
 			if(!bool){
 				model.addObject("errorMsg", MessageConstants.INVALID_EMAIL_USERNAME);
 				model.setViewName("forgotPassword");
@@ -141,7 +141,7 @@ public class UserController {
 		return model;
 	}
 
-	@RequestMapping(value = "/act/{actLink}", method = RequestMethod.GET)
+	@RequestMapping(value = "/accAct/{actLink}", method = RequestMethod.GET)
 	public ModelAndView activateAccount(@PathVariable("actLink") String activationLink){
 		ModelAndView model = new ModelAndView();
 		model.setViewName("login");
@@ -156,6 +156,26 @@ public class UserController {
 		}catch(Exception e){
 			logger.error("Exception Occured " + e.getMessage());
 			model.addObject("errorMsg",MessageConstants.SOMETHING_WRONG);
+		}
+		return model;
+	}
+	
+	//#Check if email is going
+	@RequestMapping(value = "/fp/{actLink}", method = RequestMethod.GET)
+	public ModelAndView forgotPasswordFromLink(@PathVariable("actLink") String activationLink){
+		ModelAndView model = new ModelAndView();
+		model.setViewName("setPassword");
+		logger.info("Activation Link is " + activationLink);
+		try{
+			boolean bool = getUserTokenService().validateTokenAndDoOperation(activationLink, EnumTokenType.FP);
+			if(!bool){
+				model.addObject("errorMsg",MessageConstants.INVALID_TOKEN);
+				model.setViewName("login");
+			}
+		}catch(Exception e){
+			logger.error("Exception Occured " + e.getMessage());
+			model.addObject("errorMsg",MessageConstants.SOMETHING_WRONG);
+			model.setViewName("login");
 		}
 		return model;
 	}

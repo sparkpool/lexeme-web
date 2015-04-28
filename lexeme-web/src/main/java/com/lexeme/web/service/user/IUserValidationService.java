@@ -6,5 +6,5 @@ public interface IUserValidationService {
 
 	public String validateUserNameOrEmailForSignUp(String userName, String email);
 	
-	public boolean validateUserAndFPLink(String userName, String email, String contextPath) throws NoSuchAlgorithmException;
+	public boolean validateUserAndFPLink(String email, String contextPath) throws NoSuchAlgorithmException;
 }
