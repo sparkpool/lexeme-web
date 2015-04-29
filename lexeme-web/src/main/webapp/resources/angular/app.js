@@ -8,6 +8,7 @@ app.controller('validateCtrl', function($scope) {
 
 });
 
+
 //to check user name availibilty
 app.directive('usernameAvailableValidator', ['$http','$q', function($http,$q) {
 	  return {

@@ -1,9 +1,9 @@
 
-<footer class="footer">
-		<div class="container">	
+<footer >
+	
+	<div class="container" >
 	<hr/>
-
-	  	<div class="row">
+	  	<div class="row footer-widgets">
 			<!--Company--->
 			<div class="col-md-3">
 				<h4><b>Comapny</b></h4>
@@ -36,8 +36,19 @@
 					Facebook</br>
 			</div>
 		</div>
-      </div>
-    </footer>
 
+
+		<div class="copyright-section">
+		        <div class="row">
+		            <div class="col-md-6">
+		                <p>© 2015 - 2015 Lexeme - All Rights Reserved</p>
+		            </div>
+		         
+		        </div>
+		</div>
+    
+    </div>
+    <!-- End Copyright -->
+</footer>
 </body>
 </html>

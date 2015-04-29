@@ -1,27 +1,18 @@
 
 <!--Header--->
 <%@ include file="header.jsp"%>
+<section id="content">
+	<div class="ui center aligned three column grid">
 
-<div class="main container">
-	<br /> <br /> <br />
-
-	<div class="ui two column middle aligned relaxed fitted stackable grid">
-
-		<div class="center aligned column">
-			<br /> <br />
-			<div class="huge green ui labeled icon button">
-				<i class="signup icon"></i> Sign Up
-			</div>
-		</div>
-
-		<!-- Vertical Divider -->
-		<div class="ui vertical divider">Or</div>
+		
+	
 		<!-- Signin column -->
-		<div class="left aligned column">
-			<br /> <br /> <br /> <br />
+		<div class="column">
+		<div class="ui form ">
+			<br>
 			<h1>Login</h1>
 
-			<form class="ui form segment"
+			<form class="ui form "
 				action="${pageContext.request.contextPath}/user/login" method="POST">
 
 				<!-- Email-address -->
@@ -60,5 +51,8 @@
 			</form>
 		</div>
 	</div>
+	
+	</div>
+	
+	</section>
 	<%@ include file="footer.jsp"%>
-</div>

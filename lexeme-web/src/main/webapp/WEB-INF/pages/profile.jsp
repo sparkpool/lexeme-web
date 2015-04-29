@@ -1,13 +1,10 @@
 <%@ include file="header.jsp"%>
 
-<br />
-<br />
-<br />
-
-<div class="main container">
+<section id="content">
+<div class=" container">
 	<div class="ui grid ">
-
-
+		<br>
+		<br/>
 		<div class="three wide column">
 			<!-- User Profile Pictures -->
 			<div class="ui fluid card">
@@ -26,30 +23,16 @@
 
 
 				<!-- extra information about user -->
-				<div class="extra content">
-					<a> <i class="users icon"></i>
-
-					</a>
-				</div>
+			
 
 			</div>
 		
-			<div class="ui vertical pointing segment menu">
-				<a class="active teal item"> Inbox
-					
-				</a> <a class="item"> Spam
-				</a> <a class="item"> Updates
-				</a>
-				
-			<a class="item">Personal Information </a>
-			</div>
+		
 		</div>
 
 		<!-- Profile Information Section -->
 
-
 		<div class="thirteen wide column">
-
 
 			<div class="profile">
 				<div class="ui pointing secondary menu">
@@ -57,8 +40,7 @@
 						class="blue item" data-tab="second">Account Information</a> <a
 						class="blue item" data-tab="third">Personal Information</a> <a
 						class="yellow item" data-tab="paymenthistory">PayMent History</a>
-					<a class="yellow item" data-tab="solution">Search Solution</a>
-					<a class="yellow item" data-tab="askquestion">Ask Question</a>
+						<a class="yellow item" data-tab="solution">Search Solution</a>
 
 				</div>
 
@@ -82,6 +64,7 @@
 					<div class="four wide column">
 
 						<div class="one column">
+						<label>Add pay pal email id</label>
 							<form action="" class="ui form">
 								<div class="field">
 									<input type="email" name="paypalid" />
@@ -95,7 +78,11 @@
 						</div>
 
 
-						<div class="second field">asdads</div>
+						<div class="second field orange segment">
+							<h1>Credit car information</h1>
+							<hr>
+							
+						</div>
 
 						<div class="column"></div>
 					</div>
@@ -105,7 +92,16 @@
 
 				<div class="ui bottom attached  tab " data-tab="third">
 					<!-- Tab Content !-->
-					Fuck you!!
+					<div class="column">
+						Acedmic
+					</div>
+					<div class="column">
+						Acedmic
+					</div>
+					<div class="column">
+						Acedmic
+					</div>
+					
 				</div>
 
 
@@ -182,37 +178,10 @@
 				</div>
 
 
-	<div class="ui botton attched tab" data-tab="askquestion">
-					<h1>Ask Question</h1>
-					<hr>
-
-					<div class="three column">
-
-						<div class="column">
-							<form action="" class="ui form">
-								<div class="field">
-									<input type="email" name="paypalid" />
-								</div>
-								<div class="field" align="center">
-
-									<input type="submit" name="Add" />
-								</div>
-
-							</form>
-						</div>
-
-
-						<div class="column"></div>
-
-						<div class="column"></div>
-					</div>
-
-
-				</div>
-			</div>
-		</div>
+</div>
+</div>
 	</div>
 
 </div>
-
+</section>
 <%@ include file="footer.jsp"%>
