@@ -7,23 +7,18 @@
 </script>
 	<section id="content">
 	<div class="ui center aligned three column grid">
-	
+	<br/>
+	<br/>
+	<br/>
+	<!--  -->
 
-			<!-- WIll SHOW THE ERROR MESSAGE -->
-			<c:if test="${!empty errorMsg}">
-				<div class="error">${errorMsg}</div>
-			</c:if>
 
-			<c:if test="${!empty msg}">
-				<div class="msg">${msg}</div>
-			</c:if>
-	
 
-	
 
-			<div class="column">
+	<div class="left aligned column">
+
 			<br/>
-				<h1>Create An Account</h1>
+				<h1 align="center">Create An Account</h1>
 				<form class="ui form "
 					action="${pageContext.request.contextPath}/user/signup"
 					method="POST" ng-controller="validateCtrl" ng-app="myApp" name="form">

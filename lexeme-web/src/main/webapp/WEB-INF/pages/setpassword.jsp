@@ -8,18 +8,9 @@
 	<div class="column">
 
 		<div class="inline example" >
-			<h1>Login</h1>
+			<h1>Set New Password</h1>
 
-			<form class="ui form" action="${pageContext.request.contextPath}/user/login" method="POST"
-				 >
-
-				<!-- Old password-address -->
-				<div class="field">
-					<label>Email</label> <input placeholder="Email" name="email"
-						type="email">
-				</div>
-
-
+			<form class="ui form" action="${pageContext.request.contextPath}/user/login" method="POST">
 				<!-- New Password -->
 				<div class="field">
 					<label>Password</label> <input name="password" type="password"
@@ -42,5 +33,5 @@
 			</form>
 		</div>
 	</div>
-
+</div>
 	<%@ include file="footer.jsp"%>

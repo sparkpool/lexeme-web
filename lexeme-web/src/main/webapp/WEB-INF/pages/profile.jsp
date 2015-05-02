@@ -1,70 +1,181 @@
 <%@ include file="header.jsp"%>
 
 <section id="content">
-<div class=" container">
-	<div class="ui grid ">
-		<br>
-		<br/>
-		<div class="three wide column">
-			<!-- User Profile Pictures -->
-			<div class="ui fluid card">
-				<div class="image">
-					<img
-						src="${pageContext.request.contextPath}/resources/semantic/images/stevie.jpg">
-				</div>
+	<div class=" container">
+		<div class="ui grid ">
+			<br> <br />
 
-				<!-- Brief description about user -->
-				<div class="content">
-					<a class="header">Shrey Arora</a>
-					<div class="meta">
-						<span class="date">Create in Sep 2014</span>
+			<div class="three wide column">
+				<!-- User Profile Pictures -->
+				<div class="ui fluid card">
+					<div class="image">
+						<img
+							src="${pageContext.request.contextPath}/resources/semantic/images/stevie.jpg">
 					</div>
+
+					<!-- Brief description about user -->
+					<div class="content">
+						<a class="header">Shrey Arora</a>
+						<div class="meta">
+							<span class="date">Create in Sep 2014</span>
+						</div>
+					</div>
+
+
+					<!-- extra information about user -->
+
+
 				</div>
 
-
-				<!-- extra information about user -->
-			
 
 			</div>
-		
-		
-		</div>
 
-		<!-- Profile Information Section -->
+			<!-- Profile Information Section -->
 
-		<div class="thirteen wide column">
+			<div class="thirteen wide column segment">
 
-			<div class="profile">
-				<div class="ui pointing secondary menu">
-					<a class="active red item" data-tab="first">Profile</a> <a
-						class="blue item" data-tab="second">Account Information</a> <a
-						class="blue item" data-tab="third">Personal Information</a> <a
-						class="yellow item" data-tab="paymenthistory">PayMent History</a>
+				<div class="profile">
+					<div class="ui pointing secondary menu">
+						<a class="active red item" data-tab="first">Profile</a> <a
+							class="blue item" data-tab="second">Account Information</a> <a
+							class="blue item" data-tab="third">Personal Information</a> <a
+							class="yellow item" data-tab="paymenthistory">PayMent History</a>
 						<a class="yellow item" data-tab="solution">Search Solution</a>
 
-				</div>
+					</div>
 
 
-				<div class="ui bottom  attached  active tab" data-tab="first">
-					<h1>User Information</h1>
-					<hr>
-					<div class="green field">Name</div>
-					<br />
-					<div class="field">School/University</div>
-					<br />
-					<div class="field">Joined Year</div>
-					<br />
+					<div class="ui bottom  attached  active tab segment"
+						data-tab="first">
+
+						<div class="right aligned column">
+							<h1 align="left">User Information</h1>
+							<input class="ui orange submit button" type="submit" name="SAVE"
+								placeholder="Edit">
+
+						</div>
+						<hr>
+						<form action="" class="ui form">
+							<div class="green field">
+								Name:<input type="email" name="paypalid" />
+
+							</div>
+							<br />
+							<div class="field">
+								School/University <input type="email" name="paypalid" />
+							</div>
+							<br />
+							<div class="field">
+								Joined Year: <input type="email" name="paypalid" />
+							</div>
+							<br />
+						</form>
 
 
 
-				</div>
-				<div class="ui bottom  attached tab " data-tab="second">
-					<h1>Pay Pal Account</h1>
-					<hr>
-					<div class="four wide column">
+					</div>
 
-						<div class="one column">
-						<label>Add pay pal email id</label>
+					<div class="ui bottom  attached tab segment" data-tab="second">
+
+						<!-- Change password section -->
+						<div class="ui orange segment">
+
+
+							<div class="right aligned column">
+								<h5 align="left">Change Password</h1>
+
+					
+							</div>
+							<hr>
+
+							<div class="ui three column grid">
+								<div class="column">
+									<div class="ui horizontal segment">
+										<p></p>
+									</div>
+								</div>
+								<div class="column">
+									<div class="ui horizontal segment">
+
+										<form action="" class="ui form">
+											<div class="field">
+												<label>Current Password:</label> <input type="email"
+													name="paypalid" />
+											</div>
+
+											<div class="field">
+												<label>New Password:</label> <input type="email"
+													name="paypalid" />
+											</div>
+
+
+											<div class="field">
+												<label>Confirm New Password:</label> <input type="email"
+													name="paypalid" />
+											</div>
+
+
+
+										</form>
+
+									</div>
+								</div>
+								<div class="column">
+									<div class="ui horizontal segment">
+								<input class="ui orange save button" type="submit" name="SAVE"
+									placeholder="Edit">
+					
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+
+
+						<!-- Contact Information -->
+						<div class="ui orange segment">
+							<div class="right aligned column">
+								<h1 align="left">Contact Information</h1>
+
+								<input class="ui orange save button" type="submit" name="SAVE"
+									placeholder="Edit">
+
+							</div>
+
+							<hr>
+							<form action="" class="ui form">
+
+								<div class="field">
+									<label>Email:</label> <input type="email" name="paypalid" />
+								</div>
+
+								<div class="field">
+									<label>Phone Number:</label> <input type="email"
+										name="paypalid" />
+								</div>
+
+
+							</form>
+
+						</div>
+
+
+
+
+						<!-- PayPal Information -->
+						<div class="ui orange segment">
+							<div class="right aligned column">
+								<h1 align="left">
+									PayPal Email </h1>
+							<input class="ui orange save button" type="submit"
+										name="SAVE" placeholder="Edit">
+
+								</div>
+						<hr>
+					
+						<p>We pay our Heroes via PayPal. Please provide your email address so we can pay you! 
+						If you already have an email address associated with a PayPal account, please use that.</p>
 							<form action="" class="ui form">
 								<div class="field">
 									<input type="email" name="paypalid" />
@@ -75,22 +186,13 @@
 								</div>
 
 							</form>
-						</div>
-
-
-						<div class="second field orange segment">
-							<h1>Credit car information</h1>
-							<hr>
-							
-						</div>
-
-						<div class="column"></div>
 					</div>
+
 
 				</div>
 
 
-				<div class="ui bottom attached  tab " data-tab="third">
+				<div class="ui bottom attached  tab segment" data-tab="third">
 					<!-- Tab Content !-->
 					<div class="column">
 						Acedmic
@@ -180,7 +282,7 @@
 
 </div>
 </div>
-	</div>
+</div>
 
 </div>
 </section>
