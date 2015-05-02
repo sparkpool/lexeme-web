@@ -1,4 +1,9 @@
 <%@ include file="header.jsp" %>
+<section id="content">
+	<div class=" container">
+		<div class="ui grid ">
+		</div>
+	</div>
+</section>
 
-    <h1>We will back soon</h1>
 <%@ include file="footer.jsp" %>

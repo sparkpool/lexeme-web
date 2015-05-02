@@ -10,10 +10,6 @@
 	<br/>
 	<br/>
 	<br/>
-	<!--  -->
-
-
-
 
 	<div class="left aligned column">
 

@@ -1,19 +1,30 @@
 
 <!--Header--->
 <%@ include file="header.jsp"%>
+
+<script type="text/javascript">
+$(function() {
+setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
+$('#btnclick').click(function() {
+$('#testdiv').show();
+setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
+})
+})
+</script>
 <section id="content">
 	<div class="ui center aligned three column grid">
 		<br /> <br /> <br />
 		<!--  -->
 		<div class="left aligned column">
-			<div class="ui form ">
-				<br>
 				<h1 align="center">Login</h1>
 
 				<!-- WIll SHOW THE ERROR MESSAGE -->
 				<p >
 					<c:if test="${!empty errorMsg}">
+				<div class="ui ignored error message" id="testdiv">
+				
 						<div class="error" style="color:red;">${errorMsg}</div>
+				</div>
 					</c:if>
 
 					<c:if test="${!empty msg}">
@@ -29,20 +40,19 @@
 					<div class="field">
 						<label>Email</label>
 
-						<div class="ui left icon input">
-							<input placeholder="Email" name="email" type="email"> <i
-								class="user icon"></i>
-						</div>
+						
+							<input placeholder="Email" name="email" type="email"> 
+						
 					</div>
 
 
 					<!-- Password -->
 					<div class="field">
 						<label>Password</label>
-						<div class="ui left icon input">
+						
 							<input name="password" type="password" placeholder="Password ">
-							<i class="lock icon"></i>
-						</div>
+							
+						
 					</div>
 
 					<div class="inline field">
@@ -53,16 +63,12 @@
 								your password</a>
 
 						</p>
-
 					</div>
 					<div class="ui field">
-						<input class="ui blue submit button" type="submit" name="SAVE">
+						<input class="ui blue submit button" type="submit" name="SAVE" id="btnclick">
 					</div>
 				</form>
 			</div>
 		</div>
-
-	</div>
-
 </section>
 <%@ include file="footer.jsp"%>
