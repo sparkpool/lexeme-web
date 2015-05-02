@@ -68,7 +68,7 @@ public class UserPojo {
 	
 	public boolean validateSetPasswordParams(){
 		if(StringUtils.isBlank(password) || StringUtils.isBlank(confirmPassword) || 
-			 !password.equals(confirmPassword)){
+			 !password.equals(confirmPassword) || !LexemeUtil.validatePassword(this.password)){
 			return false;
 		}
 		return true;
