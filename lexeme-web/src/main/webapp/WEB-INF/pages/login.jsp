@@ -6,8 +6,6 @@
 		<br /> <br /> <br />
 		<!--  -->
 		<div class="left aligned column">
-			<div class="ui form ">
-				<br>
 				<h1 align="center">Login</h1>
 
 				<!-- WIll SHOW THE ERROR MESSAGE -->
@@ -29,20 +27,19 @@
 					<div class="field">
 						<label>Email</label>
 
-						<div class="ui left icon input">
-							<input placeholder="Email" name="email" type="email"> <i
-								class="user icon"></i>
-						</div>
+						
+							<input placeholder="Email" name="email" type="email"> 
+						
 					</div>
 
 
 					<!-- Password -->
 					<div class="field">
 						<label>Password</label>
-						<div class="ui left icon input">
+						
 							<input name="password" type="password" placeholder="Password ">
-							<i class="lock icon"></i>
-						</div>
+							
+						
 					</div>
 
 					<div class="inline field">
