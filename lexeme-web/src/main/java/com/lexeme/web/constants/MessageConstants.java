@@ -17,4 +17,6 @@ public class MessageConstants {
 	public static final String ACCOUNT_ACTIVATED = "YOUR ACCOUNT HAS BEEN ACTIVATED, PLEASE LOGIN TO CONTINUE";
 	public static final String INVALID_EMAIL_USERNAME = "INVALID USERNAME OR EMAIL";
 	public static final String FP_LINK_SEND = "Link Hash been Sent to your Email Id for password reset";
+	public static final String INVALID_SESSION = "Invalid Session, please click on link again to reset your password";
+	public static final String PASSWORD_RESET_SUCCESS = "Your Password Has been Set successfully, please login to continue";
 }

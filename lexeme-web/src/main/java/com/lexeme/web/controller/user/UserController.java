@@ -1,7 +1,9 @@
 package com.lexeme.web.controller.user;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lexeme.web.constants.MessageConstants;
-import com.lexeme.web.enums.EnumTokenType;
 import com.lexeme.web.pojo.user.UserPojo;
 import com.lexeme.web.service.user.IUserService;
 import com.lexeme.web.service.user.IUserTokenService;
@@ -79,7 +80,6 @@ public class UserController {
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public ModelAndView signup(UserPojo userPojo) {
-		logger.info("User Pojo is : " + userPojo);
 		ModelAndView model = new ModelAndView();
 		try {
 			if (!userPojo.validateSignUpParams()) {
@@ -119,7 +119,6 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView login(UserPojo userPojo) {
-		logger.info("User Pojo is : " + userPojo);
 		ModelAndView model = new ModelAndView();
 		try {
 			if (!userPojo.validateLogInParams()) {
@@ -147,7 +146,7 @@ public class UserController {
 		model.setViewName("login");
 		logger.info("Activation Link is " + activationLink);
 		try{
-			boolean bool = getUserTokenService().validateTokenAndDoOperation(activationLink, EnumTokenType.UV);
+			boolean bool = getUserTokenService().validateTokenAndDoOperationForAccountActivation(activationLink);
 			if(!bool){
 				model.addObject("errorMsg",MessageConstants.INVALID_TOKEN);
 			}else{
@@ -160,22 +159,51 @@ public class UserController {
 		return model;
 	}
 	
-	//#Check if email is going
 	@RequestMapping(value = "/fp/{actLink}", method = RequestMethod.GET)
-	public ModelAndView forgotPasswordFromLink(@PathVariable("actLink") String activationLink){
+	public ModelAndView forgotPasswordFromLink(@PathVariable("actLink") String activationLink, HttpSession httpSession){
 		ModelAndView model = new ModelAndView();
 		model.setViewName("setPassword");
 		logger.info("Activation Link is " + activationLink);
 		try{
-			boolean bool = getUserTokenService().validateTokenAndDoOperation(activationLink, EnumTokenType.FP);
-			if(!bool){
+			String userId = getUserTokenService().validateTokenAndDoOperationForFP(activationLink);
+			if(StringUtils.isBlank(userId)){
 				model.addObject("errorMsg",MessageConstants.INVALID_TOKEN);
 				model.setViewName("login");
+			}else{
+				httpSession.setAttribute("userId", userId);
 			}
 		}catch(Exception e){
 			logger.error("Exception Occured " + e.getMessage());
 			model.addObject("errorMsg",MessageConstants.SOMETHING_WRONG);
 			model.setViewName("login");
+		}
+		return model;
+	}
+	
+	@RequestMapping(value = "/setPassword", method=RequestMethod.POST)
+	public ModelAndView setPassword(UserPojo userPojo, HttpSession httpSession){
+		ModelAndView model = new ModelAndView();
+		model.setViewName("setPassword");
+		try{
+			boolean bool = userPojo.validateSetPasswordParams();
+			if(!bool){
+				model.addObject("errorMsg",MessageConstants.PASSWORD_MISMATCH_CONFIRMPASSWORD);
+			}else{
+				String userId = (String) httpSession.getAttribute("userId");
+				if(StringUtils.isNotBlank(userId)){
+					bool = getUserService().setPassword(userPojo.getPassword(), userId);
+					if(bool){
+						model.setViewName("login");
+						model.addObject("msg",MessageConstants.PASSWORD_RESET_SUCCESS);
+					}
+				}else{
+					model.addObject("errorMsg",MessageConstants.INVALID_SESSION);
+				}
+			}
+		}catch(Exception e){
+			logger.error("Exception Occured " + e.getMessage());
+			model.addObject("errorMsg",MessageConstants.SOMETHING_WRONG);
+			model.setViewName("setPassword");
 		}
 		return model;
 	}

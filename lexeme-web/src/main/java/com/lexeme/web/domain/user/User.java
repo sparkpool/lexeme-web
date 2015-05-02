@@ -36,7 +36,8 @@ uniqueConstraints = {
     	@NamedQuery(name = "USER.LOGIN", query = "select u from User u where u.email = :email and u.password = :password"),
     	@NamedQuery(name = "USER.VALIDATE", query = "select u from User u where u.email = :email or u.userName = :userName"),
     	@NamedQuery(name = "EMAIL.VALIDATE", query = "select u from User u where u.email = :email"),
-    	@NamedQuery(name = "USERNAME.VALIDATE", query = "select u from User u where u.userName = :userName")
+    	@NamedQuery(name = "USERNAME.VALIDATE", query = "select u from User u where u.userName = :userName"),
+    	@NamedQuery(name = "USERID.VALIDATE", query = "select u from User u where u.id = :id")
 })
 
 public class User implements Serializable {

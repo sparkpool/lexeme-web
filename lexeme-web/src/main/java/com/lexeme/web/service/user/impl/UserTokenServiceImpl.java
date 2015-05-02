@@ -70,9 +70,8 @@ public class UserTokenServiceImpl implements IUserTokenService{
 
 	@Override
 	@Transactional
-	public boolean validateTokenAndDoOperation(String token,
-			EnumTokenType enumTokenType) {
-		UserToken userToken = validateToken(token, enumTokenType);
+	public boolean validateTokenAndDoOperationForAccountActivation(String token) {
+		UserToken userToken = validateToken(token, EnumTokenType.UV);
 		logger.info("UserToken from DB is " + userToken);
 		if(userToken != null){
 		    getAclService().makeUserVerified(userToken.getUser());
@@ -105,8 +104,9 @@ public class UserTokenServiceImpl implements IUserTokenService{
 		String paramsHash = getHashOfParams(user, EnumTokenType.FP);
 		logger.info("Hash Of Params is " + paramsHash);
 		UserToken userToken = getUserToken(user.getEmail(), EnumTokenType.FP);
+		logger.info("User Token from DB is " + userToken);
 		if(userToken!=null){
-			return userToken.getToken();
+			return getActivationLink(userToken.getToken(), contextPath, PropertiesUtil.getProjectProperty("forgot.password.email.suffix"));
 		}
 		userToken = getUserTokenPojoFromUser(user, paramsHash, EnumTokenType.FP);
 		Long id= (Long)getSessionFactory().getCurrentSession().save(userToken);
@@ -121,5 +121,16 @@ public class UserTokenServiceImpl implements IUserTokenService{
 		Query query = getSessionFactory().getCurrentSession().getNamedQuery("GET.TOKEN")
 			.setString("email", email).setLong("tokenTypeId", enumTokenType.getTokenTypeId());
 		return (UserToken)query.uniqueResult();
+	}
+
+	@Override
+	@Transactional
+	public String validateTokenAndDoOperationForFP(String token) {
+		UserToken userToken = validateToken(token, EnumTokenType.FP);
+		logger.info("UserToken from DB is " + userToken);
+		if(userToken!=null){
+			return userToken.getUser().getId().toString();
+		}
+		return null;
 	}
 }

@@ -25,7 +25,8 @@ import com.lexeme.web.domain.user.User;
 })
 @NamedQueries({
     @NamedQuery(name="TOKEN.VALIDATE", query="select ut from UserToken ut where ut.token = :token and ut.tokenTypeId = :tokenTypeId"),
-    @NamedQuery(name = "GET.TOKEN", query="select ut from UserToken ut where ut.user.email = :email and ut.tokenTypeId = :tokenTypeId")
+    @NamedQuery(name = "GET.TOKEN", query="select ut from UserToken ut where ut.user.email = :email and ut.tokenTypeId = :tokenTypeId"),
+    @NamedQuery(name = "GET.USER.TOKEN", query="select ut from UserToken ut where ut.user.id = :userId and ut.tokenTypeId = :tokenTypeId")
 })
 public class UserToken implements Serializable{
 

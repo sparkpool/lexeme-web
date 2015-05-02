@@ -66,6 +66,14 @@ public class UserPojo {
 		return false;
 	}
 	
+	public boolean validateSetPasswordParams(){
+		if(StringUtils.isBlank(password) || StringUtils.isBlank(confirmPassword) || 
+			 !password.equals(confirmPassword)){
+			return false;
+		}
+		return true;
+	}
+	
 	public String getEmail() {
 		return email;
 	}

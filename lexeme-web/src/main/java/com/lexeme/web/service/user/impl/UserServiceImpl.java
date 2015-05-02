@@ -15,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.lexeme.web.constants.MessageConstants;
 import com.lexeme.web.domain.acl.Roles;
 import com.lexeme.web.domain.user.User;
+import com.lexeme.web.domain.user.UserToken;
+import com.lexeme.web.enums.EnumTokenType;
 import com.lexeme.web.pojo.user.UserPojo;
 import com.lexeme.web.service.acl.IACLService;
 import com.lexeme.web.service.email.IEmailManager;
@@ -46,9 +48,9 @@ public class UserServiceImpl implements IUserService{
 			throw new InvalidParameterException("USER POJO CAN NOT BE NULL");
 		}
 		User user = createUserFromPojo(userPojo);
+		user.setRoles(getRolesForSignUp(userPojo.getRole()));
 		String password = getHashPassword(userPojo.getPassword());
 		user.setPassword(password);
-		user.setRoles(getRolesForSignUp(userPojo.getRole()));
 		Long id = (Long) sessionFactory.getCurrentSession().save(user);
 		logger.info("Sign Up Of user from DB result is " + id);
 		if(id!=null){
@@ -113,6 +115,36 @@ public class UserServiceImpl implements IUserService{
 
 	public IUserTokenService getUserTokenService() {
 		return userTokenService;
+	}
+
+	@Override
+	@Transactional
+	public boolean setPassword(String password, String userId) throws NoSuchAlgorithmException {
+		Long userIdLng = Long.parseLong(userId.trim());
+		User user = getUserById(userIdLng);
+		if(user != null){
+			String hashOfPassword = getHashPassword(password);
+			user.setPassword(hashOfPassword);
+			Long id = (Long)getSessionFactory().getCurrentSession().save(user);
+			if(id !=null){
+				UserToken userToken = getUserTokenFromUserId(userIdLng, EnumTokenType.FP);
+				getSessionFactory().getCurrentSession().delete(userToken);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private UserToken getUserTokenFromUserId(Long userId, EnumTokenType enumTokenType){
+		Query query = getSessionFactory().getCurrentSession().getNamedQuery("GET.USER.TOKEN").
+		   setLong("userId", userId).setLong("tokenTypeId", enumTokenType.getTokenTypeId());
+		return (UserToken)query.uniqueResult();
+	}
+	
+	private User getUserById(Long userId){
+		Query query = getSessionFactory().getCurrentSession().getNamedQuery("USERID.VALIDATE").
+		setLong("id", userId);
+		return (User)query.uniqueResult();
 	}
 
 }

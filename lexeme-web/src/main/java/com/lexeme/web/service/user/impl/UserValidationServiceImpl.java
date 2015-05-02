@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.lexeme.web.constants.MessageConstants;
 import com.lexeme.web.domain.user.User;
+import com.lexeme.web.service.email.IEmailManager;
 import com.lexeme.web.service.user.IUserTokenService;
 import com.lexeme.web.service.user.IUserValidationService;
 
@@ -27,6 +28,9 @@ public class UserValidationServiceImpl implements IUserValidationService{
 
 	@Autowired
 	private IUserTokenService userTokenService;
+
+	@Autowired
+	private IEmailManager emailManager;
 	
 	@Override
 	@Transactional
@@ -99,7 +103,7 @@ public class UserValidationServiceImpl implements IUserValidationService{
 		if(user != null){
 			String activationLink = getUserTokenService().insertFPTokenAndReturnActivationLink(user, contextPath);
 			if(activationLink != null){
-				
+				getEmailManager().sendForgotPasswordEmail(user, activationLink);
 			}
 		}
 		return false;
@@ -107,6 +111,10 @@ public class UserValidationServiceImpl implements IUserValidationService{
 
 	public IUserTokenService getUserTokenService() {
 		return userTokenService;
+	}
+
+	public IEmailManager getEmailManager() {
+		return emailManager;
 	}
 
 }
