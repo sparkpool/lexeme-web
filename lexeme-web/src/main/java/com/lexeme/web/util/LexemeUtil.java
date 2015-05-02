@@ -3,6 +3,7 @@ package com.lexeme.web.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -75,5 +76,10 @@ public class LexemeUtil {
 			return getHashOfString(strBuilder.toString());
 		}
 		return null;
+	}
+	
+	public static String getRandomDigit(){
+		Random random = new Random();
+		return String.valueOf(random.nextLong());
 	}
 }

@@ -64,7 +64,7 @@ public class UserTokenServiceImpl implements IUserTokenService{
 	private String getHashOfParams(User user, EnumTokenType enumTokenType) throws NoSuchAlgorithmException{
 		List<String> params = new ArrayList<String>();
 		params.add(user.getEmail());params.add(user.getUserName());
-		params.add(enumTokenType.getTokenType());
+		params.add(enumTokenType.getTokenType());params.add(LexemeUtil.getRandomDigit());
 		return LexemeUtil.createHashOfParameters(params);
 	}
 
