@@ -1,6 +1,16 @@
 
 <!--Header--->
 <%@ include file="header.jsp"%>
+
+<script type="text/javascript">
+$(function() {
+setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
+$('#btnclick').click(function() {
+$('#testdiv').show();
+setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
+})
+})
+</script>
 <section id="content">
 	<div class="ui center aligned three column grid">
 		<br /> <br /> <br />
@@ -11,7 +21,10 @@
 				<!-- WIll SHOW THE ERROR MESSAGE -->
 				<p >
 					<c:if test="${!empty errorMsg}">
+				<div class="ui ignored error message" id="testdiv">
+				
 						<div class="error" style="color:red;">${errorMsg}</div>
+				</div>
 					</c:if>
 
 					<c:if test="${!empty msg}">
@@ -50,16 +63,12 @@
 								your password</a>
 
 						</p>
-
 					</div>
 					<div class="ui field">
-						<input class="ui blue submit button" type="submit" name="SAVE">
+						<input class="ui blue submit button" type="submit" name="SAVE" id="btnclick">
 					</div>
 				</form>
 			</div>
 		</div>
-
-	</div>
-
 </section>
 <%@ include file="footer.jsp"%>
