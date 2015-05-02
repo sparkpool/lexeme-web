@@ -5,36 +5,20 @@
 <script type="text/javascript">
     var _contextPath = "${pageContext.request.contextPath}";
 </script>
-<div class="main container">
-	<br /> <br /> <br />
-
-	<div class="ui two column middle aligned relaxed fitted stackable grid">
-		<div class="center aligned column">
-
-			<div class="huge green ui labeled icon button">
-				<i class="signup icon"></i> Sign In
-			</div>
-
-			<!-- WIll SHOW THE ERROR MESSAGE -->
-			<c:if test="${!empty errorMsg}">
-				<div class="error">${errorMsg}</div>
-			</c:if>
-
-			<c:if test="${!empty msg}">
-				<div class="msg">${msg}</div>
-			</c:if>
-
-		</div>
-
-		<!-- Vertical Divider -->
-		<div class="ui vertical divider">Or</div>
-
-		<!-- Sign in column -->
-		<div class="left aligned column">
+	<section id="content">
+	<div class="ui center aligned three column grid">
+	<br/>
+	<br/>
+	<br/>
+	<!--  -->
 
 
-			<div class="column">
-				<h1>Create An Account</h1>
+
+
+	<div class="left aligned column">
+
+			<br/>
+				<h1 align="center">Create An Account</h1>
 				<form class="ui form "
 					action="${pageContext.request.contextPath}/user/signup"
 					method="POST" ng-controller="validateCtrl" ng-app="myApp" name="form">
@@ -92,8 +76,9 @@
 					<input class="ui blue submit button" type="submit" name="SAVE">
 				</form>
 			</div>
+
+		<div>
 		</div>
-		<div></div>
-	</div>
-</div>
+		</div>
+</section>
 <%@ include file="footer.jsp"%>

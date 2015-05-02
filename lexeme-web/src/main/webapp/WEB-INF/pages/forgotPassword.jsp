@@ -1,6 +1,8 @@
 <%@ include file="header.jsp"%>
 <br />
 <br />
+
+<section id="content">
 <div class="ui center aligned three column grid">
 	<br/>
 	<br/>
@@ -27,4 +29,5 @@
 			</form>
 	</div>
 </div>
+</section>
 <%@ include file="footer.jsp"%>

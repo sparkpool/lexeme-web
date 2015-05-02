@@ -8,6 +8,7 @@ app.controller('validateCtrl', function($scope) {
 
 });
 
+
 //to check user name availibilty
 app.directive('usernameAvailableValidator', ['$http','$q', function($http,$q) {
 	  return {
@@ -43,13 +44,18 @@ app.directive('emailAvailableValidator', ['$http', function($http) {
 	  return {
 	    require : 'ngModel',
 	    link : function($scope, element, attrs, ngModel) {
-	      ngModel.$asyncValidators.usernameAvailable = function(email) {
+	     
+	    ngModel.$asyncValidators.usernameAvailable = function(email) {
 	        return $http.get(_contextPath+'/validate/user?email='+ email);
 	      };
 	    }
 	  };
 }]);
 
+
+//Make all kind of action like edit, delete,
+//edit :- user can edit his/her information
+//delete :- only moderator/admin has right to delete the content
 
 
 
