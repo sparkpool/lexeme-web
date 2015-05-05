@@ -53,6 +53,7 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/angular/app.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/lwb-css.css" type="text/css" media="screen" charset="utf-8">
 	
 	</head>
 			

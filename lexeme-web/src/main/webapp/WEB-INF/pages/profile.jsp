@@ -204,18 +204,17 @@
 										<form action="" class="ui form">
 											<div class="right field input">
 
-												<label>Current Password</label> <input type="email"
+												<label>School Name</label> <input type="text"
 													name="paypalid" />
 											</div>
 
 											<div class="right field input">
-												<label>New Password</label> <input type="email"
-													name="paypalid" />
+												<label>Degree</label> <input type="text" name="paypalid" />
 											</div>
 
 
 											<div class="right field input">
-												<label>Confirm New Password</label> <input type="email"
+												<label>Year of Passing</label> <input type="email"
 													name="paypalid" />
 											</div>
 
@@ -232,7 +231,7 @@
 							<!-- Contact Information -->
 							<div class="ui orange segment">
 								<div class="right aligned column">
-									<h5 align="left">Contact Information</h5>
+									<h5 align="left">Experience</h5>
 
 									<input class="ui orange save button" type="submit" name="SAVE"
 										placeholder="Edit">
@@ -243,43 +242,26 @@
 								<form action="" class="ui form">
 
 									<div class="field">
-										<label>Email:</label> <input type="email" name="paypalid" />
-									</div>
-
-									<div class="field">
-										<label>Phone Number:</label> <input type="email"
+										<label> Company Name</label> <input type="email"
 											name="paypalid" />
 									</div>
 
-
-								</form>
-
-							</div>
-
-
-
-
-							<!-- PayPal Information -->
-							<div class="ui orange segment">
-								<div class="right aligned column">
-
-									<h5 align="left">PayPal Email</h5>
-									<input class="ui orange save button" type="submit" name="SAVE"
-										placeholder="Edit">
-
-								</div>
-								<hr>
-
-								<p>We pay our Heroes via PayPal. Please provide your email
-									address so we can pay you! If you already have an email address
-									associated with a PayPal account, please use that.</p>
-								<form action="" class="ui form">
 									<div class="field">
-										<input type="email" name="paypalid" />
+										<label>Job Title</label> <input type="email" name="paypalid" />
 									</div>
 
+									<div class="field">
+										<label>Exp.</label> <input type="email" name="paypalid" />
+									</div>
+
+
 								</form>
+
 							</div>
+
+
+
+
 
 						</div>
 
@@ -337,22 +319,25 @@
 								<h5>Download Solution</h5>
 								<hr>
 
-								<div class="three column">
+								<div class="dashboard-profile-sections">
+									<h6 class="dashboard-my-account-section_heading">
+										Change Password <input type="submit" class="orange-btn xs"
+											value="Save" />
+									</h6>
 
-									<div class="column">
-										<form action="" class="ui form">
-											<div class="field">
-												<input type="email" name="paypalid" />
-											</div>
-											<div class="field" align="center">
+									<form data-ng-submit="changePassword($event);">
 
-												<input type="submit" name="Add" />
-											</div>
+										<div class="column">
 
-										</form>
-									</div>
+											<fieldset>
+												<label><strong>Current Password: </strong></label> <input
+													type="password" data-ng-model="password.current " required
+													title="Enter Old Password ">
+											</fieldset>
 
+										</div>
 
+									</form>
 									<div class="column"></div>
 
 									<div class="column"></div>

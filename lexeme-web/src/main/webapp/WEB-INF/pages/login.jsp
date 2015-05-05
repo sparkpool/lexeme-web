@@ -12,6 +12,7 @@ setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
 })
 </script>
 <section id="content">
+
 	<div class="ui center aligned three column grid">
 		<br /> <br /> <br />
 		<!--  -->
@@ -32,7 +33,7 @@ setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
 					</c:if>
 				</p>
 
-				<form class="ui form "
+				<form id="feedback-form" class="ui form "
 					action="${pageContext.request.contextPath}/user/login"
 					method="POST">
 

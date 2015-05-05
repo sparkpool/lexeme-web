@@ -36,5 +36,8 @@
 				<!-- /carousel -->
 			</section>
 	
-	
+	<section id="content">
+		<div class="main container">
+		</div>
+	</section>
 	<%@ include file="footer.jsp" %>

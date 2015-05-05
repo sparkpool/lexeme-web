@@ -15,7 +15,7 @@
 
 			<br/>
 				<h1 align="center">Create An Account</h1>
-				<form class="ui form "
+				<form id="feedback-form"class="ui form "
 					action="${pageContext.request.contextPath}/user/signup"
 					method="POST" ng-controller="validateCtrl" ng-app="myApp" name="form">
 
