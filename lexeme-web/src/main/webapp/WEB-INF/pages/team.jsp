@@ -3,18 +3,13 @@
 <div class="ch-wrapper" id="ch-content-wrapper">
 	<div id="feedback-container" class="container">
 		<div class="page-heading-wrapper">
-			<h1 class="page-heading">Send us your Feedback</h1>
 		</div>
 				<div class="feedback-form-left">
 			<div class="feedback-support-text">
-				<img src="/img/feedback.png" alt="send-feedback"/>
-				<h4>Help us do better</h4> Use the form to send us your feedback and ideas on how we can improve.
+				<h1 class="page-heading">Send us Your feedback.</h1>
 			</div>
 		</div>
 		<form id="feedback-form" method="post" action="feedback_send.php">
-			<input type="hidden" id="flsver" name="flsver">
-			<input type="hidden" id="pdfver" name="pdfver">
-			<input type="hidden" id="http_ref" name="http_ref" value="">
 			<div class="feedback-form-middle">
 				<fieldset>
 					<label>Email:</label>

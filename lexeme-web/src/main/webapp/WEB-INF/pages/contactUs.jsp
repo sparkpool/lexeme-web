@@ -8,7 +8,7 @@
 				<div class="feedback-form-left">
 			<div class="feedback-support-text">
 				<img src="/img/feedback.png" alt="send-feedback"/>
-				<h4>Help us do better</h4> Use the form to send us your feedback and ideas on how we can improve.
+				<h4>Send us Your feedback.</h4>
 			</div>
 		</div>
 		<form id="feedback-form" method="post" action="feedback_send.php">
