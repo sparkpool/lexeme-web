@@ -65,7 +65,7 @@
 			
 			<!-- Start Header Section -->
 					
-			<header class="clearfix">
+			<header class="ch-header">
 				
 				<!-- Start Top Bar -->
 		 

@@ -1,6 +1,8 @@
 	<!--Header--->
 	
 	<%@ include file="header.jsp" %>
+	<section id="content">
+		<div class="main container">
 	 
 		<section id="home">
 				<!-- Carousel -->
@@ -36,8 +38,6 @@
 				<!-- /carousel -->
 			</section>
 	
-	<section id="content">
-		<div class="main container">
 		</div>
 	</section>
 	<%@ include file="footer.jsp" %>

@@ -7,10 +7,13 @@
 </script>
 	<section id="content">
 	<div class="ui center aligned three column grid">
-	<br/>
-	<br/>
-	<br/>
+<div class="page-heading-wrapper">
 
+		</div>
+		<div class="feedback-form-left">
+			<div class="feedback-support-text">
+			</div>
+		</div>	
 	<div class="left aligned column">
 
 			<br/>
