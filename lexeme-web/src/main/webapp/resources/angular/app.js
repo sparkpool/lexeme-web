@@ -9,12 +9,6 @@ var app = angular.module('myApp', [ 'ngRoute' ]);
 app.config(['$routeProvider','$locationProvider',
                function($routeProvider,$locationProvider) {
 	
-	if(window.history && window.history.pushState){
-      $locationProvider.html5Mode({
-             enabled: true,
-             requireBase: false,
-	  });
-		}
                    $routeProvider.
                        when('/login', {
                            templateUrl: _contextPath+'/user/login',
@@ -27,6 +21,16 @@ app.config(['$routeProvider','$locationProvider',
                        when('/profile',{
                            templateUrl: _contextPath+'/user/profile',
                            controller: 'RouteController'
+                    	   
+                       }).
+                       when('/solution',{
+                           templateUrl: _contextPath+'solution.jsp',
+                           controller: 'autocompleteController'
+                    	   
+                       })
+                       .when('/team',{
+                           templateUrl: 'team.jsp',
+                           controller: 'autocompleteController'
                     	   
                        })
                        .otherwise({

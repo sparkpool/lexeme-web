@@ -11,15 +11,19 @@ setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
 })
 })
 </script>
-<section id="content">
-	<div class="ch-wrapper" id="ch-content-wrapper">
 
+<section id="content">
 		<div class="ui center aligned two column grid">
-			<br /> <br /> <br />
-			<!--  -->
+		<br/>
+		<br/>
+		<br/>
 			<div class="left aligned column">
+				
 				<h1 align="center">Login</h1>
+					<div class="field">
+				
 				<%@ include file="message.jsp"%>
+				</div>
 				<form id="feedback-form" class="ui form "
 					action="${pageContext.request.contextPath}/user/login"
 					method="POST">
@@ -56,6 +60,6 @@ setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
 				</form>
 			</div>
 		</div>
-	</div>
+	
 </section>
 <%@ include file="footer.jsp"%>

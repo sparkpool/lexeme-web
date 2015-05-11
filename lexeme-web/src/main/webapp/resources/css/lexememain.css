@@ -61,6 +61,21 @@
 	}
 }
 
+
+
+.logo{
+		float:none;
+		margin-top:15px;
+		text-align:left;
+		display:block;
+		width:auto;
+		font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+		font-size: 21px;
+		font-style:bold;
+		font-weight: 300;
+}
+
 @media screen and (max-width:480px){
 	.logo{
 		float:none;
@@ -618,16 +633,6 @@ ul.social-list li:last-child a i {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -o-border-radius: 0;
-}
-
-.navbar-brand {
-	position: relative;
-	padding: 27px 0;
-	margin: 0!important;
-	transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
 }
 
 .navbar-default .navbar-nav {

@@ -2,9 +2,7 @@
 <!--Header--->
 <%@page import="com.lexeme.web.enums.EnumRoles"%>
 <%@ include file="header.jsp"%>
-<script type="text/javascript">
-    var _contextPath = "${pageContext.request.contextPath}";
-</script>
+
 <section id="content">
 	<div class="ui center aligned two column grid">
 

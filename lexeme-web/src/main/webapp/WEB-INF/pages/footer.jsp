@@ -1,9 +1,10 @@
-        <div class="ch-footer-links_wrapper">
+        <div class="footer">
+            <hr>
                     <ul class="ch-footer-links_container" id="ch-footer-links_container">
                 <li>
                     <h6>Company</h6>
-                    <a href="/about-us/">About Us</a>
-                    <a href="/blog/">Blog</a>
+                    <a href="${pageContext.request.contextPath}/aboutUs">About Us</a>
+                    <a href="${pageContext.request.contextPath}/solution">SolutionLib</a>
                     <a href="/sitemap/">Sitemap</a>
                     <!--<a href="/api/intro.php">API</a>-->
                 </li>
@@ -28,11 +29,4 @@
                 </li>
              
             </ul>
-                <div class="ch-copyright_wrapper">
-            <div class="ch-copyright_container">
-                <p class="ch-copyright_info">
-                    Copyright © 2015. Lexeme Web, Inc.
-                                    </p>
-            </div>
-        </div>
     </div>

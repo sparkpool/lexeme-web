@@ -2,6 +2,9 @@
 	<html ng-app="myApp" style="height: 158px; ">
 	
 	<head>
+	<script type="text/javascript">
+    var _contextPath = "${pageContext.request.contextPath}";
+</script>
 	   <!-- Full Body Container -->
 		<div id="container">
 		<meta charset="utf-8">

@@ -1,4 +1,5 @@
 <%@ include file="header.jsp" %>
+
 <section id="content">
 <div class="ch-wrapper" id="ch-content-wrapper">
 	<div id="feedback-container" class="container">
