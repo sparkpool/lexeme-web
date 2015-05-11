@@ -100,11 +100,11 @@ $.fn.api.settings.api = {
           prompt : 'Please enter a password'
         },
         {
-          type   : 'length[8]',
+          type   : 'length[6]',
           prompt : 'Your password must be between 6 to 18 characters'
         },
          {
-         	  type:'maxLength[12]',
+         	  type:'maxLength[18]',
               prompt : 'Your password must be between 6 to 18 characters'
          }
       ]

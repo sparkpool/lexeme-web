@@ -35,4 +35,5 @@
 	</div>
 </div>
 </section>
-	<%@ include file="footer.jsp"%>
+
+<%@ include file="footer.jsp"%>

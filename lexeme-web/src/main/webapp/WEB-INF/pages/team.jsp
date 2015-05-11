@@ -9,6 +9,7 @@
 				<h1 class="page-heading">Send us Your feedback.</h1>
 			</div>
 		</div>
+		
 		<form id="feedback-form" method="post" action="feedback_send.php">
 			<div class="feedback-form-middle">
 				<fieldset>
