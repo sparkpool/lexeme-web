@@ -7,19 +7,19 @@ app.factory("Data", ['$http',
 	      
 		
 		obj.get = function (q) {
-            return $http.get(serviceBase + q).then(function (results) {
+            return $http.get(q).then(function (results) {
                 return results.data;
             });
         };
 		
         obj.post = function (q, object) {
-            return $http.post(serviceBase + q, object).then(function (results) {
+            return $http.post(q, object).then(function (results) {
                 return results.data;
             });
         };
         
 		obj.put = function (q, object) {
-            return $http.put(serviceBase + q, object).then(function (results) {
+            return $http.put(q, object).then(function (results) {
                 return results.data;
             });
         };

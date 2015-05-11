@@ -52,10 +52,8 @@ app.controller('validateCtrl', function($scope,$http) {
 	
 	//handle method for field1 blur
 	$scope.checkEmail = function() {
-		$scope.countedValue = 'Blur from field1:  ' + $scope.email + ' * '
-				+ $scope.userName + ' = ' + $scope.email * $scope.userName;
-	
-		console.log(_contextPath);
+		
+		
 		$http.get(
 				_contextPath + '/validate/user?email='
 						+ $scope.email).success(

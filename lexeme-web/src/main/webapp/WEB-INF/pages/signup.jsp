@@ -17,7 +17,7 @@
 				name="form">
 
 				<!-- Email-address -->
-				<div class="field">
+				<div class="field"   ng-class="{ error: form.email.$error.unique }">
 					<label>Email</label> <input placeholder="Email" name="email"
 						type="email" ng-model="email" my-focus="focusField1"
 						my-blur="checkEmail()" required> 
@@ -28,7 +28,7 @@
 				</div>
 
 				<!-- UserName -->
-				<div class="field">
+				<div class="field"  ng-class="{ error: form.userName.$error.unique }">
 					<label>Username</label> <input placeholder="Username"
 						name="userName" type="text" ng-model="userName"
 						my-focus="focusField2" my-blur="checkUserName()" required>
