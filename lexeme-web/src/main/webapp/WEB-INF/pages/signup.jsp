@@ -6,6 +6,7 @@
 <section id="content">
 	<div class="ui center aligned two column grid">
 
+	<%@include file="message.jsp" %>
 
 		<div class="left aligned column">
 
@@ -19,7 +20,7 @@
 				<!-- Email-address -->
 				<div class="field"   ng-class="{ error: form.email.$error.unique }">
 					<label>Email</label> <input placeholder="Email" name="email"
-						type="email" ng-model="email" my-focus="focusField1"
+						type="email" ng-model="email" 
 						my-blur="checkEmail()" required> 
 						<span class="ui red pointing above ui label error"
 						style="color: red;"
@@ -31,7 +32,7 @@
 				<div class="field"  ng-class="{ error: form.userName.$error.unique }">
 					<label>Username</label> <input placeholder="Username"
 						name="userName" type="text" ng-model="userName"
-						my-focus="focusField2" my-blur="checkUserName()" required>
+						 my-blur="checkUserName()" required>
 
 					<span class="ui red pointing above ui label error"
 						ng-show="form.userName.$dirty && form.userName.$error.unique">

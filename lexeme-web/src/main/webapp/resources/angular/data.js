@@ -1,7 +1,6 @@
 
 app.factory("Data", ['$http',
-    function ($http, toaster) { // This service connects to our REST API
-
+    function ($http) { 
         var obj = {};
 		
 	      

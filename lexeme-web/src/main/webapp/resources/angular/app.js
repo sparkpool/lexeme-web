@@ -100,19 +100,6 @@ app.controller('validateCtrl', function($scope,$http) {
 });
 
 
-//focus directive
-app.directive('myFocus', function () {
-    return {
-        restrict: 'A',
-        link: function (scope, element, attr) {
-            scope.$watch(attr.myFocus, function (n, o) {
-                if (n != 0 && n) {
-                    element[0].focus();
-                }
-            });
-        }
-    };
-});
 //blur directive
 app.directive('myBlur', function () {
     return {

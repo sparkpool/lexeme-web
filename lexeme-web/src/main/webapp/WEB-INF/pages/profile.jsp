@@ -312,41 +312,62 @@
 					<div class="ui botton attched tab" data-tab="solution">
 						<div class="ui orange segment">
 
-							<h5>Download Solution</h5>
+							<h5>Get Solution</h5>
 							<hr>
+							<div class="row">
 
-							<div class="dashboard-profile-sections">
-								<h6 class="dashboard-my-account-section_heading">
-									Change Password <input type="submit" class="orange-btn xs"
-										value="Save" />
-								</h6>
+								<div class="container">
 
-								<form data-ng-submit="changePassword($event);">
+									<div class="col-lg-8 col-md-8 col-sm-8">
 
-									<div class="column">
+										<script type="text/ng-template" id="customTemplate.html">
+					<a>
+						<span bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+						<i>| {{match.model.cpoursename}} | {{match.model.description}} | {{match.model.University}}  </i>
+					</a>
+				</script>
 
-										<fieldset>
-											<label><strong>Current Password: </strong></label> <input
-												type="password" data-ng-model="password.current " required
-												title="Enter Old Password ">
-										</fieldset>
 
+										<form class="form-search"
+											ng-controller="autocompleteController">
+											<input type="text" ng-model="sol.course"
+												placeholder="	CourseID | Course Name | Subject | University  	"
+												typeahead="c as c.courseid for c in list | filter:$viewValue | limitTo:10"
+												typeahead-min-length='1'
+												typeahead-on-select='onSelectPart($item, $model, $label)'
+												typeahead-template-url="customTemplate.html"
+												class="form-control" name="course"> <i
+												class="icon-search nav-search-icon"></i>
+
+										</form>
+									</div>
+									<!--Div close--->
+
+									<div class="col-lg-8" align="center" style="padding-top: 30px;"
+										ng-controller="autocompleteController">
+										<button class="btn btn-warning btn-lg" data-toggle="modal"
+											ng-click="setDescription(sol);">Get Solution</button>
 									</div>
 
-								</form>
-								<div class="column"></div>
+								</div>
 
-								<div class="column"></div>
 							</div>
-
-
+							<!-- /.page-content -->
 						</div>
-
 					</div>
+					<div class="column"></div>
+
+					<div class="column"></div>
 				</div>
+
+
 			</div>
+
 		</div>
 	</div>
-	
+	</div>
+	</div>
+	</div>
+
 </section>
 <%@ include file="footer.jsp"%>
