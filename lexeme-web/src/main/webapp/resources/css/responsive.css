@@ -1,3 +1,73 @@
+@media ( min-width : 320px) and (max-width: 767px) {
+	#login-form {
+		width: 100%;
+		float: right;
+		margin-right: 0; #
+		margin-left: -18px;
+		display: inline
+	}
+}
+
+
+
+.logo{
+		float:none;
+		margin-top:15px;
+		text-align:left;
+		display:block;
+		width:auto;
+		font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+		font-size: 21px;
+		font-style:bold;
+		font-weight: 300;
+}
+
+@media screen and (max-width:480px){
+	.logo{
+		float:none;
+		margin-top:15px;
+		text-align:center;
+		display:block;
+		width:auto;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 13px;
+		font-size: 21px;
+		font-style:bold;
+		font-weight: 300;
+	}
+	
+	a{
+		text-align: center;
+		font-size:100px;
+	}
+	
+	sidebar {
+	  position:absolute;
+	  left:0; top:1px; bottom: 0;
+	   width: 178px;
+	   margin-left: -10px;
+	  float: left;
+	  overflow: hidden;
+	  background: #2c3e50;
+	  background: rgba(44,62,80, 0.4);
+	  color: #eee;
+	  min-height: 600px;
+	}
+	
+
+
+sidebar ul li a{
+		text-align: left;
+		font-size:100px;
+	
+}
+
+	
+}
+
+
+
 @media (max-width: 1200px) {
 	
 	.navbar-default .navbar-toggle, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
@@ -5,9 +75,13 @@
 		padding: 8px 5px 6px 5px;
 	}
 	
+	
 	.navbar-default .navbar-toggle i {
 		color: #bbb;
 		font-size: 2em;
+		position:absolute;
+    left:0; top:92px; bottom: 0;
+    width: 178px;
 	}
 
 	.quote-buttons span {
@@ -368,7 +442,9 @@
 
 
 @media (min-width : 992px) {
-    
+    .sidebar{
+    display:none;
+    }
     #main-slide .slider-content h2{
 		font-size: 68px;
 	}

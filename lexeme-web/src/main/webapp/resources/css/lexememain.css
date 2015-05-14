@@ -51,52 +51,6 @@
 	
 }
 
-@media ( min-width : 320px) and (max-width: 767px) {
-	#login-form {
-		width: 100%;
-		float: right;
-		margin-right: 0; #
-		margin-left: -18px;
-		display: inline
-	}
-}
-
-
-
-.logo{
-		float:none;
-		margin-top:15px;
-		text-align:left;
-		display:block;
-		width:auto;
-		font-family: 'Open Sans', sans-serif;
-	font-size: 13px;
-		font-size: 21px;
-		font-style:bold;
-		font-weight: 300;
-}
-
-@media screen and (max-width:480px){
-	.logo{
-		float:none;
-		margin-top:15px;
-		text-align:center;
-		display:block;
-		width:auto;
-		font-family: 'Open Sans', sans-serif;
-	font-size: 13px;
-		font-size: 21px;
-		font-style:bold;
-		font-weight: 300;
-	}
-	
-	a{
-		text-align: center;
-		font-size:100px;
-	}
-	
-	
-}
 
 
 

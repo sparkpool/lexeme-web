@@ -12,7 +12,7 @@ setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
 })
 </script>
 
-<section id="content">
+<section id="content" >
 		<div class="ui center aligned two column grid">
 		<br/>
 		<br/>
