@@ -3,14 +3,14 @@
 <%@page import="com.lexeme.web.enums.EnumRoles"%>
 <%@ include file="header.jsp"%>
 
-<section id="content">
-	<div class="ui center aligned two column grid">
+<div id="page-content">
+   
+  <div class="container" >
+ 	<div class="ui center aligned two column grid">
 
-	<%@include file="message.jsp" %>
 
 		<div class="left aligned column">
 
-			<br />
 			<h1 align="center">Create An Account</h1>
 			<form id="feedback-form" class="ui form "
 				action="${pageContext.request.contextPath}/user/signup"
@@ -19,6 +19,8 @@
 
 				<!-- Email-address -->
 				<div class="field"   ng-class="{ error: form.email.$error.unique }">
+	<%@include file="message.jsp" %>
+
 					<label>Email</label> <input placeholder="Email" name="email"
 						type="email" ng-model="email" 
 						my-blur="checkEmail()" required> 
@@ -83,5 +85,7 @@
 
 		<div></div>
 	</div>
-</section>
+</div>
+</div>
+
 <%@ include file="footer.jsp"%>

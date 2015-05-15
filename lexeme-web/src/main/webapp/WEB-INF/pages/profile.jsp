@@ -1,9 +1,9 @@
 <%@ include file="header.jsp"%>
 
-<section id="content">
-	<div class=" container" ng-app="myApp" ng-controller="authCtrl">
+<div id="page-content">
+   
+ 	<div class=" container" ng-app="myApp" ng-controller="authCtrl">
 		<div class="ui grid ">
-			<br> <br />
 
 			<div class="three wide column">
 				<!-- User Profile Pictures -->
@@ -375,6 +375,6 @@
 
 		</div>
 	</div>
+</div>
 
-</section>
 <%@ include file="footer.jsp"%>

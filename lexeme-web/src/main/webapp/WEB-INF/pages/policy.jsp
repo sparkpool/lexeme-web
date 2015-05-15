@@ -1,9 +1,8 @@
 <%@ include file="header.jsp"%>
 
-<section id="content">
-	<div class=" container">
-		<br> <br />
-
+<div id="page-content">
+   
+  <div class="container" >
 
 		<!-- Profile Information Section -->
 
@@ -92,6 +91,5 @@
 			</div>
 		</div>
 	</div>
-
-</section>
+</div>
 <%@ include file="footer.jsp"%>

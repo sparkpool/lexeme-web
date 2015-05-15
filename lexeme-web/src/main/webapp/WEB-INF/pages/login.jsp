@@ -12,11 +12,10 @@ setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
 })
 </script>
 
-<section id="content" >
-		<div class="ui center aligned two column grid">
-		<br/>
-		<br/>
-		<br/>
+<div id="page-content">
+   
+  <div class="container" >
+ 		<div class="ui center aligned two column grid">
 			<div class="left aligned column">
 				
 				<h1 align="center">Login</h1>
@@ -60,6 +59,7 @@ setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
 				</form>
 			</div>
 		</div>
-	
-</section>
+
+</div>
+</div>
 <%@ include file="footer.jsp"%>
