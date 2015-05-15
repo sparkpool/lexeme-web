@@ -3,10 +3,13 @@
 <%@ include file="header.jsp"%>
 <br />
 <br />
-<div class="ui center aligned three column grid">
+	<section id="content">
+	<div class="ui center aligned three column grid">
+	<br/>
+	<br/>
+	<br/>
 
-	<div class="column">
-
+	<div class="left aligned column">
 		<div class="inline example" >
 			<h1>Set New Password</h1>
 
@@ -31,4 +34,6 @@
 		</div>
 	</div>
 </div>
-	<%@ include file="footer.jsp"%>
+</section>
+
+<%@ include file="footer.jsp"%>

@@ -1,40 +1,60 @@
-	<!--Header--->
-	
-	<%@ include file="header.jsp" %>
-	 
-		<section id="home">
-				<!-- Carousel -->
-				<div id="main-slide" class="" data-ride="">
-	
-					<!-- Indicators -->
-					
-					<!--/ Indicators end-->
-	
-					<!-- Carousel inner -->
-					<div class="carousel-inner">
-						<div class="item active">
-							<img class="img-responsive" src="" alt="">
-							<div class="slider-content">
-								<div class="col-md-12 text-center">
-									<h2 class="animated2">
-									  <span>Welcome to <strong>NotoHub</strong></span>
-									</h2>
-									<h3 class="animated3">
-										<span>Get Help form Anywhere</span>
-									</h3>
-									<p class="animated4">					
-									<a href="#" class="btn-system btn-large border-btn btn-wite"><i class="fa fa-tasks"></i> Signup</a>
-	
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Carousel inner end-->
-	
+
+<!--Header--->
+<%@ include file="header.jsp"%>
+
+<div class="page-section intro">
+	<div class="container">
+		<div class="pull-left">
+			<p align="left"
+				style="color: #FFFFFF; padding-top: 60px; text-shadow: inherit; table-layout: auto; font-size: 36px;">
+				Welcome to CampusManiac</p>
+			<div class="col-lg-7">
+				<blockquote class="bs-callout bs-callout-warning">You
+					can download an existing solution form solution libraray</blockquote>
+				<div class="btn-group" align="left">
+					<button class="btn btn-warning btn-lg" data-toggle="modal"
+						data-target="#makePayment" onClick="addQuestion()">Get
+						Solution</button>
 				</div>
-				<!-- /carousel -->
-			</section>
-	
-	
-	<%@ include file="footer.jsp" %>
+			</div>
+			<div class="col-lg-7">
+				<blockquote class="bs-callout bs-callout-warning">You
+					can ask form help from our experts</blockquote>
+				<div class="btn-group" align="left">
+					<button class="btn btn-warning btn-lg" data-toggle="modal"
+						data-target="#makePayment" onClick="addQuestion()">Ask
+						Question</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="africa" class="page-section">
+	<div class="container">
+		<div class="pull-left">
+			<p align="left"
+				style="color: #FFFFFF; padding-top: 60px; text-shadow: inherit; table-layout: auto; font-size: 36px;">How
+				it Works</p>
+			<div class="col-lg-7">
+				<blockquote class="bs-callout bs-callout-warning">You
+					can download an existing solution form solution libraray</blockquote>
+				<div class="btn-group" align="left">
+					<button class="btn btn-warning btn-lg" data-toggle="modal"
+						data-target="#makePayment" onClick="addQuestion()">Get
+						Solution</button>
+				</div>
+			</div>
+			<div class="col-lg-7">
+				<blockquote class="bs-callout bs-callout-warning">You
+					can ask form help from our experts</blockquote>
+				<div class="btn-group" align="left">
+					<button class="btn btn-warning btn-lg" data-toggle="modal"
+						data-target="#makePayment" onClick="addQuestion()">Ask
+						Question</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%@ include file="footer.jsp"%>

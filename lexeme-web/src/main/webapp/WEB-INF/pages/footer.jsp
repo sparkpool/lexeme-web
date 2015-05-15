@@ -1,54 +1,32 @@
+        <div class="footer">
+            <hr>
+                    <ul class="ch-footer-links_container" id="ch-footer-links_container">
+                <li>
+                    <h6>Company</h6>
+                    <a href="${pageContext.request.contextPath}/aboutUs">About Us</a>
+                    <a href="${pageContext.request.contextPath}/solution">SolutionLib</a>
+                    <a href="/sitemap/">Sitemap</a>
+                    <!--<a href="/api/intro.php">API</a>-->
+                </li>
+                <!--<li>
+                    <h6>Resources</h6>
+                    <a href="/textbooks/">Textbooks</a>
+                    <a href="/sitemap/">Sitemap</a>
+                </li>-->
+            
+                <li>
+                    <h6>Support</h6>
 
-<footer >
-	
-	<div class="container" >
-	<hr/>
-	  	<div class="row footer-widgets">
-			<!--Company--->
-			<div class="col-md-3">
-				<h4><b>Comapny</b></h4>
-					<a href="${pageContext.request.contextPath}/aboutUs">About Us</a></br>
-					<a href="${pageContext.request.contextPath}/team">Team </a></br>
-					Vision</br>
-			</div>
-
-			<!--Resources--->
-			<div class="col-md-3">
-				<h4><b>Resources</b></h4>
-					Expert Help</br>
-					Solution Library</br>
-					Tools </br>
-			</div>
-			
-			<!---Support-->
-			<div class="col-md-3">
-				<h4><b>Support</b></h4>
-					<a href="${pageContext.request.contextPath}/team">Contact Us</a></br>
-					<a href="${pageContext.request.contextPath}/team">Team </a></br>
-					<a href="${pageContext.request.contextPath}/policy">Privacy Terms</a></br>
-			</div>
-
-			<!--Social Reach-->
-			<div class="col-md-3">
-				<h4><b>Connect</b></h4>
-					Linked In</br>
-					Twitter</br>
-					Facebook</br>
-			</div>
-		</div>
-
-
-		<div class="copyright-section">
-		        <div class="row">
-		            <div class="col-md-6">
-		                <p>© 2015 - 2015 Lexeme - All Rights Reserved</p>
-		            </div>
-		         
-		        </div>
-		</div>
-    
+					<a href="${pageContext.request.contextPath}/team">Contact Us</a>
+					<a href="${pageContext.request.contextPath}/team">Team </a>
+					<a href="${pageContext.request.contextPath}/policy">Privacy Terms</a>
+                </li>
+                <li>
+                    <h6>Legal</h6>
+                    <a href="/copyright.php">Copyright Policy</a>
+                    <a href="/privacy.php">Privacy Policy</a>
+                    <a href="/Terms_of_Use.php">Terms of Use</a>
+                </li>
+             
+            </ul>
     </div>
-    <!-- End Copyright -->
-</footer>
-</body>
-</html>

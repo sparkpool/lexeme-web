@@ -11,48 +11,37 @@ setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
 })
 })
 </script>
-<section id="content">
-	<div class="ui center aligned three column grid">
-		<br /> <br /> <br />
-		<!--  -->
-		<div class="left aligned column">
-				<h1 align="center">Login</h1>
 
-				<!-- WIll SHOW THE ERROR MESSAGE -->
-				<p >
-					<c:if test="${!empty errorMsg}">
-				<div class="ui ignored error message" id="testdiv">
+<section id="content" >
+		<div class="ui center aligned two column grid">
+		<br/>
+		<br/>
+		<br/>
+			<div class="left aligned column">
 				
-						<div class="error" style="color:red;">${errorMsg}</div>
+				<h1 align="center">Login</h1>
+					<div class="field">
+				
+				<%@ include file="message.jsp"%>
 				</div>
-					</c:if>
-
-					<c:if test="${!empty msg}">
-						<div class="msg" style="color:red;">${msg}</div>
-					</c:if>
-				</p>
-
-				<form class="ui form "
+				<form id="feedback-form" class="ui form "
 					action="${pageContext.request.contextPath}/user/login"
 					method="POST">
 
 					<!-- Email-address -->
 					<div class="field">
-						<label>Email</label>
+						<label>Email</label> <input placeholder="Email" name="email"
+							type="email">
 
-						
-							<input placeholder="Email" name="email" type="email"> 
-						
 					</div>
 
 
 					<!-- Password -->
 					<div class="field">
-						<label>Password</label>
-						
-							<input name="password" type="password" placeholder="Password ">
-							
-						
+						<label>Password</label> <input name="password" type="password"
+							placeholder="Password ">
+
+
 					</div>
 
 					<div class="inline field">
@@ -65,10 +54,12 @@ setTimeout(function() { $("#testdiv").fadeOut(1000); }, 500)
 						</p>
 					</div>
 					<div class="ui field">
-						<input class="ui blue submit button" type="submit" name="SAVE" id="btnclick">
+						<input class="ui blue submit button" type="submit" name="SAVE"
+							value="Login" id="btnclick">
 					</div>
 				</form>
 			</div>
 		</div>
+	
 </section>
 <%@ include file="footer.jsp"%>
