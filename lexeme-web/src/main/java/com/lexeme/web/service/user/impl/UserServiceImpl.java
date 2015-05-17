@@ -42,7 +42,7 @@ public class UserServiceImpl implements IUserService{
 	private IUserTokenService userTokenService;
 	
 	@Override
-	@Transactional
+    @Transactional
 	public UserPojo signupUser(UserPojo userPojo, String contextPath) throws NoSuchAlgorithmException {
 		if(userPojo == null){
 			throw new InvalidParameterException("USER POJO CAN NOT BE NULL");

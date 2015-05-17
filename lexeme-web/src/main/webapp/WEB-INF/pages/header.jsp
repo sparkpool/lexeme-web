@@ -1,3 +1,4 @@
+	<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<html ng-app="myApp" style="height: 158px; ">
 	

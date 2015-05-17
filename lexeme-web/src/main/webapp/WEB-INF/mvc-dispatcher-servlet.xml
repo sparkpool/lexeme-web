@@ -10,8 +10,7 @@
 	    http://www.springframework.org/schema/tx 
 	    http://www.springframework.org/schema/tx/spring-tx.xsd
 	    http://www.springframework.org/schema/mvc 
-	    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
-    ">
+	    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 
 	<context:annotation-config />
@@ -21,19 +20,13 @@
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	<mvc:annotation-driven />
 
-	<tx:annotation-driven transaction-manager="txManager" />
-	
-	<bean id="txManager"
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
 
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
-		<property name="nestedTransactionAllowed" value="true" />
 	</bean>
 
 	<bean id="sessionFactory"
@@ -102,6 +95,26 @@
 		</property>
 	</bean>
 
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+
+	<bean id="securityManager" class="com.hk.web.auth.ShiroSecurityManager">
+    	<!-- Single realm app.  If you have multiple realms, use the 'realms' property instead. -->
+    	<property name="realm" ref="remoteUserRealm"/>
+    	<property name="sessionMode" value="http"/>
+	</bean>
+  
+	<bean id="remoteUserRealm" class="com.hk.web.auth.RemoteUserRealm"></bean>
+  
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>
+  
+  	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+    	<property name="securityManager" ref="securityManager"/>
+  	</bean>
+	
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
@@ -111,10 +124,11 @@
 		</property>
 	</bean>
 
-	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-      <property name="templateLoaderPath" value="/WEB-INF/ftl/"></property>
-    </bean>
-    
+	<bean id="freemarkerConfig"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="/WEB-INF/ftl/"></property>
+	</bean>
+
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="username" value="lexemec@gmail.com" />
 		<property name="password" value="lexeme@123" />
@@ -129,5 +143,5 @@
 				<prop key="mail.debug">false</prop>
 			</props>
 		</property>
-    </bean>
+	</bean>
 </beans>
