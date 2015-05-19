@@ -104,6 +104,8 @@ public class UserServiceImpl implements IUserService{
 		}
 		return userPojo;
 	}
+	
+	
 
 	public IACLService getAclService() {
 		return aclService;
@@ -141,7 +143,8 @@ public class UserServiceImpl implements IUserService{
 		return (UserToken)query.uniqueResult();
 	}
 	
-	private User getUserById(Long userId){
+	@Override
+	public User getUserById(Long userId){
 		Query query = getSessionFactory().getCurrentSession().getNamedQuery("USERID.VALIDATE").
 		setLong("id", userId);
 		return (User)query.uniqueResult();

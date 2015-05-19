@@ -100,21 +100,25 @@
 	</bean>
 
 	<bean id="securityManager" class="com.hk.web.auth.ShiroSecurityManager">
-    	<!-- Single realm app.  If you have multiple realms, use the 'realms' property instead. -->
-    	<property name="realm" ref="remoteUserRealm"/>
-    	<property name="sessionMode" value="http"/>
+		<!-- Single realm app. If you have multiple realms, use the 'realms' property 
+			instead. -->
+		<property name="realm" ref="remoteUserRealm" />
+		<property name="sessionMode" value="http" />
 	</bean>
-  
-	<bean id="remoteUserRealm" class="com.hk.web.auth.RemoteUserRealm"></bean>
-  
+
+	<bean id="remoteUserRealm" class="com.lexeme.web.auth.RemoteUserRealm"></bean>
+
 	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
 
-	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>
-  
-  	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
-    	<property name="securityManager" ref="securityManager"/>
-  	</bean>
-	
+	<bean
+		class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+		depends-on="lifecycleBeanPostProcessor" />
+
+	<bean
+		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">

@@ -73,7 +73,8 @@ public class UserValidationServiceImpl implements IUserValidationService{
 		return null;
 	}
 	
-	private User validateUserName(String userName){
+	@Override
+	public User validateUserName(String userName){
 		Query query = getSessionFactory().getCurrentSession().getNamedQuery("USERNAME.VALIDATE")
 				.setString("userName", userName);
 		return (User)query.uniqueResult();
