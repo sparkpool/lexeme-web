@@ -54,6 +54,47 @@
 
 
 
+
+/***
+*Profile Section
+*/
+profile{
+	vertical-align: middle;
+	max-width: 200px;
+	max-height: 200px;
+	display: -moz-inline-box; /* Firefox 2 */
+	display: inline-block;
+    
+}
+
+.profile-content{
+ 	width: 150px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0; 
+    
+  }
+  
+  
+  
+/***  
+*Product banner
+*
+*/
+  
+product{
+	positon:absolute;
+	height:100px;
+	 width: 150px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0; 
+	
+	
+	
+}  
+  
+  
 /*------------------------------------------*/
 /*	     01 - General & Basic Styles
 /*------------------------------------------*/
@@ -173,8 +214,14 @@ p strong {
 	font-weight: 700;
 }
 
+#page-content{
+	background: none repeat scroll 0% 0% #ECF6FB;
+	
+}
+}
 .page-content p {
 	margin-bottom: 15px;
+	
 }
 
 .wite-text {
@@ -310,7 +357,8 @@ input[type="submit"] {
 }
 
 #container {
-    background-color: #fff;
+    background: none repeat scroll 0% 0% #ECF6FB;	
+    
 }
 
 .boxed-page {
@@ -611,8 +659,7 @@ ul.social-list li:last-child a i {
 	display: block;
     font-size: 14px;
 	font-weight: 300;
-    padding: 28px 15px 28px 15px;
-	overflow: hidden;
+  overflow: hidden;
     transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -1780,8 +1827,8 @@ footer {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 20px;
-  background-color: #FFFFFF;
+  height: 10px;
+  background-color: black;
 }
 
 footer p {

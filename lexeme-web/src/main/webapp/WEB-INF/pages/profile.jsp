@@ -3,22 +3,23 @@
 <div id="page-content">
    
  	<div class=" container" ng-app="myApp" ng-controller="authCtrl">
+	<section id="content">
 		<div class="ui grid ">
 
 			<div class="three wide column">
 				<!-- User Profile Pictures -->
-			<div class="ui fluid card">
-				<div class="image">
+		
+			<div class="profile">
 					<img
 						src="${pageContext.request.contextPath}/resources/semantic/images/stevie.jpg">
-				</div>
-
+			
 				<!-- Brief description about user -->
-				<div class="content">
+				<div class="content" id="profile">
 					<a class="header">Shrey Arora</a>
 					<div class="meta">
 						<span class="date">Create in Sep 2014</span>
 					</div>
+				
 				</div>
 
 
@@ -374,6 +375,7 @@
 			</div>
 
 		</div>
+		</section>
 	</div>
 </div>
 

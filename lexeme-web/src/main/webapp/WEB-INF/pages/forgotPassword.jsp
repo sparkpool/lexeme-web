@@ -1,15 +1,9 @@
 <%@ include file="header.jsp"%>
-<br />
-<br />
 
 <div id="page-content">
    
   <div class="container" >
  <div class="ui center aligned three column grid">
-	<br/>
-	<br/>
-	<br/>
-	<!--  -->
 	<div class="column">
 			<%@include file="message.jsp" %>
 		

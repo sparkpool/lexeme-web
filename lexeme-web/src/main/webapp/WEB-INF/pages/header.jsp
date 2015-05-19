@@ -113,7 +113,7 @@
 						navigation</span> 
 						<span class="icon-bar"></span> <span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-				</a> <a class="logo" href="#">NotoHub</a>
+				</a> <a class="logo" href="${pageContext.request.contextPath}">NotoHub</a>
 			</div>
 			<div id="slidemenu">
 			<ul class="nav navbar-nav navbar-right">
@@ -124,6 +124,9 @@
 							up</a></li>
 					<li><a href="${pageContext.request.contextPath}/user/profile">Profile</a>
 					</li>
+					<li><a href="${pageContext.request.contextPath}/user/profile">Earn Money</a>
+					</li>
+
 				</ul>
 			</div>
 		</div>

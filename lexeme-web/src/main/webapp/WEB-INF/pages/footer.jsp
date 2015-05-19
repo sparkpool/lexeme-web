@@ -1,6 +1,5 @@
-        <div class="footer">
-            <hr>
-                    <ul class="ch-footer-links_container" id="ch-footer-links_container">
+        <div  class="footer" >
+            <ul class="ch-footer-links_container" id="ch-footer-links_container">
                 <li>
                     <h6>Company</h6>
                     <a href="${pageContext.request.contextPath}/aboutUs">About Us</a>
@@ -8,12 +7,6 @@
                     <a href="/sitemap/">Sitemap</a>
                     <!--<a href="/api/intro.php">API</a>-->
                 </li>
-                <!--<li>
-                    <h6>Resources</h6>
-                    <a href="/textbooks/">Textbooks</a>
-                    <a href="/sitemap/">Sitemap</a>
-                </li>-->
-            
                 <li>
                     <h6>Support</h6>
 
@@ -29,4 +22,5 @@
                 </li>
              
             </ul>
+           
     </div>

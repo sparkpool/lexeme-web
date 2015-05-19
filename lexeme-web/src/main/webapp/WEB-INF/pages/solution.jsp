@@ -1,10 +1,7 @@
 <%@ include file="header.jsp"%>
-<section id="content">
-	<br /> <br /> <br /> <br />
 	<script type="text/javascript">
 		var _contextPath = "${pageContext.request.contextPath}";
 	</script>
-	<br />
 	<div id="page-content">
 
 		<div class="container">
