@@ -1,12 +1,23 @@
-<%@include file="header.jsp" %>
+<%@include file="header.jsp"%>
 <div id="page-content">
-   
-   
-  <div class="container" >
- 	<div class="product">
- 	
- 		<p>Hello</p>
- 	</div>
- </div>
- </div>
+	<div class="container">
+		<section id="content">
+
+		<!-- Front banner -->
+		<div class="">
+		
+		</div>
+		<!-- How it works -->
+		<div class="">
+		
+		</div>
+		
+		<!-- Product banner -->
+		<div class="">
+		
+		</div>
+
+		</section>
+	</div>
+</div>
 <%@include file="footer.jsp"%>

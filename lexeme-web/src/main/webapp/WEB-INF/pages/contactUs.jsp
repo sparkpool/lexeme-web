@@ -1,15 +1,11 @@
 <%@ include file="header.jsp"%>
 <div id="page-content">
 	<div class="container">
-
+	<section id="content">
 		<div class="ch-wrapper" id="ch-content-wrapper">
 			<div id="feedback-container" class="container">
-				<div class="page-heading-wrapper">
-					<h1 class="page-heading">Send us your Feedback</h1>
-				</div>
 				<div class="feedback-form-left">
 					<div class="feedback-support-text">
-						<img src="/img/feedback.png" alt="send-feedback" />
 						<h4>Send us Your feedback.</h4>
 					</div>
 				</div>
@@ -47,6 +43,8 @@
 				</form>
 			</div>
 		</div>
+		
+		</section>
 	</div>
 </div>
 <%@ include file="footer.jsp"%>

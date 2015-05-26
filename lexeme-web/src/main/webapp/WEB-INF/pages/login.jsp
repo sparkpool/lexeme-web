@@ -2,73 +2,36 @@
 <!--Header--->
 <%@ include file="header.jsp"%>
 
-<script type="text/javascript">
-	$(function() {
-		setTimeout(function() {
-			$("#testdiv").fadeOut(1000);
-		}, 500)
-		$('#btnclick').click(function() {
-			$('#testdiv').show();
-			setTimeout(function() {
-				$("#testdiv").fadeOut(1000);
-			}, 500)
-		})
-	})
-</script>
 
 <div id="page-content">
 
-	<div class="container-fluid">
+	<div class="container">
+	<section id="content">
 		<div class="row">
 
-			<div class="col-xs-12">
-				<%@ include file="message.jsp"%>
-			</div>
-
+		<!-- Error Message -->
 			<div class="row">
 				<div class="col-xs-12">
-					<h1 align="center">Login</h1>
+					<%@ include file="message.jsp"%>
 				</div>
 			</div>
-		</div>
-	<hr>
- 
+
+			<!-- Heading -->
+			<div class="row">
+				<div class="col-md-12" align="center">
+					<div class="feedback-form-center">
+						<div class="feedback-support-text">
+							<h1 >Login</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Form -->
 		<div class="row">
-			<div class="col-md-5" align="center">
-			
-				<div class="row">
-					<div class="col-md-5 col-md-offset-8">
-						<button type="button" class="btn btn-info" placeholder="">Log
-							in with Gmail</button>
-					</div>
-
-				</div>
-
-				<br />
-
-				<div class="row">
-					<div class="col-md-5 col-md-offset-8">
-						<button type="button" class="btn btn-warning" placeholder="">Log
-							in with Facebook</button>
-					</div>
-				</div>
-
-				<br />
-				<div class="row">
-					<div class="col-md-5 col-md-offset-8">
-						<button type="button" class="btn btn-warning" placeholder="">Log
-							in with Google Plus</button>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="col-md-7 ">
+			<div class="col-md-12 ">
 				<div class="ui center aligned two column grid">
 					<div class="left aligned column">
-						<div class="field"></div>
 						<form id="feedback-form" class="ui form "
 							action="${pageContext.request.contextPath}/user/login"
 							method="POST">
@@ -98,18 +61,32 @@
 
 								</p>
 							</div>
+
 							<div class="ui field">
 								<input class="ui blue submit button" type="submit" name="SAVE"
 									value="Login" id="btnclick">
 							</div>
+
+							<div class="inline field">
+
+
+								<p>
+									Not a member? <a
+										href="${pageContext.request.contextPath}/user/signup">Join
+										Today</a>
+
+								</p>
+							</div>
+
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-		<hr>
- 
+	</section>
+	</div>
+
 </div>
 
 

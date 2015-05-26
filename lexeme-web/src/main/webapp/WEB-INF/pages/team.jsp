@@ -3,9 +3,7 @@
 <section id="content">
 <div class="ch-wrapper" id="ch-content-wrapper">
 	<div id="feedback-container" class="container">
-		<div class="page-heading-wrapper">
-		</div>
-				<div class="feedback-form-left">
+		<div class="feedback-form-left">
 			<div class="feedback-support-text">
 				<h1 class="page-heading">Send us Your feedback.</h1>
 			</div>

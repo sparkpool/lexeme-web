@@ -3,6 +3,7 @@
 <div id="page-content">
    
   <div class="container" >
+  <section id="content">
  <div class="ui center aligned three column grid">
 	<div class="column">
 			<%@include file="message.jsp" %>
@@ -27,6 +28,7 @@
 			</form>
 	</div>
 </div>
+</section>
 </div>
 </div>
 <%@ include file="footer.jsp"%>
