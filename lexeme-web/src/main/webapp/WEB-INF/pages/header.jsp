@@ -124,7 +124,7 @@
 							up</a></li>
 					<li><a href="${pageContext.request.contextPath}/user/profile">Profile</a>
 					</li>
-					<li><a href="${pageContext.request.contextPath}/user/profile">Earn Money</a>
+					<li><a href="${pageContext.request.contextPath}/upload">Earn Money</a>
 					</li>
 
 				</ul>

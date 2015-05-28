@@ -54,7 +54,11 @@
 
 
 
-
+front-banner{
+	positon:absolute;
+	height:100%;
+	width:100%;
+}
 /***
 *Profile Section
 */
@@ -145,6 +149,22 @@ product{
 	
 	
 }  
+
+
+/***
+*Upload document section
+*
+*/
+
+upload{
+	
+}
+
+/*Upload document image section->Thumbnail*/
+upload-imgpre{
+	
+}
+
 
 
 /***
