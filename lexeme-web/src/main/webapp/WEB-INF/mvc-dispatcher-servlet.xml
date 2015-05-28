@@ -99,7 +99,7 @@
 		<property name="securityManager" ref="securityManager" />
 	</bean>
 
-	<bean id="securityManager" class="com.hk.web.auth.ShiroSecurityManager">
+	<bean id="securityManager" class="com.lexeme.web.auth.ShiroSecurityManager">
 		<!-- Single realm app. If you have multiple realms, use the 'realms' property 
 			instead. -->
 		<property name="realm" ref="remoteUserRealm" />
@@ -108,14 +108,28 @@
 
 	<bean id="remoteUserRealm" class="com.lexeme.web.auth.RemoteUserRealm"></bean>
 
+	<bean
+		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+
 	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
 
+	<!-- Enable Shiro Annotations for Spring-configured beans. Only run after -->
+	<!-- the lifecycleBeanProcessor has run: -->
 	<bean
 		class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
 		depends-on="lifecycleBeanPostProcessor" />
 
 	<bean
 		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+
+	<!-- Secure Spring remoting: Ensure any Spring Remoting method invocations -->
+	<!-- can be associated with a Subject for security checks. -->
+	<bean id="secureRemoteInvocationExecutor"
+		class="org.apache.shiro.spring.remoting.SecureRemoteInvocationExecutor">
 		<property name="securityManager" ref="securityManager" />
 	</bean>
 

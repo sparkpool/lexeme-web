@@ -1,4 +1,5 @@
-	<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+	<%@page import="com.lexeme.web.enums.EnumRoles"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<html ng-app="myApp" style="height: 158px; ">
 	
@@ -62,11 +63,7 @@
 			
 			
 	<body>
-	
-	
-			
-			
-			<!-- Start Header Section -->
+	<!-- Start Header Section -->
 					
 			<header class="ch-header">
 				
