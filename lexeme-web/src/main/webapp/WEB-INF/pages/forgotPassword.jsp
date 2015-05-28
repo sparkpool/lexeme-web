@@ -1,15 +1,13 @@
 <%@ include file="header.jsp"%>
-<br />
-<br />
 
-<section id="content">
-<div class="ui center aligned three column grid">
-	<br/>
-	<br/>
-	<br/>
-	<!--  -->
-	<%@include file="message.jsp" %>
+<div id="page-content">
+   
+  <div class="container" >
+  <section id="content">
+ <div class="ui center aligned three column grid">
 	<div class="column">
+			<%@include file="message.jsp" %>
+		
 			<h1>Forgot Password</h1>
 			<p>Enter your email address to reset your password. 
 			You may need to check your spam folder or unblock no-reply@lexeme.com.</p>
@@ -18,6 +16,7 @@
 
 				<!-- Email-address -->
 				<div class="field">
+		
 					<input placeholder="Email" name="email"
 						type="email">
 				</div>
@@ -30,4 +29,6 @@
 	</div>
 </div>
 </section>
+</div>
+</div>
 <%@ include file="footer.jsp"%>

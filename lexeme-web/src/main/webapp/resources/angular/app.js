@@ -122,7 +122,7 @@ app.directive('myBlur', function () {
  * Autocomplete
  */
 app.controller('autocompleteController',['$scope','$http', function($scope, $http) {
-	$scope.sol = {course:'asda'};
+	$scope.sol = {course:''};
 
 	$http.get('http://localhost/Company_final/api/v1/searchSolution.php').
   		success(

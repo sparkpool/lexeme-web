@@ -1,3 +1,139 @@
+/* adjust body when menu is open */
+body.slide-active {
+    overflow-x: hidden
+}
+/*first child of #page-content so it doesn't shift around*/
+.no-margin-top {
+    margin-top: 0px!important
+}
+/*wrap the entire page content but not nav inside this div if not a fixed top, don't add any top padding */
+
+#page-content.slide-active {
+    padding-top: 0
+
+}
+
+/* put toggle bars on the left :: not using button */
+#slide-nav .navbar-toggle {
+    cursor: pointer;
+    position: relative;
+    line-height: 0;
+    float: left;
+    margin: 0;
+    width: 30px;
+    height: 40px;
+    padding: 10px 0 0 0;
+    border: 0;
+
+}
+
+
+/* icon bar prettyup - optional */
+#slide-nav .navbar-toggle > .icon-bar {
+    width: 100%;
+    display: block;
+    height: 3px;
+    margin: 5px 0 0 0;
+}
+
+#slide-nav .navbar-toggle.slide-active .icon-bar {
+    background: orange
+}
+.navbar-header {
+    position: relative
+}
+
+/* un fix the navbar when active so that all the menu items are accessible */
+.navbar.navbar-fixed-top.slide-active {
+    position: relative
+}
+/* screw writing importants and shit, just stick it in max width since these classes are not shared between sizes */
+@media (max-width:767px) { 
+    #slide-nav .container {
+        margin: 0;
+        padding: 0!important;
+ 
+    }
+    #slide-nav .navbar-header {
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    #slide-nav .navbar.slide-active {
+        position: absolute;
+        width: 80%;
+        top: -1px;
+        z-index: 1000;
+    }
+    #slide-nav #slidemenu {
+        left: -50%;
+        width: 50%;
+        min-width: 0;
+        position: absolute;
+        padding-left: 0;
+        z-index: 2;
+        margin-top:10px;
+        background: none repeat scroll 0% 0% #06476B;
+    }
+    #slide-nav #slidemenu .navbar-nav {
+        min-width: 0;
+        width: 100%;
+        margin-top: 9px;
+    }
+    #slide-nav #slidemenu .navbar-nav .dropdown-menu li a {
+        background: none repeat scroll 0% 0% #06476B;
+		min-width: 0;
+        width: 50%;
+        white-space: normal;
+    }
+    #slide-nav {
+        border-top: 0
+    }
+    #slide-nav.navbar-inverse #slidemenu {
+            background: none repeat scroll 0% 0% #06476B;
+    
+    }
+    /* this is behind the navigation but the navigation is not inside it so that the navigation is accessible and scrolls*/
+    #slide-nav #navbar-height-col {
+        position: fixed;
+        margin-top: 50px;
+		height: 100%;
+        width: 50%;
+        left: -80%;
+        background: #eee;
+    }
+    #slide-nav.navbar-inverse #navbar-height-col {
+         background: none repeat scroll 0% 0% #06476B;
+       z-index: 1;
+        border: 0;
+    }
+    #slide-nav .navbar-form {
+        width: 100%;
+        margin: 15px 0;
+        text-align: center;
+        overflow: hidden;
+        /*fast clearfixer*/
+    }
+    #slide-nav .navbar-form .form-control {
+        text-align: center
+    }
+    #slide-nav .navbar-form .btn {
+        width: 100%
+    }
+}
+@media (min-width:768px) { 
+    #page-content {
+        left: 0!important
+    }
+    .navbar.navbar-fixed-top.slide-active {
+        position: fixed
+    }
+    .navbar-header {
+        left: 0!important
+    }
+}
+
+
+
 @media ( min-width : 320px) and (max-width: 767px) {
 	#login-form {
 		width: 100%;
@@ -55,13 +191,8 @@
 	  min-height: 600px;
 	}
 	
-
-
-sidebar ul li a{
-		text-align: left;
-		font-size:100px;
-	
-}
+	content{
+	}
 
 	
 }
@@ -441,62 +572,3 @@ sidebar ul li a{
 
 
 
-@media (min-width : 992px) {
-    .sidebar{
-    display:none;
-    }
-    #main-slide .slider-content h2{
-		font-size: 68px;
-	}
-}
-
-
-@media (min-width : 768px) and (max-width: 991px) {
-    
-    #main-slide .slider-content h2{
-		font-size: 52px;
-	}
-	#main-slide .slider-content h3{
-		font-size: 24px;
-		margin-top: 12px;
-	}
-
-	.slider.btn{
-		padding: 5px 25px;
-		margin-top: 5px;
-		font-size: 16px;
-	}
-    
-}
-
-
-@media (max-width : 767px) {
-    
-    #main-slide .slider-content h2{
-		font-size: 28px;
-		line-height: normal;
-		margin-bottom: 0;
-	}
-	#main-slide .slider-content h3{
-		font-size: 14px;
-		margin-top: 5px;
-	}
-	.slider.btn{
-		padding: 0 15px;
-		margin-top: 0;
-		font-size: 12px;
-	}
-	#main-slide .carousel-indicators{
-		display: none;
-	}
-    
-}
-
-
-@media (max-width : 479px) {
-    
-    #main-slide .item .slider-content{
-		display: none;
-	}
-    
-}
