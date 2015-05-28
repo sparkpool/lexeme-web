@@ -122,6 +122,7 @@
 							class="glyphicon glyphicon-cloud"></i> Login</a></li>
 					<li><a href="${pageContext.request.contextPath}/user/signup">Sign
 							up</a></li>
+							
 					<li><a href="${pageContext.request.contextPath}/user/profile">Profile</a>
 					</li>
 					<li><a href="${pageContext.request.contextPath}/upload">Earn Money</a>

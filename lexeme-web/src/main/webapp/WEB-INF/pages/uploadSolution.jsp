@@ -47,7 +47,6 @@ canvas{
 
 					<div class="row">
 						<div class="col-lg-12">
-							<button type="button" class="btn btn-warning" name="upload Documents"></button>
 						</div>
 					</div>
 				</div>
