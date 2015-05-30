@@ -56,4 +56,9 @@ public class PrincipalImpl implements Principal {
 		return this.isAssumed;
 	}
 
+	@Override
+	public String toString() {
+		return "PrincipalImpl [firstName=" + firstName + "]";
+	}
+
 }

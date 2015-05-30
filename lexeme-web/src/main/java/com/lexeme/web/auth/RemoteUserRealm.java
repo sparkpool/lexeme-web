@@ -10,8 +10,6 @@ import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.authc.credential.CredentialsMatcher;
-import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -27,9 +25,6 @@ import com.lexeme.web.service.user.IUserValidationService;
 
 public class RemoteUserRealm extends AuthorizingRealm {
 
-	public static String realmName = "DefaultHibernateRealmName";
-	public static int hashIterations = 1;
-
 	@Autowired
 	private IUserValidationService userValidationService;
 	
@@ -38,15 +33,6 @@ public class RemoteUserRealm extends AuthorizingRealm {
 	
 	public RemoteUserRealm() {
 		super();
-	}
-
-	@Override
-	public CredentialsMatcher getCredentialsMatcher() {
-		HashedCredentialsMatcher credentialsMatcher = new HashedCredentialsMatcher();
-		credentialsMatcher.setHashAlgorithmName("SHA-256");;
-		credentialsMatcher.setStoredCredentialsHexEncoded(false);
-		credentialsMatcher.setHashIterations(hashIterations);
-		return credentialsMatcher;
 	}
 
 	@Override
@@ -102,7 +88,7 @@ public class RemoteUserRealm extends AuthorizingRealm {
 	      throw new AccountException("Null usernames are not allowed by this realm.");
 	    }
 
-	    User user = getUserValidationService().validateUserName(username);
+	    User user = getUserValidationService().validateUser(username);
 	    if (user == null) {
 		      throw new UnknownAccountException("No account found for user [" + username + "]");
 		}

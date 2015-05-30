@@ -70,6 +70,9 @@ public class User implements Serializable {
 	@Column(name = "PHONE_NO", length = 20)
 	private String phoneNo;
 
+	@Column(name = "SALT", length = 100)
+	private String salt;
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "CREATE_DT", nullable = false, updatable = false)
 	private Date createDt;
@@ -220,6 +223,14 @@ public class User implements Serializable {
 
 	public void setCourses(Set<Course> courses) {
 		this.courses = courses;
+	}
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 
 	@Override

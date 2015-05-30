@@ -6,6 +6,11 @@ import java.util.Date;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.crypto.RandomNumberGenerator;
+import org.apache.shiro.crypto.SecureRandomNumberGenerator;
+import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +27,7 @@ import com.lexeme.web.service.acl.IACLService;
 import com.lexeme.web.service.email.IEmailManager;
 import com.lexeme.web.service.user.IUserService;
 import com.lexeme.web.service.user.IUserTokenService;
-import com.lexeme.web.util.LexemeUtil;
+import com.lexeme.web.service.user.IUserValidationService;
 
 @Service
 public class UserServiceImpl implements IUserService{
@@ -41,6 +46,9 @@ public class UserServiceImpl implements IUserService{
 	@Autowired
 	private IUserTokenService userTokenService;
 	
+	@Autowired
+	private IUserValidationService userValidationService;
+	
 	@Override
     @Transactional
 	public UserPojo signupUser(UserPojo userPojo, String contextPath) throws NoSuchAlgorithmException {
@@ -49,8 +57,10 @@ public class UserServiceImpl implements IUserService{
 		}
 		User user = createUserFromPojo(userPojo);
 		user.setRoles(getRolesForSignUp(userPojo.getRole()));
-		String password = getHashPassword(userPojo.getPassword());
+		String salt = getSalt();
+		String password = getHashPassword(userPojo.getPassword(), salt);
 		user.setPassword(password);
+		user.setSalt(salt);
 		Long id = (Long) sessionFactory.getCurrentSession().save(user);
 		logger.info("Sign Up Of user from DB result is " + id);
 		if(id!=null){
@@ -69,8 +79,8 @@ public class UserServiceImpl implements IUserService{
 		return roles;
 	}
 	
-	private String getHashPassword(String password) throws NoSuchAlgorithmException{
-		return LexemeUtil.getHashOfString(password);
+	private String getHashPassword(String password, String salt) throws NoSuchAlgorithmException{
+		return new Sha256Hash(password, salt, 1024).toBase64();
 	}
 	
 	private User createUserFromPojo(UserPojo userPojo){
@@ -91,21 +101,32 @@ public class UserServiceImpl implements IUserService{
 		if(userPojo == null){
 			throw new InvalidParameterException("USER POJO CAN NOT BE NULL");
 		}
-		String password = getHashPassword(userPojo.getPassword());
+		
+		User user = getUserValidationService().validateUser(userPojo.getEmail());
+		if(user == null){
+		   userPojo.setMsg(MessageConstants.INVALID_EMAIL);	
+		   return userPojo;
+		}
+		String password = getHashPassword(userPojo.getPassword(), user.getSalt());
 		
 		Query query = getSessionFactory().getCurrentSession().getNamedQuery("USER.LOGIN")
 		.setString("email", userPojo.getEmail()).setString("password", password);
 		
-		User user = (User) query.uniqueResult();
+		user = (User) query.uniqueResult();
 		if(user!=null && user.getId()!=null){
 			userPojo.setId(user.getId());
+			loginUser(userPojo.getEmail(), user.getPassword());
 		}else{
-			userPojo.setMsg(MessageConstants.INVALID_LOGIN);
+			userPojo.setMsg(MessageConstants.INVALID_PASSWORD);
 		}
 		return userPojo;
 	}
 	
-	
+	private void loginUser(String email, String password){
+		UsernamePasswordToken token = new UsernamePasswordToken(email, password);
+		token.setRememberMe(true);
+		SecurityUtils.getSubject().login(token);
+	}
 
 	public IACLService getAclService() {
 		return aclService;
@@ -125,8 +146,10 @@ public class UserServiceImpl implements IUserService{
 		Long userIdLng = Long.parseLong(userId.trim());
 		User user = getUserById(userIdLng);
 		if(user != null){
-			String hashOfPassword = getHashPassword(password);
+			String salt = getSalt();
+			String hashOfPassword = getHashPassword(password, salt);
 			user.setPassword(hashOfPassword);
+			user.setSalt(salt);
 			Long id = (Long)getSessionFactory().getCurrentSession().save(user);
 			if(id !=null){
 				UserToken userToken = getUserTokenFromUserId(userIdLng, EnumTokenType.FP);
@@ -148,6 +171,15 @@ public class UserServiceImpl implements IUserService{
 		Query query = getSessionFactory().getCurrentSession().getNamedQuery("USERID.VALIDATE").
 		setLong("id", userId);
 		return (User)query.uniqueResult();
+	}
+	
+	private String getSalt(){
+		RandomNumberGenerator rng = new SecureRandomNumberGenerator();
+		return rng.nextBytes().toHex();
+	}
+
+	public IUserValidationService getUserValidationService() {
+		return userValidationService;
 	}
 
 }

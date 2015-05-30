@@ -64,7 +64,8 @@ public class UserValidationServiceImpl implements IUserValidationService{
 		return null;
 	}
 	
-	private User validateUser(String email){
+	@Override
+	public User validateUser(String email){
 		if(StringUtils.isNotBlank(email)){
 			User user = validateEmail(email);
 			logger.info("Results from DB for User Validation is " + user);

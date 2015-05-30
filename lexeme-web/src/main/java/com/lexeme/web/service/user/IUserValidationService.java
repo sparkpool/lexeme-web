@@ -11,4 +11,6 @@ public interface IUserValidationService {
 	public boolean validateUserAndFPLink(String email, String contextPath) throws NoSuchAlgorithmException;
 	
 	public User validateUserName(String userName);
+
+	public User validateUser(String email);
 }

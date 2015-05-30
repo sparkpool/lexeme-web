@@ -1,6 +1,7 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html ng-app="myApp" style="height: 158px;">
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 
 <head>
 <script type="text/javascript">
@@ -122,8 +123,11 @@
 							class="glyphicon glyphicon-cloud"></i> Login</a></li>
 					<li><a href="${pageContext.request.contextPath}/user/signup">Sign
 							up</a></li>
+							
+					<shiro:authenticated>
 					<li><a href="${pageContext.request.contextPath}/user/profile">Profile</a>
 					</li>
+					</shiro:authenticated>
 					<li><a href="${pageContext.request.contextPath}/user/profile">Earn Money</a>
 					</li>
 
