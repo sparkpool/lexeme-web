@@ -5,10 +5,13 @@
 	<div class="container"> <!-- Container -->
 	
 	<section id="content">
+	
 		<div class="pull-left">
 			<p align="left"
 				style="color: #FFFFFF; padding-top: 60px; text-shadow: inherit; table-layout: auto; font-size: 36px;">
-				Welcome to NotoHub</p>
+				Welcome to NotoHub
+		
+				</p>
 			<div class="col-lg-7">
 				<blockquote class="bs-callout bs-callout-warning">You
 					can download an existing solution form solution libraray</blockquote>
@@ -58,11 +61,7 @@
 		</section>
 	</div>
 </div>
-	<style >
-body{
-background:#7FC16D;
-}
-</style>
+
 
 <script type="text/javascript">
 	$(document).ready(function() {
