@@ -26,4 +26,13 @@ public class GeneralController {
 	public String policy(){
 		return "policy";
 	}
+	
+	@RequestMapping(value = "/upload", method = RequestMethod.GET)
+	public String uploadSolution(){
+		return "uploadSolution";
+	}
+	
+
+	
+	
 }
