@@ -208,6 +208,16 @@ public class UserController {
 		return model;
 	}
 	
+	@RequestMapping(value = "/logout", method=RequestMethod.GET)
+	public String logout(){
+		try{
+			getUserService().logout();	
+		}catch(Exception e){
+	        logger.error("Exception occured during logout " + e.getMessage());		
+		}
+		return "home";
+	}
+	
 	public IUserService getUserService() {
 		return userService;
 	}

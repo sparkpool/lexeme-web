@@ -1,8 +1,9 @@
 package com.lexeme.web.auth;
 
-import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
 import org.apache.shiro.authc.AccountException;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -17,14 +18,14 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.lexeme.web.domain.acl.Permissions;
-import com.lexeme.web.domain.acl.Roles;
 import com.lexeme.web.domain.user.User;
 import com.lexeme.web.service.user.IUserService;
 import com.lexeme.web.service.user.IUserValidationService;
 
 public class RemoteUserRealm extends AuthorizingRealm {
-
+	
+	private static final Logger logger = Logger.getLogger(RemoteUserRealm.class);
+			
 	@Autowired
 	private IUserValidationService userValidationService;
 	
@@ -45,39 +46,15 @@ public class RemoteUserRealm extends AuthorizingRealm {
 	    Principal userPrincipal = (Principal) principals.fromRealm(getName()).iterator().next();
 
 	    // Retrieve roles and permissions from database
-	    User user = getUserService().getUserById(userPrincipal.getId());
-	    Set<String> roleNames = getStringRoles(user.getRoles());
-	    Set<String> permissions = getStringPermissions(user.getRoles());
-
-	    SimpleAuthorizationInfo info = new SimpleAuthorizationInfo(roleNames);
-	    info.setStringPermissions(permissions);
+	    Map<String, Set<String>> map = getUserService().getRolesAndPermission(userPrincipal.getId());
+	    
+	    logger.info("Role and permissions are " + map);
+	    
+	    SimpleAuthorizationInfo info = new SimpleAuthorizationInfo(map.get("roles"));
+	    info.setStringPermissions(map.get("permissions"));
 	    return info;
 	}
 	
-	private Set<String> getStringRoles(Set<Roles> roles){
-		Set<String> strRoles = new HashSet<String>();
-		if(roles!=null){
-			for(Roles role : roles){
-				strRoles.add(role.getName());
-			}	
-		}
-		return strRoles;
-	}
-	
-	private Set<String> getStringPermissions(Set<Roles> roles){
-		Set<String> strPermissions = new HashSet<String>();
-		if(roles!=null){
-			for(Roles role : roles){
-				if(role!=null && role.getPermissions()!=null){
-					for(Permissions permission : role.getPermissions()){
-						strPermissions.add(permission.getName());
-					}
-				}
-			}
-		}
-		return strPermissions;
-	}
-
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(
 			AuthenticationToken token) throws AuthenticationException {
