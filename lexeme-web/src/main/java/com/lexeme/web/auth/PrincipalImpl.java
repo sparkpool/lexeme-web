@@ -18,13 +18,13 @@ public class PrincipalImpl implements Principal {
 
 	public PrincipalImpl(User user) {
 		this.id = user.getId();
-		this.firstName = user.getFirstName();
+		this.firstName = user.getUserName();
 		this.email = user.getEmail();
 	}
 
 	public void setAssumedIdentity(User assumedUser) {
 	    this.assumedId = assumedUser.getId();
-	    this.assumedFirstName = assumedUser.getFirstName();
+	    this.assumedFirstName = assumedUser.getUserName();
 	    this.assumedEmail = assumedUser.getEmail();
 	    this.isAssumed = true;
 	  }

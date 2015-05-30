@@ -11,4 +11,5 @@ public interface IUserService {
 	public UserPojo login(UserPojo userPojo) throws NoSuchAlgorithmException;
 	public boolean setPassword(String password, String userId) throws NoSuchAlgorithmException;
 	public User getUserById(Long userId);
+	public void logout();
 }

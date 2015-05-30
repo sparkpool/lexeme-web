@@ -182,4 +182,9 @@ public class UserServiceImpl implements IUserService{
 		return userValidationService;
 	}
 
+	@Override
+	public void logout() {
+		SecurityUtils.getSubject().logout();
+	}
+
 }
