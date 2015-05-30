@@ -1,5 +1,6 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <html ng-app="myApp" style="height: 158px;">
 
 <head>
@@ -106,27 +107,42 @@
 	<!-- Start Header Section -->
 	<div class="navbar navbar-default navbar-static-top" role="navigation"
 		id="slide-nav">
-		
+
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-toggle"> <span class="sr-only">Toggle
-						navigation</span> 
-						<span class="icon-bar"></span> <span class="icon-bar"></span>
+						navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a> <a class="logo" href="${pageContext.request.contextPath}">NotoHub</a>
 			</div>
 			<div id="slidemenu">
-			<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a
 						href="${pageContext.request.contextPath}/user/login"><i
 							class="glyphicon glyphicon-cloud"></i> Login</a></li>
 					<li><a href="${pageContext.request.contextPath}/user/signup">Sign
 							up</a></li>
+
+
+					<li id="dropdown" align="left" >
+						
+						<a href=""
+							data-toggle="dropdown" class="dropdown-toggle">
 							
-					<li><a href="${pageContext.request.contextPath}/user/profile">Profile</a>
-					</li>
-					<li><a href="${pageContext.request.contextPath}/upload">Earn Money</a>
-					</li>
+							Hello <b
+								class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a
+									href="${pageContext.request.contextPath}/user/profile">My
+										Account</a></li>
+								<li><a href="" ng-click="logout();">Logout</a></li>
+							</ul>
+							</li>
+					<shiro:notAuthenticated>
+				
+					</shiro:notAuthenticated>
+					<li><a href="${pageContext.request.contextPath}/upload">Earn
+							Money</a></li>
 
 				</ul>
 			</div>
