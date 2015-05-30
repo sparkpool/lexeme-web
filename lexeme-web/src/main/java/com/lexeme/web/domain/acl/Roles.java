@@ -39,8 +39,8 @@ public class Roles implements Serializable {
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "ROLES_HAS_PERMISSIONS", joinColumns = {
-			@JoinColumn(name = "ROLE_ID", nullable = false, updatable = false)}, 
-			inverseJoinColumns = { @JoinColumn(name = "PERMISSION_ID", 
+			@JoinColumn(name = "ROLES_ID", nullable = false, updatable = false)}, 
+			inverseJoinColumns = { @JoinColumn(name = "PERMISSIONS_ID", 
 			nullable = false, updatable = false) })
 	private Set<Permissions> permissions;
 	

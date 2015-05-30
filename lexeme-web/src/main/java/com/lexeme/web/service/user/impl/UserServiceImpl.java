@@ -3,6 +3,9 @@ package com.lexeme.web.service.user.impl;
 import java.security.InvalidParameterException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -18,6 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lexeme.web.constants.MessageConstants;
+import com.lexeme.web.domain.acl.Permissions;
 import com.lexeme.web.domain.acl.Roles;
 import com.lexeme.web.domain.user.User;
 import com.lexeme.web.domain.user.UserToken;
@@ -171,6 +175,45 @@ public class UserServiceImpl implements IUserService{
 		Query query = getSessionFactory().getCurrentSession().getNamedQuery("USERID.VALIDATE").
 		setLong("id", userId);
 		return (User)query.uniqueResult();
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Map<String, Set<String>> getRolesAndPermission(Long userId){
+		Map<String, Set<String>> map = new HashMap<String, Set<String>>();
+		User user = getUserById(userId);
+		if(user!=null){
+			Set<String> roles = getStringRoles(user.getRoles());
+			logger.info("Roles are " + roles);
+			map.put("roles",roles);
+			Set<String> permissions = getStringPermissions(user.getRoles());
+			map.put("permissions", permissions);
+		}
+		return map;
+	}
+	
+	private Set<String> getStringRoles(Set<Roles> roles){
+		Set<String> strRoles = new HashSet<String>();
+		if(roles!=null){
+			for(Roles role : roles){
+				strRoles.add(role.getName());
+			}	
+		}
+		return strRoles;
+	}
+	
+	private Set<String> getStringPermissions(Set<Roles> roles){
+		Set<String> strPermissions = new HashSet<String>();
+		if(roles!=null){
+			for(Roles role : roles){
+				if(role!=null && role.getPermissions()!=null){
+					for(Permissions permission : role.getPermissions()){
+						strPermissions.add(permission.getName());
+					}
+				}
+			}
+		}
+		return strPermissions;
 	}
 	
 	private String getSalt(){

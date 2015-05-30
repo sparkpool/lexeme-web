@@ -46,6 +46,13 @@ public enum EnumRoles {
 		roles.add(TUTOR_UNVERIFIED);
 		return roles;
 	}
+	
+	public static String getUnverifiedRoles(){
+		StringBuilder strBuilder = new StringBuilder();
+		strBuilder.append(STUDENT_UNVERIFIED.getRole()).append(",").
+		append(TUTOR_UNVERIFIED.getRole());
+		return strBuilder.toString();
+	}
 
 	public String getDisplayName() {
 		return displayName;
