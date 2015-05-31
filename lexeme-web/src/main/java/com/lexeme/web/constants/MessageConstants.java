@@ -20,4 +20,6 @@ public class MessageConstants {
 	public static final String FP_LINK_SEND = "Link Hash been Sent to your Email Id for password reset";
 	public static final String INVALID_SESSION = "Invalid Session, please click on link again to reset your password";
 	public static final String PASSWORD_RESET_SUCCESS = "Your Password Has been Set successfully, please login to continue";
+	public static final String FILE_NOT_ALLOWED = "This File is not allowed to upload";
+	public static final String FILE_UPLOAD_SUCCESS = "File Upload successfully and it's pending with moderator review";
 }

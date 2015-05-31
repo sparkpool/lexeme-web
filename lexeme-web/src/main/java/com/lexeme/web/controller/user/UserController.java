@@ -215,7 +215,7 @@ public class UserController {
 		}catch(Exception e){
 	        logger.error("Exception occured during logout " + e.getMessage());		
 		}
-		return "home";
+		return "login";
 	}
 	
 	public IUserService getUserService() {

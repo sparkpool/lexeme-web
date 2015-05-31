@@ -26,10 +26,8 @@ public class UserProf implements Serializable {
 	@Column (name = "CITY", length=30)
 	private String city;
 	
-	
 	@Column (name="STATE", length=30)
 	private String state;
-	
 	
 	@Column (name="COUNTRY", length=30)
 	private String country;
@@ -49,7 +47,6 @@ public class UserProf implements Serializable {
 	
 	@Column(name="PHOTO_URL", length=250)
 	private String photoUrl;
-	
 	
 	@Column(name="OTHER", length=500)
 	private String other;
