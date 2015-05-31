@@ -117,33 +117,31 @@
 			</div>
 			<div id="slidemenu">
 				<ul class="nav navbar-nav navbar-right">
-					
-				<shiro:notAuthenticated>
-					<li class="active"><a
-						href="${pageContext.request.contextPath}/user/login"><i
-							class="glyphicon glyphicon-cloud"></i> Login</a></li>
-					<li><a href="${pageContext.request.contextPath}/user/signup">Sign
-							up</a></li>
-				</shiro:notAuthenticated>
+
+					<shiro:notAuthenticated>
+						<li class="active"><a
+							href="${pageContext.request.contextPath}/user/login"><i
+								class="glyphicon glyphicon-cloud"></i> Login</a></li>
+						<li><a href="${pageContext.request.contextPath}/user/signup">Sign
+								up</a></li>
+					</shiro:notAuthenticated>
 
 
-				<shiro:authenticated>
-					
-					<li id="dropdown" align="left" >
-						
-						<a href=""
-							data-toggle="dropdown" class="dropdown-toggle">
-							
-							<shiro:principal  property="firstName"/> <b
-								class="caret"></b></a>
+					<shiro:authenticated>
+
+						<li id="dropdown" align="left"><a href=""
+							data-toggle="dropdown" class="dropdown-toggle"> <img
+								src="${pageContext.request.contextPath}/resources/images/nophoto_pic.gif"
+								width="20px" height="20px"> <shiro:principal
+									property="firstName" /> <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><a
 									href="${pageContext.request.contextPath}/user/profile">My
 										Account</a></li>
-								<li><a href="${pageContext.request.contextPath}/user/logout">Logout</a></li>
-							</ul>
-							</li>
-				
+								<li><a
+									href="${pageContext.request.contextPath}/user/logout">Logout</a></li>
+							</ul></li>
+
 					</shiro:authenticated>
 					<li><a href="${pageContext.request.contextPath}/upload">Earn
 							Money</a></li>

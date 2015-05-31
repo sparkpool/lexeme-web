@@ -1,69 +1,199 @@
 <%@include file="header.jsp"%>
 
-<div class="page-content">  <!-- Open Page conatiner -->
+<div id="page-content">
+	<!-- Open Page conatiner -->
+	<!-- Container -->
+
+	<div class="into">
+		<div class="row">
+			<div class="col-md-12">
+
+
+
+				<h1>Welcome to NotoHub</h1>
+
+
+				<div class="form-group" align="center">
+					<form class="form-search" ng-controller="autocompleteController"
+						align="center">
+
+						<div class="col-md-6 col-md-offset-2">
+
+							<input type="text" ng-model="sol.course"
+								placeholder="	CourseID | Course Name | Subject | University  	"
+								typeahead="c as c.courseid for c in list | filter:$viewValue | limitTo:10"
+								typeahead-min-length='1'
+								typeahead-on-select='onSelectPart($item, $model, $label)'
+								typeahead-template-url="customTemplate.html"
+								class="form-control" name="course">
+						</div>
+						<div class="col-md-2">
+
+							<button type="submit" class="btn btn-info">Go</button>
+						</div>
+
+					</form>
+				</div>
+
+
+			</div>
+			<!--  -->
+		</div>
+
+
+	</div>
 	
-	<div class="container"> <!-- Container -->
+	<div class="about">
+		<h1>Browse Library</h1>
+		<p>Noto Hub  offers students crowd-sourced study documents, expert tutors and customizable flashcards, accessible anywhere, at any time.</p>
+	<hr>
+		<div class="col-md-4">
+			<div class="ui link cards">
+				<div class="card">
+				<canvas style="width: 84px; height: 200px;" height="400" width="168"></canvas>
+				<input readonly="readonly" style="display: none; width: 0px; visibility: hidden;" id="ch_split-qa_value" data-width="84" data-readonly="true" data-linecap="round" data-fgcolor="#0aaae7" value="0" data-thickness=".1" data-displayinput="false" data-targetvalue="20" class="dial" type="text">
+					<div class="content">
+						<div class="header">Documents</div>
+						<div class="meta">
+							<a>Friends</a>
+						</div>
+						<div class="description">Veronika Ossi is a set designer
+							living in New York who enjoys kittens, music, and partying.</div>
+					</div>
+					<div class="extra content">
+						<span class="right floated"> Joined in 2013 </span> <span>
+							<i class="user icon"></i> 75 Friends
+						</span>
+					</div>
+				</div>
+			</div>
+			</div>
+		<div class="col-md-4">
+			<div class="ui link cards">
+				<div class="card">
+				<canvas style="width: 84px; height: 200px;" height="400" width="168"></canvas>
+				<input readonly="readonly" style="display: none; width: 0px; visibility: hidden;" id="ch_split-qa_value" data-width="84" data-readonly="true" data-linecap="round" data-fgcolor="#0aaae7" value="0" data-thickness=".1" data-displayinput="false" data-targetvalue="20" class="dial" type="text">
+
+					<div class="content">
+						<div class="header">Homework</div>
+						<div class="meta">
+							<a>Friends</a>
+						</div>
+						<div class="description">Veronika Ossi is a set designer
+							living in New York who enjoys kittens, music, and partying.</div>
+					</div>
+					<div class="extra content">
+						<span class="right floated"> Joined in 2013 </span> <span>
+							<i class="user icon"></i> 75 Friends
+						</span>
+					</div>
+				</div>
+			</div>
+			</div>
+		<div class="col-md-4">
+			<div class="ui link cards">
+				<div class="card">
+								<canvas style="width: 84px; height: 200px;" height="400" width="168"></canvas>
+				<input readonly="readonly" style="display: none; width: 0px; visibility: hidden;" id="ch_split-qa_value" data-width="84" data-readonly="true" data-linecap="round" data-fgcolor="#0aaae7" value="0" data-thickness=".1" data-displayinput="false" data-targetvalue="20" class="dial" type="text">
+				
+					<div class="content">
+						<div class="header">Noto</div>
+						<div class="meta">
+							<a>Friends</a>
+						</div>
+						<div class="description">Veronika Ossi is a set designer
+							living in New York who enjoys kittens, music, and partying.</div>
+					</div>
+					<div class="extra content">
+						<span class="right floated"> Joined in 2013 </span> <span>
+							<i class="user icon"></i> 75 Friends
+						</span>
+					</div>
+				</div>
+			</div>
+			</div>
+
+		</div>
+
+		<div class="howitWork">
+			<h1>How it Works?</h1>
 	
-	<section id="content">
+			<div class="col-md-4">
+			<div class="ui link cards">
+				<div class="card">
+								<canvas style="width: 84px; height: 200px;" height="400" width="168"></canvas>
+				<input readonly="readonly" style="display: none; width: 0px; visibility: hidden;" id="ch_split-qa_value" data-width="84" data-readonly="true" data-linecap="round" data-fgcolor="#0aaae7" value="0" data-thickness=".1" data-displayinput="false" data-targetvalue="20" class="dial" type="text">
+				
+					<div class="content">
+						<div class="header">Noto</div>
+						<div class="meta">
+							<a>Friends</a>
+						</div>
+						<div class="description">Veronika Ossi is a set designer
+							living in New York who enjoys kittens, music, and partying.</div>
+					</div>
+					<div class="extra content">
+						<span class="right floated"> Joined in 2013 </span> <span>
+							<i class="user icon"></i> 75 Friends
+						</span>
+					</div>
+				</div>
+			</div>
+			</div>
 	
-		<div class="pull-left">
-			<p align="left"
-				style="color: #FFFFFF; padding-top: 60px; text-shadow: inherit; table-layout: auto; font-size: 36px;">
-				Welcome to NotoHub
+			<div class="col-md-4">
+			<div class="ui link cards">
+				<div class="card">
+								<canvas style="width: 84px; height: 200px;" height="400" width="168"></canvas>
+				<input readonly="readonly" style="display: none; width: 0px; visibility: hidden;" id="ch_split-qa_value" data-width="84" data-readonly="true" data-linecap="round" data-fgcolor="#0aaae7" value="0" data-thickness=".1" data-displayinput="false" data-targetvalue="20" class="dial" type="text">
+				
+					<div class="content">
+						<div class="header">Noto</div>
+						<div class="meta">
+							<a>Friends</a>
+						</div>
+						<div class="description">Veronika Ossi is a set designer
+							living in New York who enjoys kittens, music, and partying.</div>
+					</div>
+					<div class="extra content">
+						<span class="right floated"> Joined in 2013 </span> <span>
+							<i class="user icon"></i> 75 Friends
+						</span>
+					</div>
+				</div>
+			</div>
+			</div>
+	
+			<div class="col-md-4">
+			<div class="ui link cards">
+				<div class="card">
+								<canvas style="width: 84px; height: 200px;" height="400" width="168"></canvas>
+				<input readonly="readonly" style="display: none; width: 0px; visibility: hidden;" id="ch_split-qa_value" data-width="84" data-readonly="true" data-linecap="round" data-fgcolor="#0aaae7" value="0" data-thickness=".1" data-displayinput="false" data-targetvalue="20" class="dial" type="text">
+				
+					<div class="content">
+						<div class="header">Noto</div>
+						<div class="meta">
+							<a>Friends</a>
+						</div>
+						<div class="description">Veronika Ossi is a set designer
+							living in New York who enjoys kittens, music, and partying.</div>
+					</div>
+					<div class="extra content">
+						<span class="right floated"> Joined in 2013 </span> <span>
+							<i class="user icon"></i> 75 Friends
+						</span>
+					</div>
+				</div>
+			</div>
+			</div>
+	
+		</div>
+
 		
-				</p>
-			<div class="col-lg-7">
-				<blockquote class="bs-callout bs-callout-warning">You
-					can download an existing solution form solution libraray</blockquote>
-				<div class="btn-group" align="left">
-					<button class="btn btn-warning btn-lg" data-toggle="modal"
-						data-target="#makePayment" onClick="addQuestion()">Get
-						Solution</button>
-				</div>
-			</div>
-			<div class="col-lg-7">
-				<blockquote class="bs-callout bs-callout-warning">You
-					can ask form help from our experts</blockquote>
-				<div class="btn-group" align="left">
-					<button class="btn btn-warning btn-lg" data-toggle="modal"
-						data-target="#makePayment" onClick="addQuestion()">Ask
-						Question</button>
-				</div>
-			</div>
-		</div>
 	</div>
-</div>
-<div id="africa" class="page-section">
-	<div class="container">
-		<div class="pull-left">
-			<p align="left"
-				style="color: #FFFFFF; padding-top: 60px; text-shadow: inherit; table-layout: auto; font-size: 36px;">How
-				it Works</p>
-			<div class="col-lg-7">
-				<blockquote class="bs-callout bs-callout-warning">You
-					can download an existing solution form solution libraray</blockquote>
-				<div class="btn-group" align="left">
-					<button class="btn btn-warning btn-lg" data-toggle="modal"
-						data-target="#makePayment" onClick="addQuestion()">Get
-						Solution</button>
-				</div>
-			</div>
-			<div class="col-lg-7">
-				<blockquote class="bs-callout bs-callout-warning">You
-					can ask form help from our experts</blockquote>
-				<div class="btn-group" align="left">
-					<button class="btn btn-warning btn-lg" data-toggle="modal"
-						data-target="#makePayment" onClick="addQuestion()">Ask
-						Question</button>
-				</div>
-			</div>
-		</div>
-		</section>
-	</div>
-</div>
 
 
-<script type="text/javascript">
+	<script type="text/javascript">
 	$(document).ready(function() {
 		// navigation click actions
 		$('.scroll-link').on('click', function(event) {
@@ -105,4 +235,4 @@
 	}
 </script>
 
-<%@include file="footer.jsp"%>
+	<%@include file="footer.jsp"%>

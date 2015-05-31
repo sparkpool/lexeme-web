@@ -1,3 +1,4 @@
+<%@page import="com.lexeme.web.enums.EnumRoles"%>
 <%@ include file="header.jsp"%>
 
 <div id="page-content">
@@ -5,11 +6,10 @@
 		<section id="content">
 			<!-- Profile Picture -->
 			<div class="row">
-
 				<div class="col-lg-2">
 					<div class="profile">
 						<img
-							src="${pageContext.request.contextPath}/resources/semantic/images/stevie.jpg">
+							src="${pageContext.request.contextPath}/resources/images/nophoto_pic.gif">
 					</div>
 				</div>
 				<!-- extra information about user -->
@@ -37,6 +37,11 @@
 						<div class="creditBox">
 							<span class="date">$69</span>
 						</div>
+
+						<!--  -->
+						<shiro:hasAnyRoles name="<%= EnumRoles.getUnverifiedRoles() %>">
+							Unverified
+						</shiro:hasAnyRoles>
 
 					</div>
 
@@ -116,12 +121,7 @@
 												<label>School/University</label> <input type="email"
 													name="paypalid" />
 											</div>
-											<br />
-											<div class="field">
-												<label>Joined Year:</label> <input type="email"
-													name="paypalid" />
-											</div>
-											<br />
+											<br /> <br />
 											<div class=" column">
 
 												<input class="ui orange submit button" type="submit"
@@ -155,8 +155,15 @@
 										</div>
 
 										<div class="field">
-											<label>Exp.</label> <input type="email" name="paypalid" />
+											<label>From:</label> <input type="email" name="paypalid" />
+
+
+											<label>to:</label> <input type="email" name="paypalid" />
+
+
+
 										</div>
+
 
 										<input class="ui orange save button" type="submit" name="SAVE"
 											placeholder="Edit">
@@ -219,36 +226,7 @@
 
 
 							<!-- Contact Information -->
-							<div class="ui orange segment">
-								<div class="right aligned column">
-									<h5 align="left">Experience</h5>
-
-									<input class="ui orange save button" type="submit" name="SAVE"
-										placeholder="Edit">
-
-								</div>
-
-								<hr>
-								<form action="" class="ui form" ng-submit="changePassword();">
-									<div class="field">
-										<label> Company Name</label> <input type="email"
-											name="paypalid" />
-									</div>
-
-									<div class="field">
-										<label>Job Title</label> <input type="email" name="paypalid" />
-									</div>
-
-									<div class="field">
-										<label>Exp.</label> <input type="email" name="paypalid" />
-									</div>
-
-
-								</form>
-
-							</div>
 						</div>
-
 
 						<div class="ui bottom attached  tab segment" data-tab="forth">
 
@@ -316,38 +294,8 @@
 										<label>Phone Number:</label> <input type="email"
 											name="paypalid" />
 									</div>
-
-
-								</form>
-
-							</div>
-
-
-
-
-							<!-- PayPal Information -->
-							<div class="ui orange segment">
-								<div class="right aligned column">
-									<h5 align="left">PayPal Email</h5>
-									<input class="ui orange save button" type="submit" name="SAVE"
-										placeholder="Edit">
-
-								</div>
-								<hr>
-
-								<p>We pay our Heroes via PayPal. Please provide your email
-									address so we can pay you! If you already have an email address
-									associated with a PayPal account, please use that.</p>
-								<form action="" class="ui form" ng-submit="changePassword();">
-									<div class="field">
-										<input type="email" name="paypalid" />
-									</div>
-
 								</form>
 							</div>
-
-
-
 						</div>
 						<!-- Close profile section -->
 		</section>
