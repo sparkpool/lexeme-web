@@ -105,7 +105,7 @@
 <body>
 
 	<!-- Start Header Section -->
-	<div class="navbar navbar-default navbar-static-top" role="navigation"
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation"
 		id="slide-nav">
 
 		<div class="container">
@@ -114,10 +114,14 @@
 						navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a> <a class="logo" href="${pageContext.request.contextPath}">NotoHub</a>
+				
+				
+				
 			</div>
 			<div id="slidemenu">
 				<ul class="nav navbar-nav navbar-right">
-
+ 				<li><a href="${pageContext.request.contextPath}">Resources</a>
+			
 					<shiro:notAuthenticated>
 						<li class="active"><a
 							href="${pageContext.request.contextPath}/user/login"><i

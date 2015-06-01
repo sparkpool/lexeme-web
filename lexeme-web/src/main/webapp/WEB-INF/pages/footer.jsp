@@ -36,7 +36,7 @@
 					<ul>
 					
 					<h3>Legal</h3>
-					<li><a href="${pageContext.request.contextPath}/contactUs">Contact uS</a></li>
+					<li><a href="${pageContext.request.contextPath}/policy">Policy</a></li>
 					<li><a href="${pageContext.request.contextPath}/contactUs">Contact uS</a></li>
 					<li><a href="${pageContext.request.contextPath}/contactUs">Contact uS</a></li>
 					</ul>

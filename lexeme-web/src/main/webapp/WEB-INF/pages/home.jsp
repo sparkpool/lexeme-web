@@ -2,6 +2,7 @@
 
 <div id="page-content">
 	<!-- Open Page conatiner -->
+
 	<!-- Container -->
 
 	<div class="into">
@@ -42,16 +43,25 @@
 
 
 	</div>
-	
-	<div class="about">
-		<h1>Browse Library</h1>
-		<p>Noto Hub  offers students crowd-sourced study documents, expert tutors and customizable flashcards, accessible anywhere, at any time.</p>
-	<hr>
-		<div class="col-md-4">
-			<div class="ui link cards">
-				<div class="card">
-				<canvas style="width: 84px; height: 200px;" height="400" width="168"></canvas>
-				<input readonly="readonly" style="display: none; width: 0px; visibility: hidden;" id="ch_split-qa_value" data-width="84" data-readonly="true" data-linecap="round" data-fgcolor="#0aaae7" value="0" data-thickness=".1" data-displayinput="false" data-targetvalue="20" class="dial" type="text">
+
+
+	<div class="row">
+		<div class="about">
+			<h1>Browse Library</h1>
+			<p>Noto Hub offers students crowd-sourced study documents, expert
+				tutors and customizable flashcards, accessible anywhere, at any
+				time.</p>
+			<hr>
+			<div class="col-md-4">
+				<div class="box4">
+					<canvas style="width: 84px; height: 200px;" height="400"
+						width="168"></canvas>
+					<input readonly="readonly"
+						style="display: none; width: 0px; visibility: hidden;"
+						id="ch_split-qa_value" data-width="84" data-readonly="true"
+						data-linecap="round" data-fgcolor="#0aaae7" value="0"
+						data-thickness=".1" data-displayinput="false"
+						data-targetvalue="20" class="dial" type="text">
 					<div class="content">
 						<div class="header">Documents</div>
 						<div class="meta">
@@ -67,12 +77,16 @@
 					</div>
 				</div>
 			</div>
-			</div>
-		<div class="col-md-4">
-			<div class="ui link cards">
-				<div class="card">
-				<canvas style="width: 84px; height: 200px;" height="400" width="168"></canvas>
-				<input readonly="readonly" style="display: none; width: 0px; visibility: hidden;" id="ch_split-qa_value" data-width="84" data-readonly="true" data-linecap="round" data-fgcolor="#0aaae7" value="0" data-thickness=".1" data-displayinput="false" data-targetvalue="20" class="dial" type="text">
+			<div class="col-md-4">
+				<div class="box4">
+					<canvas style="width: 84px; height: 200px;" height="400"
+						width="168"></canvas>
+					<input readonly="readonly"
+						style="display: none; width: 0px; visibility: hidden;"
+						id="ch_split-qa_value" data-width="84" data-readonly="true"
+						data-linecap="round" data-fgcolor="#0aaae7" value="0"
+						data-thickness=".1" data-displayinput="false"
+						data-targetvalue="20" class="dial" type="text">
 
 					<div class="content">
 						<div class="header">Homework</div>
@@ -89,13 +103,17 @@
 					</div>
 				</div>
 			</div>
-			</div>
-		<div class="col-md-4">
-			<div class="ui link cards">
-				<div class="card">
-								<canvas style="width: 84px; height: 200px;" height="400" width="168"></canvas>
-				<input readonly="readonly" style="display: none; width: 0px; visibility: hidden;" id="ch_split-qa_value" data-width="84" data-readonly="true" data-linecap="round" data-fgcolor="#0aaae7" value="0" data-thickness=".1" data-displayinput="false" data-targetvalue="20" class="dial" type="text">
-				
+			<div class="col-md-4">
+				<div class="box4">
+					<canvas style="width: 84px; height: 200px;" height="400"
+						width="168"></canvas>
+					<input readonly="readonly"
+						style="display: none; width: 0px; visibility: hidden;"
+						id="ch_split-qa_value" data-width="84" data-readonly="true"
+						data-linecap="round" data-fgcolor="#0aaae7" value="0"
+						data-thickness=".1" data-displayinput="false"
+						data-targetvalue="20" class="dial" type="text">
+
 					<div class="content">
 						<div class="header">Noto</div>
 						<div class="meta">
@@ -111,89 +129,19 @@
 					</div>
 				</div>
 			</div>
-			</div>
 
 		</div>
-
+	</div>
+	<div class="row">
 		<div class="howitWork">
 			<h1>How it Works?</h1>
-	
-			<div class="col-md-4">
-			<div class="ui link cards">
-				<div class="card">
-								<canvas style="width: 84px; height: 200px;" height="400" width="168"></canvas>
-				<input readonly="readonly" style="display: none; width: 0px; visibility: hidden;" id="ch_split-qa_value" data-width="84" data-readonly="true" data-linecap="round" data-fgcolor="#0aaae7" value="0" data-thickness=".1" data-displayinput="false" data-targetvalue="20" class="dial" type="text">
-				
-					<div class="content">
-						<div class="header">Noto</div>
-						<div class="meta">
-							<a>Friends</a>
-						</div>
-						<div class="description">Veronika Ossi is a set designer
-							living in New York who enjoys kittens, music, and partying.</div>
-					</div>
-					<div class="extra content">
-						<span class="right floated"> Joined in 2013 </span> <span>
-							<i class="user icon"></i> 75 Friends
-						</span>
-					</div>
-				</div>
-			</div>
-			</div>
-	
-			<div class="col-md-4">
-			<div class="ui link cards">
-				<div class="card">
-								<canvas style="width: 84px; height: 200px;" height="400" width="168"></canvas>
-				<input readonly="readonly" style="display: none; width: 0px; visibility: hidden;" id="ch_split-qa_value" data-width="84" data-readonly="true" data-linecap="round" data-fgcolor="#0aaae7" value="0" data-thickness=".1" data-displayinput="false" data-targetvalue="20" class="dial" type="text">
-				
-					<div class="content">
-						<div class="header">Noto</div>
-						<div class="meta">
-							<a>Friends</a>
-						</div>
-						<div class="description">Veronika Ossi is a set designer
-							living in New York who enjoys kittens, music, and partying.</div>
-					</div>
-					<div class="extra content">
-						<span class="right floated"> Joined in 2013 </span> <span>
-							<i class="user icon"></i> 75 Friends
-						</span>
-					</div>
-				</div>
-			</div>
-			</div>
-	
-			<div class="col-md-4">
-			<div class="ui link cards">
-				<div class="card">
-								<canvas style="width: 84px; height: 200px;" height="400" width="168"></canvas>
-				<input readonly="readonly" style="display: none; width: 0px; visibility: hidden;" id="ch_split-qa_value" data-width="84" data-readonly="true" data-linecap="round" data-fgcolor="#0aaae7" value="0" data-thickness=".1" data-displayinput="false" data-targetvalue="20" class="dial" type="text">
-				
-					<div class="content">
-						<div class="header">Noto</div>
-						<div class="meta">
-							<a>Friends</a>
-						</div>
-						<div class="description">Veronika Ossi is a set designer
-							living in New York who enjoys kittens, music, and partying.</div>
-					</div>
-					<div class="extra content">
-						<span class="right floated"> Joined in 2013 </span> <span>
-							<i class="user icon"></i> 75 Friends
-						</span>
-					</div>
-				</div>
-			</div>
-			</div>
-	
 		</div>
-
-		
 	</div>
 
+</div>
 
-	<script type="text/javascript">
+
+<script type="text/javascript">
 	$(document).ready(function() {
 		// navigation click actions
 		$('.scroll-link').on('click', function(event) {
@@ -235,4 +183,4 @@
 	}
 </script>
 
-	<%@include file="footer.jsp"%>
+<%@include file="footer.jsp"%>
