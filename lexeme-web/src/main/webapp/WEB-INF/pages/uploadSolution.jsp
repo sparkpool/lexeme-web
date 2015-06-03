@@ -28,7 +28,7 @@ canvas {
 <!-- Upload solution form -->
 
 <div id="page-content">
-	<div class="container">
+	<div class="container-fluid">
 		<section id="content">
 			<div class="feedback-form-center" align="center">
 				<div class="feedback-support-text">

@@ -2,144 +2,134 @@
 
 <div id="page-content">
 	<!-- Open Page conatiner -->
+	<div class="container-fluid">
 
-	<!-- Container -->
-
-	<div class="into">
-		<div class="row">
-			<div class="col-md-12">
-
-
-
-				<h1>Welcome to NotoHub</h1>
-
-
-				<div class="form-group" align="center">
-					<form class="form-search" ng-controller="autocompleteController"
-						align="center">
-
-						<div class="col-md-6 col-md-offset-2">
-
-							<input type="text" ng-model="sol.course"
-								placeholder="	CourseID | Course Name | Subject | University  	"
-								typeahead="c as c.courseid for c in list | filter:$viewValue | limitTo:10"
-								typeahead-min-length='1'
-								typeahead-on-select='onSelectPart($item, $model, $label)'
-								typeahead-template-url="customTemplate.html"
-								class="form-control" name="course">
-						</div>
-						<div class="col-md-2">
-
-							<button type="submit" class="btn btn-info">Go</button>
-						</div>
-
-					</form>
-				</div>
-
-
-			</div>
-			<!--  -->
-		</div>
-
-
-	</div>
-
-
+		<section id="content">
+			<div class="into" >
+				<div class="row">
+					<div class="row">
+				
+					<div class="col-md-12">
+	
+							<h1>Get Help from Anywhere</h1>
+					</div>
+						
+					</div>
 	<div class="row">
-		<div class="about">
-			<h1>Browse Library</h1>
-			<p>Noto Hub offers students crowd-sourced study documents, expert
-				tutors and customizable flashcards, accessible anywhere, at any
-				time.</p>
-			<hr>
-			<div class="col-md-4">
-				<div class="box4">
-					<canvas style="width: 84px; height: 200px;" height="400"
-						width="168"></canvas>
-					<input readonly="readonly"
-						style="display: none; width: 0px; visibility: hidden;"
-						id="ch_split-qa_value" data-width="84" data-readonly="true"
-						data-linecap="round" data-fgcolor="#0aaae7" value="0"
-						data-thickness=".1" data-displayinput="false"
-						data-targetvalue="20" class="dial" type="text">
-					<div class="content">
-						<div class="header">Documents</div>
-						<div class="meta">
-							<a>Friends</a>
+
+						<div class="col-md-12">
+
+							<div class="tree">
+								<ul>
+
+									<li><a href="#">NotoHub</a>
+										<ul>
+											<li><a href="#">Login</a>
+												<ul>
+													<a href="#">If you don't have any account</a>
+												</ul></li>
+											<li><a href="#">Singup</a></li>
+											<li><a href="#">Search Solution</a>
+												<ul>
+													<li><a href="#">Download</a>
+												</ul></li>
+
+
+										</ul></li>
+								</ul>
+							</div>
+							</div>
 						</div>
-						<div class="description">Veronika Ossi is a set designer
-							living in New York who enjoys kittens, music, and partying.</div>
-					</div>
-					<div class="extra content">
-						<span class="right floated"> Joined in 2013 </span> <span>
-							<i class="user icon"></i> 75 Friends
-						</span>
 					</div>
 				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="box4">
-					<canvas style="width: 84px; height: 200px;" height="400"
-						width="168"></canvas>
-					<input readonly="readonly"
-						style="display: none; width: 0px; visibility: hidden;"
-						id="ch_split-qa_value" data-width="84" data-readonly="true"
-						data-linecap="round" data-fgcolor="#0aaae7" value="0"
-						data-thickness=".1" data-displayinput="false"
-						data-targetvalue="20" class="dial" type="text">
 
-					<div class="content">
-						<div class="header">Homework</div>
-						<div class="meta">
-							<a>Friends</a>
+			</div>
+
+
+			<div class="row">
+
+				<div class="about" id="res">
+						<div class="row">
+					
+						<div class="col-md-12">
+							<h1>Resources</h1>
 						</div>
-						<div class="description">Veronika Ossi is a set designer
-							living in New York who enjoys kittens, music, and partying.</div>
-					</div>
-					<div class="extra content">
-						<span class="right floated"> Joined in 2013 </span> <span>
-							<i class="user icon"></i> 75 Friends
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="box4">
-					<canvas style="width: 84px; height: 200px;" height="400"
-						width="168"></canvas>
-					<input readonly="readonly"
-						style="display: none; width: 0px; visibility: hidden;"
-						id="ch_split-qa_value" data-width="84" data-readonly="true"
-						data-linecap="round" data-fgcolor="#0aaae7" value="0"
-						data-thickness=".1" data-displayinput="false"
-						data-targetvalue="20" class="dial" type="text">
 
-					<div class="content">
-						<div class="header">Noto</div>
-						<div class="meta">
-							<a>Friends</a>
 						</div>
-						<div class="description">Veronika Ossi is a set designer
-							living in New York who enjoys kittens, music, and partying.</div>
-					</div>
-					<div class="extra content">
-						<span class="right floated"> Joined in 2013 </span> <span>
-							<i class="user icon"></i> 75 Friends
-						</span>
-					</div>
-				</div>
-			</div>
+							<div class="row">
+						
+						<div class="col-md-12">
+							<div class="tree">
 
-		</div>
-	</div>
-	<div class="row">
-		<div class="howitWork">
-			<h1>How it Works?</h1>
-		</div>
-	</div>
+								<ul>
+									<li><a href="#">Documents</a>
+										<ul>
+											<li><a href="#">Notes</a>
+												<ul>
+													<li><a href="#">10,000</a></li>
+												</ul></li>
+											<li><a href="#">Homework</a>
+												<ul>
+													<li><a href="#">Grand Child</a></li>
+													<li><a href="#">Grand Child</a>
+														<ul>
+															<li><a href="#">Great Grand Child</a></li>
+														</ul></li>
+												</ul></li>
+											<li><a href="#">Essay</a></li>
 
+											<li><a href="#">Labs</a></li>
+										</ul></li>
+								</ul>
+
+
+							</div>
 </div>
+						</div>
+					</div>
+				</div>
 
+				<hr>
+				<div class="row">
+
+					<div class="about">
+						<div class="row">
+
+							<div class="col-md-12">
+								<h1>How it works</h1>
+							</div>
+
+						</div>
+						<div class="row">
+
+							<div id="col-md-6 col-md-offset 5" >
+								<div class="tree">
+									<ul>
+										<li><a href="#">Search Solution</a>
+											<ul>
+												<li><a href="#">Check Solution</a></li>
+												<li><a href="#">Payment</a></li>
+
+
+												<li><a href="#">Get Solution/Download</a></li>
+
+
+
+
+											</ul></li>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+</div>
 
 <script type="text/javascript">
 	$(document).ready(function() {

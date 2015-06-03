@@ -2,7 +2,7 @@
 <%@ include file="header.jsp"%>
 
 <div id="page-content">
-	<div class=" container" ng-app="myApp" ng-controller="authCtrl">
+	<div class=" container-fluid" ng-app="myApp" ng-controller="authCtrl">
 		<section id="content">
 			<!-- Profile Picture -->
 			<div class="row">

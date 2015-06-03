@@ -120,18 +120,29 @@
 			</div>
 			<div id="slidemenu">
 				<ul class="nav navbar-nav navbar-right">
- 				<li><a href="${pageContext.request.contextPath}">Resources</a>
+
+ 				<li><a href="#" id="#res">Resources</a>
+ 				</li>
+ 													<li><a href="#how">How it works</a></li>
+
 			
+									<li><a href="${pageContext.request.contextPath}/upload">Earn
+							Money</a></li>
+
+					
 					<shiro:notAuthenticated>
 						<li class="active"><a
 							href="${pageContext.request.contextPath}/user/login"><i
 								class="glyphicon glyphicon-cloud"></i> Login</a></li>
 						<li><a href="${pageContext.request.contextPath}/user/signup">Sign
 								up</a></li>
+								
+								
 					</shiro:notAuthenticated>
 
 
 					<shiro:authenticated>
+
 
 						<li id="dropdown" align="left"><a href=""
 							data-toggle="dropdown" class="dropdown-toggle"> <img
@@ -147,10 +158,7 @@
 							</ul></li>
 
 					</shiro:authenticated>
-					<li><a href="${pageContext.request.contextPath}/upload">Earn
-							Money</a></li>
-
-				</ul>
+								</ul>
 			</div>
 		</div>
 	</div>
