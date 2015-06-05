@@ -111,15 +111,15 @@
 								<div class="two column">
 									<div class=" column">
 
-										<form action="" class="ui form" ng-submit="userGenInfo();">
+										<form action="" class="ui form" method="POST">
 											<div class="field">
-												<label>Name</label><input type="email" name="paypalid" />
+												<label>Name</label><input type="text" name="name" />
 
 											</div>
 											<br />
 											<div class="field">
-												<label>School/University</label> <input type="email"
-													name="paypalid" />
+												<label>School/University</label> <input type="text"
+													name="university" />
 											</div>
 											<br /> <br />
 											<div class=" column">
@@ -139,42 +139,51 @@
 						</div>
 
 						<div class="ui bottom  attached tab segment" data-tab="second">
-							<div class="ui segment">
-								<div class="right aligned column">
-									<h5 align="left">Experience</h5>
+							<div class="right aligned column">
+								<h5 align="left">Experience</h5>
 
-									<hr>
-									<form action="" class="ui form" ng-submit="changePassword();">
+								<hr>
+								<form action="" class="ui form" method="POST" id="eventForm">
+									<div class="field">
+										<label> Company Name</label> <input type="text"
+											name="companyName" />
+									</div>
+
+									<div class="field">
+										<label>Job Title</label> <input type="text" name="Job Title" />
+									</div>
+
+									<div class="field">
+										<label>From:</label>
+										<div class="input-group input-append date" id="datePicker">
+											<input type="text" class="form-control" name="date" /> <span
+												class="input-group-addon add-on"><span
+												class="glyphicon glyphicon-calendar"></span></span>
+										</div>
+										
+
+
+									</div>
 										<div class="field">
-											<label> Company Name</label> <input type="email"
-												name="paypalid" />
+								
+										<label>to:</label>
+										<div class="input-group input-append date" id="datePicker1">
+											<input type="text" class="form-control" name="date" /> <span
+												class="input-group-addon add-on"><span
+												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
 
-										<div class="field">
-											<label>Job Title</label> <input type="email" name="paypalid" />
-										</div>
+</div>
 
-										<div class="field">
-											<label>From:</label> <input type="email" name="paypalid" />
+									<input class="ui orange save button" type="submit" name="SAVE"
+										placeholder="Edit">
 
 
-											<label>to:</label> <input type="email" name="paypalid" />
-
-
-
-										</div>
-
-
-										<input class="ui orange save button" type="submit" name="SAVE"
-											placeholder="Edit">
-
-
-									</form>
-
-								</div>
-
+								</form>
 
 							</div>
+
+
 						</div>
 
 
@@ -182,46 +191,42 @@
 						<!-- Personal Information -->
 						<div class="ui bottom attached  tab segment" data-tab="third">
 
-							<!-- Acdemic information  section -->
-							<div class="ui orange segment">
+
+							<div class="right aligned column">
+								<h5 align="left">Academic Information</h5>
+							</div>
+							<hr>
 
 
-								<div class="right aligned column">
-									<h5 align="left">Academic Information</h5>
-									<input class="ui orange save button" type="submit" name="SAVE"
-										placeholder="Edit">
+							<div class="column">
+								<div class="ui horizontal segment">
+
+									<form action="" class="ui form" ng-submit="changePassword();">
+										<div class="right field input">
+
+											<label>School Name</label> <input type="text" name="paypalid" />
+										</div>
+
+										<div class="right field input">
+											<label>Degree</label> <input type="text" name="paypalid" />
+										</div>
+
+
+										<div class="right field input">
+											<label>Year of Passing</label> <input type="email"
+												name="paypalid" />
+										</div>
+
+										<div class="field">
+											<input class="ui orange save button" type="submit"
+												name="SAVE" placeholder="Edit">
+
+										</div>
+
+
+									</form>
 
 								</div>
-								<hr>
-
-
-								<div class="column">
-									<div class="ui horizontal segment">
-
-										<form action="" class="ui form" ng-submit="changePassword();">
-											<div class="right field input">
-
-												<label>School Name</label> <input type="text"
-													name="paypalid" />
-											</div>
-
-											<div class="right field input">
-												<label>Degree</label> <input type="text" name="paypalid" />
-											</div>
-
-
-											<div class="right field input">
-												<label>Year of Passing</label> <input type="email"
-													name="paypalid" />
-											</div>
-
-
-
-										</form>
-
-									</div>
-								</div>
-
 							</div>
 
 
@@ -237,34 +242,37 @@
 
 								<div class="right aligned column">
 									<h5 align="left">Change Password</h5>
-									<input class="ui orange save button" type="submit" name="SAVE"
-										placeholder="Edit">
 
 								</div>
 
-
+								<hr>
 								<div class="column">
 									<div class="ui horizontal segment">
 
 										<form action="" class="ui form" ng-submit="changePassword();">
 											<div class="right field input">
 
-												<label>Current Password</label> <input type="email"
-													name="paypalid" />
+												<label>Current Password</label> <input type="password"
+													name="password" />
 											</div>
 
 											<div class="right field input">
-												<label>New Password</label> <input type="email"
-													name="paypalid" />
+												<label>New Password</label> <input type="password"
+													name="newpwd" />
 											</div>
 
 
 											<div class="right field input">
-												<label>Confirm New Password</label> <input type="email"
-													name="paypalid" />
+												<label>Confirm New Password</label> <input type="password"
+													name="confirmPassword" />
 											</div>
 
+											<div class="field">
 
+												<input class="ui orange save button" type="submit"
+													name="SAVE" placeholder="Edit">
+
+											</div>
 
 										</form>
 
@@ -278,28 +286,53 @@
 							<div class="ui  segment">
 								<div class="right aligned column">
 									<h5 align="left">Contact Information</h5>
-
-									<input class="ui orange save button" type="submit" name="SAVE"
-										placeholder="Edit">
-
 								</div>
-
+								<hr>
 								<form action="" class="ui form" ng-submit="changePassword();">
 
 									<div class="field">
-										<label>Email:</label> <input type="email" name="paypalid" />
+										<label>Email:</label> <input type="email" name="email" />
 									</div>
 
 									<div class="field">
-										<label>Phone Number:</label> <input type="email"
-											name="paypalid" />
+										<label>Phone Number:</label> <input type="text"
+											name="phNumber" />
+									</div>
+
+									<div class="field">
+
+										<input class="ui orange save button" type="submit" name="SAVE"
+											placeholder="Edit">
+
 									</div>
 								</form>
+								
+							<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+							<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+							<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+								
+								<script>
+ 					$(document).ready(function () {
+                
+                $('#datePicker').datepicker({
+                    format: "dd/mm/yyyy"
+                });
+                
+                 $('#datePicker1').datepicker({
+                    format: "dd/mm/yyyy"
+                });
+                
+                });  
+            
+
+</script>
 							</div>
 						</div>
 						<!-- Close profile section -->
 		</section>
 	</div>
 </div>
+
+
 
 <%@ include file="footer.jsp"%>

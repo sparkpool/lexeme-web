@@ -92,7 +92,7 @@
 				<hr>
 				<div class="row">
 
-					<div class="about">
+					<div class="howitWork">
 						<div class="row">
 
 							<div class="col-md-12">

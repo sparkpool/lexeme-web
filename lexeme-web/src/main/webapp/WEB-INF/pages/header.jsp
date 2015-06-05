@@ -9,11 +9,35 @@
     $(function(){
     $('#menu-button').click(function(){$('#container').toggleClass('active');});
 	});
+	
+	
+	
 </script>
+
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
 <!-- Full Body Container -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=0">
+
+
+<!-- date picker -->
+<!-- Include Bootstrap Datepicker -->
+
+<style type="text/css">
+/**
+ * Override feedback icon position
+ * See http://formvalidation.io/examples/adjusting-feedback-icon-position/
+ */
+#eventForm .form-control-feedback {
+    top: 0;
+    right: -15px;
+}
+</style>
 
 <!--Angular script for UI/DO Rendering-->
 <script
@@ -99,6 +123,7 @@
 	type="text/css" media="screen" charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
 
 </head>
 
