@@ -113,10 +113,14 @@
 
 										<form action="" class="ui form" method="POST">
 											<div class="field">
-												<label>Name</label><input type="text" name="name" />
+												<label>First Name</label><input type="text" name="firstName" />
 
 											</div>
 											<br />
+											<div class="field">
+												<label>Last Name</label><input type="text" name="lastName" />
+
+											</div>
 											<div class="field">
 												<label>School/University</label> <input type="text"
 													name="university" />
@@ -146,17 +150,17 @@
 								<form action="" class="ui form" method="POST" id="eventForm">
 									<div class="field">
 										<label> Company Name</label> <input type="text"
-											name="companyName" />
+											name="COMPANY" />
 									</div>
 
 									<div class="field">
-										<label>Job Title</label> <input type="text" name="Job Title" />
+										<label>Job Title</label> <input type="text" name="JOB_TITLE" />
 									</div>
 
 									<div class="field">
 										<label>From:</label>
 										<div class="input-group input-append date" id="datePicker">
-											<input type="text" class="form-control" name="date" /> <span
+											<input type="text" class="form-control" name="FROM_TIME" /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
@@ -168,7 +172,7 @@
 								
 										<label>to:</label>
 										<div class="input-group input-append date" id="datePicker1">
-											<input type="text" class="form-control" name="date" /> <span
+											<input type="text" class="form-control" name="TO_TIME" /> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
@@ -204,17 +208,17 @@
 									<form action="" class="ui form" ng-submit="changePassword();">
 										<div class="right field input">
 
-											<label>School Name</label> <input type="text" name="paypalid" />
+											<label>School Name</label> <input type="text" name="SCHOOL" />
 										</div>
 
 										<div class="right field input">
-											<label>Degree</label> <input type="text" name="paypalid" />
+											<label>Degree</label> <input type="text" name="DEGREE" />
 										</div>
 
 
 										<div class="right field input">
-											<label>Year of Passing</label> <input type="email"
-												name="paypalid" />
+											<label>Year of Passing</label> <input type="text"
+												name="YEAR" />
 										</div>
 
 										<div class="field">
@@ -291,12 +295,12 @@
 								<form action="" class="ui form" ng-submit="changePassword();">
 
 									<div class="field">
-										<label>Email:</label> <input type="email" name="email" />
+										<label>Email:</label> <input type="email" name="EMAIL" />
 									</div>
 
 									<div class="field">
 										<label>Phone Number:</label> <input type="text"
-											name="phNumber" />
+											name="PHONE_NO" />
 									</div>
 
 									<div class="field">
