@@ -2,10 +2,19 @@ package com.lexeme.web.pojo.user;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.lexeme.web.domain.user.User;
+
 public class UserContactInfo {
 
 	private String email;
 	private String phoneNumber;
+	
+	public UserContactInfo(){}
+	
+	public UserContactInfo(User user){
+		this.email = user.getEmail();
+		this.phoneNumber = user.getPhoneNo();
+	}
 	
 	public boolean validate(){
 		if(StringUtils.isBlank(email) || StringUtils.isBlank(phoneNumber) ||

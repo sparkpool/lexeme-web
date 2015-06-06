@@ -2,6 +2,7 @@ package com.lexeme.web.enums;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import com.lexeme.web.domain.acl.Roles;
 
@@ -52,6 +53,21 @@ public enum EnumRoles {
 		strBuilder.append(STUDENT_UNVERIFIED.getRole()).append(",").
 		append(TUTOR_UNVERIFIED.getRole());
 		return strBuilder.toString();
+	}
+	
+	public static String getUnverifiedRoleFromListOfRoles(Set<Roles> roles){
+		for(Roles role : roles){
+			if(role.getName().equals(STUDENT.getRole())){
+				return STUDENT_UNVERIFIED.getRole();
+			}else if(role.getName().equals(TUTOR.getRole())){
+				return TUTOR_UNVERIFIED.getRole();
+			}else if(role.getName().equals(STUDENT_UNVERIFIED.getRole())){
+				return STUDENT_UNVERIFIED.getRole();
+			}else if(role.getName().equals(TUTOR_UNVERIFIED.getRole())){
+				return TUTOR_UNVERIFIED.getRole();
+			}
+		}
+		return null;
 	}
 	
 	public String getDisplayName() {

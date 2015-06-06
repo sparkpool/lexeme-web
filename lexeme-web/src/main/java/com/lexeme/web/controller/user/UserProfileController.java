@@ -1,8 +1,10 @@
 package com.lexeme.web.controller.user;
 
+import javax.servlet.ServletContext;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import org.apache.shiro.authz.annotation.RequiresRoles;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,30 +18,34 @@ import com.lexeme.web.pojo.user.UserContactInfo;
 import com.lexeme.web.pojo.user.UserEducation;
 import com.lexeme.web.pojo.user.UserExperience;
 import com.lexeme.web.pojo.user.UserProfile;
+import com.lexeme.web.pojo.user.UserTO;
 import com.lexeme.web.service.user.IUserProfileService;
-import com.lexeme.web.to.user.UserTO;
 import com.lexeme.web.util.LexemeUtil;
 
 @Controller
 @RequestMapping("/profile")
-@RequiresRoles("TUTOR,STUDENT,STUDENT_UNVERIFIED,TUTOR_UNVERIFIED")
 public class UserProfileController {
 
 	private static final Logger logger = Logger.getLogger(UserProfileController.class);
 	
 	@Autowired
 	private IUserProfileService userProfileService;
+
+	@Autowired
+	private ServletContext servletContext;
 	
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
+	@RequiresAuthentication
 	public ModelAndView profile(){
 		ModelAndView model = new ModelAndView();
 		model.setViewName("profile");
-		UserTO userTo = null;
-		//TODO# Get User Values from DB and then pass model to view
-		return model;
+	    UserTO userTO = getUserProfileService().getUserDetails();
+		model.addObject("userTO", userTO);
+	    return model;
 	}
 	
 	@RequestMapping(value = "/changePassword", method = RequestMethod.POST)
+	@RequiresAuthentication
 	public ModelAndView changePassword(UserChangePassword userChangePassword){
 		ModelAndView model = new ModelAndView();
 		model.setViewName("profile");
@@ -66,6 +72,7 @@ public class UserProfileController {
 
 	@RequestMapping(value = "/updateContactInfo", method = RequestMethod.POST)
 	@ResponseBody
+	@RequiresAuthentication
 	public String updateUserContactInfo(UserContactInfo userContactInfo){
 	    try{
 	    	if(!userContactInfo.validate()){
@@ -73,7 +80,7 @@ public class UserProfileController {
 	    	}else if(!LexemeUtil.validateEmail(userContactInfo.getEmail())){
 	    		return MessageConstants.INVALID_EMAIL_FORMAT;
 	    	}else{
-	    		return getUserProfileService().validateAndSaveUserContactInfo(userContactInfo);
+	    		return getUserProfileService().validateAndSaveUserContactInfo(userContactInfo, getServletContext().getContextPath());
 	    	}
 	    }catch(Exception e){
 	    	logger.error("Exception occured : " + e.getMessage());
@@ -84,6 +91,7 @@ public class UserProfileController {
 
 	@RequestMapping(value = "/updateUserProf", method = RequestMethod.POST)
 	@ResponseBody
+	@RequiresAuthentication
 	public String updateUserProfileInfo(UserProfile userProfile){
 		try{
 		if(!userProfile.validate()){
@@ -101,6 +109,7 @@ public class UserProfileController {
 	
 	@RequestMapping(value = "/updateUserEdu", method = RequestMethod.POST)
 	@ResponseBody
+	@RequiresAuthentication
 	public String updateUserEducation(UserEducation userEducation){
 		try{
 			if(!userEducation.validate()){
@@ -118,6 +127,7 @@ public class UserProfileController {
 	
 	@RequestMapping(value = "/updateUserExp", method = RequestMethod.POST)
 	@ResponseBody
+	@RequiresAuthentication
 	public String updateUserExperience(UserExperience userExperience){
 		try{
 			if(!userExperience.validate()){
@@ -136,5 +146,9 @@ public class UserProfileController {
 	public IUserProfileService getUserProfileService() {
 		return userProfileService;
 	}
-	
+
+	public ServletContext getServletContext() {
+		return servletContext;
+	}
+
 }

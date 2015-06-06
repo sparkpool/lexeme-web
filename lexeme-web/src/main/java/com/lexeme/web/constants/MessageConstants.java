@@ -32,4 +32,5 @@ public class MessageConstants {
 	public static final String MANDATORY_PARAMS = "Mandatory Params are missing";
 	public static final String MANDATORY_PARAMS_LENGTH = "Params Length are not in range";
 	public static final String INFO_UPDATE_SUCCESS = "Your Information Updated Successfully";
+	public static final String INFO_WITH_EMAIL_SENT = "Your Information has been updated successfuly and an Email has been sent to your email for Account verification";
 }

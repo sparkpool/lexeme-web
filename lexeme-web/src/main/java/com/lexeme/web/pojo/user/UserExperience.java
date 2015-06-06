@@ -2,6 +2,8 @@ package com.lexeme.web.pojo.user;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.lexeme.web.domain.user.UserExp;
+
 public class UserExperience {
 
 	private String company;
@@ -10,19 +12,34 @@ public class UserExperience {
 	private String toTime;
 	private String location;
 	private String other;
-	
-	public boolean validate(){
-		if(StringUtils.isBlank(company) || StringUtils.isBlank(jobTitle) ||
-				StringUtils.isBlank(fromTime) || StringUtils.isBlank(toTime) || 
-				StringUtils.isBlank(location)){
+
+	public UserExperience() {
+	}
+
+	public UserExperience(UserExp userExp) {
+		if (userExp != null) {
+			this.company = userExp.getCompany();
+			this.jobTitle = userExp.getJobTitle();
+			this.fromTime = userExp.getFromTime();
+			this.toTime = userExp.getToTime();
+			this.location = userExp.getLocation();
+			this.other = userExp.getOther();
+		}
+	}
+
+	public boolean validate() {
+		if (StringUtils.isBlank(company) || StringUtils.isBlank(jobTitle)
+				|| StringUtils.isBlank(fromTime) || StringUtils.isBlank(toTime)
+				|| StringUtils.isBlank(location)) {
 			return false;
 		}
 		return true;
 	}
-	
-	public boolean validateLength(){
-		if(company.length() > 50 || jobTitle.length() > 50 || fromTime.length() > 20 ||
-				toTime.length() > 20 || location.length() > 50){
+
+	public boolean validateLength() {
+		if (company.length() > 50 || jobTitle.length() > 50
+				|| fromTime.length() > 20 || toTime.length() > 20
+				|| location.length() > 50) {
 			return false;
 		}
 		return true;
@@ -75,5 +92,5 @@ public class UserExperience {
 	public void setOther(String other) {
 		this.other = other;
 	}
-	
+
 }
