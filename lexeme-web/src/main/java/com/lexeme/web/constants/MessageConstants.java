@@ -25,4 +25,5 @@ public class MessageConstants {
 	public static final String INVALID_OLD_PASSWORD = "Invalid Old Password";
 	public static final String PASSWORD_CHANGE_SUCCESSFULLY = "Password change successfully, please login to continue";
 	public static final String OLD_NEW_PASSWORD_SAME = "Old and New Password can not be same";
+	public static final String INVALID_LOGIN_SESSION = "Invalid session, please login again !!";
 }

@@ -35,6 +35,9 @@ public class UserProfileServiceImpl implements IUserProfileService{
 			UserChangePassword userChangePassword) throws NoSuchAlgorithmException {
 		Long userId = getUserIdFromPrincipal();
 		logger.info("User Id from Principal is " + userId);
+		if(userId == null){
+			return MessageConstants.INVALID_LOGIN_SESSION;
+		}
 		User user = getUserService().getUserById(userId);
 		String password = LexemeUtil.getHashPassword(userChangePassword.getOldPassword(), user.getSalt());
 		if(!user.getPassword().equals(password)){
@@ -60,8 +63,11 @@ public class UserProfileServiceImpl implements IUserProfileService{
 	}
 	
 	private Long getUserIdFromPrincipal(){
-		Principal principal = (Principal)SecurityUtils.getSubject().getPrincipal();
-		return principal.getId();
+		if(SecurityUtils.getSubject().isAuthenticated()){
+			Principal principal = (Principal)SecurityUtils.getSubject().getPrincipal();
+			return principal.getId();	
+		}
+		return null;
 	}
 
 	public IUserService getUserService() {

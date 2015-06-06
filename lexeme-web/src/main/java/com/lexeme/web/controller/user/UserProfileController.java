@@ -46,7 +46,7 @@ public class UserProfileController {
 			String result = getUserProfileService().validateAndSaveNewPassword(userChangePassword);
 			if(StringUtils.isBlank(result)){
 				model.addObject("msg",MessageConstants.PASSWORD_CHANGE_SUCCESSFULLY);
-				model.setViewName("home");
+				model.setViewName("login");
 			}else{
 				model.addObject("errorMsg",result);
 			}
