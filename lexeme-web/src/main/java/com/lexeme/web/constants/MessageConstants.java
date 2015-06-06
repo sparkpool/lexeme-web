@@ -26,4 +26,10 @@ public class MessageConstants {
 	public static final String PASSWORD_CHANGE_SUCCESSFULLY = "Password change successfully, please login to continue";
 	public static final String OLD_NEW_PASSWORD_SAME = "Old and New Password can not be same";
 	public static final String INVALID_LOGIN_SESSION = "Invalid session, please login again !!";
+	public static final String INVALID_EMAIL_PHONE_NO = "Invalid Email or Phone No or Phone No must be between 6 to 15 characters";
+	public static final String INVALID_EMAIL_FORMAT = "Email is not in valid format";
+	public static final String CONTACT_INFO_UPDATED = "Contact Info Updated Successfully";
+	public static final String MANDATORY_PARAMS = "Mandatory Params are missing";
+	public static final String MANDATORY_PARAMS_LENGTH = "Params Length are not in range";
+	public static final String INFO_UPDATE_SUCCESS = "Your Information Updated Successfully";
 }
