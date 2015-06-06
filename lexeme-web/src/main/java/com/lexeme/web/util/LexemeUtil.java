@@ -8,6 +8,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
+import org.apache.shiro.crypto.RandomNumberGenerator;
+import org.apache.shiro.crypto.SecureRandomNumberGenerator;
+import org.apache.shiro.crypto.hash.Sha256Hash;
 
 import com.lexeme.web.constants.RegexConstants;
 
@@ -81,5 +84,14 @@ public class LexemeUtil {
 	public static String getRandomDigit(){
 		Random random = new Random();
 		return String.valueOf(random.nextLong());
+	}
+	
+	public static String getHashPassword(String password, String salt) throws NoSuchAlgorithmException{
+		return new Sha256Hash(password, salt, 1024).toBase64();
+	}
+	
+	public static String getSalt(){
+		RandomNumberGenerator rng = new SecureRandomNumberGenerator();
+		return rng.nextBytes().toHex();
 	}
 }

@@ -53,7 +53,7 @@ public enum EnumRoles {
 		append(TUTOR_UNVERIFIED.getRole());
 		return strBuilder.toString();
 	}
-
+	
 	public String getDisplayName() {
 		return displayName;
 	}

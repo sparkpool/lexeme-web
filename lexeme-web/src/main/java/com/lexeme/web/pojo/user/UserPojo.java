@@ -145,8 +145,7 @@ public class UserPojo {
 	
 	@Override
 	public String toString() {
-		return "UserPojo [id=" + id + ", email=" + email + ", password="
-				+ password + ", confirmPassword=" + confirmPassword
+		return "UserPojo [id=" + id + ", email=" + email 
 				+ ", userName=" + userName + ", firstName=" + firstName
 				+ ", middleName=" + middleName + ", lastName=" + lastName
 				+ ", phoneNo=" + phoneNo + ", msg=" + msg + "]";
