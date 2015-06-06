@@ -99,13 +99,11 @@
 					<div class="profile">
 						<div class="ui pointing secondary menu">
 							<a class="active blue item" data-tab="first">Profile</a> 
-										<shiro:hasRole name="<%=EnumRoles.TUTOR.getRole()%>">
 			
 							
 							<a
 								class="blue item" data-tab="second">Experience</a>
 								
-								</shiro:hasRole>
 								 <a
 								class="blue item" data-tab="third">Education</a> <a
 								class="blue item" data-tab="forth">Settings</a>
@@ -120,7 +118,7 @@
 
 
 										<!-- User name -->
-										<form action="${pageContext.request.contextPath}/profile/"
+										<form action="${pageContext.request.contextPath}/profile/updateUserProfile"
 											name="form" method="POST" class="ui form">
 
 
@@ -249,8 +247,6 @@
 							</div>
 
 						</div>
-										<shiro:hasRole name="<%=EnumRoles.TUTOR.getRole()%>">
-			
 				
 						<div class="ui bottom  attached tab segment" data-tab="second">
 							<div class="right aligned column">
@@ -258,7 +254,7 @@
 
 								<hr>
 								<form
-									action="${pageContext.request.contextPath}/profile/contactInfo"
+									action="${pageContext.request.contextPath}/profile/updateUserExp"
 									name="form" method="POST" class="ui form">
 									<div class="field">
 										<label> Company Name</label> <input type="text" name="company" id="company" placeholder="Company"/>
@@ -288,6 +284,19 @@
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
 
+
+								<div class="field">
+											<label>Location</label>
+											
+											<input type="text" name="location" id="location" placeholder="Location" /> 
+										</div>
+										<div class="field">
+											<label>Other</label>
+											
+											<input type="text" name="other" id="other" placeholder="Other" /> 
+										</div>
+										
+									
 									</div>
 
 									<input class="ui orange save button" type="submit" name="SAVE"
@@ -300,7 +309,6 @@
 
 
 						</div>
-</shiro:hasRole>
 
 						<!-- Personal Information -->
 						<div class="ui bottom attached  tab segment" data-tab="third">
@@ -316,22 +324,35 @@
 								<div class="ui horizontal segment">
 
 									<form
-										action="${pageContext.request.contextPath}/profile/contactInfo"
+										action="${pageContext.request.contextPath}/profile/updateUserEdu"
 										name="form" method="POST" class="ui form">
 										<div class="right field input">
 
-											<label>School Name</label> <input type="text" name="schoolName" id="toTime" placeholder="School Name"/>
+											<label>School Name</label> <input type="text" name="school" id="school" placeholder="School Name"/>
 										</div>
 
 										<div class="right field input">
-											<label>Degree</label> <input type="text" name="degree" id="toTime" placeholder="Degree"/>
+											<label>Degree</label> <input type="text" name="degree" id="degree" placeholder="Degree"/>
 										</div>
 
 
 										<div class="right field input">
-											<label>Year of Passing</label> <input type="text" name="year" id="toTime" placeholder="Year of Passing" />
+											<label>Year of Passing</label> <input type="text" name="year" id="year" placeholder="Year of Passing" />
 										</div>
 
+										<div class="field">
+											<label>Subject</label>
+											
+											<input type="text" name="subject" id="subject" placeholder="Subject" /> 
+										</div>
+										<div class="field">
+											<label>Other</label>
+											
+											<input type="text" name="other" id="other" placeholder="Other" /> 
+										</div>
+										
+										
+										
 										<div class="field">
 											<input class="ui orange save button" type="submit"
 												name="SAVE" placeholder="Edit">

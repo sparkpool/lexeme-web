@@ -20,23 +20,87 @@ $(document).ready(function() {
 				type : 'empty',
 				prompt : 'Please enter your first name'
 			},
-			
+
 			{
 				type : 'maxLength[50]',
 				prompt : 'Your first Name  can not be more than 50.'
-		
+
+			} ]
+		},
+		school : {
+			identifier : 'school',
+			rules : [ {
+				type : 'empty',
+				prompt : 'Please enter your school name'
+			}, {
+				type : 'maxLength[50]',
+				prompt : 'Your School Name  can not be more than 50.'
 			}
+
 			]
+		},
+		subject : {
+			identifier : 'subject',
+			rules : [
+
+			{
+				type : 'empty',
+				prompt : 'Enter your subject name'
+			}, {
+				type : 'maxLength[50]',
+				prompt : 'Your Subject Name  can not be more than 50.'
+			}
+
+			]
+		},
+		degree : {
+			identifier : 'degree',
+			rules : [ {
+				type : 'empty',
+				prompt : 'Please enter your degree name'
+			}, {
+				type : 'maxLength[50]',
+				prompt : 'Degree Name  can not be more than 50.'
+			}
+
+			]
+
+		},
+		year : {
+			identifier : 'year',
+			rules : [ {
+				type : 'empty',
+				prompt : 'Please enter your degree name'
+			},
+
+			{
+				type : 'maxLength[50]',
+				prompt : 'Year length  can not be more than 50.'
+			}
+
+			]
+		},
+		location : {
+			identifier : 'location',
+			rules : [ {
+				type : 'empty',
+				prompt : 'Please enter your company location'
+			}, {
+				type : 'maxLength[50]',
+				prompt : 'Location Name length can not be more than 50.'
+			}
+
+			]
+
 		},
 
 		middleName : {
 			identifier : 'middle-name',
-			rules : [ 
-			{
+			rules : [ {
 				type : 'maxLength[50]',
 				prompt : 'Your middle Name  can not be more than 50.'
-		
-			}]
+
+			} ]
 		},
 		dob : {
 
@@ -58,12 +122,11 @@ $(document).ready(function() {
 				type : 'empty',
 				prompt : 'Country can not be emplty'
 
-			},
-			{
+			}, {
 				type : 'maxLength[30]',
 				prompt : 'Country Name  can not be more than 30.'
-		
-			}]
+
+			} ]
 
 		},
 		state : {
@@ -75,12 +138,12 @@ $(document).ready(function() {
 				prompt : 'State can not be emplty'
 
 			},
-			
+
 			{
 				type : 'maxLength[50]',
 				prompt : 'State Name  can not be more than 30.'
-		
-			}]
+
+			} ]
 
 		},
 		city : {
@@ -91,25 +154,23 @@ $(document).ready(function() {
 				type : 'empty',
 				prompt : 'City can not be emplty'
 
-			} ,{
+			}, {
 				type : 'maxLength[50]',
 				prompt : 'City Name  can not be more than 30.'
-		
-			}]
+
+			} ]
 
 		},
 		zip : {
 			identifier : 'zip',
-			rules : [
-			{
+			rules : [ {
 				type : 'empty',
 				prompt : 'Zip can not be emplty'
-			},
-			{
+			}, {
 				type : 'maxLength[50]',
 				prompt : 'Zip Code  can not be more than 18.'
-		
-			}]
+
+			} ]
 
 		},
 		address : {
@@ -119,12 +180,11 @@ $(document).ready(function() {
 			{
 				type : 'empty',
 				prompt : 'Address can not be emplty'
-			},
-			{
+			}, {
 				type : 'maxLength[50]',
 				prompt : 'Address  can not be more than 100.'
-		
-			}]
+
+			} ]
 
 		},
 
