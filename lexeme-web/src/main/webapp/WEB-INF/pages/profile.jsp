@@ -118,8 +118,8 @@
 
 
 										<!-- User name -->
-										<form action="${pageContext.request.contextPath}/profile/updateUserProfile"
-											name="form" method="POST" class="ui form">
+										<form 
+											name="form" method="POST" class="ui form" ng-controller="authCtrl" ng-app="myApp" ng-submit="userGenInfo();">
 
 
 											<!-- firstName -->
@@ -254,8 +254,8 @@
 
 								<hr>
 								<form
-									action="${pageContext.request.contextPath}/profile/updateUserExp"
-									name="form" method="POST" class="ui form">
+									
+									name="form" method="POST" class="ui form" ng-controller="authCtrl" ng-app="myApp" ng-submit="userExperience();">
 									<div class="field">
 										<label> Company Name</label> <input type="text" name="company" id="company" placeholder="Company"/>
 									</div>
@@ -324,8 +324,8 @@
 								<div class="ui horizontal segment">
 
 									<form
-										action="${pageContext.request.contextPath}/profile/updateUserEdu"
-										name="form" method="POST" class="ui form">
+										
+										name="form" method="POST" class="ui form" ng-controller="authCtrl" ng-app="myApp" ng-submit="academicInfortion();">
 										<div class="right field input">
 
 											<label>School Name</label> <input type="text" name="school" id="school" placeholder="School Name"/>
@@ -388,7 +388,7 @@
 										<!-- Chnage password -->
 										<form
 											action="${pageContext.request.contextPath}/profile/changePassword"
-											name="form" method="POST" class="ui form">
+											name="form" method="POST" class="ui form" >
 											<div class="right field input">
 
 												<label>Current Password</label> <input type="password"
@@ -422,13 +422,14 @@
 
 							<!-- Contact Information -->
 							<div class="ui  segment">
-								<div class="right aligned column">
+								<div class="right aligned column" ng-controller="authCtrl" ng-app="myApp" >
 									<h5 align="left">Contact Information</h5>
+									<p>{successMsg}</p>
 								</div>
 								<hr>
 								<form
-									action="${pageContext.request.contextPath}/profile/contactInfo"
-									name="form" method="POST" class="ui form">
+									
+									name="form" method="POST" class="ui form" ng-controller="authCtrl" ng-app="myApp" ng-submit="contactInformation();">
 
 									<div class="field">
 										<label>Email:</label> <input type="email" name="email"

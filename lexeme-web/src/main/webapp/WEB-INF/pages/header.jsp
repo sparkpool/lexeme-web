@@ -118,6 +118,10 @@
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/angular/app.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/resources/angular/authCtrl.js"></script>
+
+
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/lwb-css.css"
 	type="text/css" media="screen" charset="utf-8">
