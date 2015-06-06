@@ -39,7 +39,7 @@
 						</div>
 
 						<!--  -->
-						<shiro:hasAnyRoles name="<%= EnumRoles.getUnverifiedRoles() %>">
+						<shiro:hasAnyRoles name="<%=EnumRoles.getUnverifiedRoles()%>">
 							Unverified
 						</shiro:hasAnyRoles>
 
@@ -47,7 +47,7 @@
 
 				</div>
 
-
+				<%@ include file="message.jsp"%>
 			</div>
 
 
@@ -98,8 +98,15 @@
 				<div class="col-md-8 " id="profile-form">
 					<div class="profile">
 						<div class="ui pointing secondary menu">
-							<a class="active blue item" data-tab="first">Profile</a> <a
-								class="blue item" data-tab="second">Experience</a> <a
+							<a class="active blue item" data-tab="first">Profile</a> 
+										<shiro:hasRole name="<%=EnumRoles.TUTOR.getRole()%>">
+			
+							
+							<a
+								class="blue item" data-tab="second">Experience</a>
+								
+								</shiro:hasRole>
+								 <a
 								class="blue item" data-tab="third">Education</a> <a
 								class="blue item" data-tab="forth">Settings</a>
 						</div>
@@ -111,20 +118,121 @@
 								<div class="two column">
 									<div class=" column">
 
-										<form action="" class="ui form" method="POST">
+
+										<!-- User name -->
+										<form action="${pageContext.request.contextPath}/profile/"
+											name="form" method="POST" class="ui form">
+
+
+											<!-- firstName -->
 											<div class="field">
-												<label>First Name</label><input type="text" name="firstName" />
+												<label>First Name</label><input type="text" name="firstName" id="first-name"  placeholder="First Name"/>
 
 											</div>
 											<br />
+											
+											
+											<!-- Middle Name -->
 											<div class="field">
-												<label>Last Name</label><input type="text" name="lastName" />
+												<label>Middle Name</label><input type="text" name="middleName" id="middle-name"  placeholder="Middle Name"/>
 
 											</div>
+											<br />
+											
+																						
+											<!-- last Name -->
+									
+											<div class="field">
+												<label>Last Name</label><input type="text" name="lastName" id="last-name" placeholder="Last Name"/>
+
+											</div>
+											
+											
+											<!-- Sex -->
+											
+											<div class="field">
+												<label>Sex</label>
+												
+												<select class="ui search dropdown">
+													<optgroup label="Gender">
+														<option value="Male">Male</option>
+														<option value="Female">Female</option>
+													
+													</optgroup>
+												</select>
+											
+											</div>
+											
+											
+											<!-- Date of Birth -->
+											<div class="field">
+												<label>DOB</label>
+											<div class="input-group input-append date" id="datePicker1">
+											<input type="text" class="form-control" name="dob" id="dob" placeholder="Date of Birth"/> <span
+												class="input-group-addon add-on"><span
+												class="glyphicon glyphicon-calendar"></span></span>
+										</div>	
+											</div>
+											
+											<!-- Country -->
+											
+											<div class="field">
+											
+												<label>Country</label>
+												<input type="text" name="country" id="country" placeholder="Country" />
+											
+											
+											</div>
+											
+											
+											<!-- City -->
+											
+											
+											<div class="field">
+											
+												<label>City</label>
+												<input type="text" name="city" id="city" placeholder="City" />
+											
+											
+											</div>
+											
+											
+											<!-- State -->
+											
+											<div class="field">
+											
+												<label>State</label>
+												<input type="text" name="state" id="state" placeholder="State" />
+											
+											
+											</div>
+											
+											
+											<!-- ZIp -->
+											<div class="field">
+											
+												<label>Zip Code</label>
+												<input type="text" name="zip" id="zip" placeholder="Zip Code" />
+											
+											
+											</div>
+											
+											<!-- Address -->
+											<div class="field">
+											
+												<label>Address</label>
+												<input type="text" name="address" id="address" placeholder="Address" />
+											
+											</div>
+											
+											
+											
+											
 											<div class="field">
 												<label>School/University</label> <input type="text"
-													name="university" />
+													name="university" required="required" id="university" placeholder="University"/>
 											</div>
+											
 											<br /> <br />
 											<div class=" column">
 
@@ -141,43 +249,46 @@
 							</div>
 
 						</div>
-
+										<shiro:hasRole name="<%=EnumRoles.TUTOR.getRole()%>">
+			
+				
 						<div class="ui bottom  attached tab segment" data-tab="second">
 							<div class="right aligned column">
 								<h5 align="left">Experience</h5>
 
 								<hr>
-								<form action="" class="ui form" method="POST" id="eventForm">
+								<form
+									action="${pageContext.request.contextPath}/profile/contactInfo"
+									name="form" method="POST" class="ui form">
 									<div class="field">
-										<label> Company Name</label> <input type="text"
-											name="COMPANY" />
+										<label> Company Name</label> <input type="text" name="company" id="company" placeholder="Company"/>
 									</div>
 
 									<div class="field">
-										<label>Job Title</label> <input type="text" name="JOB_TITLE" />
+										<label>Job Title</label> <input type="text" name="jobTitle" id="jobTitle" placeholder="Job Title" />
 									</div>
 
 									<div class="field">
 										<label>From:</label>
 										<div class="input-group input-append date" id="datePicker">
-											<input type="text" class="form-control" name="FROM_TIME" /> <span
-												class="input-group-addon add-on"><span
+											<input type="text" class="form-control" name="fromTime" id="fromTime" placeholder="From date"/>
+											<span class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
-										
+
 
 
 									</div>
-										<div class="field">
-								
+									<div class="field">
+
 										<label>to:</label>
 										<div class="input-group input-append date" id="datePicker1">
-											<input type="text" class="form-control" name="TO_TIME" /> <span
+											<input type="text" class="form-control" name="toTime" id="toTime" placeholder="To date"/> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
 
-</div>
+									</div>
 
 									<input class="ui orange save button" type="submit" name="SAVE"
 										placeholder="Edit">
@@ -189,8 +300,7 @@
 
 
 						</div>
-
-
+</shiro:hasRole>
 
 						<!-- Personal Information -->
 						<div class="ui bottom attached  tab segment" data-tab="third">
@@ -205,20 +315,21 @@
 							<div class="column">
 								<div class="ui horizontal segment">
 
-									<form action="" class="ui form" ng-submit="changePassword();">
+									<form
+										action="${pageContext.request.contextPath}/profile/contactInfo"
+										name="form" method="POST" class="ui form">
 										<div class="right field input">
 
-											<label>School Name</label> <input type="text" name="SCHOOL" />
+											<label>School Name</label> <input type="text" name="schoolName" id="toTime" placeholder="School Name"/>
 										</div>
 
 										<div class="right field input">
-											<label>Degree</label> <input type="text" name="DEGREE" />
+											<label>Degree</label> <input type="text" name="degree" id="toTime" placeholder="Degree"/>
 										</div>
 
 
 										<div class="right field input">
-											<label>Year of Passing</label> <input type="text"
-												name="YEAR" />
+											<label>Year of Passing</label> <input type="text" name="year" id="toTime" placeholder="Year of Passing" />
 										</div>
 
 										<div class="field">
@@ -253,29 +364,31 @@
 								<div class="column">
 									<div class="ui horizontal segment">
 
-										<form action="" class="ui form" ng-submit="changePassword();">
+										<!-- Chnage password -->
+										<form
+											action="${pageContext.request.contextPath}/profile/changePassword"
+											name="form" method="POST" class="ui form">
 											<div class="right field input">
 
 												<label>Current Password</label> <input type="password"
-													name="password" />
+													name="oldPassword" placeholder="Current Password" />
 											</div>
 
 											<div class="right field input">
 												<label>New Password</label> <input type="password"
-													name="newpwd" />
+													name="password" placeholder="New Password" />
 											</div>
 
 
 											<div class="right field input">
-												<label>Confirm New Password</label> <input type="password"
-													name="confirmPassword" />
+												<label>Confirm New Password</label> <input
+													name="confirmPassword" type="password"
+													id="password-confirm" placeholder="Confirm Password">
 											</div>
 
 											<div class="field">
-
 												<input class="ui orange save button" type="submit"
 													name="SAVE" placeholder="Edit">
-
 											</div>
 
 										</form>
@@ -292,15 +405,18 @@
 									<h5 align="left">Contact Information</h5>
 								</div>
 								<hr>
-								<form action="" class="ui form" ng-submit="changePassword();">
+								<form
+									action="${pageContext.request.contextPath}/profile/contactInfo"
+									name="form" method="POST" class="ui form">
 
 									<div class="field">
-										<label>Email:</label> <input type="email" name="EMAIL" />
+										<label>Email:</label> <input type="email" name="email"
+											placeholder="Email" />
 									</div>
 
 									<div class="field">
-										<label>Phone Number:</label> <input type="text"
-											name="PHONE_NO" />
+										<label>Phone Number:</label> <input type="text" name="phoneNo"
+											id="phoneNo" placeholder="Phone Number" />
 									</div>
 
 									<div class="field">
@@ -310,26 +426,31 @@
 
 									</div>
 								</form>
-								
-							<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
-							<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
-							<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
-								
-								<script>
- 					$(document).ready(function () {
-                
-                $('#datePicker').datepicker({
-                    format: "dd/mm/yyyy"
-                });
-                
-                 $('#datePicker1').datepicker({
-                    format: "dd/mm/yyyy"
-                });
-                
-                });  
-            
 
-</script>
+								<link rel="stylesheet"
+									href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+								<link rel="stylesheet"
+									href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+								<script
+									src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+
+								<script>
+									$(document).ready(function() {
+
+										$('#datePicker').datepicker({
+											format : "dd/mm/yyyy"
+										});
+
+										$('#datePicker1').datepicker({
+											format : "dd/mm/yyyy"
+										});
+										
+										$('#DOB').datepicket({
+											format:"dd/mm/yyyy"
+										});
+
+									});
+								</script>
 							</div>
 						</div>
 						<!-- Close profile section -->
