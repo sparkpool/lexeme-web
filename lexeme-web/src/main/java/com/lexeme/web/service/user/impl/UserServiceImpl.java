@@ -11,9 +11,6 @@ import java.util.Set;
 import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.crypto.RandomNumberGenerator;
-import org.apache.shiro.crypto.SecureRandomNumberGenerator;
-import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +29,7 @@ import com.lexeme.web.service.email.IEmailManager;
 import com.lexeme.web.service.user.IUserService;
 import com.lexeme.web.service.user.IUserTokenService;
 import com.lexeme.web.service.user.IUserValidationService;
+import com.lexeme.web.util.LexemeUtil;
 
 @Service
 public class UserServiceImpl implements IUserService{
@@ -61,8 +59,8 @@ public class UserServiceImpl implements IUserService{
 		}
 		User user = createUserFromPojo(userPojo);
 		user.setRoles(getRolesForSignUp(userPojo.getRole()));
-		String salt = getSalt();
-		String password = getHashPassword(userPojo.getPassword(), salt);
+		String salt = LexemeUtil.getSalt();
+		String password = LexemeUtil.getHashPassword(userPojo.getPassword(), salt);
 		user.setPassword(password);
 		user.setSalt(salt);
 		Long id = (Long) sessionFactory.getCurrentSession().save(user);
@@ -81,10 +79,6 @@ public class UserServiceImpl implements IUserService{
 			throw new InvalidParameterException("INVALID ROLE FROM DB");
 		}
 		return roles;
-	}
-	
-	private String getHashPassword(String password, String salt) throws NoSuchAlgorithmException{
-		return new Sha256Hash(password, salt, 1024).toBase64();
 	}
 	
 	private User createUserFromPojo(UserPojo userPojo){
@@ -111,7 +105,7 @@ public class UserServiceImpl implements IUserService{
 		   userPojo.setMsg(MessageConstants.INVALID_EMAIL);	
 		   return userPojo;
 		}
-		String password = getHashPassword(userPojo.getPassword(), user.getSalt());
+		String password = LexemeUtil.getHashPassword(userPojo.getPassword(), user.getSalt());
 		
 		Query query = getSessionFactory().getCurrentSession().getNamedQuery("USER.LOGIN")
 		.setString("email", userPojo.getEmail()).setString("password", password);
@@ -150,8 +144,8 @@ public class UserServiceImpl implements IUserService{
 		Long userIdLng = Long.parseLong(userId.trim());
 		User user = getUserById(userIdLng);
 		if(user != null){
-			String salt = getSalt();
-			String hashOfPassword = getHashPassword(password, salt);
+			String salt = LexemeUtil.getSalt();
+			String hashOfPassword = LexemeUtil.getHashPassword(password, salt);
 			user.setPassword(hashOfPassword);
 			user.setSalt(salt);
 			Long id = (Long)getSessionFactory().getCurrentSession().save(user);
@@ -214,11 +208,6 @@ public class UserServiceImpl implements IUserService{
 			}
 		}
 		return strPermissions;
-	}
-	
-	private String getSalt(){
-		RandomNumberGenerator rng = new SecureRandomNumberGenerator();
-		return rng.nextBytes().toHex();
 	}
 
 	public IUserValidationService getUserValidationService() {

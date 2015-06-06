@@ -136,7 +136,7 @@
 									property="firstName" /> <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><a
-									href="${pageContext.request.contextPath}/user/profile">My
+									href="${pageContext.request.contextPath}/profile/view">My
 										Account</a></li>
 								<li><a
 									href="${pageContext.request.contextPath}/user/logout">Logout</a></li>

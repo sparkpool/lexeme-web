@@ -72,12 +72,6 @@ public class UserController {
 		return model;
 	}
 	
-	@RequestMapping(value = "/profile", method = RequestMethod.GET)
-	public String profile(){
-		return "profile";
-	}
-
-	
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public ModelAndView signup(UserPojo userPojo) {
 		ModelAndView model = new ModelAndView();

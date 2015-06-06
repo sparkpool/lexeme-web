@@ -12,7 +12,7 @@ public class MessageConstants {
 	public static final String SOMETHING_WRONG = "SOMETHING WENT WRONG, PLEASE TRY AGAIN !!";
 	public static final String SIGNUP_SUCCESS = "THANKS FOR SIGN UP, PLEASE LOGIN TO CONTINUE. WE HAVE SEND AN EMAIL TO ACTIVATE YOUR ACCOUNT.";
 	public static final String PASSWORD_MISMATCH_CONFIRMPASSWORD = "PASSWORD AND CONFIRM PASSWORD DOES NOT MATCH OR PASSWORD MUST BE BETWEEN 8 to 16 CHARACTERS";
-	public static final String INVALID_EMAIL = "No User Exist with given UserName";
+	public static final String INVALID_EMAIL = "No User Exist with given Email";
 	public static final String INVALID_PASSWORD = "INVALID PASSWORD";
 	public static final String INVALID_TOKEN = "INVALID TOKEN OR LINK HAS EXPIRED";
 	public static final String ACCOUNT_ACTIVATED = "YOUR ACCOUNT HAS BEEN ACTIVATED, PLEASE LOGIN TO CONTINUE";
@@ -22,4 +22,7 @@ public class MessageConstants {
 	public static final String PASSWORD_RESET_SUCCESS = "Your Password Has been Set successfully, please login to continue";
 	public static final String FILE_NOT_ALLOWED = "This File is not allowed to upload";
 	public static final String FILE_UPLOAD_SUCCESS = "File Upload successfully and it's pending with moderator review";
+	public static final String INVALID_OLD_PASSWORD = "Invalid Old Password";
+	public static final String PASSWORD_CHANGE_SUCCESSFULLY = "Password change successfully, please login to continue";
+	public static final String OLD_NEW_PASSWORD_SAME = "Old and New Password can not be same";
 }

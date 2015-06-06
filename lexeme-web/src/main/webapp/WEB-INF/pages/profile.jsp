@@ -40,7 +40,6 @@
 
 						<!--  -->
 						<shiro:hasAnyRoles name="<%= EnumRoles.getUnverifiedRoles() %>">
-							Unverified
 						</shiro:hasAnyRoles>
 
 					</div>
@@ -234,7 +233,7 @@
 							<!-- Change password section -->
 							<div class="ui  segment">
 
-
+<form action="${pageContext.request.contextPath}/profile/changePassword" method="POST" class="ui form" >
 								<div class="right aligned column">
 									<h5 align="left">Change Password</h5>
 									<input class="ui orange save button" type="submit" name="SAVE"
@@ -246,22 +245,21 @@
 								<div class="column">
 									<div class="ui horizontal segment">
 
-										<form action="" class="ui form" ng-submit="changePassword();">
 											<div class="right field input">
 
-												<label>Current Password</label> <input type="email"
-													name="paypalid" />
+												<label>Current Password</label> <input type="password"
+													name="oldPassword" />
 											</div>
 
 											<div class="right field input">
 												<label>New Password</label> <input type="email"
-													name="paypalid" />
+													name="password" />
 											</div>
 
 
 											<div class="right field input">
 												<label>Confirm New Password</label> <input type="email"
-													name="paypalid" />
+													name="confirmPassword" />
 											</div>
 
 
