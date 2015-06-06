@@ -35,9 +35,6 @@ public class UserProf implements Serializable {
 	@Column (name="ZIP", length =18)
 	private String zip;
 	
-	@Column(name="PHONE_NO",length=20)
-	private String phoneNo;
-	
 	
 	@Column(name="DOB", length=12)
 	private String dob;
@@ -106,14 +103,6 @@ public class UserProf implements Serializable {
 		return zip;
 	}
 
-	public void setPhoneNo(String phoneNo) {
-		this.phoneNo = phoneNo;
-	}
-
-	public String getPhoneNo() {
-		return phoneNo;
-	}
-
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
@@ -153,10 +142,5 @@ public class UserProf implements Serializable {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-
-	
-	
-	
-
 	
 }
