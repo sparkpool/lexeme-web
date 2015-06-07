@@ -2,6 +2,8 @@ package com.lexeme.web.pojo.user;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.lexeme.web.domain.user.UserEdu;
+
 public class UserEducation {
 
 	private String school;
@@ -9,19 +11,33 @@ public class UserEducation {
 	private String year;
 	private String subject;
 	private String others;
-	
-	public boolean validate(){
-		if(StringUtils.isBlank(school) || StringUtils.isBlank(degree) ||
-				StringUtils.isBlank(year) || StringUtils.isBlank(subject)){
+
+	public UserEducation() {
+	}
+
+	public UserEducation(UserEdu userEdu) {
+		if (userEdu != null) {
+			this.school = userEdu.getSchool();
+			this.degree = userEdu.getDegree();
+			this.year = userEdu.getYear();
+			this.subject = userEdu.getSubject();
+			this.others = userEdu.getOther();
+
+		}
+	}
+
+	public boolean validate() {
+		if (StringUtils.isBlank(school) || StringUtils.isBlank(degree)
+				|| StringUtils.isBlank(year) || StringUtils.isBlank(subject)) {
 			return false;
 		}
 		return true;
 	}
-	
-	public boolean validateLength(){
-		if(school.length() > 50 || degree.length() > 50 ||
-				year.length() > 10 || subject.length() > 50 || 
-				(StringUtils.isNotBlank(others) && others.length() > 100)){
+
+	public boolean validateLength() {
+		if (school.length() > 50 || degree.length() > 50 || year.length() > 10
+				|| subject.length() > 50
+				|| (StringUtils.isNotBlank(others) && others.length() > 100)) {
 			return false;
 		}
 		return true;
@@ -66,5 +82,5 @@ public class UserEducation {
 	public void setOthers(String others) {
 		this.others = others;
 	}
-	
+
 }

@@ -2,6 +2,9 @@ package com.lexeme.web.pojo.user;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.lexeme.web.domain.user.User;
+import com.lexeme.web.domain.user.UserProf;
+
 public class UserProfile {
 
 	private String firstName;
@@ -14,22 +17,44 @@ public class UserProfile {
 	private String state;
 	private String zip;
 	private String address;
-	
-	public boolean validate(){
-		if(StringUtils.isBlank(firstName) || StringUtils.isBlank(lastName) || 
-				StringUtils.isBlank(sex) || StringUtils.isBlank(dob) || StringUtils.isBlank(country) 
-				|| StringUtils.isBlank(city) || StringUtils.isBlank(state) || StringUtils.isBlank(zip) ||
-				StringUtils.isBlank(address)){
+
+	public UserProfile() {
+	}
+
+	public UserProfile(UserProf userProf, User user) {
+		if (userProf != null) {
+			this.address = userProf.getAddress();
+			this.city = userProf.getCity();
+			this.dob = userProf.getDob();
+			this.country = userProf.getCountry();
+			this.state = userProf.getState();
+			this.zip = userProf.getZip();
+			this.sex = userProf.getSex();
+		}
+		this.firstName = user.getFirstName();
+		this.middleName = user.getMiddleName();
+		this.lastName = user.getLastName();
+	}
+
+	public boolean validate() {
+		if (StringUtils.isBlank(firstName) || StringUtils.isBlank(lastName)
+				|| StringUtils.isBlank(sex) || StringUtils.isBlank(dob)
+				|| StringUtils.isBlank(country) || StringUtils.isBlank(city)
+				|| StringUtils.isBlank(state) || StringUtils.isBlank(zip)
+				|| StringUtils.isBlank(address)) {
 			return false;
 		}
 		return true;
 	}
-	
-	public boolean validateParamsLength(){
-		if(firstName.length() > 50 || lastName.length() > 50 || (StringUtils.isNotBlank(middleName) && middleName.length() > 50) ||
-				sex.length() > 10 || dob.length() > 12 || country.length() > 30 || 
-				city.length() > 30 || state.length() > 30 || zip.length() > 18 ||
-				address.length() > 100){
+
+	public boolean validateParamsLength() {
+		if (firstName.length() > 50
+				|| lastName.length() > 50
+				|| (StringUtils.isNotBlank(middleName) && middleName.length() > 50)
+				|| sex.length() > 10 || dob.length() > 12
+				|| country.length() > 30 || city.length() > 30
+				|| state.length() > 30 || zip.length() > 18
+				|| address.length() > 100) {
 			return false;
 		}
 		return true;
@@ -114,6 +139,5 @@ public class UserProfile {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-	
+
 }
