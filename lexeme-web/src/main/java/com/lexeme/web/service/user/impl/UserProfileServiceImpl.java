@@ -175,7 +175,8 @@ public class UserProfileServiceImpl implements IUserProfileService{
 	
 	private String saveUserProfileDataInDB(User user, UserProfile userProfile){
 		if(user!=null){
-			UserProf userProf = getUserProfFromUserProfile(userProfile);
+			UserProf userProf = user.getUserProf(); 
+			userProf = getUserProfFromUserProfile(userProf, userProfile);
 			user.setFirstName(userProfile.getFirstName());
 			user.setMiddleName(userProfile.getMiddleName());
 			user.setLastName(userProfile.getLastName());
@@ -190,8 +191,10 @@ public class UserProfileServiceImpl implements IUserProfileService{
 		}
 	}
 	
-	private UserProf getUserProfFromUserProfile(UserProfile userProfile){
-		UserProf userProf = new UserProf();
+	private UserProf getUserProfFromUserProfile(UserProf userProf, UserProfile userProfile){
+		if(userProf == null){
+			userProf = new UserProf();	
+		}
 		userProf.setCity(userProfile.getCity());
 		userProf.setState(userProfile.getState());
 		userProf.setCountry(userProfile.getCountry());
@@ -215,7 +218,8 @@ public class UserProfileServiceImpl implements IUserProfileService{
 	
 	private String saveUserEducationDataInDB(User user, UserEducation userEducation){
 		if(user!=null){
-			UserEdu userEdu = getUserEduFromUserEducation(userEducation);
+			UserEdu userEdu = user.getUserEdu(); 
+		    userEdu = getUserEduFromUserEducation(userEdu, userEducation);
 			user.setUserEdu(userEdu);
 			Long userId = (Long)getSessionFactory().getCurrentSession().save(user);
 			if(userId == null){
@@ -227,8 +231,10 @@ public class UserProfileServiceImpl implements IUserProfileService{
 		}
 	}
 	
-	private UserEdu getUserEduFromUserEducation(UserEducation userEducation){
-		UserEdu userEdu = new UserEdu();
+	private UserEdu getUserEduFromUserEducation(UserEdu userEdu, UserEducation userEducation){
+		if(userEdu == null){
+			userEdu = new UserEdu();	
+		}
 		userEdu.setSchool(userEducation.getSchool());
 		userEdu.setDegree(userEducation.getDegree());
 		userEdu.setYear(userEducation.getYear());
@@ -250,7 +256,8 @@ public class UserProfileServiceImpl implements IUserProfileService{
 	
 	private String saveUserExperienceDataInDB(User user, UserExperience userExperience){
 		if(user!=null){
-			UserExp userExp = getUserExpFromUserExperience(userExperience);
+			UserExp userExp = user.getUserExp(); 
+			userExp = getUserExpFromUserExperience(userExp, userExperience);	
 			user.setUserExp(userExp);
 			Long userId = (Long)getSessionFactory().getCurrentSession().save(user);
 			if(userId == null){
@@ -262,8 +269,10 @@ public class UserProfileServiceImpl implements IUserProfileService{
 		}
 	}
 	
-	private UserExp getUserExpFromUserExperience(UserExperience userExperience){
-		UserExp userExp = new UserExp();
+	private UserExp getUserExpFromUserExperience(UserExp userExp, UserExperience userExperience){
+		if(userExp == null){
+			userExp = new UserExp();	
+		}
 		userExp.setCompany(userExperience.getCompany());
 		userExp.setJobTitle(userExperience.getJobTitle());
 		userExp.setFromTime(userExperience.getFromTime());
