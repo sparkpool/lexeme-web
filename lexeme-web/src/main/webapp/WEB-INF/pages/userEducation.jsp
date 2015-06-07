@@ -1,22 +1,21 @@
 						<!-- Personal Information -->
-						<div class="ui bottom attached  tab segment" data-tab="third"  >
+						<div class="ui bottom attached  tab segment" data-tab="third" ng-controller="authCtrl" ng-app="myApp">
 
 
 							<div class="right aligned column">
 								<h5 align="left">Academic Information</h5>
-								</div>
+										<div style="color: red;">{{successMsg}}</div>
+								
+							</div>
 							<hr>
 
 							<div class="column">
 								<div class="ui horizontal segment">
-									<form name="form" 
-										method="POST" class="ui form"
-										ng-controller="authCtrl" 
-										ng-app="myApp"
+
+									<form name="form" method="POST" class="ui form"
+										
 										ng-submit="academicInfortion();">
-										
-										
-										<div class="right field input">
+									<div class="right field input">
 
 											<label>School/University Name</label> 
 											<input type="text"
@@ -28,6 +27,7 @@
 												ng-init="formData.school='${userTO.userEducation.school}'"
 												/>
 										</div>
+
 
 										<div class="right field input">
 											<label>Degree</label> 
@@ -55,6 +55,8 @@
 												/>
 										</div>
 
+
+
 										<div class="field">
 											<label>Subject</label> 
 											<input type="text" 
@@ -67,15 +69,16 @@
 									
 												/>
 										</div>
-										<div class="field">
+							
+											<div class="field">
 											<label>Other</label> 
 											<input type="text" 
-												name="other"
-												id="other" 
+												name="others"
+												id="others" 
 												value="${userTO.userEducation.others}"
 												placeholder="Other" 
-												ng-model="formData.other" 
-												ng-init="formData.other='${userTO.userEducation.other}'"
+												ng-model="formData.others" 
+												ng-init="formData.others='${userTO.userEducation.others}'"
 									
 												
 												/>

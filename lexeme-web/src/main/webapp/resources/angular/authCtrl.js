@@ -1,94 +1,158 @@
-app.controller('authCtrl',function ($scope, $routeParams, $location, $http) {
-    //initially set those objects to null to avoid undefined error
-	$scope.successMsg = '';
-	$scope.formData={};
 
+/**********************************************************************************
+ * This application controller used to update the user information.
+ * - Contact information
+ * - Academic Information
+ * - Contact information
+ * - User experience
+***********************************************************************************/
 
-	/***
-	 * This function will be called,once password be updated.
-	 */
+app
+		.controller(
+				'authCtrl',
+				function($scope, $routeParams, $location, $http) {
+					// initially set those objects to null to avoid undefined
+					// error
+					
+					//will render the the msg in UI
+					$scope.successMsg = '';
+					
+					//Hold form data
+					$scope.formData = {};
 
-	
-	
-	$scope.contactInformation=function(){
-		
-		$http({
-			  method  : 'POST',
-			  url     : _contextPath + '/profile/updateContactInfo',
-			  data    : $.param($scope.formData),  // pass in data as strings
-			  headers : { 'Content-Type': 'application/x-www-form-urlencoded; text/plain;charset=UTF-8' },
-		})
-			  .success(function(data, status, headers, config)  {
-			    console.log("Shrey chutiya:"+data);
-			  }).error(function(data, status, headers, config){
-				console.log("Error main aa raha hai " + data);  
-			  });
-		
-		
-	
-		
-	};
-	
-	
-	
-	$scope.academicInfortion=function(){
-		$http.post(
-				_contextPath + '/profile/updateUserEdu'
-						).success(
-				function(data, status, headers, config) {
-					// this callback will be called asynchronously
-					// when the response is available
-					console.log(status);
-					$scope.successMsg ="User Education Information has been updated!";
+					/***********************************************************
+					 * This function will be called,once contact information has
+					 * been updated.
+					 ***********************************************************/
+					$scope.contactInformation = function() {
 
-				}).error(
-				function(data, status, headers, config) {
-					// called asynchronously if an error occurs
-					// or server returns response with an error status.
+						$http(
+								{
+									method : 'POST',
+									url : _contextPath
+											+ '/profile/updateContactInfo',
+									data : $.param($scope.formData), // pass
+																		// in
+																		// data
+																		// as
+																		// strings
+									headers : {
+										'Content-Type' : 'application/x-www-form-urlencoded; text/plain;charset=UTF-8'
+									},
+								}).success(
+								function(data, status, headers, config) {
+									//set the success message
+									
+									$scope.successMsg= data;
+								}).error(
+								function(data, status, headers, config) {
+									
+									//set the 
+									$scope.successMsg= data;
+													
+								
+								});
+
+					};
+
+					
+					/***********************************************************
+					 * This function will be called,once academic information has
+					 * been updated.
+					 ***********************************************************/
+					$scope.academicInfortion = function() {
+						$http(
+								{
+									method : 'POST',
+									url : _contextPath + '/profile/updateUserEdu',
+									data : $.param($scope.formData), // pass
+																		// in
+																		// data
+																		// as
+																		// strings
+									headers : {
+										'Content-Type' : 'application/x-www-form-urlencoded; text/plain;charset=UTF-8'
+									},
+								}).success(
+								function(data, status, headers, config) {
+									//set the success message
+									$scope.successMsg= data;
+													
+								}).error(
+								function(data, status, headers, config) {
+									
+									//set the 
+									$scope.successMsg= data;
+																		
+								
+								});
+					};
+
+					
+					/***********************************************************
+					 * This function will be called,once userexp information has
+					 * been updated.
+					 ***********************************************************/
+					$scope.userExperience = function() {
+						$http(
+								{
+									method : 'POST',
+									url : _contextPath + '/profile/updateUserExp',
+									data : $.param($scope.formData), // pass
+																		// in
+																		// data
+																		// as
+																		// strings
+									headers : {
+										'Content-Type' : 'application/x-www-form-urlencoded; text/plain;charset=UTF-8'
+									},
+								}).success(
+								function(data, status, headers, config) {
+									//set the success message
+									$scope.successMsg= data;
+														
+								}).error(
+								function(data, status, headers, config) {
+									
+									//set the 
+									$scope.successMsg= data;
+																			
+								
+								});
+					};
+
+					
+					/***********************************************************
+					 * This function will be called,once userinfo information has
+					 * been updated.
+					 ***********************************************************/
+					$scope.userGenInfo = function() {
+						$http(
+								{
+									method : 'POST',
+									url : _contextPath +'/profile/updateUserProf',
+									data : $.param($scope.formData), // pass
+																		// in
+																		// data
+																		// as
+																		// strings
+									headers : {
+										'Content-Type' : 'application/x-www-form-urlencoded; text/plain;charset=UTF-8'
+									},
+								}).success(
+								function(data, status, headers, config) {
+									//set the success message
+									$scope.successMsg= data;
+														
+								}).error(
+								function(data, status, headers, config) {
+									
+									//set the 
+									$scope.successMsg= data;
+																			
+								
+								});
+					};
+					
 					
 				});
-		
-	};
-	
-	$scope.userExperience=function(){
-		$http.post(
-				_contextPath + '/profile/updateUserExp'
-						).success(
-				function(data, status, headers, config) {
-					// this callback will be called asynchronously
-					// when the response is available
-					console.log(status);
-					$scope.successMsg ="User Experience Information has been updated!";
-
-				}).error(
-				function(data, status, headers, config) {
-					// called asynchronously if an error occurs
-					// or server returns response with an error status.
-					
-				});
-		
-	};
-	
-	$scope.userGenInfo=function(){
-		$http.post(
-				_contextPath + '/profile/updateUserInfo'
-						).success(
-				function(data, status, headers, config) {
-					// this callback will be called asynchronously
-					// when the response is available
-					console.log(status);
-					$scope.successMsg ="User Information has been updated!";
-
-
-				}).error(
-				function(data, status, headers, config) {
-					// called asynchronously if an error occurs
-					// or server returns response with an error status.
-					
-				});
-		
-	};
-});
-
-
-
