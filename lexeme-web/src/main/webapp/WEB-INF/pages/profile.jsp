@@ -85,28 +85,16 @@
 					</div>
 					<hr>
 
-					<div class="row">
-						<div class="col-md-2 col-sm-2">
-							<p>Profile Link</p>
-
-							<a href="">http://localhost:8080/lwb/user/ profile</a>
-						</div>
-					</div>
-
 				</div>
 
 				<div class="col-md-8 " id="profile-form">
 					<div class="profile">
 						<div class="ui pointing secondary menu">
 							<a class="active blue item" data-tab="first">Profile</a> 
-			
-							
-							<a
-								class="blue item" data-tab="second">Experience</a>
+							<a class="blue item" data-tab="second">Experience</a>
 								
-								 <a
-								class="blue item" data-tab="third">Education</a> <a
-								class="blue item" data-tab="forth">Settings</a>
+						    <a class="blue item" data-tab="third">Education</a> 
+						    <a class="blue item" data-tab="forth">Settings</a>
 						</div>
 						<div class="ui bottom  attached  active tab segment"
 							data-tab="first">
@@ -124,15 +112,15 @@
 
 											<!-- firstName -->
 											<div class="field">
-												<label>First Name</label><input type="text" name="firstName" id="first-name"  placeholder="First Name"/>
-
+												<label>First Name</label>
+												<input type="text" name="firstName" id="first-name"  value="${userTO.userProfile.firstName}" placeholder="First Name" />
 											</div>
 											<br />
 											
 											
 											<!-- Middle Name -->
 											<div class="field">
-												<label>Middle Name</label><input type="text" name="middleName" id="middle-name"  placeholder="Middle Name"/>
+												<label>Middle Name</label><input type="text" name="middleName" id="middle-name" value="${userTO.userProfile.middleName}" placeholder="Middle Name"/>
 
 											</div>
 											<br />
@@ -141,7 +129,7 @@
 											<!-- last Name -->
 									
 											<div class="field">
-												<label>Last Name</label><input type="text" name="lastName" id="last-name" placeholder="Last Name"/>
+												<label>Last Name</label><input type="text" name="lastName" id="last-name" value="${userTO.userProfile.lastName}" placeholder="Last Name"/>
 
 											</div>
 											
@@ -151,12 +139,12 @@
 											<div class="field">
 												<label>Sex</label>
 												
-												<select class="ui search dropdown">
-													<optgroup label="Gender">
-														<option value="Male">Male</option>
-														<option value="Female">Female</option>
-													
-													</optgroup>
+												<select name="sex" class="ui search dropdown">
+                             							<optgroup label="Gender">
+                             							<option value="">--Select--</option>
+														<option value="Male" selected="${userTO.userProfile.sex eq 'Male' ? 'selected' : ''}">Male</option>
+														<option value="Female" selected="${userTO.userProfile.sex eq 'Female' ? 'selected' : ''}">Female</option>
+														</optgroup>
 												</select>
 											
 											</div>
@@ -166,7 +154,7 @@
 											<div class="field">
 												<label>DOB</label>
 											<div class="input-group input-append date" id="datePicker1">
-											<input type="text" class="form-control" name="dob" id="dob" placeholder="Date of Birth"/> <span
+											<input type="text" class="form-control" name="dob" id="dob" value="${userTO.userProfile.dob}" placeholder="Date of Birth"/> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>	
@@ -175,11 +163,8 @@
 											<!-- Country -->
 											
 											<div class="field">
-											
 												<label>Country</label>
-												<input type="text" name="country" id="country" placeholder="Country" />
-											
-											
+												<input type="text" name="country" id="country" value="${userTO.userProfile.country}" placeholder="Country" />
 											</div>
 											
 											
@@ -187,48 +172,29 @@
 											
 											
 											<div class="field">
-											
 												<label>City</label>
-												<input type="text" name="city" id="city" placeholder="City" />
-											
-											
+												<input type="text" name="city" id="city" value="${userTO.userProfile.city}" placeholder="City" />
 											</div>
 											
 											
 											<!-- State -->
 											
 											<div class="field">
-											
 												<label>State</label>
-												<input type="text" name="state" id="state" placeholder="State" />
-											
-											
+												<input type="text" name="state" id="state" value="${userTO.userProfile.state}" placeholder="State" />
 											</div>
 											
 											
 											<!-- ZIp -->
 											<div class="field">
-											
 												<label>Zip Code</label>
-												<input type="text" name="zip" id="zip" placeholder="Zip Code" />
-											
-											
+												<input type="text" name="zip" id="zip" value="${userTO.userProfile.zip}" placeholder="Zip Code" />
 											</div>
 											
 											<!-- Address -->
 											<div class="field">
-											
 												<label>Address</label>
-												<input type="text" name="address" id="address" placeholder="Address" />
-											
-											</div>
-											
-											
-											
-											
-											<div class="field">
-												<label>School/University</label> <input type="text"
-													name="university" required="required" id="university" placeholder="University"/>
+												<input type="text" name="address" id="address" value="${userTO.userProfile.address}" placeholder="Address" />
 											</div>
 											
 											<br /> <br />
@@ -257,17 +223,17 @@
 									
 									name="form" method="POST" class="ui form" ng-controller="authCtrl" ng-app="myApp" ng-submit="userExperience();">
 									<div class="field">
-										<label> Company Name</label> <input type="text" name="company" id="company" placeholder="Company"/>
+										<label> Company Name</label> <input type="text" name="company" id="company" value="${userTO.userExperience.company}" placeholder="Company"/>
 									</div>
 
 									<div class="field">
-										<label>Job Title</label> <input type="text" name="jobTitle" id="jobTitle" placeholder="Job Title" />
+										<label>Job Title</label> <input type="text" name="jobTitle" id="jobTitle" value="${userTO.userExperience.jobTitle}" placeholder="Job Title" />
 									</div>
 
 									<div class="field">
 										<label>From:</label>
 										<div class="input-group input-append date" id="datePicker">
-											<input type="text" class="form-control" name="fromTime" id="fromTime" placeholder="From date"/>
+											<input type="text" class="form-control" name="fromTime" id="fromTime" value="${userTO.userExperience.fromTime}" placeholder="From date"/>
 											<span class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
@@ -279,7 +245,7 @@
 
 										<label>to:</label>
 										<div class="input-group input-append date" id="datePicker1">
-											<input type="text" class="form-control" name="toTime" id="toTime" placeholder="To date"/> <span
+											<input type="text" class="form-control" name="toTime" id="toTime" value="${userTO.userExperience.toTime}" placeholder="To date"/> <span
 												class="input-group-addon add-on"><span
 												class="glyphicon glyphicon-calendar"></span></span>
 										</div>
@@ -288,12 +254,12 @@
 								<div class="field">
 											<label>Location</label>
 											
-											<input type="text" name="location" id="location" placeholder="Location" /> 
+											<input type="text" name="location" id="location" value="${userTO.userExperience.location}" placeholder="Location" /> 
 										</div>
 										<div class="field">
 											<label>Other</label>
 											
-											<input type="text" name="other" id="other" placeholder="Other" /> 
+											<input type="text" name="other" id="other" value="${userTO.userExperience.other}" placeholder="Other" /> 
 										</div>
 										
 									
@@ -319,36 +285,33 @@
 							</div>
 							<hr>
 
-
 							<div class="column">
 								<div class="ui horizontal segment">
 
-									<form
-										
-										name="form" method="POST" class="ui form" ng-controller="authCtrl" ng-app="myApp" ng-submit="academicInfortion();">
+									<form name="form" method="POST" class="ui form" ng-controller="authCtrl" ng-app="myApp" ng-submit="academicInfortion();">
 										<div class="right field input">
 
-											<label>School Name</label> <input type="text" name="school" id="school" placeholder="School Name"/>
+											<label>School/University Name</label> <input type="text" name="school" id="school" value="${userTO.userEducation.school}" placeholder="School Name"/>
 										</div>
 
 										<div class="right field input">
-											<label>Degree</label> <input type="text" name="degree" id="degree" placeholder="Degree"/>
+											<label>Degree</label> <input type="text" name="degree" id="degree" value="${userTO.userEducation.degree}" placeholder="Degree"/>
 										</div>
 
 
 										<div class="right field input">
-											<label>Year of Passing</label> <input type="text" name="year" id="year" placeholder="Year of Passing" />
+											<label>Year of Passing</label> <input type="text" name="year" id="year" value="${userTO.userEducation.year}" placeholder="Year of Passing" />
 										</div>
 
 										<div class="field">
 											<label>Subject</label>
 											
-											<input type="text" name="subject" id="subject" placeholder="Subject" /> 
+											<input type="text" name="subject" id="subject" value="${userTO.userEducation.subject}" placeholder="Subject" /> 
 										</div>
 										<div class="field">
 											<label>Other</label>
 											
-											<input type="text" name="other" id="other" placeholder="Other" /> 
+											<input type="text" name="other" id="other" value="${userTO.userEducation.others}" placeholder="Other" /> 
 										</div>
 										
 										
@@ -433,12 +396,12 @@
 
 									<div class="field">
 										<label>Email:</label> <input type="email" name="email"
-											placeholder="Email" ng-model="formData.email"/>
+											value="${userTO.userContactInfo.email}" placeholder="Email" ng-model="formData.email" />
 									</div>
 
 									<div class="field">
 										<label>Phone Number:</label> <input type="text" name="phoneNumber"
-											id="phoneNo" placeholder="Phone Number" ng-model="formData.phoneNumber"/>
+											id="phoneNo" value="${userTO.userContactInfo.phoneNumber}" placeholder="Phone Number" ng-model="formData.phoneNumber" />
 									</div>
 
 									<div class="field">

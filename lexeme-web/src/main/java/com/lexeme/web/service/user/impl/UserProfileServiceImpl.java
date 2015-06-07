@@ -121,7 +121,8 @@ public class UserProfileServiceImpl implements IUserProfileService{
 			if(!userContactInfo.getPhoneNumber().equals(user.getPhoneNo())){
 				user.setPhoneNo(userContactInfo.getPhoneNumber());
 				phoneChange = true;
-			}else if(!user.getEmail().equals(userContactInfo.getEmail())){
+			}
+			if(!user.getEmail().equals(userContactInfo.getEmail())){
 				user.setEmail(userContactInfo.getEmail());
 				emailChange = true;
 			}
@@ -285,6 +286,7 @@ public class UserProfileServiceImpl implements IUserProfileService{
 	}
 
 	@Override
+	@Transactional
 	public UserTO getUserDetails() {
 		Long userId = getUserIdFromPrincipal();
 		if(userId != null){

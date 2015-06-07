@@ -19,9 +19,9 @@ app.controller('authCtrl',function ($scope, $routeParams, $location, $http) {
 			  headers : { 'Content-Type': 'application/x-www-form-urlencoded; text/plain;charset=UTF-8' },
 		})
 			  .success(function(data, status, headers, config)  {
-			    console.log("Shrey chutiya:"+response);
+			    console.log("Shrey chutiya:"+data);
 			  }).error(function(data, status, headers, config){
-				console.log("Error main aa raha hai " + response);  
+				console.log("Error main aa raha hai " + data);  
 			  });
 		
 		
