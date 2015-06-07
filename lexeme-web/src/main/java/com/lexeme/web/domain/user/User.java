@@ -81,13 +81,13 @@ public class User implements Serializable {
 	@Column(name = "MODIFIED_DT", nullable = false, insertable = false)
 	private Date modifiedDt;
 
-	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade=CascadeType.ALL)
 	private UserProf userProf;
 
-	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade=CascadeType.ALL)
 	private UserEdu userEdu;
 
-	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade=CascadeType.ALL)
 	private UserExp userExp;
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
