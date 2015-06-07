@@ -177,6 +177,7 @@ public class UserProfileServiceImpl implements IUserProfileService{
 		if(user!=null){
 			UserProf userProf = user.getUserProf(); 
 			userProf = getUserProfFromUserProfile(userProf, userProfile);
+			userProf.setUser(user);
 			user.setFirstName(userProfile.getFirstName());
 			user.setMiddleName(userProfile.getMiddleName());
 			user.setLastName(userProfile.getLastName());
@@ -220,6 +221,7 @@ public class UserProfileServiceImpl implements IUserProfileService{
 		if(user!=null){
 			UserEdu userEdu = user.getUserEdu(); 
 		    userEdu = getUserEduFromUserEducation(userEdu, userEducation);
+		    userEdu.setUser(user);
 			user.setUserEdu(userEdu);
 			Long userId = (Long)getSessionFactory().getCurrentSession().save(user);
 			if(userId == null){
@@ -258,6 +260,7 @@ public class UserProfileServiceImpl implements IUserProfileService{
 		if(user!=null){
 			UserExp userExp = user.getUserExp(); 
 			userExp = getUserExpFromUserExperience(userExp, userExperience);	
+			userExp.setUser(user);
 			user.setUserExp(userExp);
 			Long userId = (Long)getSessionFactory().getCurrentSession().save(user);
 			if(userId == null){
