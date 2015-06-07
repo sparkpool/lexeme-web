@@ -424,21 +424,21 @@
 							<div class="ui  segment">
 								<div class="right aligned column" ng-controller="authCtrl" ng-app="myApp" >
 									<h5 align="left">Contact Information</h5>
-									<p>{successMsg}</p>
+						
 								</div>
 								<hr>
 								<form
 									
-									name="form" method="POST" class="ui form" ng-controller="authCtrl" ng-app="myApp" ng-submit="contactInformation();">
+									name="contactForm" method="POST" class="ui form" ng-controller="authCtrl" ng-app="myApp" ng-submit="contactInformation();">
 
 									<div class="field">
 										<label>Email:</label> <input type="email" name="email"
-											placeholder="Email" />
+											placeholder="Email" ng-model="formData.email"/>
 									</div>
 
 									<div class="field">
-										<label>Phone Number:</label> <input type="text" name="phoneNo"
-											id="phoneNo" placeholder="Phone Number" />
+										<label>Phone Number:</label> <input type="text" name="phoneNumber"
+											id="phoneNo" placeholder="Phone Number" ng-model="formData.phoneNumber"/>
 									</div>
 
 									<div class="field">
