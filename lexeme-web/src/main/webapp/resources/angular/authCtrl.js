@@ -17,9 +17,15 @@ app
 					//will render the the msg in UI
 					$scope.successMsg = '';
 					
+					$scope.errorMsg='';
 					//Hold form data
 					$scope.formData = {};
 
+					
+					$scope.setNewDate=function(date){
+						formDate.toTime=date;
+					};
+					
 					/***********************************************************
 					 * This function will be called,once contact information has
 					 * been updated.
@@ -48,7 +54,7 @@ app
 								function(data, status, headers, config) {
 									
 									//set the 
-									$scope.successMsg= data;
+									$scope.errorMsg=data;
 													
 								
 								});
@@ -82,8 +88,8 @@ app
 								function(data, status, headers, config) {
 									
 									//set the 
-									$scope.successMsg= data;
-																		
+									$scope.errorMsg=data;
+																					
 								
 								});
 					};
@@ -115,8 +121,8 @@ app
 								function(data, status, headers, config) {
 									
 									//set the 
-									$scope.successMsg= data;
-																			
+									$scope.errorMsg=data;
+																						
 								
 								});
 					};
@@ -148,11 +154,11 @@ app
 								function(data, status, headers, config) {
 									
 									//set the 
-									$scope.successMsg= data;
-																			
+									$scope.errorMsg=data;
+																							
 								
 								});
 					};
 					
 					
-				});
+}); //end auth ctrl

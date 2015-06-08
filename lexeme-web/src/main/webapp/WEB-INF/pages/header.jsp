@@ -3,6 +3,11 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <html ng-app="myApp" style="height: 158px;">
 
+<!-- Full Body Container -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=0">
+
 <head>
 <script type="text/javascript">
     var _contextPath = "${pageContext.request.contextPath}";
@@ -14,30 +19,7 @@
 	
 </script>
 
-<script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-  </script>
-<!-- Full Body Container -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=0">
 
-
-<!-- date picker -->
-<!-- Include Bootstrap Datepicker -->
-
-<style type="text/css">
-/**
- * Override feedback icon position
- * See http://formvalidation.io/examples/adjusting-feedback-icon-position/
- */
-#eventForm .form-control-feedback {
-    top: 0;
-    right: -15px;
-}
-</style>
 
 <!--Angular script for UI/DO Rendering-->
 <script
@@ -88,16 +70,9 @@
 	src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/semantic/javascript/profile.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/js/tablesort.min.js"></script>
 
 <script
 	src="${pageContext.request.contextPath}/resources/semantic/javascript/validate-form.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/home.js"></script>
-
-<link
-	href="${pageContext.request.contextPath}/resources/semantic/css/semantic.min.css"
-	rel="stylesheet">
 <link
 	href="${pageContext.request.contextPath}/resources/css/lexememain.css"
 	rel="stylesheet">
@@ -114,10 +89,6 @@
 <!-- Color CSS Styles  -->
 
 <!--Angular Js-->
-<script
-	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/angular/app.js"></script>
 <script type="text/javascript"
@@ -127,6 +98,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/lwb-css.css"
 	type="text/css" media="screen" charset="utf-8">
+
 <meta name="viewport"
 	content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 

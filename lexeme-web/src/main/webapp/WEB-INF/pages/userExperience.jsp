@@ -2,7 +2,7 @@
 <div class="ui bottom  attached tab segment" data-tab="second" ng-controller="authCtrl" ng-app="myApp">
 	<div class="right aligned column">
 		<h5 align="left">Experience</h5>
-		<div style="color: red;">{{successMsg}}</div>
+		<%@ include file="errorMessage.jsp" %>		
 		
 		<hr>
 		<form name="form" method="POST" class="ui form"
@@ -40,11 +40,11 @@
 					<input type="text" 
 						class="form-control" 
 						name="fromTime"
-						id="fromTime" 
+						id="date2" 
 						value="${userTO.userExperience.fromTime}"
 						placeholder="From date(dd/mm/yyyy)"
 						ng-model="formData.fromTime" 
-					  	ng-init="formData.fromTime'${userTO.userExperience.fromTime}'"
+					  	ng-init="formData.fromTime='${userTO.userExperience.fromTime}'"
 						
 						 /> 
 						
@@ -58,21 +58,22 @@
 
 			</div>
 			<div class="field">
-
 				<label>to:</label>
 				<div class="input-group input-append date" 
 					id="datePicker1">
 					<input type="text" 
 						class="form-control" 
 						name="toTime" 
-						id="toTime"
+						id="date3"
 						value="${userTO.userExperience.toTime}" 
 						placeholder="To date(dd/mm/yyyy)" 
-						
 						ng-model="formData.toTime" 
-					  	ng-init="formData.toTime'=${userTO.userExperience.toTime}'"
-						
+					  	ng-init="formData.toTime='${userTO.userExperience.toTime}'"
+					  	ng-change="setNewDate(formData.toTime)"
+					  	
 						 /> 
+						 
+						
 						
 						<!-- Create Span for Calendar Image -->
 						<span class="input-group-addon add-on">
@@ -88,7 +89,7 @@
 						value="${userTO.userExperience.location}"
 						placeholder="Location" 
 						ng-model="formData.location" 
-					  	ng-init="formData.location'=${userTO.userExperience.location}'"
+					  	ng-init="formData.location= '${userTO.userExperience.location}'"
 						
 						/>
 				</div>
@@ -100,7 +101,7 @@
 						value="${userTO.userExperience.other}" 
 						placeholder="Other" 
 						ng-model="formData.other" 
-					  	ng-init="formData.other'=${userTO.userExperience.other}'"
+					  	ng-init="formData.other='${userTO.userExperience.other}'"
 						/>
 				</div>
 

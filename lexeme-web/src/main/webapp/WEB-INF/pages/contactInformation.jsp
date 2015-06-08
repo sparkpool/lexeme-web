@@ -3,10 +3,8 @@
 	<div class="right aligned column" ng-controller="authCtrl"
 		ng-app="myApp">
 		<h5 align="left">Contact Information</h5>
-
-		<div style="color: red;">{{successMsg}}</div>
-
-
+		
+		<%@ include file="errorMessage.jsp" %>		
 		<hr>
 		<form name="contactForm" method="POST" class="ui form"
 			ng-submit="contactInformation();">
@@ -35,4 +33,27 @@
 
 
 	</div>
+	
+	<script type="text/javascript">
+            // When the document is ready
+            $(document).ready(function () {
+                
+                $('#date1').datepicker({
+                    format: "dd/mm/yyyy"
+                });  
+                
+                $('#date2').datepicker({
+                    format: "dd/mm/yyyy"
+                });  
+                
+                $('#date3').datepicker({
+                    format: "dd/mm/yyyy"
+                });  
+                
+                
+            
+            });
+            
+            </script>
+	
 </div>

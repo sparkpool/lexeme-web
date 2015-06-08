@@ -70,7 +70,8 @@ app.controller('validateCtrl', function($scope,$http) {
 					// or server returns response with an error status.
 					$scope.form.email.$setValidity("unique",false);
 					$scope.emailMsg='Email address already exists';
-					
+
+
 				});
 	};
 	
@@ -81,6 +82,8 @@ app.controller('validateCtrl', function($scope,$http) {
 				function(data, status, headers, config) {
 					// this callback will be called asynchronously
 					// when the response is available
+
+					
 					console.log(status);
 					$scope.userMsg = '';
 					$scope.form.userName.$setValidity("unique",true);
@@ -93,6 +96,7 @@ app.controller('validateCtrl', function($scope,$http) {
 
 					$scope.userMsg='UserName already exists';
 
+					
 				});
 	};
 

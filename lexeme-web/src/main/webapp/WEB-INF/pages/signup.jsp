@@ -3,7 +3,7 @@
 <%@page import="com.lexeme.web.enums.EnumRoles"%>
 <%@ include file="header.jsp"%>
 <div id="page-content">
-	<div class="container-fluid">
+	<div class="container">
 	<section id="content">
 		<div class="row">
 			<div class="row">

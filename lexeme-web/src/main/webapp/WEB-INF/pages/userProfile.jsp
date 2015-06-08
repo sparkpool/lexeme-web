@@ -3,13 +3,9 @@
 					  ng-app="myApp" >
 	<div class="right aligned column">
 		<h5 align="left">User Information</h5>
-		<div style="color: red;">{{successMsg}}</div>
+		<%@ include file="errorMessage.jsp" %>		
 		
 		<hr>
-		<div class="two column">
-			<div class=" column">
-
-
 				<!-- User name -->
 				<form name="form" 
 					  method="POST" 
@@ -98,7 +94,7 @@
 							<input type="text" 
 								class="form-control" 
 								name="dob" 
-								id="dob"
+								id="date1"
 								value="${userTO.userProfile.dob}" 
 								placeholder="Date of Birth(dd/mm/yyyy)" 
 								
@@ -187,17 +183,19 @@
 					</div>
 
 					<br /> <br />
-					<div class="field">
-						<input class="ui orange submit button" type="submit" name="SAVE"
-							placeholder="Edit">
-
-					</div>
+					<input class="ui orange save button" 
+					type="submit" 
+					name="SAVE"
+					placeholder="Edit">
 				</form>
+
+
+
 
 			</div>
 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
 		</div>
 
-	</div>
-
-</div>

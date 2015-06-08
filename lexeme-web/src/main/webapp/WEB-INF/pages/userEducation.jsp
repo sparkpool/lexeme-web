@@ -4,7 +4,7 @@
 
 							<div class="right aligned column">
 								<h5 align="left">Academic Information</h5>
-										<div style="color: red;">{{successMsg}}</div>
+								<%@ include file="errorMessage.jsp" %>		
 								
 							</div>
 							<hr>
