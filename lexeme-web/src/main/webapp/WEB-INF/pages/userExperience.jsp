@@ -69,7 +69,6 @@
 						placeholder="To date(dd/mm/yyyy)" 
 						ng-model="formData.toTime" 
 					  	ng-init="formData.toTime='${userTO.userExperience.toTime}'"
-					  	ng-change="setNewDate(formData.toTime)"
 					  	
 						 /> 
 						 
@@ -95,14 +94,18 @@
 				</div>
 				<div class="field">
 					<label>Other</label> 
-					<input type="text" 
+					
+					<textarea rows="6" cols="10" 
+					class="form-control"
 						name="other" 
 						id="other"
 						value="${userTO.userExperience.other}" 
 						placeholder="Other" 
 						ng-model="formData.other" 
 					  	ng-init="formData.other='${userTO.userExperience.other}'"
-						/>
+						>
+					</textarea>
+					
 				</div>
 
 

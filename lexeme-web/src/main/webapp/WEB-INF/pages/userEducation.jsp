@@ -12,9 +12,9 @@
 							<div class="column">
 								<div class="ui horizontal segment">
 
-									<form name="form" method="POST" class="ui form"
+									<form name="eduForm" method="POST" class="ui form"
 										
-										ng-submit="academicInfortion();">
+										ng-submit="academicInfortion();" role="form">
 									<div class="right field input">
 
 											<label>School/University Name</label> 
@@ -72,7 +72,9 @@
 							
 											<div class="field">
 											<label>Other</label> 
-											<input type="text" 
+											
+											<textarea rows="6" cols="10"
+												class="form-control"
 												name="others"
 												id="others" 
 												value="${userTO.userEducation.others}"
@@ -80,15 +82,16 @@
 												ng-model="formData.others" 
 												ng-init="formData.others='${userTO.userEducation.others}'"
 									
-												
-												/>
+											
+											></textarea>
 										</div>
 
 
 
 										<div class="field">
 											<input class="ui orange save button" type="submit"
-												name="SAVE" placeholder="Edit">
+												name="SAVE" placeholder="Edit"
+												>
 
 										</div>
 

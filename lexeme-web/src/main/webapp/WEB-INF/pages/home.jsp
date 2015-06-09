@@ -10,9 +10,12 @@
 					<div class="row">
 				
 					<div class="col-md-12">
-	
-							<h1>Get Help from Anywhere</h1>
-					</div>
+<div class="video-overlay">&nbsp;</div>
+<video id="cover-video" class="video-background" loop muted>
+<source src="//static.onemightyroar.com/site-assets/videos/file.mp4" type="video/mp4">
+<source src="//static.onemightyroar.com/site-assets/videos/file.ogv" type="video/ogg">
+</video>
+</div>					</div>
 						
 					</div>
 	<div class="row">
