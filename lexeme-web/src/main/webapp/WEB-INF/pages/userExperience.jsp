@@ -36,16 +36,15 @@
 			<div class="field">
 				<label>From:</label>
 				<div class="input-group input-append date" 
-					id="">
+					id="date2">
 					<input type="text" 
 						class="form-control" 
 						name="fromTime"
-						id="date2" 
+						id="fromTime" 
 						value="${userTO.userExperience.fromTime}"
 						placeholder="From date(dd/mm/yyyy)"
 						ng-model="formData.fromTime" 
 					  	ng-init="formData.fromTime='${userTO.userExperience.fromTime}'"
-						
 						 /> 
 						
 						<!-- Create Span for Calendar Image -->
@@ -60,11 +59,11 @@
 			<div class="field">
 				<label>to:</label>
 				<div class="input-group input-append date" 
-					id="datePicker1">
+					id="date3">
 					<input type="text" 
 						class="form-control" 
 						name="toTime" 
-						id="date3"
+						id="toTime"
 						value="${userTO.userExperience.toTime}" 
 						placeholder="To date(dd/mm/yyyy)" 
 						ng-model="formData.toTime" 
@@ -114,7 +113,9 @@
 			<input class="ui orange save button" 
 					type="submit" 
 					name="SAVE"
-					placeholder="Edit">
+					placeholder="Edit"
+					ng-disabled="!form.$dirty"
+					>
 
 		</form> <!-- End form -->
 		

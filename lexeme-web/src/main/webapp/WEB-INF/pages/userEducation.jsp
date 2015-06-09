@@ -91,6 +91,8 @@
 										<div class="field">
 											<input class="ui orange save button" type="submit"
 												name="SAVE" placeholder="Edit"
+															ng-disabled="!form.$dirty"
+		
 												>
 
 										</div>
