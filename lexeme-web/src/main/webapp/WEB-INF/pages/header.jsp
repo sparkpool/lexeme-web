@@ -133,7 +133,7 @@
  													<li><a href="#how">How it works</a></li>
 
 			
-									<li><a href="${pageContext.request.contextPath}/upload">Earn
+									<li><a href="${pageContext.request.contextPath}/doc/upload">Earn
 							Money</a></li>
 
 					

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lexeme.web.constants.MessageConstants;
@@ -25,27 +27,32 @@ public class DocumentUploadController {
 
 	@RequestMapping(value = "/upload", method = RequestMethod.GET)
 	@RequiresAuthentication
-	public String uploadFile(){
-		return "upload";
+	public String uploadFile() {
+		return "uploadSolution";
 	}
-	
+
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	@RequiresAuthentication
-	public ModelAndView uploadFile(DocumentUpload documentUpload) {
+	public ModelAndView uploadFile(
+			@RequestParam("file") MultipartFile file, 
+
+	@RequestParam("category") String category,
+	@RequestParam(value = "courseId", required = false) String courseId,
+	@RequestParam(value = "description", required = false) String description) {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("uploadSolution");
 		try {
-			String fileName = documentUpload.getFile().getOriginalFilename();
+			String fileName = file.getOriginalFilename();
 			if (!FileOperationsUtil.isFileAllowed(fileName)) {
 				logger.info("File with given extension not allowed " + fileName);
 				model.addObject("errorMsg", MessageConstants.FILE_NOT_ALLOWED);
 			} else {
-				getDocumentService().uploadFile(documentUpload.getCategory(), documentUpload.getCourseId(),
-						documentUpload.getDescription(), documentUpload.getFile());
+				getDocumentService().uploadFile(category, courseId,
+				description, file);
 				model.addObject("msg", MessageConstants.FILE_UPLOAD_SUCCESS);
 			}
 		} catch (Exception e) {
-			logger.error("Exception occured : "+ e.getMessage());
+			logger.error("Exception occured : " + e.getMessage());
 			model.addObject("errorMsg", MessageConstants.SOMETHING_WRONG);
 		}
 		return model;
