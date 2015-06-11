@@ -41,7 +41,7 @@
 
 						<!--  -->
 						<shiro:hasAnyRoles name="<%=EnumRoles.getUnverifiedRoles()%>">
-							Unverified
+							<p><a href="/user/resendActLink">Click Here</a> to activate your account.</p>
 						</shiro:hasAnyRoles>
 
 					</div>

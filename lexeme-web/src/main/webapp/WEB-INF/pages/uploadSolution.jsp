@@ -40,6 +40,7 @@ canvas {
 						exam-specific study guides, please see our guidelines. Have
 						questions or trouble uploading? See our FAQ!</p>
 				</div>
+				
 				<div class="form-group" align="center">
 					<div class="row">
 						<div class="col-lg-12">
@@ -195,7 +196,8 @@ canvas {
 					var span = document.createElement('span');
 					span.innerHTML = [
 							'<div class="col-md-8 col-md-offset-2" style="outline: 1px solid aqua;background-color:#ECF6FB;">' 
-								
+								,'<form name="form" method="POST" class="ui form"'
+								 ,'ng-submit="uploadDocument();">'
 								,'<div class="col-md-4"><img class="thumb" src="',
 									e.target.result,
 									'" title="',
@@ -207,7 +209,9 @@ canvas {
 										,'class="form-control" ><option>CS</option>'
 									    ,'<option>Homework</option>',
 									    '<option>Lab</option>',
-									    '<option>Notes</option>','</select></div></div>' ].join('');
+									    '<option>Notes</option>','</select></div>'
+									    ,'<div class="col-md-3 col-md-offet-2"><label>Upload</label><input class="ui orange save button" type="submit" name="SAVE" placeholder="Edit" value="upload" data-toggle="modal" data-target="#exampleModal"></div>'
+									    ,'</form></div></div>' ].join('');
 					document.getElementById('list').insertBefore(span, null);
 
 					document.getElementById('list').insertBefore(span, null);

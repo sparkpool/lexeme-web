@@ -1,179 +1,223 @@
 <%@include file="header.jsp"%>
 
-<div id="page-content">
-	<!-- Open Page conatiner -->
-	<div class="container-fluid">
-
-		<section id="content">
-			<div class="into" >
-				<div class="row">
-					<div class="row">
-				
-					<div class="col-md-12">
-<div class="video-overlay">&nbsp;</div>
-<video id="cover-video" class="video-background" loop muted>
-<source src="//static.onemightyroar.com/site-assets/videos/file.mp4" type="video/mp4">
-<source src="//static.onemightyroar.com/site-assets/videos/file.ogv" type="video/ogg">
-</video>
-</div>					</div>
-						
-					</div>
-	<div class="row">
-
-						<div class="col-md-12">
-
-							<div class="tree">
-								<ul>
-
-									<li><a href="#">NotoHub</a>
-										<ul>
-											<li><a href="#">Login</a>
-												<ul>
-													<a href="#">If you don't have any account</a>
-												</ul></li>
-											<li><a href="#">Singup</a></li>
-											<li><a href="#">Search Solution</a>
-												<ul>
-													<li><a href="#">Download</a>
-												</ul></li>
-
-
-										</ul></li>
-								</ul>
-							</div>
-							</div>
-						</div>
-					</div>
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-md-3">
+				<div class="claim lead">NotoHub
+						<p>Read, Share & Earn<p>
+			
 				</div>
-
 			</div>
+			<div class="col-sm-8 col-md-9">
+				<img
+					src="${pageContext.request.contextPath}/resources/images/open_book_large_T.png"
+					class="pull-right" />
+			</div>
+		</div>
+		<div class="btn-group btn-group-claim">
 
-
-			<div class="row">
-
-				<div class="about" id="res">
-						<div class="row">
-					
-						<div class="col-md-12">
-							<h1>Resources</h1>
-						</div>
-
-						</div>
-							<div class="row">
-						
-						<div class="col-md-12">
-							<div class="tree">
-
-								<ul>
-									<li><a href="#">Documents</a>
-										<ul>
-											<li><a href="#">Notes</a>
-												<ul>
-													<li><a href="#">10,000</a></li>
-												</ul></li>
-											<li><a href="#">Homework</a>
-												<ul>
-													<li><a href="#">Grand Child</a></li>
-													<li><a href="#">Grand Child</a>
-														<ul>
-															<li><a href="#">Great Grand Child</a></li>
-														</ul></li>
-												</ul></li>
-											<li><a href="#">Essay</a></li>
-
-											<li><a href="#">Labs</a></li>
-										</ul></li>
-								</ul>
-
-
-							</div>
+			<a
+				href=""
+				class="btn btn-claim btn-lg"> Get Solution </a> <a
+				href="${pageContext.request.contextPath}/user/login"
+				class="btn btn-claim btn-lg"> <i class="fa fa-eye"> </i>
+				SignIn/Login
+			</a>
+		</div>
+	</div>
 </div>
-						</div>
-					</div>
+
+<div class="banner">
+	<div class="container">
+		<div class="row">
+			<div class="text-center">
+				Study Resources
 				</div>
-
-				<hr>
-				<div class="row">
-
-					<div class="howitWork">
-						<div class="row">
-
-							<div class="col-md-12">
-								<h1>How it works</h1>
-							</div>
-
-						</div>
-						<div class="row">
-
-							<div id="col-md-6 col-md-offset 5" >
-								<div class="tree">
-									<ul>
-										<li><a href="#">Search Solution</a>
-											<ul>
-												<li><a href="#">Check Solution</a></li>
-												<li><a href="#">Payment</a></li>
-
-
-												<li><a href="#">Get Solution/Download</a></li>
-
-
-
-
-											</ul></li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
-
-					</div>
+				<div class="visible-xs">
+					<br />
 				</div>
 			</div>
+			<div class="col-sm-6">
+				<div class="btn-group btn-group-justified btn-group-social">
+					<a href="https://github.com/mcasimir/mobile-angular-ui"
+						target="blank" class="btn"> <span class="btn-social"><i
+							class="fa fa-github"></i></span> <span class="github-count flag"></span>
+					</a> <a href="https://twitter.com/mobileangularui" target="blank"
+						class="btn"> <span class="btn-social"><i
+							class="fa fa-twitter"></i></span> <span class="twitter-count flag"></span>
+					</a> <a href="https://plus.google.com/+MobileangularuiGp"
+						target="blank" class="btn"> <span class="btn-social"><i
+							class="fa fa-google-plus"></i></span> <span
+						class="google-plus-count flag"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div class="home">
+	<div class="content" role="main">
+
+
+		<div class="container">
+			<div class="home-body">
+				<div class="lead">Noto Hub offers students crowd-sourced study
+					documents, expert tutors and customizable flashcards, accessible
+					anywhere, at any</div>
+					
+					<hr>
+
+				<section class="feature row">
+					<div class="col-sm-4 feature-figure">
+
+						<img
+							src="${pageContext.request.contextPath}/resources/images/docu.png"
+							class="pull-right" />
+
+					</div>
+					<div class="col-sm-8 feature-text">
+
+						<h2 id="awesome-mobile-components">Documents</h2>
+						<p>
+						<ul>
+							<p>Homework Solution</p>
+							<li>Course Specification</li>
+							<li>Notes</li>
+							<li>Labs</li>
+							<li>Reseach Paper</li>
+							<li>Essay</li>
+
+						</ul>
+
+						</p>
+					</div>
+				</section>
+				<section class="feature row">
+					<div class="col-sm-4 col-sm-push-8 feature-figure">
+						<img
+							src="${pageContext.request.contextPath}/resources/images/qa.png"
+							class="pull-right" />
+					</div>
+					<div class="col-sm-8 col-sm-pull-4 feature-text">
+						<h2 id="angular-js-everywhere">Answers</h2>
+						<p>Looking for help ? Noto Hub has educational resources - from practice problems to homework help - tagged to thousands of high schools and colleges from around the world.</p>
+						<hr>
+						<li>Homework Solution</li>
+						<li>Get Notes</li>
+						<li>Get Essays</li>
+						
+					</div>
+				</section>
+				
+				<section class="feature row">
+					<div class="col-sm-4 col-sm-push-8 feature-figure">
+
+						<img
+							src="${pageContext.request.contextPath}/resources/images/sec-desktop-fig.png"
+							class="pull-right" />
+
+
+
+					</div>
+					<div class="col-sm-8 col-sm-pull-4 feature-text">
+						<h2 id="bootstrap-tailored-for-your-needs">Share/Earn</h2>
+						<p>Easy! Share your knowledge to start earning.</p>
+						<hr>
+						<li>Make money by sharing your study resources with other students!</li>
+						<li>Create Q&As and earn money when students unlock your answers.</li>
+					</div>
+				</section>
+			</div>
+		</div>
+
+
+
+		<div class="container">
+			<div class="home-body">
+				<section class="text-center">
+					<h2 style="text-align: center;">How it works!</h2>
+					<p>Anyone can download, read and share the Documents</p>
+					<br />
+
+<hr>
+
+				<div class="row">
+			
+					<div class="col-md-4">
+						<div class="howitWork">
+			
+						<div class="row" align="left">
+						<div class="col-md-8" align="justify">
+	
+							<img
+								src="${pageContext.request.contextPath}/resources/images/docu.png"
+								class="pull-right" width="150px" />
+								</div>
+						</div>
+
+						<div class="row">
+
+							<div class="btn-group">
+								<a
+									href=""
+									class="btn btn-claim btn-lg"> Dowload Documents </a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+					<div class="col-md-4">
+								<div class="howitWork">
+			
+						<div class="row" align="left">
+						<div class="col-md-8" align="justify">
+	
+							<img
+								src="${pageContext.request.contextPath}/resources/images/upload.jpg"
+								class="pull-right" width="150px" />
+								</div>
+						</div>
+
+						<div class="row">
+
+							<div class="btn-group">
+								<a
+									href=""
+									class="btn btn-claim btn-lg">Upload Documents </a>
+							</div>
+						</div>
+
+					</div>
+		</div>
+					<div class="col-md-4">
+					<div class="howitWork">
+						<div class="row" align="left">
+							<div class="col-md-8" align="justify">
+							<img
+								src="${pageContext.request.contextPath}/resources/images/earnMoney.jpg"
+								class="pull-right" width="150px" />
+								</div>
+						</div>
+
+						<div class="row">
+							<div class="btn-group">
+								<a
+									href=""
+									class="btn btn-claim btn-lg"> Earn Money </a>
+							</div>
+						</div>
+
+					</div>
+					</div>
+				</div>
+
 		</section>
+		
 
 	</div>
 </div>
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		// navigation click actions
-		$('.scroll-link').on('click', function(event) {
-			event.preventDefault();
-			var sectionID = $(this).attr("data-id");
-			scrollToID('#' + sectionID, 750);
-		});
-		// scroll to top action
-		$('.scroll-top').on('click', function(event) {
-			event.preventDefault();
-			$('html, body').animate({
-				scrollTop : 0
-			}, 'slow');
-		});
-		// mobile nav toggle
-		$('#nav-toggle').on('click', function(event) {
-			event.preventDefault();
-			$('#main-nav').toggleClass("open");
-		});
-	});
-	// scroll function
-	function scrollToID(id, speed) {
-		var offSet = 50;
-		var targetOffset = $(id).offset().top - offSet;
-		var mainNav = $('#main-nav');
-		$('html,body').animate({
-			scrollTop : targetOffset
-		}, speed);
-		if (mainNav.hasClass("open")) {
-			mainNav.css("height", "1px").removeClass("in").addClass("collapse");
-			mainNav.removeClass("open");
-		}
-	}
-	if (typeof console === "undefined") {
-		console = {
-			log : function() {
-			}
-		};
-	}
-</script>
 
 <%@include file="footer.jsp"%>
