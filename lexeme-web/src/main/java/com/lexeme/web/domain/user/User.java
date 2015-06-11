@@ -52,7 +52,7 @@ public class User implements Serializable {
 	@Column(name = "EMAIL", nullable = false, length = 50, unique = true)
 	private String email;
 
-	@Column(name = "USER_NAME", length = 50)
+	@Column(name = "USER_NAME", length = 50, unique = true)
 	private String userName;
 
 	@Column(name = "PASSWORD", nullable = false, length = 256)
@@ -80,6 +80,17 @@ public class User implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "MODIFIED_DT", nullable = false, insertable = false)
 	private Date modifiedDt;
+
+	@Column(name = "STATUS")
+	private Integer status;
+	
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 
 	@OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade=CascadeType.ALL)
 	private UserProf userProf;

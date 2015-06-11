@@ -15,4 +15,7 @@ public interface IUserService {
 	public User getUserById(Long userId);
 	public void logout();
 	public Map<String, Set<String>> getRolesAndPermission(Long userId);
+	public Long getUserIdFromPrincipal();
+	public String resendActivationLinkToUser(String contextPath)
+			throws NoSuchAlgorithmException;
 }

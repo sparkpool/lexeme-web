@@ -1,6 +1,6 @@
 <html>
     <body>
-        <h3>Hi ${userName}, welcome to Lexeme Web Sulutions!</h3>
+        <h3>Hi ${userName}, welcome to Lexeme Web Solutions!</h3>
 
         <div>
             Your email address is ${emailAddress}.

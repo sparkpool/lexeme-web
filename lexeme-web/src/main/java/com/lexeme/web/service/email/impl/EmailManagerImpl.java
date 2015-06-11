@@ -67,4 +67,26 @@ public class EmailManagerImpl implements IEmailManager{
 		}
 		return subject;
 	}
+
+	@Override
+	public void resendActivationLink(User user, String activationLink) {
+        try {
+    		Map<String, Object> values = new HashMap<String, Object>();
+    		values.put("userName", user.getUserName());
+    		values.put("activationLink", activationLink);
+    		values.put("emailAddress", user.getEmail());
+
+			getEmailSentService().sentEmail(values, user.getEmail(), getResendActivationSubjectFromProperties(), "ResendActivation");
+		} catch (Exception e) {
+			logger.error("Exception occured during sending email " + e.getMessage());
+		}
+	}
+	
+	private String getResendActivationSubjectFromProperties(){
+		String subject = PropertiesUtil.getProjectProperty("resend.activation.subject");
+		if(subject == null || subject.trim().length() == 0){
+			subject = "Activate Your Account !!";
+		}
+		return subject;
+	}
 }

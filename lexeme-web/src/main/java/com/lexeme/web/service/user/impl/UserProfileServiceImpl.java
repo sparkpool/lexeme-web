@@ -30,6 +30,7 @@ import com.lexeme.web.service.email.IEmailManager;
 import com.lexeme.web.service.user.IUserProfileService;
 import com.lexeme.web.service.user.IUserService;
 import com.lexeme.web.service.user.IUserTokenService;
+import com.lexeme.web.service.user.IUserValidationService;
 import com.lexeme.web.util.LexemeUtil;
 
 @Service
@@ -52,11 +53,14 @@ public class UserProfileServiceImpl implements IUserProfileService{
 	@Autowired
 	private IEmailManager emailManager;
 	
+	@Autowired
+	private IUserValidationService userValidationService;
+	
 	@Override
 	@Transactional
 	public String validateAndSaveNewPassword(
 			UserChangePassword userChangePassword) throws NoSuchAlgorithmException {
-		Long userId = getUserIdFromPrincipal();
+		Long userId = getUserService().getUserIdFromPrincipal();
 		logger.info("User Id from Principal is " + userId);
 		if(userId == null){
 			return MessageConstants.INVALID_LOGIN_SESSION;
@@ -85,14 +89,6 @@ public class UserProfileServiceImpl implements IUserProfileService{
 		return null;
 	}
 	
-	private Long getUserIdFromPrincipal(){
-		if(SecurityUtils.getSubject().isAuthenticated()){
-			Principal principal = (Principal)SecurityUtils.getSubject().getPrincipal();
-			return principal.getId();	
-		}
-		return null;
-	}
-
 	public IUserService getUserService() {
 		return userService;
 	}
@@ -113,7 +109,7 @@ public class UserProfileServiceImpl implements IUserProfileService{
 	}
 	
 	private String saveUserContactInfoIntoDB(UserContactInfo userContactInfo, String contextPath){
-		Long userId = getUserIdFromPrincipal();
+		Long userId = getUserService().getUserIdFromPrincipal();
 		User user = getUserService().getUserById(userId);
 		boolean emailChange = false;
 		boolean phoneChange = false;
@@ -123,11 +119,18 @@ public class UserProfileServiceImpl implements IUserProfileService{
 				phoneChange = true;
 			}
 			if(!user.getEmail().equals(userContactInfo.getEmail())){
+				//Checking first if email is already taken or not
+				String emailMsg = getUserValidationService().validateUserNameOrEmailForSignUp(null, userContactInfo.getEmail());
+				if(StringUtils.isNotBlank(emailMsg)){
+					return emailMsg;
+				}
+				//deleting old token which has been sent for activation in old email
+				getUserTokenService().deleteUserActivationToken(user.getEmail());
 				user.setEmail(userContactInfo.getEmail());
 				emailChange = true;
 			}
-			//Now removing all roles and setting unverified role
 			if(emailChange){
+				//Now removing all roles and setting unverified role
 				String newRole = EnumRoles.getUnverifiedRoleFromListOfRoles(user.getRoles());
 				Set<Roles> newRoles = getAclService().getRolesForSignUp(newRole);
 				logger.info("Roles from DB is " + newRoles);
@@ -165,7 +168,7 @@ public class UserProfileServiceImpl implements IUserProfileService{
 	@Override
 	@Transactional
 	public String saveUserProfileData(UserProfile userProfile) {
-		Long userId = getUserIdFromPrincipal();
+		Long userId = getUserService().getUserIdFromPrincipal();
 		if(userId == null){
 			return MessageConstants.INVALID_SESSION;
 		}
@@ -209,7 +212,7 @@ public class UserProfileServiceImpl implements IUserProfileService{
 	@Override
 	@Transactional
 	public String saveUserEducationData(UserEducation userEducation) {
-		Long userId = getUserIdFromPrincipal();
+		Long userId = getUserService().getUserIdFromPrincipal();
 		if(userId == null){
 			return MessageConstants.INVALID_SESSION;
 		}		
@@ -248,7 +251,7 @@ public class UserProfileServiceImpl implements IUserProfileService{
 	@Override
 	@Transactional
 	public String saveUserExperienceData(UserExperience userExperience) {
-		Long userId = getUserIdFromPrincipal();
+		Long userId = getUserService().getUserIdFromPrincipal();
 		if(userId == null){
 			return MessageConstants.INVALID_SESSION;
 		}
@@ -300,7 +303,7 @@ public class UserProfileServiceImpl implements IUserProfileService{
 	@Override
 	@Transactional
 	public UserTO getUserDetails() {
-		Long userId = getUserIdFromPrincipal();
+		Long userId = getUserService().getUserIdFromPrincipal();
 		if(userId != null){
 			User user = getUserService().getUserById(userId);
 			UserTO userTO = new UserTO();
@@ -311,6 +314,10 @@ public class UserProfileServiceImpl implements IUserProfileService{
 			return userTO;
 		}
 		return null;
+	}
+
+	public IUserValidationService getUserValidationService() {
+		return userValidationService;
 	}
 
 }

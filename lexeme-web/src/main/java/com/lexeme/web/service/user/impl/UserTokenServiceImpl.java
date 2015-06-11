@@ -81,7 +81,8 @@ public class UserTokenServiceImpl implements IUserTokenService{
 		return false;
 	}
 	
-	private void deleteToken(UserToken userToken){
+	@Override
+	public void deleteToken(UserToken userToken){
 		getSessionFactory().getCurrentSession().delete(userToken);
 	}
 	
@@ -116,6 +117,25 @@ public class UserTokenServiceImpl implements IUserTokenService{
 		}
 		return null;		
 	}
+	
+	@Override
+	public void deleteUserActivationToken(String email){
+		UserToken userToken = getUserToken(email, EnumTokenType.UV);
+		if(userToken!=null){
+			deleteToken(userToken);
+		}
+	}
+	
+	@Override
+	public String getExistingUserActivationLink(User user, String contextPath) throws NoSuchAlgorithmException{
+		UserToken userToken = getUserToken(user.getEmail(), EnumTokenType.UV);
+		logger.info("UserToken from DB for email " + user.getEmail() + " is " + userToken);
+		if(userToken!=null){
+			return getActivationLink(userToken.getToken(), contextPath, PropertiesUtil.getProjectProperty("activation.email.suffix"));
+		}
+        return null;
+	}
+	
 	
 	private UserToken getUserToken(String email, EnumTokenType enumTokenType){
 		Query query = getSessionFactory().getCurrentSession().getNamedQuery("GET.TOKEN")

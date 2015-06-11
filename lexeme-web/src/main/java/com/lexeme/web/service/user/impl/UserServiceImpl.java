@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -17,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.lexeme.web.auth.Principal;
 import com.lexeme.web.constants.MessageConstants;
 import com.lexeme.web.domain.acl.Permissions;
 import com.lexeme.web.domain.acl.Roles;
@@ -210,13 +212,47 @@ public class UserServiceImpl implements IUserService{
 		return strPermissions;
 	}
 
+	@Override
+	@Transactional
+	public String resendActivationLinkToUser(String contextPath) throws NoSuchAlgorithmException{
+		Long userId = getUserIdFromPrincipal();
+		if(userId!=null){
+			User user = getUserById(userId);
+			String activationLink = getUserTokenService().getExistingUserActivationLink(user, contextPath);
+			if(StringUtils.isBlank(activationLink)){
+				return MessageConstants.ACCOUNT_ALREADY_ACTIVATED;
+			}
+			getEmailManager().resendActivationLink(user, activationLink);
+			return MessageConstants.ACTIVATION_LINK_SEND;
+		}
+		return MessageConstants.INVALID_SESSION;
+	}
+	
+	@Override
+	public Long getUserIdFromPrincipal(){
+		Principal principal = getPrincipal();
+		if(principal!=null){
+			return principal.getId();
+		}
+		return null;
+	}
+	
+	private Principal getPrincipal(){
+		if(SecurityUtils.getSubject()!=null && SecurityUtils.getSubject().isAuthenticated()){
+			return (Principal)SecurityUtils.getSubject().getPrincipal();
+		}	
+		return null;
+	}
+
 	public IUserValidationService getUserValidationService() {
 		return userValidationService;
 	}
 
 	@Override
 	public void logout() {
-		SecurityUtils.getSubject().logout();
+		if(SecurityUtils.getSubject()!=null && SecurityUtils.getSubject().isAuthenticated()){
+			SecurityUtils.getSubject().logout();	
+		}
 	}
 
 }

@@ -5,12 +5,16 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lexeme.web.constants.MessageConstants;
@@ -144,6 +148,7 @@ public class UserController {
 			if(!bool){
 				model.addObject("errorMsg",MessageConstants.INVALID_TOKEN);
 			}else{
+				getUserService().logout();
 				model.addObject("msg",MessageConstants.ACCOUNT_ACTIVATED);
 			}
 		}catch(Exception e){
@@ -189,6 +194,7 @@ public class UserController {
 					if(bool){
 						model.setViewName("login");
 						model.addObject("msg",MessageConstants.PASSWORD_RESET_SUCCESS);
+						getUserService().logout();
 					}
 				}else{
 					model.addObject("errorMsg",MessageConstants.INVALID_SESSION);
@@ -210,6 +216,19 @@ public class UserController {
 	        logger.error("Exception occured during logout " + e.getMessage());		
 		}
 		return "login";
+	}
+	
+	@RequestMapping(value = "/resendActLink", method = RequestMethod.GET, produces = { "text/plain" })
+	@ResponseBody
+	@RequiresAuthentication
+	@ResponseStatus(HttpStatus.OK)
+	public String resendActivationLink(){
+		try{
+			return getUserService().resendActivationLinkToUser(getServletContext().getContextPath());
+		}catch(Exception e){
+			logger.error("Exception occured : " + e.getMessage());
+			return MessageConstants.SOMETHING_WRONG;
+		}
 	}
 	
 	public IUserService getUserService() {
