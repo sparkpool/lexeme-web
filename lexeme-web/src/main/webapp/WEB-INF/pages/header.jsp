@@ -9,17 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=0">
 
 <head>
-<script type="text/javascript">
-    var _contextPath = "${pageContext.request.contextPath}";
-    $(function(){
-    $('#menu-button').click(function(){$('#container').toggleClass('active');});
-	});
-	
-	
-	
-</script>
 
-
+  
 
 <!--Angular script for UI/DO Rendering-->
 <script
@@ -42,11 +33,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" type="text/css">
-<link
-	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,700italic,400,700"
-	rel="stylesheet" type="text/css">
+
 <!--Company css-->
 <script
 	src="http://patrickgawron.com/wp/wp-content/uploads/2013/11/jquery.address.js"></script>
@@ -94,10 +81,27 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/angular/authCtrl.js"></script>
 
+<script>
+
+   		 var _contextPath = "${pageContext.request.contextPath}";
+   
+     $(document).ready(function(){
+    
+    	$('#menu-button').click(function(){
+    		$('#container').toggleClass('active');
+    	});
+	
+	});
+	
+	
+	
+</script>
 
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/lwb-css.css"
 	type="text/css" media="screen" charset="utf-8">
+
+
 
 <meta name="viewport"
 	content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">

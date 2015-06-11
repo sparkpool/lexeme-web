@@ -12,7 +12,7 @@
 							<div class="column">
 								<div class="ui horizontal segment">
 
-									<form name="eduForm" method="POST" class="ui form"
+									<form name="form" method="POST" class="ui form"
 										
 										ng-submit="academicInfortion();" role="form">
 									<div class="right field input">

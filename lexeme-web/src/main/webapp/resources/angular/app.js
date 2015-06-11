@@ -3,40 +3,6 @@ var app = angular.module('myApp', [ 'ngRoute' ]);
 
 
 
-/***
- * Angular Routing
- */
-app.config(['$routeProvider','$locationProvider',
-               function($routeProvider,$locationProvider) {
-	
-                   $routeProvider.
-                       when('/login', {
-                           templateUrl: _contextPath+'/user/login',
-                           controller: 'validateCtrl'
-                       }).
-                       when('/signup', {
-                           templateUrl: _contextPath+'/user/signup',
-                           controller: 'validateCtrl'
-                       }).
-                       when('/profile',{
-                           templateUrl: _contextPath+'/user/profile',
-                           controller: 'RouteController'
-                    	   
-                       }).
-                       when('/solution',{
-                           templateUrl: _contextPath+'solution.jsp',
-                           controller: 'autocompleteController'
-                    	   
-                       })
-                       .when('/team',{
-                           templateUrl: 'team.jsp',
-                           controller: 'autocompleteController'
-                    	   
-                       })
-                       .otherwise({
-                           redirectTo: '/'
-                       });
-}]);
 
 
 

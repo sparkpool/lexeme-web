@@ -1,12 +1,14 @@
 
 <div class="ui  segment" ng-controller="authCtrl" ng-app='myApp'>
-	<div class="right aligned column" ng-controller="authCtrl"
+	<div class="right aligned column" 
+		ng-controller="authCtrl"
 		ng-app="myApp">
 		<h5 align="left">Contact Information</h5>
 		
 		<%@ include file="errorMessage.jsp" %>		
 		<hr>
-		<form name="contactForm" method="POST" class="ui form"
+		<form name="form"
+		 method="POST" class="ui form"
 			ng-submit="contactInformation();">
 
 			<div class="field">
