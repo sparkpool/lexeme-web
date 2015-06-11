@@ -2,8 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="header.jsp"%>
 
-<div id="page-content" >
-	<div class=" container-fluid" >
+<div id="page-content">
+	<div class=" container-fluid">
 		<section id="content">
 			<!-- Profile Picture -->
 			<div class="row">
@@ -15,12 +15,35 @@
 				</div>
 				<!-- extra information about user -->
 
-				<div class="col-lg-4 col-lg-offset-1">
+				<div class="col-lg-5 col-lg-offset-1">
 					<!-- Brief description about user -->
 					<div class="content" id="profile">
 						<a class="header">Shrey Arora</a>
 						<div class="meta">
-							<span class="date">Create in Sep 2014</span>
+							<span class="date">Create in Sep 2014</span> <br /> <br /> <br />
+							
+							<div style="background-color:red;">
+								
+								<div class="alert alert-success" role="alert">
+									
+									<button type="button" class="close" data-dismiss="alert"
+										aria-label="Close">
+										
+										<span aria-hidden="true">&times;</span>
+									</button>
+									
+									<div style="background-repeat: no-repeat; color: #4F8A10;">
+										<shiro:hasAnyRoles name="<%=EnumRoles.getUnverifiedRoles()%>">
+											<p style="color: red;">
+												Your account is not activate.<a href="/user/resendActLink">Click
+													Here</a> to activate your account.
+											</p>
+										</shiro:hasAnyRoles>
+
+									</div>
+								</div>
+							</div>
+
 						</div>
 
 					</div>
@@ -40,10 +63,6 @@
 						</div>
 
 						<!--  -->
-						<shiro:hasAnyRoles name="<%=EnumRoles.getUnverifiedRoles()%>">
-							<p><a href="/user/resendActLink">Click Here</a> to activate your account.</p>
-						</shiro:hasAnyRoles>
-
 					</div>
 
 				</div>
@@ -89,7 +108,7 @@
 				</div>
 
 
-			<!-- User profile Data section -->
+				<!-- User profile Data section -->
 				<div class="col-md-8 " id="profile-form">
 					<div class="profile">
 						<div class="ui pointing secondary menu">
@@ -98,24 +117,24 @@
 								class="blue item" data-tab="third">Education</a> <a
 								class="blue item" data-tab="forth">Settings</a>
 						</div>
-							
-							
-							<!-- User profile information -->
-							<%@ include file ="userProfile.jsp" %>
-							
-							<!-- User Experience information -->
-							<%@ include file ="userExperience.jsp" %>
-							
-							<!-- User education information -->
-							<%@ include file ="userEducation.jsp" %>
 
-							<!-- Acdemic information  section -->
-							<%@ include file ="changePassword.jsp" %>
-							<!-- Contact Information -->
-							<%@ include file ="contactInformation.jsp" %>
-							<!-- Close profile section -->
-							
-		<!-- end user profile data section -->
+
+						<!-- User profile information -->
+						<%@ include file="userProfile.jsp"%>
+
+						<!-- User Experience information -->
+						<%@ include file="userExperience.jsp"%>
+
+						<!-- User education information -->
+						<%@ include file="userEducation.jsp"%>
+
+						<!-- Acdemic information  section -->
+						<%@ include file="changePassword.jsp"%>
+						<!-- Contact Information -->
+						<%@ include file="contactInformation.jsp"%>
+						<!-- Close profile section -->
+
+						<!-- end user profile data section -->
 		</section>
 	</div>
 </div>

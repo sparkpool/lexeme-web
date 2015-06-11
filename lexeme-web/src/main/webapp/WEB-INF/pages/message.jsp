@@ -8,7 +8,9 @@
 					aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<div class="error" style="color: red;">${errorMsg}</div>
+				<div style="
+			    background-repeat: no-repeat;
+				color: red; ">${errorMsg}</div>
 			</div>
 		</c:if>
 
@@ -19,7 +21,9 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 
-				<div class="msg" style="color: red;">${msg}</div>
+				<div  style="
+			    background-repeat: no-repeat;
+				color: #4F8A10; ">${msg}</div>
 			</div>
 		</c:if>
 	</p>

@@ -6,11 +6,11 @@
 	<div class="container">
 	<section id="content">
 		<div class="row">
+					<!-- Error Message -->
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col-md-4 col-md-offset-4" align="center">
 					<%@ include file="message.jsp"%>
 				</div>
-
 			</div>
 
 			<!-- Heading -->

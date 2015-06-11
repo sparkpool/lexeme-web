@@ -45,22 +45,20 @@ canvas {
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="row">
-								<input type="file" name="upload from Computer" id="files"
-									name="" multiple />
+								<button type="button" class="btn btn-info btn-lg"
+									id="addDocument">
+									Add Documents</button>
 							</div>
-							
 							
 							<div class="row">
 								<ul>
-									<div id="list"></div>
+									<div class="list"></div>
 								</ul>
 							</div>
 							<br>
 
 							<div class="row">
-								<button type="button" class="btn btn-info btn-lg"
-									data-toggle="modal" data-target="#exampleModal">
-									Upload Documents</button>
+								
 							</div>
 
 						</div>
@@ -181,51 +179,22 @@ canvas {
 
 
 <script>
-	function handleFileSelect(evt) {
-		var files = evt.target.files; // FileList object
-		// Loop through the FileList and render image files as thumbnails.
-		for (var i = 0, f; f = files[i]; i++) {
-			var reader = new FileReader();
-			
-			
-
-			// Closure to capture the file information.
-			reader.onload = (function(theFile) {
-				return function(e) {
-					// Render thumbnail.
-					var span = document.createElement('span');
-					span.innerHTML = [
-							'<div class="col-md-8 col-md-offset-2" style="outline: 1px solid aqua;background-color:#ECF6FB;">' 
-								,'<form name="form" method="POST" class="ui form"'
-								 ,'ng-submit="uploadDocument();">'
-								,'<div class="col-md-4"><img class="thumb" src="',
-									e.target.result,
-									'" title="',
-									escape(theFile.name),
-									'"/>',
-									'</p></div>'
-									,'<div class="col-md-3 col-md-offet-2">'
-							,'<label>Doument Type</label> <select name="role"'
-										,'class="form-control" ><option>CS</option>'
-									    ,'<option>Homework</option>',
-									    '<option>Lab</option>',
-									    '<option>Notes</option>','</select></div>'
-									    ,'<div class="col-md-3 col-md-offet-2"><label>Upload</label><input class="ui orange save button" type="submit" name="SAVE" placeholder="Edit" value="upload" data-toggle="modal" data-target="#exampleModal"></div>'
-									    ,'</form></div></div>' ].join('');
-					document.getElementById('list').insertBefore(span, null);
-
-					document.getElementById('list').insertBefore(span, null);
-
-				};
-			})(f);
-
-			// Read in the image file as a data URL.
-			reader.readAsDataURL(f);
-		}
-	}
-
-	document.getElementById('files').addEventListener('change',
-			handleFileSelect, false);
+$("#addDocument").click(function () {
+	var span ='<div class="col-md-8 col-md-offset-2" style="outline: 1px solid aqua;background-color:#ECF6FB;">' 
+	          +'<form name="form" action="${pageContext.request.contextPath}/doc/upload" method="POST" class="ui form" enctype="multipart/form-data" >'
+			  +'<div class="col-md-2 "><label><strong>Select File</strong></label> <input type="file" name="file" /></div>'	
+			  +'<div class="col-md-2 "><label><strong>CourseID</strong></label> <input type="text" name="courseId" id="courseID" ng-model="formData.courseID"/></div>'
+			  +'<div class="col-md-2 "><label><strong>Additional Info</strong></label> <textarea rows="3" cols="10" class="form-control"  id="description" name="description" ng-model="formData.description"></textarea></div>'
+			  +'<div class="col-md-2 ">'
+			  +'<label>Doument Type</label> <select name="category"'
+			  +'class="form-control" ><option value="CS">CS</option>'
+			  +'<option value="Homework">Homework</option>'
+			  +'<option value="lab">Lab</option>'
+			  +'<option value="Notes">Notes</option></select></div>'
+			  +'<div class="col-md-2 "><label>Upload</label><input class="ui orange save button" type="submit" name="SAVE" placeholder="Edit" value="upload"></div>'
+			  +'</form></div></div>';
+	$('.list').append(span);
+});
 </script>
 
 
