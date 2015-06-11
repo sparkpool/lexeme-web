@@ -38,13 +38,14 @@ public class FileOperationsUtil {
 		return false;
 	}
 
-	public static void uploadUnverifiedFile(MultipartFile file, String fileName) {
+	public static String uploadUnverifiedFile(MultipartFile file, String fileName) {
 		InputStream inputStream = null;
 		OutputStream outputStream = null;
 		try {
 			inputStream = file.getInputStream();
             String filePath = PropertiesUtil.getProjectProperty("unverified.prefix");
-            String fileFullPath = filePath + System.currentTimeMillis() + "_" + fileName;
+            String fileFullName = System.currentTimeMillis() + "_" + fileName;
+            String fileFullPath = filePath + fileFullName;
 			File newFile = new File(fileFullPath);
 			if (!newFile.exists()) {
 				newFile.createNewFile();
@@ -56,6 +57,7 @@ public class FileOperationsUtil {
 			while ((read = inputStream.read(bytes)) != -1) {
 				outputStream.write(bytes, 0, read);
 			}
+			return fileFullName;
 		} catch (IOException e) {
 			logger.error("Exception occured : " + e.getMessage());
 		}finally{
@@ -66,5 +68,6 @@ public class FileOperationsUtil {
 				logger.error("Exception occured : " + e.getMessage());
 			}
 		}
+		return null;
 	}
 }

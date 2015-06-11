@@ -27,12 +27,4 @@ public class GeneralController {
 		return "policy";
 	}
 	
-	@RequestMapping(value = "/upload", method = RequestMethod.GET)
-	public String uploadSolution(){
-		return "uploadSolution";
-	}
-	
-
-	
-	
 }

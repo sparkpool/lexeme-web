@@ -1,5 +1,6 @@
 package com.lexeme.web.service.document.impl;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,8 +15,11 @@ public class DocumentServiceImpl implements IDocumentService{
 	@Transactional
 	public void uploadFile(String category, String courseId,
 			String description, MultipartFile file) {
-		FileOperationsUtil.uploadUnverifiedFile(file, file.getOriginalFilename());
 		
+		String fullFileName = FileOperationsUtil.uploadUnverifiedFile(file, file.getOriginalFilename());
+		if(StringUtils.isBlank(fullFileName)){
+			
+		}
 	}
 
 }

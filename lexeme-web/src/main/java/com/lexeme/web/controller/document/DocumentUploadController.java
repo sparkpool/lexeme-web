@@ -6,11 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lexeme.web.constants.MessageConstants;
+import com.lexeme.web.pojo.document.DocumentUpload;
 import com.lexeme.web.service.document.IDocumentService;
 import com.lexeme.web.util.FileOperationsUtil;
 
@@ -24,23 +23,25 @@ public class DocumentUploadController {
 	@Autowired
 	private IDocumentService documentService;
 
+	@RequestMapping(value = "/upload", method = RequestMethod.GET)
+	@RequiresAuthentication
+	public String uploadFile(){
+		return "upload";
+	}
+	
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	@RequiresAuthentication
-	public ModelAndView uploadFile(
-			@RequestParam("category") String category,
-			@RequestParam("file") MultipartFile file,
-			@RequestParam(value = "courseId", required = false) String courseId,
-			@RequestParam(value = "description", required = false) String description) {
+	public ModelAndView uploadFile(DocumentUpload documentUpload) {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("uploadSolution");
 		try {
-			String fileName = file.getOriginalFilename();
+			String fileName = documentUpload.getFile().getOriginalFilename();
 			if (!FileOperationsUtil.isFileAllowed(fileName)) {
 				logger.info("File with given extension not allowed " + fileName);
 				model.addObject("errorMsg", MessageConstants.FILE_NOT_ALLOWED);
 			} else {
-				getDocumentService().uploadFile(category, courseId,
-						description, file);
+				getDocumentService().uploadFile(documentUpload.getCategory(), documentUpload.getCourseId(),
+						documentUpload.getDescription(), documentUpload.getFile());
 				model.addObject("msg", MessageConstants.FILE_UPLOAD_SUCCESS);
 			}
 		} catch (Exception e) {
