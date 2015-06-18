@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import com.lexeme.web.domain.user.User;
@@ -17,6 +19,9 @@ import com.lexeme.web.domain.user.User;
 
 @Entity
 @Table (name ="COURSE")
+@NamedQueries({
+	@NamedQuery(name = "GET.COURSE", query="SELECT c FROM Course c WHERE c.courseID = :courseID")
+})
 public class Course implements Serializable{
 
 	private static final long serialVersionUID = 6948604767856192721L;

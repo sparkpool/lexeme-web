@@ -4,7 +4,7 @@ public enum EnumDocumentStatus {
 
 	PENDING(101L, "PENDING"),
 	VERIFIED(201L, "VERIFIED"),
-	DELETED(999L,"DELETED"),
+	DELETED(999L, "DELETED"),
 	;
 	
 	private Long documentStatusId;

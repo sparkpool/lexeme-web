@@ -21,7 +21,7 @@ public class FileOperationsUtil {
 
 	static {
 		String fileExtensions = PropertiesUtil
-				.getProjectProperty("document.allowed.extensions");
+				.getProjectProperty("document.not.allowed.extensions");
 		logger.info("File Extensions from property file is " + fileExtensions);
 		if (StringUtils.isNotBlank(fileExtensions)) {
 			for (String fileExtension : fileExtensions.split(",")) {
@@ -33,18 +33,18 @@ public class FileOperationsUtil {
 	public static boolean isFileAllowed(String fileName) {
 		String[] fileExtensions = fileName.split("\\.");
 		if (fileExtensions.length > 1) {
-			return validFileExtensions.containsKey(fileExtensions[1].trim());
+			return !validFileExtensions.containsKey(fileExtensions[1].trim());
 		}
 		return false;
 	}
 
-	public static String uploadUnverifiedFile(MultipartFile file, String fileName) {
+	public static String uploadUnverifiedFile(Long documentId, MultipartFile file) {
 		InputStream inputStream = null;
 		OutputStream outputStream = null;
 		try {
 			inputStream = file.getInputStream();
             String filePath = PropertiesUtil.getProjectProperty("unverified.prefix");
-            String fileFullName = System.currentTimeMillis() + "_" + fileName;
+            String fileFullName = documentId + "_" + file.getOriginalFilename();
             String fileFullPath = filePath + fileFullName;
 			File newFile = new File(fileFullPath);
 			if (!newFile.exists()) {

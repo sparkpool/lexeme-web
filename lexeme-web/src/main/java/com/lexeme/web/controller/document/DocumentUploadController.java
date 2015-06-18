@@ -11,7 +11,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lexeme.web.constants.MessageConstants;
-import com.lexeme.web.pojo.document.DocumentUpload;
 import com.lexeme.web.service.document.IDocumentService;
 import com.lexeme.web.util.FileOperationsUtil;
 
@@ -43,13 +42,14 @@ public class DocumentUploadController {
 		model.setViewName("uploadSolution");
 		try {
 			String fileName = file.getOriginalFilename();
+			logger.info("FileName is " + fileName);
 			if (!FileOperationsUtil.isFileAllowed(fileName)) {
 				logger.info("File with given extension not allowed " + fileName);
 				model.addObject("errorMsg", MessageConstants.FILE_NOT_ALLOWED);
 			} else {
-				getDocumentService().uploadFile(category, courseId,
+				String message = getDocumentService().uploadFile(category, courseId,
 				description, file);
-				model.addObject("msg", MessageConstants.FILE_UPLOAD_SUCCESS);
+				model.addObject("msg", message);
 			}
 		} catch (Exception e) {
 			logger.error("Exception occured : " + e.getMessage());

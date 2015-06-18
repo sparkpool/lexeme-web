@@ -255,4 +255,13 @@ public class UserServiceImpl implements IUserService{
 		}
 	}
 
+	@Override
+	public User getUSerFromPrincipal() {
+		Long userId = getUserIdFromPrincipal();
+		if(userId!=null){
+			return getUserById(userId);
+		}
+		return null;
+	}
+
 }

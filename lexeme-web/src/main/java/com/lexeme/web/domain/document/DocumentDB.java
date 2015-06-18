@@ -32,7 +32,7 @@ public class DocumentDB implements Serializable{
 	@Column(name = "CATEGORY", length = 50, nullable = false)
 	private String category;
 	
-	@Column(name = "PATH", length = 150, nullable = false)
+	@Column(name = "PATH", length = 150)
 	private String path;
 	
 	@Column(name = "DISPLAY_NAME", length = 100)
@@ -61,7 +61,7 @@ public class DocumentDB implements Serializable{
 	private Date createDt;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "UPDATE_TIME", nullable = false, insertable = false)
+	@Column(name = "UPDATE_TIME", insertable = false)
 	private Date modifiedDt;
 
 	public Long getId() {
