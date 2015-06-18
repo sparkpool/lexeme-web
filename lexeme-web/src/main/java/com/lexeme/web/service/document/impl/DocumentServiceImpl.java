@@ -4,6 +4,7 @@ import java.security.InvalidParameterException;
 import java.util.Date;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,8 @@ import com.lexeme.web.util.FileOperationsUtil;
 @Service
 public class DocumentServiceImpl implements IDocumentService{
 
+	private static final Logger logger = Logger.getLogger(DocumentServiceImpl.class);
+	
 	@Autowired
 	private IUserService userService;
 	
@@ -57,6 +60,7 @@ public class DocumentServiceImpl implements IDocumentService{
 		}
 		
 		Long id = saveDocument(documentDB);
+		logger.info("Document ID After saving is " + id);
 		String fullFileName = FileOperationsUtil.uploadUnverifiedFile(id, file);
 		if(StringUtils.isBlank(fullFileName)){
 			return MessageConstants.SOMETHING_WRONG;

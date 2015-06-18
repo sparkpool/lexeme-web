@@ -1,3 +1,4 @@
+<%@page import="com.lexeme.web.enums.EnumDocumentCategory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -154,11 +155,9 @@ canvas {
 								<div class="row">
 									<div class="col-md-8 col-offset-7">
 
-										<label>Category</label> <select>
-											<option>Homework</option>
-											<option>Labs</option>
-											<option>Noto</option>
-											<option>Notes</option>
+										<label>Category</label>
+										 <select name="category">
+											<option value="">Homework</option>
 										</select>
 									</div>
 								</div>
@@ -182,7 +181,6 @@ canvas {
 
 </div>
 
-
 <script>
 $("#addDocument").click(function () {
 	var span ='<div class="col-md-8 col-md-offset-2" style="outline: 1px solid aqua;background-color:#ECF6FB;">' 
@@ -192,18 +190,16 @@ $("#addDocument").click(function () {
 			  +'<div class="col-md-2 "><label><strong>Additional Info</strong></label> <textarea rows="3" cols="10" class="form-control"  id="description" name="description" ng-model="formData.description"></textarea></div>'
 			  +'<div class="col-md-2 ">'
 			  +'<label>Doument Type</label> <select name="category"'
-			  +'class="form-control" ><option value="CS">CS</option>'
-			  +'<option value="Homework">Homework</option>'
-			  +'<option value="lab">Lab</option>'
-			  +'<option value="Notes">Notes</option></select></div>'
+			  +'class="form-control" >'
+			  <c:forEach items="<%=EnumDocumentCategory.values() %>" var="category">
+			  + '<option value="${category.category}">${category.category}</option>'
+			  </c:forEach>			  
+			  +'</select></div>'
 			  +'<div class="col-md-2 "><label>Upload</label><input class="ui orange save button" type="submit" name="SAVE" placeholder="Edit" value="upload"></div>'
 			  +'</form></div></div>';
 	$('.list').append(span);
 });
+
 </script>
-
-
-
-
 <!-- Add footer -->
 <%@ include file="footer.jsp"%>

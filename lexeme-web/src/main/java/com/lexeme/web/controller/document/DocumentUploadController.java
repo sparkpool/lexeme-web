@@ -1,5 +1,9 @@
 package com.lexeme.web.controller.document;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.apache.log4j.Logger;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,24 +37,49 @@ public class DocumentUploadController {
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	@RequiresAuthentication
 	public ModelAndView uploadFile(
-			@RequestParam("file") MultipartFile file, 
+			@RequestParam("file") List<MultipartFile> files, 
 
 	@RequestParam("category") String category,
 	@RequestParam(value = "courseId", required = false) String courseId,
 	@RequestParam(value = "description", required = false) String description) {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("uploadSolution");
+		StringBuilder msgs = new StringBuilder();
+		StringBuilder errorMsgs1 = new StringBuilder("File ");
+		StringBuilder errorMsgs2 = new StringBuilder("File ");
+		Set<MultipartFile> validFiles = new HashSet<MultipartFile>();
 		try {
-			String fileName = file.getOriginalFilename();
-			logger.info("FileName is " + fileName);
-			if (!FileOperationsUtil.isFileAllowed(fileName)) {
-				logger.info("File with given extension not allowed " + fileName);
-				model.addObject("errorMsg", MessageConstants.FILE_NOT_ALLOWED);
-			} else {
-				String message = getDocumentService().uploadFile(category, courseId,
-				description, file);
-				model.addObject("msg", message);
+			for(MultipartFile file : files){
+				String fileName = file.getOriginalFilename();
+				logger.info("FileName is " + fileName);
+				if (!FileOperationsUtil.isFileAllowed(fileName)) {
+					logger.info("File with given extension not allowed " + fileName);
+					errorMsgs1.append(fileName + ", ");
+				} else if(file.getSize() > 26214400){
+					logger.info("File  " + fileName + "with size greater than 25 MB not allowed");
+					errorMsgs2.append(fileName + ", ");
+				}else{
+					validFiles.add(file);
+				}				
 			}
+			
+			if(errorMsgs1.length() > 5){
+				errorMsgs1.append(" ").append(MessageConstants.FILE_NOT_ALLOWED);
+			}else {
+				errorMsgs1.setLength(0);
+			}
+			if(errorMsgs2.length() > 5){
+				errorMsgs1.append("<br />").append(errorMsgs2.append(" ").append(MessageConstants.FILE_SIZE_NOT_ALLOWED));
+			}
+			for(MultipartFile file : validFiles){
+				String message = getDocumentService().uploadFile(category, courseId,
+						description, file);		
+				msgs.append("File ").append(file.getOriginalFilename()).append(" ").append(message).append("<br />");
+			}
+			if(msgs.length() > 0){
+				model.addObject("msg", msgs.toString());				
+			}
+			model.addObject("errorMsg", errorMsgs1.toString()); 
 		} catch (Exception e) {
 			logger.error("Exception occured : " + e.getMessage());
 			model.addObject("errorMsg", MessageConstants.SOMETHING_WRONG);

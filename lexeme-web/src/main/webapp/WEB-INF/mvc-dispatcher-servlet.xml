@@ -18,7 +18,7 @@
 
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.lexeme.web.*" />
+	<context:component-scan base-package="com.lexeme.*" />
 
 	<!-- To include resources relative path -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />

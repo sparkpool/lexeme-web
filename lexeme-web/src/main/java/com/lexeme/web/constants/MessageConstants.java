@@ -35,4 +35,5 @@ public class MessageConstants {
 	public static final String INFO_WITH_EMAIL_SENT = "Your Information has been updated successfuly and an Email has been sent to your email for Account verification";
 	public static final String ACTIVATION_LINK_SEND = "Activation Link Has Been Sent To Your EmailID !!";
 	public static final String ACCOUNT_ALREADY_ACTIVATED = "Your Account is Already Activated !!";
+	public static final String FILE_SIZE_NOT_ALLOWED = "with size greater than 25 MB not allowed";
 }
