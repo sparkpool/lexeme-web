@@ -30,6 +30,11 @@ canvas {
 <div id="page-content">
 	<div class="container-fluid">
 		<section id="content">
+				<div class="right aligned column">
+								<%@ include file="message.jsp" %>		
+								
+				</div>
+		
 			<div class="feedback-form-center" align="center">
 				<div class="feedback-support-text">
 					<h1>Start Uploading Documents</h1>
