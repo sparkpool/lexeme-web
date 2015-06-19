@@ -58,13 +58,13 @@
 				<div class="form-group" align="center">
 					<div class="row">
 						<div class="col-lg-12">
-							<form class="ui form" enctype="multipart/form-data"
+							<form id="uploadData" class="ui form" enctype="multipart/form-data"
 								action="${pageContext.request.contextPath}/doc/upload"
 								method="POST">
 
 								<div class="row">
 									<span class="btn btn-info btn-file">upload from computer
-									<input type="file" id="files" name="file" multiple="multiple">
+									<input type="file" id="files" name="file[]" multiple="multiple">
 									</span>
 								</div>
 
@@ -104,7 +104,10 @@
 
 <script>
 
-var queue = [];
+var fileList = [];
+
+var formData=new FormData();
+
 window.onload = function(){
     
     //Check File API support
@@ -115,9 +118,15 @@ window.onload = function(){
         filesInput.addEventListener("change", function(event){
             var files = event.target.files; //FileList object
             //var output = document.getElementById("result");
+            console.log("Size: "+fileList);
             for(var j=0 ;j< files.length; j++)
             {
-                var file = files[j];
+                var f = files[j];
+                
+                //ignore this line
+                fileList.push(f);
+               
+                
                 var picReader = new FileReader();
                 picReader.addEventListener("load",function(event){
                     var picFile = event.target;
@@ -148,6 +157,7 @@ window.onload = function(){
         console.log("Your browser does not support File API");
     }
 }
+    
     
 
 </script>
