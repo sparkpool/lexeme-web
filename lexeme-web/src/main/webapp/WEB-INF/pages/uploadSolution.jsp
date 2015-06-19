@@ -121,16 +121,18 @@ window.onload = function(){
             console.log("Size: "+fileList);
             for(var j=0 ;j< files.length; j++)
             {
-                var f = files[j];
+                var file = files[j];
                 
                 //ignore this line
-                fileList.push(f);
-               
+                fileList.push(file);
+         
                 
                 var picReader = new FileReader();
+         
                 picReader.addEventListener("load",function(event){
+                	
                     var picFile = event.target;
-                    var div = document.createElement("div");
+             	    var div = document.createElement("div");
                     div.innerHTML = "<div class='col-md-8 col-md-offset-2' style='outline: 1px solid aqua;background-color:#ECF6FB;'>" 
 				                    +"<div class='col-md-4 '><label>Document Name</label><br/><strong><img class='thumbnail' src='" + picFile.result + "'" 
 		                            +"title='" + picFile.name + "'/>"
