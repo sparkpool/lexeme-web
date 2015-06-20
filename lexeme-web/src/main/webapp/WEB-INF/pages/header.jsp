@@ -102,14 +102,7 @@
 	type="text/css" media="screen" charset="utf-8">
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
 
-
-<link rel="stylesheet" href="http://demo.multivio.org/css/rero-theme/jquery-ui-1.8.16.custom.css" type="text/css" />
-<!-- Multivio preview's custom CSS and JS -->
-<link rel="stylesheet" href="http://demo.multivio.org/css/1.0/multivio-min.css" type="text/css" />
-<script src="http://demo.multivio.org/js/1.0/multivio-dev.js" type="text/javascript"></script>
 
 <meta name="viewport"
 	content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
