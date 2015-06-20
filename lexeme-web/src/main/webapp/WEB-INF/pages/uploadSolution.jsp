@@ -64,7 +64,7 @@
 
 								<div class="row">
 									<span class="btn btn-info btn-file">upload from computer
-									<input type="file" id="files" name="file[]" multiple="multiple">
+									<input type="file" id="files" >
 									</span>
 								</div>
 
@@ -102,10 +102,10 @@
 
 </div>
 
-<script>
+<script type="text/javascript">
 
 var fileList = [];
-
+var index = 0;
 var formData=new FormData();
 
 window.onload = function(){
@@ -134,9 +134,12 @@ window.onload = function(){
                     var picFile = event.target;
              	    var div = document.createElement("div");
                     div.innerHTML = "<div class='col-md-8 col-md-offset-2' style='outline: 1px solid aqua;background-color:#ECF6FB;'>" 
-				                    +"<div class='col-md-4 '><label>Document Name</label><br/><strong><img class='thumbnail' src='" + picFile.result + "'" 
-		                            +"title='" + picFile.name + "'/>"
-		                            +"</strong></div>"
+				                    +"<div class='col-md-4 '><label>Document Name</label><br/>"
+				                    + "<strong><img class='thumbnail' src='" + picFile.result + "'" 
+		                            +"title='" + picFile.name + "' />"
+		                            +"</strong>"
+		                            + "<input type='file' name=file[" + (index++) + "] value='" + file + "' />" 
+		                            +"</div>"
     			  					+"<div class='col-md-4'><label><strong>CourseID</strong> </label><input type='text' name='courseId' id='courseID' ng-model='formData.courseID'/></div>"
     			  					+"<div class='col-md-4 '>"
     			 					 +'<label><strong>Doument Type</strong></label> <select name="category"'

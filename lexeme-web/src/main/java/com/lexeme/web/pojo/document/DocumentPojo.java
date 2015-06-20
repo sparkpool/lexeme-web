@@ -7,7 +7,9 @@ public class DocumentPojo {
 	private String courseID;
 	private String category;
 	private String description;
-
+    
+    public DocumentPojo(){}
+	
 	public Long getDocumentId() {
 		return documentId;
 	}

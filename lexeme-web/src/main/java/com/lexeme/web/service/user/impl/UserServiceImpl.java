@@ -113,9 +113,11 @@ public class UserServiceImpl implements IUserService{
 		.setString("email", userPojo.getEmail()).setString("password", password);
 		
 		user = (User) query.uniqueResult();
-		if(user!=null && user.getId()!=null){
+		if(user!=null && user.getId()!=null && user.getStatus() == 0){
 			userPojo.setId(user.getId());
 			loginUser(userPojo.getEmail(), user.getPassword());
+		}else if(user!=null && user.getStatus()!=0){
+			userPojo.setMsg(MessageConstants.ACCOUNT_BLOCKED);
 		}else{
 			userPojo.setMsg(MessageConstants.INVALID_PASSWORD);
 		}

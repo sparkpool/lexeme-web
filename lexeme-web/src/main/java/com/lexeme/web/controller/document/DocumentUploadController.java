@@ -11,10 +11,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lexeme.web.constants.MessageConstants;
+import com.lexeme.web.pojo.document.DocumentPojo;
+import com.lexeme.web.pojo.document.DocumentUploadPojo;
 import com.lexeme.web.service.document.IDocumentService;
 import com.lexeme.web.util.FileOperationsUtil;
 
@@ -36,55 +39,48 @@ public class DocumentUploadController {
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	@RequiresAuthentication
-	public ModelAndView uploadFile(
-			@RequestParam("file") List<MultipartFile> files, 
-
-	@RequestParam("category") String category,
-	@RequestParam(value = "courseId", required = false) String courseId,
-	@RequestParam(value = "description", required = false) String description) {
-		ModelAndView model = new ModelAndView();
-		model.setViewName("uploadSolution");
+	@ResponseBody
+	public String uploadFile(List<DocumentUploadPojo> documents) {
 		StringBuilder msgs = new StringBuilder();
 		StringBuilder errorMsgs1 = new StringBuilder("File ");
 		StringBuilder errorMsgs2 = new StringBuilder("File ");
-		Set<MultipartFile> validFiles = new HashSet<MultipartFile>();
-		try {
-			for(MultipartFile file : files){
-				String fileName = file.getOriginalFilename();
-				logger.info("FileName is " + fileName);
-				if (!FileOperationsUtil.isFileAllowed(fileName)) {
-					logger.info("File with given extension not allowed " + fileName);
-					errorMsgs1.append(fileName + ", ");
-				} else if(file.getSize() > 26214400){
-					logger.info("File  " + fileName + "with size greater than 25 MB not allowed");
-					errorMsgs2.append(fileName + ", ");
-				}else{
-					validFiles.add(file);
-				}				
-			}
-			
-			if(errorMsgs1.length() > 5){
-				errorMsgs1.append(" ").append(MessageConstants.FILE_NOT_ALLOWED);
-			}else {
-				errorMsgs1.setLength(0);
-			}
-			if(errorMsgs2.length() > 5){
-				errorMsgs1.append("<br />").append(errorMsgs2.append(" ").append(MessageConstants.FILE_SIZE_NOT_ALLOWED));
-			}
-			for(MultipartFile file : validFiles){
-				String message = getDocumentService().uploadFile(category, courseId,
-						description, file);		
-				msgs.append("File ").append(file.getOriginalFilename()).append(" ").append(message).append("<br />");
-			}
-			if(msgs.length() > 0){
-				model.addObject("msg", msgs.toString());				
-			}
-			model.addObject("errorMsg", errorMsgs1.toString()); 
-		} catch (Exception e) {
-			logger.error("Exception occured : " + e.getMessage());
-			model.addObject("errorMsg", MessageConstants.SOMETHING_WRONG);
-		}
-		return model;
+		Set<DocumentPojo> validFiles = new HashSet<DocumentPojo>();
+//			for(MultipartFile file : files){
+//				String fileName = file.getOriginalFilename();
+//				logger.info("FileName is " + fileName);
+//				if (!FileOperationsUtil.isFileAllowed(fileName)) {
+//					logger.info("File with given extension not allowed " + fileName);
+//					errorMsgs1.append(fileName + ", ");
+//				} else if(file.getSize() > 26214400){
+//					logger.info("File  " + fileName + "with size greater than 25 MB not allowed");
+//					errorMsgs2.append(fileName + ", ");
+//				}else{
+//					validFiles.add(new DocumentPojo(file,));
+//				}				
+//			}
+//			if(errorMsgs1.length() > 5){
+//				errorMsgs1.append(" ").append(MessageConstants.FILE_NOT_ALLOWED);
+//			}else {
+//				errorMsgs1.setLength(0);
+//			}
+//			if(errorMsgs2.length() > 5){
+//				errorMsgs1.append("<br />").append(errorMsgs2.append(" ").append(MessageConstants.FILE_SIZE_NOT_ALLOWED));
+//			}
+//			for(MultipartFile file : validFiles){
+//				try {
+//				//				String message = getDocumentService().uploadFile(category, courseId,
+////						description, file);		
+////				msgs.append("File ").append(file.getOriginalFilename()).append(" ").append(message).append("<br />");
+//				} catch (Exception e) {
+//					logger.error("Exception occured : " + e.getMessage());
+//				}
+//			}
+//			if(msgs.length() > 0){
+//				model.addObject("msg", msgs.toString());				
+//			}
+//			model.addObject("errorMsg", errorMsgs1.toString()); 
+//			return model;
+		return "";
 	}
 
 	public IDocumentService getDocumentService() {

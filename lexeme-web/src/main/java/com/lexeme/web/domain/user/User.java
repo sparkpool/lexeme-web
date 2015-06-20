@@ -82,7 +82,7 @@ public class User implements Serializable {
 	private Date modifiedDt;
 
 	@Column(name = "STATUS")
-	private Integer status;
+	private Integer status = 0;
 	
 	public Integer getStatus() {
 		return status;
