@@ -1,5 +1,7 @@
 package com.lexeme.web.pojo.document;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class DocumentPojo {
 
 	private Long documentId;
@@ -7,8 +9,24 @@ public class DocumentPojo {
 	private String courseID;
 	private String category;
 	private String description;
-    
-    public DocumentPojo(){}
+	private MultipartFile file;
+	
+	public DocumentPojo(MultipartFile file, String description, String category, String courseId){
+		this.file = file;
+		this.description = description;
+		this.category = category;
+		this.courseID = courseId;
+	}
+	
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+
+	public DocumentPojo(){}
 	
 	public Long getDocumentId() {
 		return documentId;

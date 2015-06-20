@@ -102,9 +102,7 @@
 
 </div>
 
-<script>
-
-
+<script type="text/javascript">
 //Get  form
 var form = document.getElementById('uploadData');
 //Prepare the form data object
@@ -154,26 +152,23 @@ window.onload = function(){
            */
              	var div = document.createElement("div");
                 div.innerHTML = "<div class='col-md-8 col-md-offset-2' style='outline: 1px solid aqua;background-color:#ECF6FB;'>" 
-				                    +"<div class='col-md-4 '><label>Document Name</label><br/><strong><img class='thumbnail' src='" + picFile.result + "'" 
+				                    +"<div class='col-md-3 '><label>Document Name</label><br/><strong><img class='thumbnail' src='" + picFile.result + "'" 
 		                            +"title='" + picFile.name + "'/>"
 		                            +"</strong></div>"
-    			  					+"<div class='col-md-4'><label><strong>CourseID</strong> </label><input type='text' name='courseId' id='courseID' ng-model='formData.courseID'/></div>"
-    			  					+"<div class='col-md-4 '>"
-    			 					 +'<label><strong>Doument Type</strong></label> <select id="myselect" name="category"'
-    			  					+'<div class="form-control">'+
-    			  					<c:forEach items="<%=EnumDocumentCategory.values() %>" var="category">
-    			  					+'<option value="${category.category}">${category.category}</option>'
-    			  					</c:forEach>			  
-    			  					+'</select></div></div><br/>';
-                  
-    			  					
+    			  					+"<div class='col-md-3'><label><strong>CourseID</strong>"
+    			  					+"</label><input type='text' name='courseId' class='courseID' ng-model='formData.courseID'/></div>"
+    			  					+"<div class='col-md-3 '>"
+    			 					+"<label><strong>Doument Type</strong></label> "
+    			 					+"<select class='myselect' name='category'>"
+    			 					<c:forEach items="<%=EnumDocumentCategory.values() %>" var="category">
+    			 					+"<option value='${category.category}'>${category.category}</option>"
+    			 					</c:forEach>			  
+    			  					+'</select>'
+    			  					+'</div><div class="col-md-3"><textarea name="description" class="description" rows="6" cols="4" ></textarea></div></div><br/>';
     			  //Get selected category
     		  $(".result").append(div);            
                 });
           	  var cat =$("#myselect option:selected").text();
-			  console.log(cat);
-			  formData.append("category",cat);
-			
                  //Read the image
                 pictureReader.readAsDataURL(file);
             }                               
@@ -187,6 +182,18 @@ window.onload = function(){
 
 //Submit form
 $( 'form' ).submit(function ( e ) {
+	$('.courseID').each(function(){
+		var course = $(this).val();
+		formData.append("courseId", course);
+	});
+	$('.myselect').each(function(){
+		var category = $(this).val();
+		formData.append("category", category);
+	});
+	$('.description').each(function(){
+		var description = $(this).val();
+		formData.append("description", description);
+	});
 	$.ajax({
 		  //set the accept data
 		  headers:{
