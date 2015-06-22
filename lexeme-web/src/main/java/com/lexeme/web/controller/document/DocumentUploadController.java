@@ -58,7 +58,7 @@ public class DocumentUploadController {
 					logger.info("File  " + fileName + "with size greater than 25 MB not allowed");
 					errorMsgs2.append(fileName + ", ");
 				}else{
-					validFiles.add(new DocumentPojo(file, descriptions.get(i), category.get(i), courseIds.get(i)));
+					validFiles.add(new DocumentPojo(file, descriptions.get(i).trim(), category.get(i).trim(), courseIds.get(i).trim()));
 				}
 				i++;
 			}

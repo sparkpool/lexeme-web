@@ -18,6 +18,31 @@ public class DocumentPojo {
 		this.courseID = courseId;
 	}
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((file.getOriginalFilename() == null) ? 0 : file.getOriginalFilename().hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DocumentPojo other = (DocumentPojo) obj;
+		if (file == null) {
+			if (other.file != null)
+				return false;
+		} else if (!file.getOriginalFilename().equals(other.file.getOriginalFilename()))
+			return false;
+		return true;
+	}
+
 	public MultipartFile getFile() {
 		return file;
 	}

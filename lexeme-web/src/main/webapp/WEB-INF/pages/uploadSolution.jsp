@@ -246,7 +246,7 @@ $( 'form' ).submit(function ( e ) {
 	//append Couser ID
 	$('.courseID').each(function(){
 		var course = $(this).val();
-		formData.append("courseId", course);
+		formData.append("courseId", course+' ');
 	});
 	
 	//Append Category
@@ -258,7 +258,7 @@ $( 'form' ).submit(function ( e ) {
 	//append description
 	$('.description').each(function(){
 		var description = $(this).val();
-		formData.append("description", description);
+		formData.append("description", description+' ');
 	});
 	$.ajax({
 		  //set the accept data

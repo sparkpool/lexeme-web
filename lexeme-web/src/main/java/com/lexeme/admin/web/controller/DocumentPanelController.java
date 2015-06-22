@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lexeme.admin.web.service.IDocumentAdminService;
@@ -34,5 +35,32 @@ public class DocumentPanelController {
 			logger.error("Exception occured " + e.getMessage());
 		}
 		return model;
+	}
+	
+	@RequestMapping(value = "/verify", method = RequestMethod.POST)
+	@RequiresRoles("MODERATOR")
+	public ModelAndView verifyDocument(@RequestParam("docId") Long documentId){
+	  ModelAndView model = new ModelAndView();
+	  model.setViewName("documentsPanel");
+	  try{
+		  
+	  }catch(Exception e){
+		  logger.error("Exception occured " + e.getMessage());
+	  }
+	  return model;
+	}
+	
+	
+	@RequestMapping(value = "/del", method = RequestMethod.POST)
+	@RequiresRoles("MODERATOR")
+	public ModelAndView deleteDocument(@RequestParam("docId") Long documentId){
+	  ModelAndView model = new ModelAndView();
+	  model.setViewName("documentsPanel");
+	  try{
+		  
+	  }catch(Exception e){
+		  logger.error("Exception occured during deleting document " + e.getMessage());
+	  }
+	  return model;
 	}
 }
