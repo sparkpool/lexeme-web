@@ -1,138 +1,132 @@
 /* adjust body when menu is open */
 body.slide-active {
-    overflow-x: hidden
+	overflow-x: hidden
 }
 /*first child of #page-content so it doesn't shift around*/
 .no-margin-top {
-    margin-top: 0px!important
+	margin-top: 0px !important
 }
 /*wrap the entire page content but not nav inside this div if not a fixed top, don't add any top padding */
-
 #page-content.slide-active {
-    padding-top: 0
-
+	padding-top: 0
 }
 
 /* put toggle bars on the left :: not using button */
 #slide-nav .navbar-toggle {
-    cursor: pointer;
-    position: relative;
-    line-height: 0;
-    float: left;
-    margin: 0;
-    width: 30px;
-    height: 40px;
-    padding: 10px 0 0 0;
-    border: 0;
-
+	cursor: pointer;
+	position: relative;
+	line-height: 0;
+	float: left;
+	margin: 0;
+	width: 30px;
+	height: 40px;
+	padding: 10px 0 0 0;
+	border: 0;
 }
 
-
 /* icon bar prettyup - optional */
-#slide-nav .navbar-toggle > .icon-bar {
-    width: 100%;
-    display: block;
-    height: 3px;
-    margin: 5px 0 0 0;
+#slide-nav .navbar-toggle>.icon-bar {
+	width: 100%;
+	display: block;
+	height: 3px;
+	margin: 5px 0 0 0;
 }
 
 #slide-nav .navbar-toggle.slide-active .icon-bar {
-    background: orange
+	background: orange
 }
+
 .navbar-header {
-    position: relative
+	position: relative
 }
 
 /* un fix the navbar when active so that all the menu items are accessible */
 .navbar.navbar-fixed-top.slide-active {
-    position: relative
+	position: relative
 }
 /* screw writing importants and shit, just stick it in max width since these classes are not shared between sizes */
-@media (max-width:767px) { 
-    #slide-nav .container {
-        margin: 0;
-        padding: 0!important;
- 
-    }
-    #slide-nav .navbar-header {
-        margin: 0 auto;
-        padding: 0 15px;
-    }
-    #slide-nav .navbar.slide-active {
-        position: absolute;
-        width: 80%;
-        top: -1px;
-        z-index: 1000;
-    }
-    #slide-nav #slidemenu {
-        left: -50%;
-        width: 50%;
-        min-width: 0;
-        position: absolute;
-        padding-left: 0;
-        z-index: 2;
-        margin-top:10px;
-        background: none repeat scroll 0% 0% #06476B;
-    }
-    #slide-nav #slidemenu .navbar-nav {
-        min-width: 0;
-        width: 100%;
-        margin-top: 9px;
-    }
-    #slide-nav #slidemenu .navbar-nav .dropdown-menu li a {
-        background: none repeat scroll 0% 0% #06476B;
+@media ( max-width :767px) {
+	#slide-nav .container {
+		margin: 0;
+		padding: 0 !important;
+	}
+	#slide-nav .navbar-header {
+		margin: 0 auto;
+		padding: 0 15px;
+	}
+	#slide-nav .navbar.slide-active {
+		position: absolute;
+		width: 80%;
+		top: -1px;
+		z-index: 1000;
+	}
+	#slide-nav #slidemenu {
+		left: -50%;
+		width: 50%;
 		min-width: 0;
-        width: 50%;
-        white-space: normal;
-    }
-    #slide-nav {
-        border-top: 0
-    }
-    #slide-nav.navbar-inverse #slidemenu {
-            background: none repeat scroll 0% 0% #06476B;
-    
-    }
-    /* this is behind the navigation but the navigation is not inside it so that the navigation is accessible and scrolls*/
-    #slide-nav #navbar-height-col {
-        position: fixed;
-        margin-top: 50px;
+		position: absolute;
+		padding-left: 0;
+		z-index: 2;
+		margin-top: 10px;
+		background: none repeat scroll 0% 0% #06476B;
+	}
+	#slide-nav #slidemenu .navbar-nav {
+		min-width: 0;
+		width: 100%;
+		margin-top: 9px;
+	}
+	#slide-nav #slidemenu .navbar-nav .dropdown-menu li a {
+		background: none repeat scroll 0% 0% #06476B;
+		min-width: 0;
+		width: 50%;
+		white-space: normal;
+	}
+	#slide-nav {
+		border-top: 0
+	}
+	#slide-nav.navbar-inverse #slidemenu {
+		background: none repeat scroll 0% 0% #06476B;
+	}
+	/* this is behind the navigation but the navigation is not inside it so that the navigation is accessible and scrolls*/
+	#slide-nav #navbar-height-col {
+		position: fixed;
+		margin-top: 50px;
 		height: 100%;
-        width: 50%;
-        left: -80%;
-        background: #eee;
-    }
-    #slide-nav.navbar-inverse #navbar-height-col {
-         background: none repeat scroll 0% 0% #06476B;
-       z-index: 1;
-        border: 0;
-    }
-    #slide-nav .navbar-form {
-        width: 100%;
-        margin: 15px 0;
-        text-align: center;
-        overflow: hidden;
-        /*fast clearfixer*/
-    }
-    #slide-nav .navbar-form .form-control {
-        text-align: center
-    }
-    #slide-nav .navbar-form .btn {
-        width: 100%
-    }
-}
-@media (min-width:768px) { 
-    #page-content {
-        left: 0!important
-    }
-    .navbar.navbar-fixed-top.slide-active {
-        position: fixed
-    }
-    .navbar-header {
-        left: 0!important
-    }
+		width: 50%;
+		left: -80%;
+		background: #eee;
+	}
+	#slide-nav.navbar-inverse #navbar-height-col {
+		background: none repeat scroll 0% 0% #06476B;
+		z-index: 1;
+		border: 0;
+	}
+	#slide-nav .navbar-form {
+		width: 100%;
+		margin: 15px 0;
+		text-align: center;
+		overflow: hidden;
+		/*fast clearfixer*/
+	}
+	#slide-nav .navbar-form .form-control {
+		text-align: center
+	}
+	#slide-nav .navbar-form .btn {
+		width: 100%
+	}
 }
 
-
+@media ( min-width :768px) {
+	#page-content {
+		left: 0 !important
+	}
+	.navbar.navbar-fixed-top.slide-active {
+		position: fixed
+	}
+	.navbar-header {
+		left: 0 !important
+	}
+}
 
 @media ( min-width : 320px) and (max-width: 767px) {
 	#login-form {
@@ -144,394 +138,320 @@ body.slide-active {
 	}
 }
 
-
-
-.logo{
-		float:none;
-		margin-top:15px;
-		text-align:left;
-		display:block;
-		width:auto;
-		font-family: 'Open Sans', sans-serif;
+.logo {
+	float: none;
+	margin-top: 15px;
+	text-align: left;
+	display: block;
+	width: auto;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
-		font-size: 21px;
-		font-style:bold;
-		font-weight: 300;
+	font-size: 21px;
+	font-style: bold;
+	font-weight: 300;
 }
 
-@media screen and (max-width:480px){
-	.logo{
-		float:none;
-		margin-top:15px;
-		text-align:center;
-		display:block;
-		width:auto;
+@media screen and (max-width:480px) {
+	.logo {
+		float: none;
+		margin-top: 15px;
+		text-align: center;
+		display: block;
+		width: auto;
 		font-family: 'Open Sans', sans-serif;
 		font-size: 13px;
 		font-size: 21px;
-		font-style:bold;
+		font-style: bold;
 		font-weight: 300;
 	}
-	
-	a{
+	a {
 		text-align: center;
-		font-size:100px;
+		font-size: 100px;
 	}
-	
 	sidebar {
-	  position:absolute;
-	  left:0; top:1px; bottom: 0;
-	   width: 178px;
-	   margin-left: -10px;
-	  float: left;
-	  overflow: hidden;
-	  background: #2c3e50;
-	  background: rgba(44,62,80, 0.4);
-	  color: #eee;
-	  min-height: 600px;
+		position: absolute;
+		left: 0;
+		top: 1px;
+		bottom: 0;
+		width: 178px;
+		margin-left: -10px;
+		float: left;
+		overflow: hidden;
+		background: #2c3e50;
+		background: rgba(44, 62, 80, 0.4);
+		color: #eee;
+		min-height: 600px;
 	}
-	
-	content{
+	content {
+		
 	}
-
-	
 }
 
-
-
-@media (max-width: 1200px) {
-	
-	.navbar-default .navbar-toggle, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+@media ( max-width : 1200px) {
+	.navbar-default .navbar-toggle,.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus
+		{
 		background: #fff;
 		padding: 8px 5px 6px 5px;
 	}
-	
-	
 	.navbar-default .navbar-toggle i {
 		color: #bbb;
 		font-size: 2em;
-		position:absolute;
-    left:0; top:92px; bottom: 0;
-    width: 178px;
+		position: absolute;
+		left: 0;
+		top: 92px;
+		bottom: 0;
+		width: 178px;
 	}
-
 	.quote-buttons span {
 		margin: 0 2px;
 	}
-
 	.flickr-widget ul li {
 		margin-left: 0px;
 		margin-right: 7px;
 	}
-
 	.subscribe-widget form input[type="text"] {
 		margin-bottom: 10px;
 	}
-
 	.history-content p {
 		max-height: 36px;
 		line-height: 20px;
 		overflow: hidden;
 	}
-	
 	.projects-carousel {
-		width: 950px!important;
+		width: 950px !important;
 	}
 }
 
-@media (max-width: 991px) {
-	
-	.boxed-page, .boxed-page header {
+@media ( max-width : 991px) {
+	.boxed-page,.boxed-page header {
 		width: 100%;
 	}
-	
 	.classic-testimonials {
-		margin-bottom: 25px!important;
+		margin-bottom: 25px !important;
 	}
-	
 	.tp-caption a.btn-system {
 		font-size: 11px;
 		padding: 4px 8px;
 	}
-	
 	.contact-details {
-		display: none!important;
+		display: none !important;
 	}
-	
 	.navbar-brand {
 		padding: 25px 15px;
 	}
-	
 	.navbar-default .navbar-nav {
 		margin: 0 !important;
 		top: 0;
 	}
-
 	ul.social-list {
 		float: none !important;
 		text-align: center;
 	}
-
 	ul.social-list li {
 		float: none !important;
 		display: inline-block;
 	}
-
 	.quote-buttons {
 		text-align: center;
 	}
-
 	.copyright-section {
 		text-align: center;
 	}
-
 	ul.footer-nav {
 		display: block;
 		float: none !important;
 		text-align: center;
 		margin-top: 10px;
 	}
-	
 	ul.footer-nav li {
 		display: inline-block;
 		float: none;
 		margin-left: 15px;
 	}
-
 	.page-banner {
 		text-align: center;
 	}
-
 	ul.breadcrumbs {
 		float: none;
 	}
-
 	ul.breadcrumbs li {
 		float: none;
 		display: inline-block;
 		float: left\0/;
 	}
-	
 	.portfolio-4 .portfolio-item {
-		width: 49.99%!important;
+		width: 49.99% !important;
 		padding-left: 15px;
 		padding-right: 15px;
 		margin-bottom: 30px;
 	}
-	
 	.projects-carousel {
 		width: 100% !important;
 	}
-	
-	.pricing-tables .pricing-table {
-		//width: 50% !important;
+	.pricing-tables .pricing-table { //
+		width: 50% !important;
 		margin-bottom: 15px;
 	}
-	
 	.pricing-tables .highlight-plan {
 		margin: 0;
 	}
-	
 	.pricing-tables .pricing-table.highlight-plan .plan-name {
 		padding: 15px 0;
 	}
-	
 	.pricing-tables .pricing-table.highlight-plan .plan-signup {
-		padding:25px 0;
+		padding: 25px 0;
 	}
-	
 	.pricing-tables .pricing-table:hover {
 		top: 0;
 	}
-	
 	.milestone-block {
 		margin-bottom: 25px;
 		margin-right: 40px;
 	}
-	
 	.fittext {
 		font-size: 30px;
 		line-height: 38px;
 	}
-	
 	.team-member {
 		text-align: center;
 		margin-bottom: 30px;
 	}
-	
 	.member-photo {
 		display: inline-block;
 		margin: 0 auto;
 	}
-	
 	.easyPieChart {
 		margin: 0 40px 20px 0;
 	}
-	
 	.right-sidebar {
 		margin-top: 60px;
 		padding-top: 60px;
 		border-top: 1px solid #eee;
 	}
-	
 	.sidebar .widget {
 		margin-bottom: 35px;
 	}
-	
 }
 
-@media (max-width: 768px) {
-  
-	.tp-leftarrow,
-	.tp-rightarrow {
-		display: none!important;
+@media ( max-width : 768px) {
+	.tp-leftarrow,.tp-rightarrow {
+		display: none !important;
 	}
-  
-    .tp-caption a.btn-system {
+	.tp-caption a.btn-system {
 		display: none;
 	}
-	
 	.history-box img {
 		float: none;
 		width: 100%;
 	}
-
 	.history-content {
 		float: none;
 		width: 100% !important;
 	}
-
 	.history-box span.history-date {
 		right: inherit;
 		left: 15px;
 	}
-	
 	.portfolio-filter li {
 		margin-bottom: 8px;
 	}
-	
 	.portfolio-4 .portfolio-item {
-		width: 100%!important;
+		width: 100% !important;
 		padding-left: 15px;
 		padding-right: 15px;
 		margin-bottom: 20px;
 	}
-  
-    .milestone-block {
-        margin-bottom: 20px;
-        margin-right: 45px;
-    }
-
+	.milestone-block {
+		margin-bottom: 20px;
+		margin-right: 45px;
+	}
 }
-@media only screen and (max-width: 480px) { 
-  
-    .top-bar  {
+
+@media only screen and (max-width: 480px) {
+	.top-bar {
 		text-align: center;
 	}
-    
 	.navbar-default .navbar-nav {
 		padding: 15px 0;
-		display:block;
+		display: block;
 	}
-	
-	.show-search, .search-form {
+	.show-search,.search-form {
 		display: none;
 	}
-  
-    ul.social-list li {
+	ul.social-list li {
 		margin: 0 3px;
 	}
-	
 	ul.social-list li a i {
 		font-size: 0.9em;
 		display: block;
 		width: auto;
 		line-height: 30px;
-		border: none!important;
+		border: none !important;
 	}
-	
 	ul.social-list li a:hover {
-		background-color: transparent!important;
+		background-color: transparent !important;
 	}
-	
 	ul.social-list li a.facebook:hover {
 		color: #507CBE;
 	}
-	
 	ul.social-list li a.twitter:hover {
 		color: #63CDF1;
 	}
-	
 	ul.social-list li a.google:hover {
 		color: #F16261;
 	}
-	
 	ul.social-list li a.dribbble:hover {
 		color: #E46387;
 	}
-	
 	ul.social-list li a.linkdin:hover {
 		color: #90CADD;
 	}
-	
 	ul.social-list li a.tumblr:hover {
 		color: #4D7EA3;
 	}
-	
 	ul.social-list li a.flickr:hover {
 		color: #E474AF;
 	}
-	
 	ul.social-list li a.instgram:hover {
 		color: #4D4F54;
 	}
-	
 	ul.social-list li a.vimeo:hover {
 		color: #87D3E0;
 	}
-	
 	ul.social-list li a.skype:hover {
 		color: #36C4F3
 	}
-	
 	.navbar-default .navbar-toggle {
 		margin-top: 15px;
 		outline: none;
 	}
-
-	.navbar-default .navbar-nav > li > a {
+	.navbar-default .navbar-nav>li>a {
 		border: none;
 		padding: 5px 10px;
 		display: block;
 		border: none !important;
 		padding-right: 0;
 	}
-	
-	.navbar-default .navbar-nav > li > a:after {
+	.navbar-default .navbar-nav>li>a:after {
 		display: none;
 	}
-
-	.navbar-default .navbar-nav > li > a:hover {
+	.navbar-default .navbar-nav>li>a:hover {
 		opacity: 0.7;
 	}
-  
-    .navbar-default .navbar-nav > li {
+	.navbar-default .navbar-nav>li {
 		margin-left: 0;
 		display: block;
 		margin-bottom: 5px;
-        width: 100%
+		width: 100%
 	}
-
-	.navbar-default .navbar-nav > li.drop > a {
-	    padding-right: 10px;
+	.navbar-default .navbar-nav>li.drop>a {
+		padding-right: 10px;
 	}
-	
-	.navbar-default .navbar-nav > li.drop > a {
+	.navbar-default .navbar-nav>li.drop>a {
 		border-radius: 2px;
 	}
-
-	ul.dropdown, ul.sup-dropdown {
-		opacity: 1!important;
+	ul.dropdown,ul.sup-dropdown {
+		opacity: 1 !important;
 		position: relative !important;
 		visibility: visible !important;
 		width: 100% !important;
@@ -542,33 +462,24 @@ body.slide-active {
 		padding-left: 20px !important;
 		box-shadow: none !important;
 	}
-
-	ul.dropdown li, ul.sup-dropdown li {
+	ul.dropdown li,ul.sup-dropdown li {
 		border-top: none;
 	}
-  
-    .milestone-block {
-        display: block;
-        clear: left;
-        margin-right: 0;
-    }
-  
-    .btn-system {
-        margin-bottom: 10px;
-    }
-  
-    .easyPieChart {
-      font-size: 24px;
-      font-weight: 400;
-      position: relative;
-      text-align: center;
-      display: inline-block;
-      margin: 0 0 20px 0;
-      overflow: hidden;
-    }
-    
+	.milestone-block {
+		display: block;
+		clear: left;
+		margin-right: 0;
+	}
+	.btn-system {
+		margin-bottom: 10px;
+	}
+	.easyPieChart {
+		font-size: 24px;
+		font-weight: 400;
+		position: relative;
+		text-align: center;
+		display: inline-block;
+		margin: 0 0 20px 0;
+		overflow: hidden;
+	}
 }
-
-
-
-

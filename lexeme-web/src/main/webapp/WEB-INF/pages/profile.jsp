@@ -10,7 +10,8 @@
 				<div class="col-lg-2">
 					<div class="profile">
 						<img
-							src="${pageContext.request.contextPath}/resources/images/nophoto_pic.gif">
+							src="${pageContext.request.contextPath}/resources/images/nophoto_pic.gif"
+							class="img-responsive img-circle">
 					</div>
 				</div>
 				<!-- extra information about user -->
@@ -21,23 +22,29 @@
 						<a class="header">Shrey Arora</a>
 						<div class="meta">
 							<span class="date">Create in Sep 2014</span> <br /> <br /> <br />
-							
-							<div style="background-color:red;">
-								
+
+							<div style="background-color: red;">
+
 								<div class="alert alert-success" role="alert">
-									
+
 									<button type="button" class="close" data-dismiss="alert"
 										aria-label="Close">
-										
+
 										<span aria-hidden="true">&times;</span>
 									</button>
-									
-									<div style="background-repeat: no-repeat; color: #4F8A10;">
+
+									<div style="background-repeat: no-repeat; color: #4F8A10;"
+										ng-controller="validateCtrl" ng-app="myApp">
 										<shiro:hasAnyRoles name="<%=EnumRoles.getUnverifiedRoles()%>">
-											<p style="color: red;">
-												Your account is not activate.<a href="/user/resendActLink">Click
-													Here</a> to activate your account.
+											<p style="color: red;" ng-hide="link">
+												Your account is not activate.<a href=""
+													ng-click="sendActivationLink()">Click Here</a> to activate
+												your account.
 											</p>
+
+											<p style="color: red;" ng-show="link">{{userMsg}}</p>
+
+
 										</shiro:hasAnyRoles>
 
 									</div>

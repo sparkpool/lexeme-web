@@ -2,18 +2,13 @@
 
 <div class="page-content">
 	<div class="container">
-
 		<section id="content">
 			<div class="col-md-12">
 				<blockquote>
 					<h1 style="text-align: center;">Document Verification Panel</h1>
 				</blockquote>
 			</div>
-
-
 			<!-- Personal Information -->
-
-
 			<table class="table table-hover">
 				<thead>
 					<tr>
@@ -29,14 +24,16 @@
 						<td>
 							<div class="col-md-3 ">
 								<form name="form" method="POST" class="ui form"
-									action="${pageContext.request.contextPath}/admin/docs/del" role="form">
+									action="${pageContext.request.contextPath}/admin/docs/del"
+									role="form">
 									<button type="button" class="btn btn-danger">Delete</button>
 								</form>
 							</div>
 
 							<div class="col-md-3">
 								<form name="form" method="POST" class="ui form"
-									action="${pageContext.request.contextPath}/admin/docs/verify" role="form">
+									action="${pageContext.request.contextPath}/admin/docs/verify"
+									role="form">
 									<button type="button" class="btn btn-success">Verify</button>
 								</form>
 							</div>
@@ -45,15 +42,8 @@
 					</tr>
 				</tbody>
 			</table>
-
-
 		</section>
-
 	</div>
-
-
-
-
 </div>
 
 

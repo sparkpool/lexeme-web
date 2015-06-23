@@ -24,8 +24,9 @@
 			<!-- Personal Information -->
 
 			<form name="form"
-				action="${pageContext.request.contextPath}/admin/docs/unverified" method="GET"
-				class="ui form" enctype="multipart/form-data">
+				action="${pageContext.request.contextPath}/admin/docs/unverified"
+				method="GET" class="ui form" enctype="multipart/form-data"
+				ng-controller="adminCtrl" ng-app="myApp">
 
 				<div class="row">
 
@@ -35,7 +36,8 @@
 
 							<div class="col-md-4 ">
 								<label><strong>CourseID</strong></label> <input type="text"
-									name="courseId" id="courseID" value="${userTO.userEducation.school}"/>
+									name="courseId" id="courseID"
+									value="${userTO.userEducation.school}" />
 							</div>
 
 						</div>
