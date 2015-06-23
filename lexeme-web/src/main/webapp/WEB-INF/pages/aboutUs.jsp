@@ -5,7 +5,9 @@
 	<div class="container">
 		<!-- Container -->
 
-		<section id="content"></section>
+		<div id="library-header">
+		</div>
+		</section>
 	</div>
 </div>
 <%@ include file="footer.jsp"%>

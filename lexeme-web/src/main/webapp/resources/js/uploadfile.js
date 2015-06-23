@@ -1,13 +1,14 @@
 
 
 $(document).ready(function() {
-    //your code here
-
 	//Get  form
 	var form = document.getElementById('uploadData');
 	//Prepare the form data object
 	var formData=new FormData(form);
-
+	//fileList used to store number of selected file
+	var fileList=[];
+	//div identifier
+	var divID= 1;
 	//On-load event
 	window.onload = function(){
 	    if(window.File && window.FileList && window.FileReader)
@@ -25,56 +26,116 @@ $(document).ready(function() {
 	    		//append the form data
 	    	    for(var j=0 ;j< files.length; j++)
 	            {
-	                var file = files[j];
-	                //ignore this line
-	              
-	                
-	                
-	        		formData.append("file",file);
-
-	                //picture Reader
+	                var getFile = files[j];
+	                fileList.push(getFile);
 	                var pictureReader = new FileReader();
 	                
-	              
 	                //Add Event Listener
 	                pictureReader.addEventListener("load",function(event){
 	             
-	                var picFile ;
-	            	var div = document.createElement("div");
-	                div.innerHTML = "<div class='col-md-8 col-md-offset-2' style='outline: 1px solid aqua;background-color:#ECF6FB;'>" 
-					                    +"<div class='col-md-4 '><label>Document Name</label><br/><strong><img class='thumbnail' src='" + picFile.result + "'" 
-			                            +"title='" + picFile.name + "'/>"
-			                            +"</strong></div>"
-	    			  					+"<div class='col-md-4'><label><strong>CourseID</strong> </label><input type='text' name='courseId' id='courseID' ng-model='formData.courseID'/></div>"
-	    			  					+"<div class='col-md-4 '>"
-	    			 					 +'<label><strong>Doument Type</strong></label> <select id="myselect" name="category"'
-	    			  					+'<div class="form-control">'+
-	    			  					<c:forEach items='<%=EnumDocumentCategory.values() %>' var='category'>
-	    			  					+'<option value="${category.category}">${category.category}</option>'
-	    			  					</c:forEach>		  
-	    			  					+'</select></div></div><br/>';
-	                  
-	    			  					
+	                var picFile = event.target ;
+	                var srcImage;
+	                //check file type is image
+	                 if (getFile.type.match("image.*")) {
+	                	  picFile = event.target;
+	                	  srcImage=picFile.result;
+	                		console.log(srcImage);
+	                        
+	                }else{
+	                	var img = new Image();
+	                	
+	                	srcImage=_contextPath+"/resources/images/docImage.png";
+	                	img.src=srcImage;
+	                	console.log(srcImage);
+	                }
+	           
+	              	var div = document.createElement("div");
+	            	div.setAttribute("id", divID);
+	     			div.setAttribute("name", "uploadDiv");                     
+	    
+	                div.innerHTML = "<div class='col-md-8 col-md-offset-2' id='"+divID+"' name='uploadDiv' style='outline: 1px solid aqua;background-color:#ECF6FB;'>" 
+					                    +"<div class='col-md-2 '><input type='checkbox' name='checked' id='"+divID+"'/></span></div>"
+	                					+"<div class='col-md-2 '><div class='file-preview-frame file-preview-initial'><label style='color:orange;'>"+getFile.name+"</label><br/><strong>"
+			                            +"<object data='"+picFile.result+"' width='160px' height='160px'></object></strong></div>"
+			                            +"</div>"
+	    			  					+"<div class='col-md-2'><label><strong>CourseID</strong>"
+	    			  					+"</label><input type='text' name='courseId' class='courseID' id='courseId'  /></div>"
+	    			  					+"<div class='col-md-2 '>"
+	    			 					+"<label><strong>Doument Type</strong></label> "
+	    			 					+"<select class='myselect' name='category'>"
+	    			 					
+	    			 					+"<option value='Homework'>Homework</option>"
+	    			 					+"<option value='Notes'>Notes</option>"
+	    			 					+"<option value='Essay'>Essay</option>"
+	    			 					+"<option value='Other'>Other</option>"
+		    			 							  
+	    			  					+'</select>'
+	    			  					+'</div><div class="col-md-3"><strong><label>Additional Information</label></strong><textarea name="description" class="description" rows="6" cols="4"  ></textarea></div></div><br/>';
 	    			  //Get selected category
-	    		  $(".result").append(div);            
+	    		   formData.append("uploadDiv", divID);
+		            divID++;
+	    			 $(".result").append(div);            
 	                });
-	          	  var cat =$("#myselect option:selected").text();
-				  console.log(cat);
-				  formData.append("category",cat);
-				
-	                 //Read the image
-	                pictureReader.readAsDataURL(file);
-	            }                               
+	              
+	          	  //Read the image
+	              pictureReader.readAsDataURL(getFile);
+	            }   
+	    	    
+	          
 	        });
 	    }
-
+	   
 	}
 	    
-	    
-	  
+	 
+	//Remove the element 
+	$('div').click(function() { 
+		//fire when the button is clicked
+	    var removeIndex=0;
+		
+		//get How many selected checkbox
+		$('form input:checkbox').each(function() {
+	      var checkbox = $(this); 
+		 
+	      var selectedDiv =document.getElementById($(this).attr('id'));
+	      if(checkbox.is(':checked')){ 
+	 		  //Remove Division  	  		  
+	    	  $(selectedDiv).remove();
+	 		  
+	 		  //Delete element and slice the array after deletion
+	    	  fileList.splice(removeIndex,1);
+	      }
+	      //Increment index
+	      removeIndex++;
+	    });
+	});
+
 
 	//Submit form
 	$( 'form' ).submit(function ( e ) {
+		
+		//append file here
+		for(var fileIndex=0 ;fileIndex< fileList.length; fileIndex++){
+			formData.append("file", fileList[fileIndex]);
+		}
+	      
+		//append Couser ID
+		$('.courseID').each(function(){
+			var course = $(this).val();
+			formData.append("courseId", course+' ');
+		});
+		
+		//Append Category
+		$('.myselect').each(function(){
+			var category = $(this).val();
+			formData.append("category", category);
+		});
+		
+		//append description
+		$('.description').each(function(){
+			var description = $(this).val();
+			formData.append("description", description+' ');
+		});
 		$.ajax({
 			  //set the accept data
 			  headers:{
@@ -82,7 +143,7 @@ $(document).ready(function() {
 			  },
 			  
 			  //set the server path
-			  url: '${pageContext.request.contextPath}/doc/upload',
+			  url: _contextPath+'/doc/upload',
 				
 			  //set prepared form data
 			  data: formData,
@@ -92,9 +153,21 @@ $(document).ready(function() {
 			  
 			  success: function(data){
 				  //Show response
-				  document.write(data);
+				  $(".form-group").empty();
+				  $(".feedback-form-center").empty();
+				  
+				  //Thank you for your Contribution	
+				  //You have successfully uploaded 1 documents for 1 courses.
+				  //It takes up to 3 business days for your documents to be approved.
+				  $(".responseMsg").html(data);   
+				  $(".responseMsg").append("<div class='btn-group btn-group-info'>"
+
+							+"<a href='' class='btn btn-info btn-lg'> Upload Documents</a>" 
+							+"<div>");
+
 			  }
 			});
 	});
+
 
 });

@@ -695,7 +695,26 @@ right connector from last child*/
 }
 
 /**Media query**/
+#library-header {
+  position: relative;
+  background: url('https://d14to6y4nub5k1.cloudfront.net/img/library/header.jpg?ddfd5eccc60e') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #27a9e1;
+  height: 200px;
+  width:100%;
+ 	margin-top:-10px; 
+}
 
+/**Set the background color of select box*/
+input {
+    border: 0px solid;
+    color: #CCC;
+    border-left: 0px thin;
+    border-left-color: black;
+}
 /**Css for login/Register/ Forgot password*/
 #login-container {
 	margin-bottom: 1em

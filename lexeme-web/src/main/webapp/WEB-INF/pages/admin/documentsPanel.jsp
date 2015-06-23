@@ -29,15 +29,15 @@
 						<td>
 							<div class="col-md-3 ">
 								<form name="form" method="POST" class="ui form"
-									ng-submit="documentverified();" role="form">
+									action="${pageContext.request.contextPath}/admin/docs/del" role="form">
 									<button type="button" class="btn btn-danger">Delete</button>
 								</form>
 							</div>
 
 							<div class="col-md-3">
 								<form name="form" method="POST" class="ui form"
-									ng-submit="documentverified();" role="form">
-									<button type="button" class="btn btn-success">Verified</button>
+									action="${pageContext.request.contextPath}/admin/docs/verify" role="form">
+									<button type="button" class="btn btn-success">Verify</button>
 								</form>
 							</div>
 
