@@ -230,16 +230,23 @@ $(document)
 								".feedback-form-center")
 								.empty();
 
+								var output="";
+								for(var i=0;i<fileList.length;i++){
+									output=output + "<li align='center'>"+fileList[i].name+"</li></ul>";
+								 };
 								//Thank you for your Contribution	
 								//You have successfully uploaded 1 documents for 1 courses.
 								//It takes up to 3 business days for your documents to be approved.
 								$(".responseMsg").html(
-										data);
+										"");
 								$(".responseMsg")
-								.append(
-										"<div class='btn-group btn-group-info'>"
-
-										+ "<a href='' class='btn btn-info btn-lg'> Upload Documents</a>"
+								.append("<p style='font-size:20px;'><strong>Thank you for your Contribution</strong></p><br/>" 
+										+"<p>You have successfully uploaded "+fileList.length+" documents for "+fileList.length+" courses</p>"
+										+"<p>It takes up to 3 business days for your documents to be approved</p>"
+										+"List of uploaded Files:"+
+										output
+										+"<div class='btn-group btn-group-info'>"
+										+ "<a href='' class='ui orange save button'> Upload Documents</a>"
 										+ "<div>");
 
 							}
