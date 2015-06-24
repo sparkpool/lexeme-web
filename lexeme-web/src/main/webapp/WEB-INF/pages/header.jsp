@@ -10,7 +10,7 @@
 
 <head>
 
-  
+
 
 <!--Angular script for UI/DO Rendering-->
 <script
@@ -44,12 +44,6 @@
 <link
 	href="${pageContext.request.contextPath}/resources/semantic/css/semantic.min.css"
 	rel="stylesheet">
-<link
-	href="${pageContext.request.contextPath}/resources/semantic/css/card.css"
-	rel="stylesheet">
-<link
-	href="${pageContext.request.contextPath}/resources/semantic/css/card.min.css"
-	rel="stylesheet">
 
 <script
 	src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.js"></script>
@@ -70,7 +64,7 @@
 
 <!-- Css3 Transitions Styles  -->
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/animate.css"
+	href="${pageContext.request.contextPath}/resources/css/colors/peach.css"
 	media="screen">
 
 <!-- Color CSS Styles  -->
@@ -82,19 +76,15 @@
 	src="${pageContext.request.contextPath}/resources/angular/authCtrl.js"></script>
 
 <script>
+	var _contextPath = "${pageContext.request.contextPath}";
 
-   	var _contextPath = "${pageContext.request.contextPath}";
-   
-     $(document).ready(function(){
-    
-    	$('#menu-button').click(function(){
-    		$('#container').toggleClass('active');
-    	});
-	
+	$(document).ready(function() {
+
+		$('#menu-button').click(function() {
+			$('#container').toggleClass('active');
+		});
+
 	});
-	
-	
-	
 </script>
 
 <link rel="stylesheet"
@@ -120,30 +110,29 @@
 						navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a> <a class="logo" href="${pageContext.request.contextPath}">NotoHub</a>
-				
-				
-				
+
+
+
 			</div>
 			<div id="slidemenu">
 				<ul class="nav navbar-nav navbar-right">
 
- 				<li><a href="#" id="#res">Resources</a>
- 				</li>
- 													<li><a href="#how">How it works</a></li>
+					<li><a href="#" id="#res">Resources</a></li>
+					<li><a href="#how">How it works</a></li>
 
-			
-									<li><a href="${pageContext.request.contextPath}/doc/upload">Earn
+
+					<li><a href="${pageContext.request.contextPath}/doc/upload">Earn
 							Money</a></li>
 
-					
+
 					<shiro:notAuthenticated>
 						<li class="active"><a
 							href="${pageContext.request.contextPath}/user/login"><i
 								class="glyphicon glyphicon-cloud"></i> Login</a></li>
 						<li><a href="${pageContext.request.contextPath}/user/signup">Sign
 								up</a></li>
-								
-								
+
+
 					</shiro:notAuthenticated>
 
 
@@ -164,7 +153,7 @@
 							</ul></li>
 
 					</shiro:authenticated>
-								</ul>
+				</ul>
 			</div>
 		</div>
 	</div>

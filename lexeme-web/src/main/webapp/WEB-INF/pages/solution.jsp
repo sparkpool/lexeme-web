@@ -7,7 +7,7 @@
 		<section id="content">
 
 	
- 			<div class="row" style="display: none;">
+ 			<div class="widget-search">
                     <div class="col-xs-12">
                         <div class="input-group">
                             <input type="text" class="form-control" id="contact-list-search">

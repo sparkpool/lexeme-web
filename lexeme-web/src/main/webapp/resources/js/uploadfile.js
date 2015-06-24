@@ -3,7 +3,7 @@
  * 
  * 
  * 
- */
+ ********************************************************************************/
 
 $(document)
 .ready(
@@ -91,7 +91,7 @@ $(document)
 													+ "</label><br/><strong>"
 													+ "<object data='"
 													+ picFile.result
-													+ "' width='160px' height='160px'></object></strong></div>"
+													+ "' width='100px' height='100px'></object></strong></div>"
 													+ "</div>"
 													+ "<div class='col-md-2'><label><strong>CourseID</strong>"
 													+ "</label><input type='text' name='courseId' class='courseID' id='courseId'  /></div>"
