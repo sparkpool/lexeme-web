@@ -13,33 +13,37 @@
 				<thead>
 					<tr>
 						<th>Document No.</th>
-						<th>Document Title</th>
+						<th>Document Name</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>John</td>
-						<td>Doe</td>
+				<c:forEach items="${documents}" var="document" varStatus="ctr">
+				<tr>
+						<td>${ctr.index+1}</td>
+						<td>${document.name}</td>
 						<td>
 							<div class="col-md-3 ">
 								<form name="form" method="POST" class="ui form"
-									action="${pageContext.request.contextPath}/admin/docs/del"
-									role="form">
-									<button type="button" class="btn btn-danger">Delete</button>
+									action="${pageContext.request.contextPath}/admin/docs/verify"
+									>
+									<input type="hidden" name="docId" value="${document.documentId}" />
+ 									<input type="submit" class="btn btn-success">Verify</button>
 								</form>
 							</div>
-
 							<div class="col-md-3">
 								<form name="form" method="POST" class="ui form"
-									action="${pageContext.request.contextPath}/admin/docs/verify"
-									role="form">
-									<button type="button" class="btn btn-success">Verify</button>
-								</form>
+									action="${pageContext.request.contextPath}/admin/docs/del"
+									>
+									<input type="hidden" name="docId" value="${document.documentId}" />
+									<input type="submit" class="btn btn-danger">Delete</button>
+								</form>								
 							</div>
 
 						</td>
 					</tr>
+				
+				</c:forEach>
 				</tbody>
 			</table>
 		</section>

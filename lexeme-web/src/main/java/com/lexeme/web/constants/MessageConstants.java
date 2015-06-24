@@ -37,4 +37,6 @@ public class MessageConstants {
 	public static final String ACCOUNT_ALREADY_ACTIVATED = "Your Account is Already Activated !!";
 	public static final String FILE_SIZE_NOT_ALLOWED = "with size greater than 25 MB not allowed";
 	public static final String ACCOUNT_BLOCKED = "Your Account is blocked, contact Administrator to unblock your account";
+	public static final String DOCUMENT_DELETED = "Document has been deleted successfully !!";
+	public static final String ERROR_DOCUMENT_DELETED = "Problem occured in deleting file, please try again !!";
 }

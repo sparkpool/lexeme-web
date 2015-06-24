@@ -18,6 +18,11 @@ public class DocumentPojo {
 		this.courseID = courseId;
 	}
 	
+	public DocumentPojo(Long documentId, String name){
+		this.documentId = documentId;
+		this.name = name;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
