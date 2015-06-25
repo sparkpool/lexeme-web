@@ -54,10 +54,10 @@
 				reserved.</p>
 			<div class="pull-right">
 				<ul class="nav nav-pills payments">
-					<li><i class="fa fa-cc-visa"></i></li>
-					<li><i class="fa fa-cc-mastercard"></i></li>
-					<li><i class="fa fa-cc-amex"></i></li>
-					<li><i class="fa fa-cc-paypal"></i></li>
+					<li><i class="fa fa-cc-visa fa-2x"></i></li>
+					<li><i class="fa fa-cc-mastercard fa-2x"></i></li>
+					<li><i class="fa fa-cc-amex fa-2x"></i></li>
+					<li><i class="fa fa-cc-paypal fa-2x"></i></li>
 				</ul>
 			</div>
 		</div>

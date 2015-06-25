@@ -10,8 +10,7 @@
 
 <head>
 
-
-
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <!--Angular script for UI/DO Rendering-->
 <script
 	src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>

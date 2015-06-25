@@ -127,7 +127,7 @@
 								</shiro:hasAnyRoles>
 								 <a
 								class="blue item" data-tab="third">Education</a> <a
-								class="blue item" data-tab="forth">Settings</a>
+								class="blue item" data-tab="forth"><i class="fa fa-cog"></i>Settings</a>
 						</div>
 
 

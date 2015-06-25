@@ -65,7 +65,7 @@
 	
 }
 #page-content1 {
-background-color:#fff;
+background-color:#ffff8;
 }
 </style>
 
@@ -88,7 +88,7 @@ background-color:#fff;
 			<div class="feedback-form-center" align="center">
 				<div class="feedback-support-text">
 					
-					<i class="icon-large icon-cloud"></i>
+					<i class='fa fa-cloud-upload fa-4x' style="color: orange;"></i>
 					<h1>Start Uploading Documents</h1>
 					<hr>
 
@@ -104,12 +104,15 @@ background-color:#fff;
 					
 						<form name="form" id="uploadData" class="ui form"
 							enctype="multipart/form-data" role="form">
-
+							
 							<div class="row">
 								<span class="btn btn-info btn-file"><span class="glyphicon glyphicon-upload"></span>upload from computer
 									<input type="file" id="files" name="file[]" multiple="multiple">
 								</span>
 							</div>
+							<br/>
+							<br/>
+							
 							
 							<div class="row">
 							</div>
@@ -117,8 +120,12 @@ background-color:#fff;
 							<div class="row">
 								<div class="result" />
 							</div>
+							
 							<div class="row">
+							
 								<div class="col-md-12">
+							<br/>
+							
 									<input class="ui orange save button" type="submit" name="SAVE"
 										placeholder="Edit">
 								</div>
