@@ -35,14 +35,14 @@
 	border-radius: 5px;
 	border: 1px solid #ddd;
 	padding: 5px;
-	width: 100%;
+	width: 50%;
 	margin-bottom: 5px;
 }
 
 .file-preview-frame {
 	display: table;
 	margin: 8px;
-	height: 160px;
+	height: 50px;
 	border: 1px solid #ddd;
 	box-shadow: 1px 1px 5px 0 #a2958a;
 	padding: 6px;
@@ -56,6 +56,17 @@
 	font-size: 11px;
 	color: #777;
 }
+
+.upDiv{
+	width:50%;
+	margin-left: 10px;
+	margin-right:5px;
+	height: 30px;
+	
+}
+#page-content1 {
+background-color:#fff;
+}
 </style>
 
 
@@ -63,7 +74,7 @@
 
 <!-- Upload solution form -->
 
-<div id="page-content">
+<div id="page-content1">
 	<div class="container-fluid">
 		<section id="content">
 			<div class="right aligned column">

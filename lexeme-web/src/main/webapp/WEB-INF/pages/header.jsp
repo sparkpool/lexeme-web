@@ -117,10 +117,11 @@
 			<div id="slidemenu">
 				<ul class="nav navbar-nav navbar-right">
 
-					<li><a href="#" id="#res">Resources</a></li>
-					<li><a href="#how">How it works</a></li>
+					<shiro:hasAnyRoles name="STUDENT, TUTOR, TUTOR_UNVERIFIED, STUDENT_UNVERIFIED">
+						<li><a href="#" id="#res">Resources</a></li>
+						<li><a href="#how">How it works</a></li>
 
-
+					</shiro:hasAnyRoles>
 					<li><a href="${pageContext.request.contextPath}/doc/upload">Earn
 							Money</a></li>
 
@@ -134,7 +135,11 @@
 
 
 					</shiro:notAuthenticated>
+					<shiro:hasRole name="MODERATOR">
+						<li><a
+							href="${pageContext.request.contextPath}/admin/docs/unverified/">DashBord</a></li>
 
+					</shiro:hasRole>
 
 					<shiro:authenticated>
 

@@ -119,8 +119,13 @@
 				<div class="col-md-8 " id="profile-form">
 					<div class="profile">
 						<div class="ui pointing secondary menu">
-							<a class="active blue item" data-tab="first">Profile</a> <a
-								class="blue item" data-tab="second">Experience</a> <a
+							<a class="active blue item" data-tab="first">Profile</a>
+							<shiro:hasAnyRoles name="TUTOR, TUTOR_UNVERIFIED,MODERATOR">
+							 <a
+								class="blue item" data-tab="second">Experience</a>
+								
+								</shiro:hasAnyRoles>
+								 <a
 								class="blue item" data-tab="third">Education</a> <a
 								class="blue item" data-tab="forth">Settings</a>
 						</div>
@@ -130,8 +135,10 @@
 						<%@ include file="userProfile.jsp"%>
 
 						<!-- User Experience information -->
-						<%@ include file="userExperience.jsp"%>
-
+						
+						<shiro:hasAnyRoles name="TUTOR, MODERATOR, TUTOR_UNVERIFIED">
+							<%@ include file="userExperience.jsp"%>
+						</shiro:hasAnyRoles>
 						<!-- User education information -->
 						<%@ include file="userEducation.jsp"%>
 
