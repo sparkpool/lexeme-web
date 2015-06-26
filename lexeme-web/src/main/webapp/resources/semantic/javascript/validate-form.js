@@ -15,6 +15,14 @@ $(document).ready(function() {
 	 **************************************************************************/
 	validationRules = {
 
+		courseID:{
+			identifier : 'courseID',
+			rules : [ {
+				type : 'empty',
+				prompt : 'Please enter Couser ID '
+
+			} ]
+		},
 		courseId : {
 			identifier : 'courseId',
 			rules : [ {

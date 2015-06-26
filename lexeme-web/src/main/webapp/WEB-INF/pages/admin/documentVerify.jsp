@@ -31,15 +31,18 @@
 			<!-- Personal Information -->
 
 			<form name="form"
-				action="${pageContext.request.contextPath}/admin/docs/verify/update"
+				action="${pageContext.request.contextPath}/admin/docs/verifyUpdate"
 				method="POST" class="ui form">
 
+				
+				<input type="hidden" name="documentId" value="${documentPojo.documentId}" />
 				<div class="row">
 					<div class="col-md-6">
 						<div class="row">
 							<div class="col-md-4 ">
-								<label><strong>CourseID</strong></label> <input type="text"
-									name="courseId" id="courseID" value="${documentPojo.courseID}" />
+								<label>
+								<strong>CourseID</strong></label> <input type="text"
+									name="courseID" id="courseID" value="${documentPojo.courseID}" />
 							</div>
 						</div>
 						<div class="row">
@@ -72,13 +75,7 @@
 							</div>
 						</div>
 
-						<div class="row">
-							<div class="col-md-4">
-								<label><strong>Approved By</strong></label> <input type="text"
-									name="courseId" id="courseID" ng-model="formData.approve" />
-							</div>
-
-						</div>
+				
 
 					</div>
 					<div class="col-md-6">

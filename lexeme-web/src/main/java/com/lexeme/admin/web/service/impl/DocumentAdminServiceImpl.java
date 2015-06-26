@@ -168,16 +168,15 @@ public class DocumentAdminServiceImpl implements IDocumentAdminService{
 		verifiedFolderPrefix = verifiedFolderPrefix + userId;
 		boolean folderCreated = FileOperationsUtil.createDir(verifiedFolderPrefix);
 		logger.info("Verified Folder Creation result " + folderCreated + " " + verifiedFolderPrefix);
-		if(folderCreated){
-			verifiedFolderPrefix = verifiedFolderPrefix + "/" + fileName;
-			String unverifiedFolderPath = PropertiesUtil.getProjectProperty("unverified.prefix");
-			unverifiedFolderPath = unverifiedFolderPath + fileName;
-			boolean moveDone = FileOperationsUtil.moveFile(unverifiedFolderPath, verifiedFolderPrefix);
-			if(!moveDone){
-				throw new LexemeWebException(MessageConstants.SOMETHING_WRONG);
-			}
-			return verifiedFolderPrefix;
+		verifiedFolderPrefix = verifiedFolderPrefix + "/" + fileName;
+		String unverifiedFolderPath = PropertiesUtil
+				.getProjectProperty("unverified.prefix");
+		unverifiedFolderPath = unverifiedFolderPath + fileName;
+		boolean moveDone = FileOperationsUtil.moveFile(unverifiedFolderPath,
+				verifiedFolderPrefix);
+		if (!moveDone) {
+			throw new LexemeWebException(MessageConstants.SOMETHING_WRONG);
 		}
-		throw new LexemeWebException(MessageConstants.SOMETHING_WRONG);
+		return verifiedFolderPrefix;
 	}
 }
