@@ -70,4 +70,22 @@ public class FileOperationsUtil {
 		}
 		return null;
 	}
+	
+	public static boolean moveFile(String oldFile, String newFile){
+		logger.info("Old and New File to move is " + oldFile + " " + newFile);
+		File file = new File(oldFile);
+		if(file.exists()){
+			return file.renameTo(new File(newFile));
+		}	
+		return false;
+	}
+	
+	public static boolean createDir(String folderPath){
+		logger.info("Folder Path to createdirectory is " + folderPath);
+		File file = new File(folderPath);
+		if(!file.exists()){
+			return file.mkdir();
+		}
+		return false;
+	}
 }

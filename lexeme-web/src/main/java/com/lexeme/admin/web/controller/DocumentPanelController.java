@@ -2,6 +2,7 @@ package com.lexeme.admin.web.controller;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,14 +47,44 @@ public class DocumentPanelController {
 	@RequiresRoles("MODERATOR")
 	public ModelAndView verifyDocument(@RequestParam("docId") Long documentId){
 	  ModelAndView model = new ModelAndView();
-	  model.setViewName("admin/documentsPanel");
+	  model.setViewName("admin/documentVerify");
 	  try{
-		  List<DocumentPojo> documents = getDocumentAdminService().getUnverifiedDocuments(10);
-		  model.addObject("documents", documents);
+		 DocumentPojo documentPojo = getDocumentAdminService().getDocumentFromDocumentId(documentId);
+		 logger.info("Document Pojo from DB is " + documentPojo);
+		 model.addObject("documentPojo", documentPojo);
 	  }catch(Exception e){
 		  logger.error("Exception occured " + e.getMessage());
 	  }
 	  return model;
+	}
+	
+	
+	@RequestMapping(value = "/verifyUpdate", method = RequestMethod.POST)
+	@RequiresRoles("MODERATOR")
+	public ModelAndView verifyDocument(DocumentPojo documentPojo) {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("admin/documentVerify");
+		model.addObject("documentPojo", documentPojo);
+		logger.info("Document Pojo from client side is " + documentPojo);
+		try {
+			if(!documentPojo.validate()){
+				model.addObject("errorMsg", MessageConstants.MANDATORY_PARAMS);
+			}else{
+				String result = getDocumentAdminService().saveDocument(documentPojo);
+	            if(StringUtils.isBlank(result)){
+	            	model.addObject("errorMsg", MessageConstants.INVALID_DOCUMENT);
+	            }else{
+	            	model.setViewName("admin/documentsPanel");
+	            	model.addObject("msg",result);
+					List<DocumentPojo> documents = getDocumentAdminService().getUnverifiedDocuments(10);
+					model.addObject("documents", documents);
+	            }	
+			}
+		} catch (Exception e) {
+			logger.error("Exception occured " + e.getMessage());
+			model.addObject("erroMsg",MessageConstants.SOMETHING_WRONG);
+		}
+		return model;
 	}
 	
 	
@@ -63,8 +94,12 @@ public class DocumentPanelController {
 	  ModelAndView model = new ModelAndView();
 	  model.setViewName("admin/documentsPanel");
 	  try{
-		  //TODO# make soft delete this file and move file to deleted folder
-		  model.addObject("msg", MessageConstants.DOCUMENT_DELETED);
+			String result = getDocumentAdminService().deleteDocument(documentId);
+			if (StringUtils.isBlank(result)) {
+				model.addObject("msg", MessageConstants.DOCUMENT_DELETED);
+			} else {
+				model.addObject("errorMsg",result);
+			}
 		  List<DocumentPojo> documents = getDocumentAdminService().getUnverifiedDocuments(10);
 		  model.addObject("documents", documents);
 	  }catch(Exception e){

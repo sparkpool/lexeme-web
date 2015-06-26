@@ -1,5 +1,6 @@
 package com.lexeme.web.pojo.document;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 public class DocumentPojo {
@@ -10,6 +11,15 @@ public class DocumentPojo {
 	private String category;
 	private String description;
 	private MultipartFile file;
+	
+	public boolean validate(){
+	  if(documentId == null || StringUtils.isBlank(courseID) || 
+			  StringUtils.isBlank(category) || StringUtils.isBlank(description) || 
+			  StringUtils.isBlank(name)){
+		  return false;
+	  }
+	  return true;
+	}
 	
 	public DocumentPojo(MultipartFile file, String description, String category, String courseId){
 		this.file = file;
@@ -87,6 +97,13 @@ public class DocumentPojo {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "DocumentPojo [documentId=" + documentId + ", name=" + name
+				+ ", courseID=" + courseID + ", category=" + category
+				+ ", description=" + description + "]";
 	}
 	
 }
