@@ -11,14 +11,12 @@
 
 							<div class="column">
 								<div class="ui horizontal segment">
-
 									<form name="form" method="POST" class="ui form"
-										
 										ng-submit="academicInfortion();" role="form">
-									<div class="right field input">
 
+									<div class="right field input">
 											<label>School/University Name</label> 
-											<input type="text"
+												<input type="text"
 												name="school" 
 												id="school"
 												value="${userTO.userEducation.school}"

@@ -36,25 +36,35 @@
 
 							<div class="col-md-4 ">
 								<label><strong>CourseID</strong></label> <input type="text"
-									name="courseId" id="courseID"
-									value="${userTO.userEducation.school}" />
+									name="courseId" id="courseID" value="${DocumentPojo.courseID}" />
 							</div>
 
 						</div>
+						
+						<div class="row">
+
+							<div class="col-md-4 ">
+								<label><strong>Name</strong></label> <input type="text"
+									name="name" id="name" value="${DocumentPojo.name}" />
+							</div>
+
+						</div>
+						
 
 						<div class="row">
 							<div class="col-md-12 ">
 								<label><strong>Search Keywords</strong></label>
 								<textarea rows="3" cols="10" class="form-control"
 									id="description" name="description"
-									ng-model="formData.description"></textarea>
+									value="${DocumentPojo.description}"></textarea>
 							</div>
 						</div>
 
 						<div class="row">
 
 							<div class="col-md-4 ">
-								<label>Document Type</label> <select name="category"
+								<label>Document Type</label> 
+								<select name="category"
 									class="form-control"><option value="CS">CS</option>
 									<option value="Homework">Homework</option>
 									<option value="lab">Lab</option>

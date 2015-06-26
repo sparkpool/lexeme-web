@@ -58,7 +58,8 @@ $(document)
 													div.innerHTML = "<div class='col-md-8 col-md-offset-2'  col-md-offset-1' id='"
 															+ divID
 															+ "' name='uploadDiv' style='outline: 1px solid aqua;'>"
-															+ "<div class='col-md-1'><a class='del' href='#' name='checked' id='"
+															+ "<div class='col-md-1'>" +
+																	"<br/><br/><a class='del' href='#' name='checked' id='"
 															+ divID
 															+ "'><i class='fa fa-trash-o fa-lg'></i></a>"
 															+ "</div>"
