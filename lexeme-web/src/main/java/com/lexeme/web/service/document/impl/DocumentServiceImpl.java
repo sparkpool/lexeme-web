@@ -2,6 +2,7 @@ package com.lexeme.web.service.document.impl;
 
 import java.security.InvalidParameterException;
 import java.util.Date;
+import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -13,14 +14,17 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.lexeme.admin.web.service.IDocumentAdminService;
 import com.lexeme.web.constants.MessageConstants;
+import com.lexeme.web.domain.acl.Roles;
 import com.lexeme.web.domain.course.Course;
 import com.lexeme.web.domain.document.DocumentDB;
 import com.lexeme.web.domain.user.User;
 import com.lexeme.web.enums.EnumDocumentStatus;
+import com.lexeme.web.enums.EnumRoles;
 import com.lexeme.web.service.course.ICourseService;
 import com.lexeme.web.service.document.IDocumentService;
 import com.lexeme.web.service.user.IUserService;
 import com.lexeme.web.util.FileOperationsUtil;
+import com.lexeme.web.util.PropertiesUtil;
 
 @Service
 public class DocumentServiceImpl implements IDocumentService{
@@ -105,9 +109,34 @@ public class DocumentServiceImpl implements IDocumentService{
 	public String getFilePathOfDocumentID(Long documentId) {
 		DocumentDB document = getDocumentAdminService().getDocumentById(documentId);
 		if(document != null){
-			return document.getPath();
+			User user = getUserService().getUSerFromPrincipal();
+			Set<Roles> roles = user.getRoles();
+            return getFileAccordingToRole(document.getPath(), roles, document.getStatus());
 		}
 		return null;
+	}
+	
+	private String getFileAccordingToRole(String filePath, Set<Roles> roles, Long documentStatusId){
+		if(EnumDocumentStatus.DELETED.getDocumentStatusId().equals(documentStatusId)){
+			return null;
+		}
+		boolean hasModeratorRole = checkIfRoleContains(EnumRoles.MODERATOR.getRole(), roles);
+		if(!hasModeratorRole && !EnumDocumentStatus.VERIFIED.getDocumentStatusId().equals(documentStatusId)){
+			return null;
+		}else if(hasModeratorRole && !EnumDocumentStatus.VERIFIED.getDocumentStatusId().equals(documentStatusId)){
+			String folderPath = PropertiesUtil.getProjectProperty("unverified.prefix");
+			return folderPath + filePath;
+		}
+		return filePath;
+	}
+	
+	private boolean checkIfRoleContains(String roleStr, Set<Roles> roles){
+		for(Roles role : roles){
+			if(role.getName().equals(roleStr)){
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

@@ -54,7 +54,8 @@ public class DocumentDownloadController {
 			
 			response.setContentType(context.getMimeType(filePath));
 	        response.setContentLength((int)file.length());
-	        response.setHeader("Content-Disposition","attachment; filename=\"" + file.getName() +"\"");
+	        String trimFileName = file.getName().split("#")[1];
+	        response.setHeader("Content-Disposition","attachment; filename=\"" + trimFileName +"\"");
 	 
 	        outStream = response.getOutputStream();
 	        FileCopyUtils.copy(inputStream, outStream);
