@@ -1,19 +1,8 @@
 <%@page import="com.lexeme.web.enums.EnumDocumentCategory"%>
 <%@ include file="../header.jsp"%>
 
-<style>
-.dark-and-bold {
-	background-color: #0F3066;
-}
-
-.dark-and-bold a.mvo-caption {
-	font-family: Georgia, Times New Roman, serif;
-	color: #F7F7F0;
-}
-</style>
 <div class="page-content">
 	<div class="container">
-
 		<section id="content">
 			<div class="col-md-12">
 				<blockquote>
@@ -30,25 +19,28 @@
 
 			<!-- Personal Information -->
 
-			<form name="form"
+			<form name="form" id="formData"
 				action="${pageContext.request.contextPath}/admin/docs/verifyUpdate"
-				method="POST" class="ui form">
+				method="POST" class="ui form" ng-controller="adminCtrl"  ng-app="myApp">
 
 				
-				<input type="hidden" name="documentId" value="${documentPojo.documentId}" />
+				<input type="hidden" name="documentId" id="documentId" ng-model="documentId"  ng-init="documentId=${documentPojo.documentId}"value="${documentPojo.documentId}" />
 				<div class="row">
 					<div class="col-md-6">
 						<div class="row">
 							<div class="col-md-4 ">
 								<label>
 								<strong>CourseID</strong></label> <input type="text"
-									name="courseID" id="courseID" value="${documentPojo.courseID}" />
+									name="courseID" id="courseID"  value="${documentPojo.courseID}" />
 							</div>
 						</div>
 						<div class="row">
 
 							<div class="col-md-4 ">
-								<label><strong>Name</strong></label> <input type="text"
+								<label>
+									<strong>Display Name</strong>
+								</label> 
+								<input type="text"
 									name="name" id="name" value="${documentPojo.name}" />
 							</div>
 
@@ -80,12 +72,14 @@
 					</div>
 					<div class="col-md-6">
 						<div class="row">
-							<div class="col-md-6">
-								<span class="multivio-preview-example-2"> <a
-									title="Olympic Charter 2010 (2.6 MB)"
-									href="http://doc.rero.ch/lm.php?url=1000,20,38,20111121000005-ZZ/2010-Olympic_Charter.pdf">
-										Olympic Charter 2010 </a>
-								</span>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							
+							<div class="col-md-6 col-md-offset-4">
+								<a class="btn btn-info btn-sm" href="#" ng-click="downloadDocument(${documentPojo.courseID});" >Download Document </a>
 							</div>
 						</div>
 					</div>
@@ -102,37 +96,4 @@
 		</section>
 	</div>
 </div>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('a.multivio-preview').enableMultivio({
-			method : 'overlay',
-			downloadButton : true,
-			quickViewButton : true,
-			previewAttr : 'href'
-		});
-	});
-	// selector for the second example
-	$('.multivio-preview-example-2 a').enableMultivio({
-		className : 'dark-and-bold',
-		method : 'overlay',
-		previewWidth : 120,
-		previewHeight : 120,
-		downloadButton : false,
-		quickViewButton : true,
-		previewAttr : 'href',
-		language : 'fr'
-	});
-	// selector for the third example
-	$('.multivio-preview-example-3 a').enableMultivio({
-		className : 'light-and-soft',
-		method : 'newwindow',
-		previewWidth : 120,
-		previewHeight : 80,
-		downloadButton : true,
-		quickViewButton : true,
-		previewAttr : 'href',
-		language : 'en'
-	});
-</script>
-
 <%@ include file="../footer.jsp"%>

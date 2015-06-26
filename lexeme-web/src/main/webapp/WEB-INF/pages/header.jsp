@@ -53,6 +53,8 @@
 <script
 	src="${pageContext.request.contextPath}/resources/semantic/javascript/profile.js"></script>
 
+
+
 <script
 	src="${pageContext.request.contextPath}/resources/semantic/javascript/validate-form.js"></script>
 <link
@@ -75,6 +77,8 @@
 	src="${pageContext.request.contextPath}/resources/angular/app.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/angular/authCtrl.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/angular/adminCtrl.js"></script>
 
 
 <!-- Add side bar -->
