@@ -69,6 +69,13 @@ public enum EnumRoles {
 		}
 		return null;
 	}
+
+	public static String getTutorRoles(){
+		StringBuilder strBuilder = new StringBuilder();
+		strBuilder.append(TUTOR.getRole()).append(",").
+		append(TUTOR_UNVERIFIED.getRole());
+		return strBuilder.toString();
+	}
 	
 	public String getDisplayName() {
 		return displayName;

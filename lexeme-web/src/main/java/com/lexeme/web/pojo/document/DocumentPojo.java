@@ -13,8 +13,7 @@ public class DocumentPojo {
 	private MultipartFile file;
 	
 	public boolean validate(){
-	  if(documentId == null || StringUtils.isBlank(courseID) || 
-			  StringUtils.isBlank(category) || StringUtils.isBlank(description) || 
+	  if(documentId == null ||  StringUtils.isBlank(category) || StringUtils.isBlank(description) || 
 			  StringUtils.isBlank(name)){
 		  return false;
 	  }
