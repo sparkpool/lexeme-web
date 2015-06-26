@@ -1,5 +1,4 @@
 <%@ include file="../header.jsp"%>
-
 <div class="page-content">
 	<div class="container">
 		<section id="content">
@@ -7,6 +6,11 @@
 				<blockquote>
 					<h1 style="text-align: center;">Document Verification Panel</h1>
 				</blockquote>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4" align="center">
+					<%@ include file="../message.jsp"%>
+				</div>
 			</div>
 			
 			<!-- Personal Information -->
