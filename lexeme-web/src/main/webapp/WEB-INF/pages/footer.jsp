@@ -2,7 +2,7 @@
 	<div class="footer" id="footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
+				<div class="col-lg-4  col-md-4 col-sm-4 col-xs-6">
 					<ul>
 
 						<h3>Company</h3>
@@ -12,7 +12,7 @@
 						<li><a href="/sitemap/">Sitemap</a> <!--<a href="/api/intro.php">API</a>-->
 					</ul>
 				</div>
-				<div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
+				<div class="col-lg-4  col-md-4 col-sm-4 col-xs-6">
 					<ul>
 						<h3>Support</h3>
 						<li><a href="${pageContext.request.contextPath}/aboutUs">About
@@ -22,23 +22,17 @@
 						<!--<a href="/api/intro.php">API</a>-->
 					</ul>
 				</div>
-				<div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
-					<ul>
 				
-					<h3>About Us</h3>
-					<li><a href="${pageContext.request.contextPath}/contactUs">Contact uS</a></li>
-					<li><a href="${pageContext.request.contextPath}/contactUs">Contact uS</a></li>
-					<li><a href="${pageContext.request.contextPath}/contactUs">Contact uS</a></li>
-					</ul>
-				</div>
 
-				<div class="col-lg-3  col-md-3 col-sm-4 col-xs-6">
+				<div class="col-lg-4  col-md-4 col-sm-4 col-xs-6">
 					<ul>
-					
-					<h3>Legal</h3>
-					<li><a href="${pageContext.request.contextPath}/policy">Policy</a></li>
-					<li><a href="${pageContext.request.contextPath}/contactUs">Contact uS</a></li>
-					<li><a href="${pageContext.request.contextPath}/contactUs">Contact uS</a></li>
+
+						<h3>Legal</h3>
+						<li><a href="${pageContext.request.contextPath}/policy">Policy</a></li>
+						<li><a href="${pageContext.request.contextPath}/contactUs">Contact
+								uS</a></li>
+						<li><a href="${pageContext.request.contextPath}/contactUs">Contact
+								uS</a></li>
 					</ul>
 				</div>
 			</div>

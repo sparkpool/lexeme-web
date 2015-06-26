@@ -123,6 +123,11 @@ app
 			 * This function will be called,once userexp information has
 			 * been updated.
 			 ***********************************************************/
+			
+			$scope.$watch('formData.toTime',function(){
+				  var date = $scope.ticket.StartDate;
+				  console.log(date);
+				});
 			$scope.userExperience = function() {
 				$http(
 						{

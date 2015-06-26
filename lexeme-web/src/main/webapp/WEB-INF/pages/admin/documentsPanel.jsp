@@ -8,14 +8,15 @@
 					<h1 style="text-align: center;">Document Verification Panel</h1>
 				</blockquote>
 			</div>
+			
 			<!-- Personal Information -->
 			<table class="table table-hover">
 				<thead>
 					<tr>
 
-						<th>Document No.</th>
-						<th>Document Name</th>
-						<th>Action</th>
+						<th><i class="fa fa-th"></i>Document No.</th>
+						<th><i class="fa fa-th"></i>Document Name</th>
+						<th><i class="fa fa-th"></i>Action</th>
 					</tr>
 				</thead>
 				<tbody>

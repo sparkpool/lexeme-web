@@ -2,76 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-
-<!-- Add header -->
-<style>
-.thumbnail {
-	height: 100px;
-	margin: 10px;
-}
-
-.btn-file {
-	position: relative;
-	overflow: hidden;
-}
-
-.btn-file input[type="file"] {
-	position: absolute;
-	top: 0;
-	right: 0;
-	min-width: 100%;
-	min-height: 100%;
-	font-size: 100px;
-	text-align: right;
-	filter: alpha(opacity = 0);
-	opacity: 0;
-	outline: none;
-	background: white;
-	cursor: inherit;
-	display: block;
-}
-
-.file-preview {
-	border-radius: 5px;
-	border: 1px solid #ddd;
-	padding: 5px;
-	width: 50%;
-	margin-bottom: 5px;
-}
-
-.file-preview-frame {
-	display: table;
-	margin: 8px;
-	height: 50px;
-	border: 1px solid #ddd;
-	box-shadow: 1px 1px 5px 0 #a2958a;
-	padding: 6px;
-	float: right;
-	text-align: center;
-	vertical-align: middle;
-}
-
-.file-thumbnail-footer .file-caption-name {
-	padding-top: 4px;
-	font-size: 11px;
-	color: #777;
-}
-
-.upDiv{
-	width:50%;
-	margin-left: 10px;
-	margin-right:5px;
-	height: 30px;
-	
-}
-#page-content1 {
-background-color:#ffff8;
-}
-</style>
-
-
+ 
 <%@ include file="header.jsp"%>
-
+<link
+	href="${pageContext.request.contextPath}/resources/css/upload.css"
+	rel="stylesheet">
 <!-- Upload solution form -->
 
 <div id="page-content1">

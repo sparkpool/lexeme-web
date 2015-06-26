@@ -91,7 +91,7 @@ $(document)
 													div.innerHTML = div.innerHTML
 															+ "<div class='modal fade' id='my"
 															+ divID
-															+ "' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' style='outline: 1px solid aqua;'>"
+															+ "' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' >"
 															+ "<div class='modal-dialog' role='document'>"
 															+ "<div class='modal-content'>"
 															+ "<div class='modal-header'>"

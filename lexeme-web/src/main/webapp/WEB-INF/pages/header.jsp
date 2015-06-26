@@ -10,7 +10,8 @@
 
 <head>
 
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <!--Angular script for UI/DO Rendering-->
 <script
 	src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>
@@ -76,7 +77,8 @@
 
 
 <!-- Add side bar -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/sidebar.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/resources/js/sidebar.js"></script>
 
 <script>
 	var _contextPath = "${pageContext.request.contextPath}";
@@ -120,13 +122,14 @@
 			<div id="slidemenu">
 				<ul class="nav navbar-nav navbar-right">
 
-					<shiro:hasAnyRoles name="STUDENT, TUTOR, TUTOR_UNVERIFIED, STUDENT_UNVERIFIED">
+					<shiro:hasAnyRoles
+						name="STUDENT, TUTOR, TUTOR_UNVERIFIED, STUDENT_UNVERIFIED">
 						<li><a href="#" id="#res">Resources</a></li>
 						<li><a href="#how">How it works</a></li>
 
 					</shiro:hasAnyRoles>
-					<li><a href="${pageContext.request.contextPath}/doc/upload">Earn
-							Money</a></li>
+					<li><a href="${pageContext.request.contextPath}/doc/upload"><i
+							class="fa fa-usd"></i> Earn Money</a></li>
 
 
 					<shiro:notAuthenticated>
@@ -140,7 +143,8 @@
 					</shiro:notAuthenticated>
 					<shiro:hasRole name="MODERATOR">
 						<li><a
-							href="${pageContext.request.contextPath}/admin/docs/unverified/">DashBord</a></li>
+							href="${pageContext.request.contextPath}/admin/docs/unverified/"><i
+								class="fa fa-tachometer"></i> DashBord</a></li>
 
 					</shiro:hasRole>
 
