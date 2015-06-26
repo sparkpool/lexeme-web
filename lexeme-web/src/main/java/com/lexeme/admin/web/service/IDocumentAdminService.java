@@ -7,4 +7,10 @@ import com.lexeme.web.pojo.document.DocumentPojo;
 public interface IDocumentAdminService {
 
 	public List<DocumentPojo> getUnverifiedDocuments(int perPage);
+	
+	public String deleteDocument(Long documentId);
+	
+	public DocumentPojo getDocumentFromDocumentId(Long documentId);
+	
+	public String saveDocument(DocumentPojo documentPojo);
 }

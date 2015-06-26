@@ -39,4 +39,6 @@ public class MessageConstants {
 	public static final String ACCOUNT_BLOCKED = "Your Account is blocked, contact Administrator to unblock your account";
 	public static final String DOCUMENT_DELETED = "Document has been deleted successfully !!";
 	public static final String ERROR_DOCUMENT_DELETED = "Problem occured in deleting file, please try again !!";
+	public static final String INVALID_DOCUMENT = "Invalid Document, please select valid document";
+	public static final String DOCUMENT_VERIFIED = "Document Verified Successfully !!";
 }
