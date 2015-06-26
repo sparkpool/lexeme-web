@@ -44,7 +44,7 @@ public class FileOperationsUtil {
 		try {
 			inputStream = file.getInputStream();
             String filePath = PropertiesUtil.getProjectProperty("unverified.prefix");
-            String fileFullName = documentId + "_" + file.getOriginalFilename();
+            String fileFullName = documentId + "#" + file.getOriginalFilename();
             String fileFullPath = filePath + fileFullName;
 			File newFile = new File(fileFullPath);
 			if (!newFile.exists()) {
