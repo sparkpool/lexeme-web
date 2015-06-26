@@ -108,7 +108,8 @@ public class DocumentAdminServiceImpl implements IDocumentAdminService{
 		}
 	}
 	
-	private DocumentDB getDocumentById(Long documentId){
+	@Override
+	public DocumentDB getDocumentById(Long documentId){
         Query query = getSessionFactory().getCurrentSession().getNamedQuery("GET.BYID");
         return (DocumentDB)query.setParameter("id", documentId).uniqueResult();
 	}
@@ -165,7 +166,7 @@ public class DocumentAdminServiceImpl implements IDocumentAdminService{
 	 */
 	private String saveVerifiedDocument(String fileName, Long userId){
 		String verifiedFolderPrefix = PropertiesUtil.getProjectProperty("verified.prefix");
-		verifiedFolderPrefix = verifiedFolderPrefix + userId;
+		verifiedFolderPrefix = verifiedFolderPrefix + "user_" + userId;
 		boolean folderCreated = FileOperationsUtil.createDir(verifiedFolderPrefix);
 		logger.info("Verified Folder Creation result " + folderCreated + " " + verifiedFolderPrefix);
 		verifiedFolderPrefix = verifiedFolderPrefix + "/" + fileName;

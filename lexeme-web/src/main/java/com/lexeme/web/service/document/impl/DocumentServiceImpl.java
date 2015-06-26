@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.lexeme.admin.web.service.IDocumentAdminService;
 import com.lexeme.web.constants.MessageConstants;
 import com.lexeme.web.domain.course.Course;
 import com.lexeme.web.domain.document.DocumentDB;
@@ -34,6 +35,13 @@ public class DocumentServiceImpl implements IDocumentService{
 	
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	public IDocumentAdminService getDocumentAdminService() {
+		return documentAdminService;
+	}
+
+	@Autowired
+	private IDocumentAdminService documentAdminService;
 	
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
@@ -90,6 +98,16 @@ public class DocumentServiceImpl implements IDocumentService{
 		}
 		documentDB.setUser(user);
 		return documentDB;
+	}
+
+	@Override
+	@Transactional
+	public String getFilePathOfDocumentID(Long documentId) {
+		DocumentDB document = getDocumentAdminService().getDocumentById(documentId);
+		if(document != null){
+			return document.getPath();
+		}
+		return null;
 	}
 
 }

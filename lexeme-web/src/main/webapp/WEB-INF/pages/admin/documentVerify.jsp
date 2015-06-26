@@ -61,7 +61,7 @@
 								<label>Document Type</label> 
 								<select name="category" class="form-control">
 								 <c:forEach items="<%=EnumDocumentCategory.values() %>" var="enumCategory">
-								   <option value="${enumCategory.category}" selected="${documentPojo.category eq enumCategory.category ? 'selected' : ''}">${enumCategory.category}</option>
+								   <option value="${enumCategory.category}" ${documentPojo.category eq enumCategory.category ? 'selected' : ''} >${enumCategory.category}</option>
 								 </c:forEach>
 								</select>	
 							</div>
