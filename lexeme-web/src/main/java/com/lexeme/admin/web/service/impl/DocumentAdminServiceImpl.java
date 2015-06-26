@@ -67,8 +67,8 @@ public class DocumentAdminServiceImpl implements IDocumentAdminService{
         		}
         		String fullName = file.getName();
         		logger.info("File Name is " + fullName);
-        		if(fullName.contains("_")){
-            		String[] splitNames = fullName.split("_");
+        		if(fullName.contains("#")){
+            		String[] splitNames = fullName.split("#");
             		document = new DocumentPojo(Long.parseLong(splitNames[0]), splitNames[1]);
             		files.add(document);	
         		}else{
