@@ -1,4 +1,5 @@
 
+<%@page import="com.lexeme.web.enums.EnumRoles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <html ng-app="myApp" style="height: 158px;">
@@ -122,12 +123,11 @@
 			<div id="slidemenu">
 				<ul class="nav navbar-nav navbar-right">
 
-					<shiro:hasAnyRoles
-						name="STUDENT, TUTOR, TUTOR_UNVERIFIED, STUDENT_UNVERIFIED">
+					<shiro:lacksRole name="<%=EnumRoles.MODERATOR.getRole() %>">
 						<li><a href="#" id="#res">Resources</a></li>
 						<li><a href="#how">How it works</a></li>
 
-					</shiro:hasAnyRoles>
+					</shiro:lacksRole>
 					<li><a href="${pageContext.request.contextPath}/doc/upload"><i
 							class="fa fa-usd"></i> Earn Money</a></li>
 
@@ -141,7 +141,7 @@
 
 
 					</shiro:notAuthenticated>
-					<shiro:hasRole name="MODERATOR">
+					<shiro:hasRole name="<%=EnumRoles.MODERATOR.getRole() %>">
 						<li><a
 							href="${pageContext.request.contextPath}/admin/docs/unverified/"><i
 								class="fa fa-tachometer"></i> DashBord</a></li>

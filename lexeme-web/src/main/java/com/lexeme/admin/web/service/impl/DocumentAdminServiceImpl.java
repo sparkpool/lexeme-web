@@ -87,6 +87,7 @@ public class DocumentAdminServiceImpl implements IDocumentAdminService{
         	return MessageConstants.INVALID_DOCUMENT;
         }
         document.setStatus(EnumDocumentStatus.DELETED.getDocumentStatusId());
+        document.setReviewBy(getUserService().getUSerFromPrincipal());
         Long id = (Long)getSessionFactory().getCurrentSession().save(document);
         if(id==null){
         	return MessageConstants.ERROR_DOCUMENT_DELETED;

@@ -1,3 +1,4 @@
+<%@page import="com.lexeme.web.enums.EnumDocumentCategory"%>
 <%@ include file="../header.jsp"%>
 
 <style>
@@ -24,28 +25,22 @@
 			<!-- Personal Information -->
 
 			<form name="form"
-				action="${pageContext.request.contextPath}/admin/docs/unverified"
-				method="GET" class="ui form" enctype="multipart/form-data"
-				ng-controller="adminCtrl" ng-app="myApp">
+				action="${pageContext.request.contextPath}/admin/docs/verify/update"
+				method="POST" class="ui form">
 
 				<div class="row">
-
-
 					<div class="col-md-6">
 						<div class="row">
-
 							<div class="col-md-4 ">
 								<label><strong>CourseID</strong></label> <input type="text"
-									name="courseId" id="courseID" value="${DocumentPojo.courseID}" />
+									name="courseId" id="courseID" value="${documentPojo.courseID}" />
 							</div>
-
 						</div>
-						
 						<div class="row">
 
 							<div class="col-md-4 ">
 								<label><strong>Name</strong></label> <input type="text"
-									name="name" id="name" value="${DocumentPojo.name}" />
+									name="name" id="name" value="${documentPojo.name}" />
 							</div>
 
 						</div>
@@ -55,8 +50,7 @@
 							<div class="col-md-12 ">
 								<label><strong>Search Keywords</strong></label>
 								<textarea rows="3" cols="10" class="form-control"
-									id="description" name="description"
-									value="${DocumentPojo.description}"></textarea>
+									id="description" name="description" >${documentPojo.description}</textarea>
 							</div>
 						</div>
 
@@ -64,11 +58,11 @@
 
 							<div class="col-md-4 ">
 								<label>Document Type</label> 
-								<select name="category"
-									class="form-control"><option value="CS">CS</option>
-									<option value="Homework">Homework</option>
-									<option value="lab">Lab</option>
-									<option value="Notes">Notes</option></select>
+								<select name="category" class="form-control">
+								 <c:forEach items="<%=EnumDocumentCategory.values() %>" var="enumCategory">
+								   <option value="${enumCategory.category}" selected="${documentPojo.category eq enumCategory.category 'selected' : ''}">${enumCategory.category}</option>
+								 </c:forEach>
+								</select>	
 							</div>
 						</div>
 
