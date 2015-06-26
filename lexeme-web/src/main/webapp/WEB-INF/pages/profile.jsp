@@ -120,11 +120,9 @@
 					<div class="profile">
 						<div class="ui pointing secondary menu">
 							<a class="active blue item" data-tab="first">Profile</a>
-							<shiro:hasAnyRoles name="TUTOR, TUTOR_UNVERIFIED,MODERATOR">
-							 <a
-								class="blue item" data-tab="second">Experience</a>
-								
-								</shiro:hasAnyRoles>
+							<shiro:hasAnyRoles name="<%=EnumRoles.getTutorRoles() %>">
+								 <a class="blue item" data-tab="second">Experience</a>
+							</shiro:hasAnyRoles>
 								 <a
 								class="blue item" data-tab="third">Education</a> <a
 								class="blue item" data-tab="forth"><i class="fa fa-cog"></i>Settings</a>
@@ -136,7 +134,7 @@
 
 						<!-- User Experience information -->
 						
-						<shiro:hasAnyRoles name="TUTOR, MODERATOR, TUTOR_UNVERIFIED">
+						<shiro:hasAnyRoles name="<%=EnumRoles.getTutorRoles() %>">
 							<%@ include file="userExperience.jsp"%>
 						</shiro:hasAnyRoles>
 						<!-- User education information -->

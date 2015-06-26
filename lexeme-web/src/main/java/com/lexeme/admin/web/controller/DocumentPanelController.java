@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +31,7 @@ public class DocumentPanelController {
 	}
 	
 	@RequestMapping(value = "/unverified", method = RequestMethod.GET)
+	@RequiresAuthentication
 	@RequiresRoles("MODERATOR")
 	public ModelAndView getAllUnverifiedDocuments(){
 		ModelAndView model = new ModelAndView();
@@ -44,6 +46,7 @@ public class DocumentPanelController {
 	}
 	
 	@RequestMapping(value = "/verify", method = RequestMethod.POST)
+	@RequiresAuthentication
 	@RequiresRoles("MODERATOR")
 	public ModelAndView verifyDocument(@RequestParam("docId") Long documentId){
 	  ModelAndView model = new ModelAndView();
@@ -60,6 +63,7 @@ public class DocumentPanelController {
 	
 	
 	@RequestMapping(value = "/verifyUpdate", method = RequestMethod.POST)
+	@RequiresAuthentication
 	@RequiresRoles("MODERATOR")
 	public ModelAndView verifyDocument(DocumentPojo documentPojo) {
 		ModelAndView model = new ModelAndView();
@@ -89,6 +93,7 @@ public class DocumentPanelController {
 	
 	
 	@RequestMapping(value = "/del", method = RequestMethod.POST)
+	@RequiresAuthentication
 	@RequiresRoles("MODERATOR")
 	public ModelAndView deleteDocument(@RequestParam("docId") Long documentId){
 	  ModelAndView model = new ModelAndView();

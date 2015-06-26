@@ -123,14 +123,11 @@
 			<div id="slidemenu">
 				<ul class="nav navbar-nav navbar-right">
 
-					<shiro:lacksRole name="<%=EnumRoles.MODERATOR.getRole() %>">
-						<li><a href="#" id="#res">Resources</a></li>
-						<li><a href="#how">How it works</a></li>
+					<li><a href="#" id="#res">Resources</a></li>
+					<li><a href="#how">How it works</a></li>
 
-					</shiro:lacksRole>
 					<li><a href="${pageContext.request.contextPath}/doc/upload"><i
 							class="fa fa-usd"></i> Earn Money</a></li>
-
 
 					<shiro:notAuthenticated>
 						<li class="active"><a
@@ -141,13 +138,13 @@
 
 
 					</shiro:notAuthenticated>
-					<shiro:hasRole name="<%=EnumRoles.MODERATOR.getRole() %>">
+					<shiro:authenticated>
+						<shiro:hasRole name="<%=EnumRoles.MODERATOR.getRole() %>">
 						<li><a
 							href="${pageContext.request.contextPath}/admin/docs/unverified/"><i
 								class="fa fa-tachometer"></i> DashBord</a></li>
-
 					</shiro:hasRole>
-
+                    </shiro:authenticated>
 					<shiro:authenticated>
 
 
