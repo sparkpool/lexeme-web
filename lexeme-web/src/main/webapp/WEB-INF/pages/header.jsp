@@ -74,6 +74,10 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/angular/authCtrl.js"></script>
 
+
+<!-- Add side bar -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/sidebar.js"></script>
+
 <script>
 	var _contextPath = "${pageContext.request.contextPath}";
 

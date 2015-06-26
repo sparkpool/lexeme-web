@@ -63,8 +63,7 @@ $(document)
 															+ "'><i class='fa fa-trash-o fa-lg'></i></a>"
 															+ "</div>"
 															+ "<div class='col-md-4'>"
-															+ iconType
-															+ "<span><strong>Document Name</strong></span>"
+															+ "<span>"+iconType+"</span>"
 															+ "<p>"
 															+ getFile.name
 															+ "</p>"
@@ -92,7 +91,7 @@ $(document)
 													div.innerHTML = div.innerHTML
 															+ "<div class='modal fade' id='my"
 															+ divID
-															+ "' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>"
+															+ "' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' style='outline: 1px solid aqua;'>"
 															+ "<div class='modal-dialog' role='document'>"
 															+ "<div class='modal-content'>"
 															+ "<div class='modal-header'>"
@@ -105,7 +104,7 @@ $(document)
 															+ "<div class='form-group'>"
 															+ "<div class='row'>"
 															+ "<div class='col-md-6'>Course ID"
-															+ "<input type='text' name='courseId' class='courseID' id='courseId'  />"
+															+ "<input type='text' name='courseId' class='courseID' id='courseId' focus />"
 															+ "</div>"
 															+ "<div class='col-md-6'>Document Type"
 															+ "<select class='myselect' name='category'>"
@@ -129,7 +128,7 @@ $(document)
 															+ "</div>"
 															+ "</div>"
 															+ "<div class='modal-footer'>"
-															+ "<div class='col-md-6'><button type='button' class='ui orange submit button' data-dismiss='modal'>Save</button></div>"
+															+ "<div class='col-md-5 col-md-offset-2'><button type='button' class='ui orange submit button' data-dismiss='modal'>Save</button></div>"
 															+
 
 															"</div></div></div>";
@@ -270,7 +269,6 @@ $(document)
 					/***
 					 * Validation Rules
 					 */
-					
 					function getValidation(){
 						
 					};

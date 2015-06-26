@@ -38,7 +38,8 @@
 
 							<!-- Email-address -->
 							<div class="field">
-								<label>Email</label> <input placeholder="Email" name="email"
+								<label>Email</label> 
+								<input placeholder="Email" name="email"
 									type="email" style="width: 20em;">
 
 							</div>
