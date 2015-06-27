@@ -79,7 +79,7 @@
 							<br/>
 							
 							<div class="col-md-6 col-md-offset-4">
-								<a class="btn btn-info btn-sm" href="#" ng-click="downloadDocument(${documentPojo.courseID});" >Download Document </a>
+								<a class="btn btn-info btn-sm" href="${pageContext.request.contextPath}/doc/download?docId=${documentPojo.documentId}" ng-click="downloadDocument(${documentPojo.courseID});" >Download Document </a>
 							</div>
 						</div>
 					</div>

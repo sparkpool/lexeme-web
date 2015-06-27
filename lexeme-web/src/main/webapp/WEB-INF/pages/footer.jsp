@@ -15,24 +15,25 @@
 				<div class="col-lg-4  col-md-4 col-sm-4 col-xs-6">
 					<ul>
 						<h3>Support</h3>
-						<li><a href="${pageContext.request.contextPath}/aboutUs">About
+						<li><a href="${pageContext.request.contextPath}/contactUs">Contact
 								Us</a></li>
-						<li><a href="${pageContext.request.contextPath}/solution">SolutionLib</a></li>
-						<li><a href="/sitemap/">Sitemap</a></li>
-						<!--<a href="/api/intro.php">API</a>-->
+						<li><a href="${pageContext.request.contextPath}/faq">FAQ</a></li>
+						<li><a href="${pageContext.request.contextPath}/feedback">Feedback</a></li>
 					</ul>
 				</div>
-				
+
 
 				<div class="col-lg-4  col-md-4 col-sm-4 col-xs-6">
 					<ul>
 
 						<h3>Legal</h3>
-						<li><a href="${pageContext.request.contextPath}/policy">Policy</a></li>
-						<li><a href="${pageContext.request.contextPath}/contactUs">Contact
-								uS</a></li>
-						<li><a href="${pageContext.request.contextPath}/contactUs">Contact
-								uS</a></li>
+						<li><a href="${pageContext.request.contextPath}/policy">Privacy
+								Policy</a></li>
+						<li><a href="${pageContext.request.contextPath}/copyrights">Copy
+								Rights Policy</a></li>
+
+						<li><a href="${pageContext.request.contextPath}/contactUs">Term
+								of Use uS</a></li>
 					</ul>
 				</div>
 			</div>

@@ -107,22 +107,14 @@ $(document)
 															+ "<div class='col-md-6'>Course ID"
 															+ "<input type='text' name='courseId' class='courseID' id='courseId' focus />"
 															+ "</div>"
-															+ "<div class='col-md-6'>Document Type"
-															+ "<select class='myselect' name='category'>"
-															+ "<option value='Homework'>Homework</option>"
-															+ "<option value='Notes'>Notes</option>"
-															+ "<option value='Essay'>Essay</option>"
-															+ "<option value='Other'>Other</option>"
-															+ "</select>"
-
-															+ "</div>"
+															
 															+ "</div>"
 															+ "</div>"
 															+ "<div class='form-group'>"
 															+ "<div class='row'>"
 															+ "<div class='col-md-12'>Description"
 															+ "<p align='left'>You can tell us more about document </p>"
-															+ "<textarea name='description' class='description' rows='2' cols='10' value='write for us not more than 100 words.' >"
+															+ "<textarea name='description' class='description' rows='2' cols='10'>"
 															+ "</textarea>"
 															+ "</div>"
 															+ "</div>"
@@ -248,18 +240,15 @@ $(document)
 																"");
 														$(".responseMsg")
 																.append(
-																		"<p style='font-size:20px;'><strong>Thank you for your Contribution</strong></p><br/>"
+																		"<p style='font-size:20px;'><strong >Thank you for your Contribution</strong></p><br/>"
 																				+ "<p>You have successfully uploaded "
 																				+ fileList.length
 																				+ " documents for "
 																				+ fileList.length
 																				+ " courses</p>"
 																				+ "<p>It takes up to 3 business days for your documents to be approved</p>"
-																				+ "List of uploaded Files:"
-																				+ output
-																				+ "<div class='btn-group btn-group-info'>"
-																				+ "<a href='' class='ui orange save button'> Upload Documents</a>"
-																				+ "<div>");
+																				
+																				);
 
 													}
 												});
