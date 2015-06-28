@@ -92,6 +92,10 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/js/sidebar.js"></script>
 
+
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/resources/js/document.js"></script>
+
 <script>
 	var _contextPath = "${pageContext.request.contextPath}";
 
@@ -134,11 +138,10 @@
 			<div id="slidemenu">
 				<ul class="nav navbar-nav navbar-right">
 
-					<li><a href="#" id="#res">Resources</a></li>
+					<li><a href="${pageContext.request.contextPath}/solution" id="#res">Library</a></li>
 					<li><a href="#how">How it works</a></li>
 
-					<li><a href="${pageContext.request.contextPath}/doc/upload"><i
-							class="fa fa-usd"></i> Earn Money</a></li>
+					<li><a href="${pageContext.request.contextPath}/doc/upload">Earn Money</a></li>
 
 					<shiro:notAuthenticated>
 						<li class="active"><a

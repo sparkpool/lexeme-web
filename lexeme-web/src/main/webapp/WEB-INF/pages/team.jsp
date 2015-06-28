@@ -12,7 +12,6 @@
 </style>
 <div class="page-content">
 	<div class="container">
-
 		<section id="content">
 			<div class="col-md-12">
 				<blockquote>
