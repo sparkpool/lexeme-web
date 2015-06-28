@@ -46,6 +46,13 @@
 	href="${pageContext.request.contextPath}/resources/semantic/css/semantic.min.css"
 	rel="stylesheet">
 
+
+<!--  -->
+
+<link
+	href="${pageContext.request.contextPath}/resources/css/document.css"
+	rel="stylesheet">
+
 <script
 	src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.js"></script>
 <script

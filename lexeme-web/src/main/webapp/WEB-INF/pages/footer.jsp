@@ -32,7 +32,7 @@
 						<li><a href="${pageContext.request.contextPath}/copyrights">Copy
 								Rights Policy</a></li>
 
-						<li><a href="${pageContext.request.contextPath}/contactUs">Term
+						<li><a href="${pageContext.request.contextPath}/termofuse">Term
 								of Use uS</a></li>
 					</ul>
 				</div>

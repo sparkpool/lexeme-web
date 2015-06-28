@@ -27,4 +27,25 @@ public class GeneralController {
 		return "policy";
 	}
 	
+	@RequestMapping(value = "/faq", method = RequestMethod.GET)
+	public String faq(){
+		return "faq";
+	}
+	
+	@RequestMapping(value = "/feedback", method = RequestMethod.GET)
+	public String feedback(){
+		return "feedback";
+	}
+	
+	@RequestMapping(value = "/copyrights", method = RequestMethod.GET)
+	public String copyrights(){
+		return "copyrights";
+	}
+	
+	@RequestMapping(value = "/termofuse", method = RequestMethod.GET)
+	public String termofuse(){
+		return "termofuse";
+	}
+	
+	
 }

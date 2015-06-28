@@ -51,7 +51,7 @@
 									<input class="ui orange save button" type="submit"
 										name="SAVE" placeholder="Edit">
 								</div>
-							</div>
+								</div>
 							<br>
 						</form>
 						<div class="row"></div>
