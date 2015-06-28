@@ -26,12 +26,18 @@
 
 
 .container-new{
+	position:relative;
 	padding-top:25%;
 	margin-top: 40px;
     height: 37%;
 	
 }
 
+
+.searchingProgess{
+	position:relative;
+	margin-left: 50%;	
+}
 .search-heading {
 	font-size: 10px;
 	color: orange;
@@ -121,6 +127,7 @@
 	position:relative;
 	margin-bottom: 10%;
 	height: 30%;
+	padding-bottom: 50px;
 }
 
 	
@@ -141,6 +148,14 @@
 	text-align: center;
 	border-bottom: 1px solid #bbe8f9;
 	
+}
+
+
+.searchingProgess{
+	position:relative;
+	
+	margin-left: 50%;	
+	padding-bottom: 50px;
 }
 
 }

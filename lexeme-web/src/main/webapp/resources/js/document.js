@@ -4,6 +4,12 @@
  */
 
 
+
+/***
+ * To-do: It will call every time .I need to figure-out how it will call only once.s
+ * 
+ * 
+ */
 function uiRenderingOnSearchBoxClicked(){
 		   //Remove the class
 		   document.getElementById("searchContent").className="";
