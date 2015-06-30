@@ -2,11 +2,13 @@ package com.lexeme.web.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.shiro.crypto.RandomNumberGenerator;
 import org.apache.shiro.crypto.SecureRandomNumberGenerator;
@@ -93,5 +95,22 @@ public class LexemeUtil {
 	public static String getSalt(){
 		RandomNumberGenerator rng = new SecureRandomNumberGenerator();
 		return rng.nextBytes().toHex();
+	}
+	
+	public static List<String> getListofStringDividedByDelimiter(String query, String delimiter){
+		if(StringUtils.isBlank(query)){
+			return null;
+		}
+		if(StringUtils.isBlank(delimiter)){
+			delimiter = ",";
+		}
+		String[] splitQuery = query.split(delimiter);
+		List<String> list =  new ArrayList<String>();
+		for(String q : splitQuery){
+			if(StringUtils.isNotBlank(q)){
+				list.add(q.trim().toLowerCase());	
+			}
+		}
+		return list;
 	}
 }

@@ -16,8 +16,8 @@ import javax.persistence.Table;
 @Table(name = "USER_PROF" )
 public class UserProf implements Serializable {
 
-	private static final long serialVersionUID = 6124696332446731232L;
-	
+	private static final long serialVersionUID = -8327886580704545434L;
+
 	@Id
 	@Column (name ="ID")
 	@GeneratedValue (strategy = GenerationType.AUTO)

@@ -42,7 +42,7 @@ uniqueConstraints = {
 
 public class User implements Serializable {
 
-	private static final long serialVersionUID = 3891759651424252922L;
+	private static final long serialVersionUID = -2442538510089907068L;
 
 	@Id
 	@Column(name = "ID")

@@ -24,7 +24,7 @@ import com.lexeme.web.domain.user.User;
 })
 public class Course implements Serializable{
 
-	private static final long serialVersionUID = 6948604767856192721L;
+	private static final long serialVersionUID = -7519575850677982185L;
 
 	@Id
 	@Column (name="ID")
