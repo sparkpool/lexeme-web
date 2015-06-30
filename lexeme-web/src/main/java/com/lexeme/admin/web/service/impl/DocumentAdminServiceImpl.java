@@ -138,7 +138,7 @@ public class DocumentAdminServiceImpl implements IDocumentAdminService{
 	public String saveDocument(DocumentPojo documentPojo) {
 		DocumentDB document = getDocumentById(documentPojo.getDocumentId());
 		if(document != null){
-			document.setDescription(documentPojo.getDescription());
+			document.setDescription(documentPojo.getDescription().toLowerCase());
 			document.setCategory(documentPojo.getCategory());
 			document.setDisplayName(documentPojo.getName());
 			if(StringUtils.isNotBlank(documentPojo.getCourseID())){

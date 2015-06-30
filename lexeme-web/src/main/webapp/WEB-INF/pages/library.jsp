@@ -24,13 +24,13 @@
 					<!-- Search Filter by category, course ID, Name, Full text -->
 					<!-- /btn-group -->
 					<!-- Input box -->
-
-					<input type="text" class="form-control" aria-label=" " id="searchString"  ng-model="searchString"
+                    <form action="${pageContext.request.contextPath}/search" method="GET" >
+					<input type="text" name="q" class="form-control" aria-label=" " id="searchString"  ng-model="searchString"
 						value="Search Here" onkeypress="uiRenderingOnSearchBoxClicked();"  />
 					<span class="input-group-btn">
-						<button type="submit" id="searchBox" name="searchBox" ng-click="getListOfDocument();"
-							onclick="uiRenderingOnSearchBoxClicked();" class="btn btn-info" on>Search</button>
+						<input type="submit" id="searchBox" name="searchBox"  class="btn btn-info" on>Search</button>
 					</span>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -52,12 +52,14 @@
 			</div>
 			
 	 -->
-		<div class="document">
+	 <c:choose>
+	 <c:when test="${!empty documents}" >
+	 <c:forEach items="${documents}" var="document">
+	  <div class="document">
 			<!-- Document heading -->
-			<div class="document-header">Document Title</div>
-
+			<div class="document-header">${document.key.name} | ${document.key.category}</div>
 			<!-- Document Body -->
-			<div class="document-body">Document Body</div>
+			<div class="document-body">${document.key.description}</div>
 
 			<!-- Document footer -->
 			<div class="document-footer">
@@ -69,19 +71,20 @@
 						<div class="col-md-4 col-xs-4">
 							<span><a href="#"><i class="fa fa-thumbs-o-up"></i></a></span>
 						</div>
-						
 						<div class="col-xs-4">
-							<span><a href="#"><i class="fa fa-download"></i></a></span>
-						
-						
+							<span><a href="#" data-id="${document.key.id}"><i class="fa fa-download"></i></a></span>
 						</div>
 					</div>
 				</div>
-
 			</div>
-
 		</div>
-	</div>
+	 </c:forEach>
+	</c:when>
+  <c:otherwise>
+		 No Result Found
+ </c:otherwise>
+</c:choose>
+		</div>
 </div>
 
 <!-- /.page-content -->

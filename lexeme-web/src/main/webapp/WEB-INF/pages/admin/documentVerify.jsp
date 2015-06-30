@@ -24,7 +24,7 @@
 				method="POST" class="ui form" ng-controller="adminCtrl"  ng-app="myApp">
 
 				
-				<input type="hidden" name="documentId" id="documentId" ng-model="documentId"  ng-init="documentId=${documentPojo.documentId}"value="${documentPojo.documentId}" />
+				<input type="hidden" name="documentId" id="documentId" ng-model="documentId"  value="${documentPojo.documentId}" />
 				<div class="row">
 					<div class="col-md-6">
 						<div class="row">

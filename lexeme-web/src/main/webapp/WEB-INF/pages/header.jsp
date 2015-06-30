@@ -134,7 +134,7 @@
 			<div id="slidemenu">
 				<ul class="nav navbar-nav navbar-right">
 
-					<li><a href="${pageContext.request.contextPath}/solution" id="#res">Library</a></li>
+					<li><a href="${pageContext.request.contextPath}/library" id="#res">Library</a></li>
 					<li><a href="${pageContext.request.contextPath}/doc/upload">Earn Money</a></li>
 
 					<shiro:notAuthenticated>

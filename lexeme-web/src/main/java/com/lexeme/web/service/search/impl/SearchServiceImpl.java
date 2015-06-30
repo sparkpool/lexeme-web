@@ -10,8 +10,10 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.lexeme.web.domain.document.DocumentDB;
+import com.lexeme.web.enums.EnumDocumentStatus;
 import com.lexeme.web.pojo.document.DocumentTO;
 import com.lexeme.web.search.other.SearchComparator;
 import com.lexeme.web.service.search.ISearchService;
@@ -24,6 +26,7 @@ public class SearchServiceImpl implements ISearchService{
 	private SessionFactory sessionFactory;
 	
 	@Override
+	@Transactional
 	public Map<DocumentTO, Long> searchDocumentsByQuery(String query) {
 		List<String> tokens = LexemeUtil.getListofStringDividedByDelimiter(query, " ");
 		return getDocumentsFromDB(tokens);
@@ -71,6 +74,7 @@ public class SearchServiceImpl implements ISearchService{
 	private List<DocumentTO> getDocumentsFromDB(String keyword){
 		Query query = getSessionFactory().getCurrentSession().getNamedQuery("GET.BYKEYWORDS");
 		query.setParameter("keyword", "%" + keyword + "%");
+		query.setParameter("status", EnumDocumentStatus.VERIFIED.getDocumentStatusId());
 		List<DocumentDB> list = (List<DocumentDB>)query.list();
 		return getDocumentFromDocumentDB(list);
 	}

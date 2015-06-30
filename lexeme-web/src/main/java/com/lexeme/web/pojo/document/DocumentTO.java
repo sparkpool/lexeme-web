@@ -1,6 +1,6 @@
 package com.lexeme.web.pojo.document;
 
-public class DocumentTO {
+public class DocumentTO implements Comparable<DocumentTO>{
 
 	private Long id;
 	private String name;
@@ -77,6 +77,11 @@ public class DocumentTO {
 	public String toString() {
 		return "DocumentTO [id=" + id + ", name=" + name + ", description="
 				+ description + ", category=" + category + "]";
+	}
+
+	@Override
+	public int compareTo(DocumentTO o) {
+		return 0;
 	}
 	
 }

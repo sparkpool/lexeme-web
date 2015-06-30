@@ -15,6 +15,9 @@ public class SearchComparator implements Comparator<DocumentTO>{
 	
 	@Override
 	public int compare(DocumentTO o1, DocumentTO o2) {
+		if(map.get(o2).compareTo(map.get(o1))==0){
+			return 1;
+		}
 		return map.get(o2).compareTo(map.get(o1));
 	}
 

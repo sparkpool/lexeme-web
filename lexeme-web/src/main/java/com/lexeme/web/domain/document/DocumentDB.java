@@ -24,7 +24,7 @@ import com.lexeme.web.domain.user.User;
 @Table(name = "DOCUMENT_DB")
 @NamedQueries({
 	@NamedQuery(name="GET.BYID", query="SELECT D FROM DocumentDB D where D.id = :id"),
-	@NamedQuery(name="GET.BYKEYWORDS", query="SELECT D FROM DocumentDB D where D.description = :keyword")
+	@NamedQuery(name="GET.BYKEYWORDS", query="SELECT D FROM DocumentDB D where D.description like :keyword and D.status = :status")
 })
 public class DocumentDB implements Serializable{
 

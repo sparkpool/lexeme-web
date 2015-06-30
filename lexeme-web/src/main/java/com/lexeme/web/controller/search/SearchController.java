@@ -31,7 +31,7 @@ public class SearchController {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("library");
 		try{
-			if(StringUtils.isBlank(query) || query.length() > 3){
+			if(StringUtils.isBlank(query) || query.length() < 3){
 				return model;
 			}
 			Map<DocumentTO, Long> documents = getSearchService().searchDocumentsByQuery(query);
