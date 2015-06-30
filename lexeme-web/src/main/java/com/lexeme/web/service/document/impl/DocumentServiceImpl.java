@@ -93,7 +93,7 @@ public class DocumentServiceImpl implements IDocumentService{
 	private DocumentDB getDocument(String category, String description){
 		DocumentDB documentDB = new DocumentDB();
 		documentDB.setCategory(category);
-		documentDB.setDescription(description);
+		documentDB.setDescription(description.toLowerCase());
 		documentDB.setCreateDt(new Date());
 		documentDB.setStatus(EnumDocumentStatus.PENDING.getDocumentStatusId());
 		User user = getUserService().getUSerFromPrincipal();

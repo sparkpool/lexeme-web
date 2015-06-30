@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @Table (name="PERMISSIONS")
 public class Permissions implements Serializable{
 
-	private static final long serialVersionUID = 3224011734863908470L;
+	private static final long serialVersionUID = -5349722705911707128L;
 
 	@Id
 	@Column (name="ID", nullable=false)

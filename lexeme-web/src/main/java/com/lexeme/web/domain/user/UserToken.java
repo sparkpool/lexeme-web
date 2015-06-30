@@ -30,8 +30,8 @@ import com.lexeme.web.domain.user.User;
 })
 public class UserToken implements Serializable{
 
-	private static final long serialVersionUID = -6338743166955178316L;
-	
+	private static final long serialVersionUID = 4294526197776585701L;
+
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)

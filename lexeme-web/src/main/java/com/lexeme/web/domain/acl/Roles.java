@@ -26,8 +26,8 @@ import com.lexeme.web.domain.user.User;
 })
 public class Roles implements Serializable {
 
-	private static final long serialVersionUID = -8261711572347293852L;
-	
+	private static final long serialVersionUID = 7135428243632700207L;
+
 	@Id
 	@Column (name="ID", nullable=false)
 	@GeneratedValue(strategy = GenerationType.AUTO)

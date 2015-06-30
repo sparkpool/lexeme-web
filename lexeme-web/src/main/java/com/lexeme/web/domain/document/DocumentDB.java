@@ -23,16 +23,22 @@ import com.lexeme.web.domain.user.User;
 @Entity
 @Table(name = "DOCUMENT_DB")
 @NamedQueries({
-	@NamedQuery(name="GET.BYID", query="SELECT D FROM DocumentDB D where D.id = :id")
+	@NamedQuery(name="GET.BYID", query="SELECT D FROM DocumentDB D where D.id = :id"),
+	@NamedQuery(name="GET.BYKEYWORDS", query="SELECT D FROM DocumentDB D where D.description = :keyword")
 })
 public class DocumentDB implements Serializable{
 
-	private static final long serialVersionUID = 7350289171395522244L;
+	private static final long serialVersionUID = -3883463540747444104L;
 
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+
+	@Override
+	public String toString() {
+		return "DocumentDB [id=" + id + "]";
+	}
 
 	@Column(name = "CATEGORY", length = 50, nullable = false)
 	private String category;
@@ -155,6 +161,31 @@ public class DocumentDB implements Serializable{
 
 	public void setModifiedDt(Date modifiedDt) {
 		this.modifiedDt = modifiedDt;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DocumentDB other = (DocumentDB) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
 
 }
