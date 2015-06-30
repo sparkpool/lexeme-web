@@ -1,11 +1,11 @@
 <%@include file="header.jsp"%>
 
-<div class="jumbotron">
+<div class="main-page">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-md-3">
 				<div class="claim lead">
-					NotoHub
+					StudyDoer
 					<p>Read, Share & Earn
 					<p>
 				</div>
@@ -45,7 +45,7 @@
 
 		<div class="container">
 			<div class="home-body">
-				<div class="lead">Noto Hub offers students crowd-sourced study
+				<div class="lead">Study Doer offers students crowd-sourced study
 					documents, expert tutors and customizable flashcards, accessible
 					anywhere, at any</div>
 

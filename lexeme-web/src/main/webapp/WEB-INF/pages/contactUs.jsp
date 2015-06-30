@@ -7,6 +7,7 @@
 				<div class="feedback-form-left">
 					<div class="feedback-support-text">
 						<h4>Send us Your feedback.</h4>
+						<i class="fa fa-envelope fa-5x"></i>
 					</div>
 				</div>
 				<form id="feedback-form" method="post" action="feedback_send.php">

@@ -2,7 +2,7 @@
 <!--Header--->
 <%@page import="com.lexeme.web.enums.EnumRoles"%>
 <%@ include file="header.jsp"%>
-<div id="page-content">
+<div id="page-content1">
 	<div class="container">
 	<section id="content">
 		<div class="row">

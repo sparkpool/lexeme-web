@@ -2,11 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="header.jsp"%>
 
-<div id="page-content">
+<div id="page-content1">
 	<div class=" container-fluid">
 		<section id="content">
 			<!-- Profile Picture -->
 		<div class="row">
+		<div class="profile-header">
 			<div class="col-lg-2">
 				<div class="profile">
 					<img
@@ -60,7 +61,7 @@
 				</div>
 
 			</div>
-
+</div>
 
 			<!-- Credit information -->
 

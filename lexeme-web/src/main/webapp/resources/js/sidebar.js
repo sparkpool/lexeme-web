@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 
     //stick in the fixed 100% height behind the navbar but don't wrap it
-    $('#slide-nav.navbar .container').append($('<div id="navbar-height-col"></div>'));
+ //   $('#slide-nav.navbar .container').append($('<div id="navbar-height-col"></div>'));
 
     // Enter your ids or classes
     var toggler = '.navbar-toggle';
@@ -14,7 +14,7 @@ $(document).ready(function () {
     var navigationwrapper = '';
     var slidewidth = '50%';
     var menuneg = '-100%';
-    var slideneg = '-80%';
+    var slideneg = '80%';
 
 
     $("#slide-nav").on("click", toggler, function (e) {
@@ -40,7 +40,7 @@ $(document).ready(function () {
 
         $(this).toggleClass('slide-active', !selected);
         $('#slidemenu').toggleClass('slide-active');
-        $('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
+       // $('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
 
 
     });

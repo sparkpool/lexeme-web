@@ -8,7 +8,7 @@
 						<h3>Company</h3>
 						<li><a href="${pageContext.request.contextPath}/aboutUs">About
 								Us</a></li>
-						<li><a href="${pageContext.request.contextPath}/solution">SolutionLib</a></li>
+						<li><a href="${pageContext.request.contextPath}/solution">Library</a></li>
 						<li><a href="/sitemap/">Sitemap</a> <!--<a href="/api/intro.php">API</a>-->
 					</ul>
 				</div>

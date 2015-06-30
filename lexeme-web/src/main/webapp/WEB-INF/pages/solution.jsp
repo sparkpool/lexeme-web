@@ -6,8 +6,14 @@
 	<div class="container">
 		<!-- Heading Text -->
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3 col-xs-12 ">
-				<h1>Download the document</h1>
+			
+						<div class="feedback-form-center" align="center">
+				<div class="feedback-support-text">
+					<i class='fa fa-download fa-4x' style="color: orange;"></i>
+					<h1>Start Searching Documents</h1>
+			
+				</div>
+
 			</div>
 		</div>
 
@@ -16,7 +22,6 @@
 			<div class="col-lg-8 col-md-offset-2">
 				<div class="input-group">
 					<!-- Search Filter by category, course ID, Name, Full text -->
-					<div class="input-group-btn"></div>
 					<!-- /btn-group -->
 					<!-- Input box -->
 
@@ -58,11 +63,17 @@
 			<div class="document-footer">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="col-md-6 col-xs-6">
+						<div class="col-md-4 col-xs-4">
 							<span><a href="#"><i class="fa fa-eye"></i></a></span>
 						</div>
-						<div class="col-md-6 col-xs-6">
+						<div class="col-md-4 col-xs-4">
 							<span><a href="#"><i class="fa fa-thumbs-o-up"></i></a></span>
+						</div>
+						
+						<div class="col-xs-4">
+							<span><a href="#"><i class="fa fa-download"></i></a></span>
+						
+						
 						</div>
 					</div>
 				</div>
