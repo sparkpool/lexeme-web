@@ -1758,17 +1758,7 @@ input {
 	margin-bottom: 1em
 }
 
-#feedback-container .success-message {
-	width: 100%;
-	float: right;
-	margin-right: 0; #
-	margin-left: -18px;
-	display: inline;
-	margin-top: 0em;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	margin-bottom: 1.5em
-}
+
 
 .feedback-support-text {
 	width: 100%;
@@ -1933,53 +1923,10 @@ h4 {
 	}
 }
 
-#feedback-form
-fieldset {
-	margin-bottom: 1.5em
-}
 
-#feedback-form fieldset
-label {
-	font-size: 1.16667em;
-	line-height: 1.28571em;
-	font-weight: 600;
-	display: block;
-	margin-bottom: 0.75em
-}
 
-#feedback-form fieldset input[type=text],#feedback-form fieldset
-textarea {
-	display: block;
-	min-width: 100%;
-	font-size: 1em;
-	line-height: 1.5em;
-	margin-top: 0em;
-	padding-top: 0.75em;
-	padding-bottom: 0.75em;
-	margin-bottom: 0em;
-	border: 2px solid #bbe8f9;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	border-radius: 2px
-}
 
-#feedback-form fieldset
-textarea {
-	height: 205px
-}
 
-#feedback-form fieldset .select2-container .select2-choice {
-	font-size: 1em;
-	line-height: 2.5em;
-	border: 2px solid #e3e3e3
-}
-
-#feedback-form .coa-wrapper {
-	margin-top: 0.5em
-}
-
-@media ( min-width : 991px) {
-	#feedback-form .coa-wrapper {
-		text-align: left
-	}
-}
+/****
+*Contact US
+*/

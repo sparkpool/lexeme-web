@@ -6,8 +6,14 @@
 	<div class=" container-fluid">
 		<section id="content">
 			<!-- Profile Picture -->
+
+		
+
+
+
 		<div class="row">
-		<div class="profile-header">
+			<div class="profile-header">
+	
 			<div class="col-lg-2">
 				<div class="profile">
 					<img

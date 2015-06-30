@@ -84,6 +84,9 @@
 		src="${pageContext.request.contextPath}/resources/angular/authCtrl.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/angular/adminCtrl.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/angular/DocumentCtrl.js"></script>
+	
 	
 	
 	<!-- Add side bar -->

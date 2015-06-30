@@ -18,18 +18,18 @@
 		</div>
 
 
-		<div class="row">
+		<div class="row" ng-controller="documentCtrl">
 			<div class="col-lg-8 col-md-offset-2">
 				<div class="input-group">
 					<!-- Search Filter by category, course ID, Name, Full text -->
 					<!-- /btn-group -->
 					<!-- Input box -->
 
-					<input type="text" class="form-control" aria-label=" "
-						value="Search Here" onkeypress="uiRenderingOnSearchBoxClicked();" />
+					<input type="text" class="form-control" aria-label=" " id="searchString"  ng-model="searchString"
+						value="Search Here" onkeypress="uiRenderingOnSearchBoxClicked();"  />
 					<span class="input-group-btn">
-						<button type="button" id="searchBox"
-							onclick="uiRenderingOnSearchBoxClicked();" class="btn btn-info">Search</button>
+						<button type="submit" id="searchBox" name="searchBox" ng-click="getListOfDocument();"
+							onclick="uiRenderingOnSearchBoxClicked();" class="btn btn-info" on>Search</button>
 					</span>
 				</div>
 			</div>
