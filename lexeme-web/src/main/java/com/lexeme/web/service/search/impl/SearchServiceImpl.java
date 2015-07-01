@@ -12,10 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.lexeme.web.comparator.search.SearchComparator;
+import com.lexeme.web.constants.DelimiterConstants;
 import com.lexeme.web.domain.document.DocumentDB;
 import com.lexeme.web.enums.EnumDocumentStatus;
 import com.lexeme.web.pojo.document.DocumentTO;
-import com.lexeme.web.search.other.SearchComparator;
 import com.lexeme.web.service.search.ISearchService;
 import com.lexeme.web.util.LexemeUtil;
 
@@ -28,7 +29,7 @@ public class SearchServiceImpl implements ISearchService{
 	@Override
 	@Transactional
 	public Map<DocumentTO, Long> searchDocumentsByQuery(String query) {
-		List<String> tokens = LexemeUtil.getListofStringDividedByDelimiter(query, " ");
+		List<String> tokens = LexemeUtil.getListofStringDividedByDelimiter(query, DelimiterConstants.SPACE);
 		return getDocumentsFromDB(tokens);
 	}
 	

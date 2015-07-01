@@ -101,9 +101,6 @@ public class LexemeUtil {
 		if(StringUtils.isBlank(query)){
 			return null;
 		}
-		if(StringUtils.isBlank(delimiter)){
-			delimiter = ",";
-		}
 		String[] splitQuery = query.split(delimiter);
 		List<String> list =  new ArrayList<String>();
 		for(String q : splitQuery){
