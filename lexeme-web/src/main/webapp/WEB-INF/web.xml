@@ -35,7 +35,8 @@
         </listener-class>
   </listener>
   
-  
+  	
+  	
   
   <listener>
         <listener-class>
@@ -66,4 +67,16 @@
   <session-config>
 	<session-timeout>10</session-timeout> 
   </session-config>  
+ 
+ 
+ <!-- Error Page Routing-->
+ <error-page>
+	<error-code>404</error-code>
+	<location>/WEB-INF/pages/error.jsp</location>
+ </error-page>
+ <error-page>
+	<error-code>500</error-code>
+	<location>/WEB-INF/pages/error.jsp</location>
+ </error-page>
+ 
  </web-app> 

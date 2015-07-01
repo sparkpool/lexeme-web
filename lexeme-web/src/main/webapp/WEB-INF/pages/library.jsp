@@ -2,64 +2,82 @@
 <script type="text/javascript">
 	var _contextPath = "${pageContext.request.contextPath}";
 </script>
-<div class="search-content" id="searchContent">
+<div class="search-content" id="searchContent" onload="searchBoxClicked()">
 	<div class="container">
 		<!-- Heading Text -->
-		<div class="row">
-			
-						<div class="feedback-form-center" align="center">
-				<div class="feedback-support-text">
-					<i class='fa fa-download fa-4x' style="color: orange;"></i>
-					<h1>Start Searching Documents</h1>
-			
+		
+			<!-- Heading -->
+			<div class="row">
+				<div class="col-md-12" align="center">
+					<div class="feedback-form-center">
+						<div class="feedback-support-text">
+							<h1>Looking for best solution,we have one</h1>
+						</div>
+					</div>
 				</div>
-
 			</div>
-		</div>
 
 
-		<div class="row" ng-controller="documentCtrl">
+		<div class="row" >
 			<div class="col-lg-8 col-md-offset-2">
-				<div class="input-group">
 					<!-- Search Filter by category, course ID, Name, Full text -->
 					<!-- /btn-group -->
 					<!-- Input box -->
-                    <form action="${pageContext.request.contextPath}/search" method="GET" >
+	                <form action="${pageContext.request.contextPath}/search" method="GET" >
+					<div class="input-group">
+					
 					<input type="text" name="q" class="form-control" aria-label=" " id="searchString"  ng-model="searchString"
 						value="Search Here" onkeypress="uiRenderingOnSearchBoxClicked();"  />
 					<span class="input-group-btn">
-						<input type="submit" id="searchBox" name="searchBox"  class="btn btn-info" on>Search</button>
+						<button type="submit" id="searchBox" name="searchBox"  class="btn btn-info" onclick="searchBoxClicked()">Search</button>
 					</span>
+					</div>
 					</form>
-				</div>
+			
 			</div>
 		</div>
 	</div>
 </div>
-<hr />
+
+<div class="banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-4" align="left">Top Results Found
+		</div>
+			<div class="visible-xs">
+				<div class="col-xs-4" align="left"></div>
+			</div>
+		</div>
+		<div class="col-sm-6"></div>
+	</div>
+</div>
+
 <div class="search-result">
 
 	<div class="container">
 
 		<!-- 
+		
 	
 		It will be shown when search results are loading
 	
 			<div class="row">
 				<div class="col-md-12">
-				<div class="searchingProgess"><i class="fa fa-spinner fa-pulse fa-5x" ></i></div>
+				<div class="searchingProgess"><i class="fa fa-spinner fa-pulse fa-5x"></i></div>
 				</div>
 			</div>
 			
 	 -->
+	 
+	 <div class="row">
 	 <c:choose>
 	 <c:when test="${!empty documents}" >
 	 <c:forEach items="${documents}" var="document">
 	  <div class="document">
 			<!-- Document heading -->
-			<div class="document-header">${document.key.name} | ${document.key.category}</div>
+			<div class="document-header"><h1>${document.key.name} | ${document.key.category}</h1></div>
 			<!-- Document Body -->
-			<div class="document-body">${document.key.description}</div>
+			<div class="document-body"><p>${document.key.description}</p></div>
 
 			<!-- Document footer -->
 			<div class="document-footer">
@@ -72,7 +90,7 @@
 							<span><a href="#"><i class="fa fa-thumbs-o-up"></i></a></span>
 						</div>
 						<div class="col-xs-4">
-							<span><a href="#" data-id="${document.key.id}"><i class="fa fa-download"></i></a></span>
+							<span><a href="${pageContext.request.contextPath}/doc/download?docId=${document.key.id}" data-id="${document.key.id}"><i class="fa fa-download"></i></a></span>
 						</div>
 					</div>
 				</div>
@@ -84,7 +102,10 @@
 		 No Result Found
  </c:otherwise>
 </c:choose>
+</div>
+</div>
 		</div>
+		
 </div>
 
 <!-- /.page-content -->

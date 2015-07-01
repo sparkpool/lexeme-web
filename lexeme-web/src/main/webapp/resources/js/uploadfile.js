@@ -240,13 +240,11 @@ $(document)
 																"");
 														$(".responseMsg")
 																.append(
-																		"<p style='font-size:20px;'><strong >Thank you for your Contribution</strong></p><br/>"
+																		"<p style='font-size:20px;color:orange;'><strong >Thank you for your Contribution</strong></p><br/>"
 																				+ "<p>You have successfully uploaded "
 																				+ fileList.length
-																				+ " documents for "
-																				+ fileList.length
-																				+ " courses</p>"
-																				+ "<p>It takes up to 3 business days for your documents to be approved</p>"
+																				+ " document.</p>"
+																				+ "<p style='color:black;'>It takes up to 1 business days for your documents to be approved</p>"
 																				
 																				);
 

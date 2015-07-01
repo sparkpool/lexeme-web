@@ -1,6 +1,8 @@
 /***
 *Document Box 
 */
+
+
 .search-banner {
 	 
     
@@ -51,7 +53,7 @@
 .search-result {
 	position:relative;
 	margin-bottom: 10%;
-	height: 30%;
+	
 }
 
 .document {
@@ -74,16 +76,41 @@
 	border-right: 1px solid orange;
 	border-top: 1px solid orange;
 	box-sizing: border-box;
-	padding: 15px;
+	margin-left: 25px;
+	margin-bottom: 25px;
+	margin-top: 25px;
+	
+
 }
 
+.document p {
+	position:relative;
+	font-size: 12px; 
+	font-size: 1vw;
+	text-transform: capitalize;	
+	font-size: 1.5vh;
+
+}
+
+/****
+*
+*/
+.document h1{
+	font-size:12px; 
+	font-size: .8vw;
+	text-transform: capitalize;
+	font-size: 1.2vh;
+
+}
 .document .document-header {
+	position:relative;
 	height: 30px;
 	text-align: center;
 	border-bottom: 1px solid #bbe8f9;
 }
 
 .document-body {
+	position:relative;
 	height: 160px;
 	text-align: left;
 	border-color: red;
@@ -91,10 +118,14 @@
 }
 
 .document-footer {
-	margin-top: 0px;
+	font-size-adjust: 0.58;	
+	position:relative;
+	
+	margin-top: 5px;
 	height: 30px;
 	text-align: center;
 }
+
 
 .document:hover {
 	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
@@ -127,9 +158,7 @@
 }
 
 .search-result {
-	position:relative;
 	margin-bottom: 10%;
-	height: 30%;
 	padding-bottom: 50px;
 }
 
@@ -146,7 +175,8 @@
 
 
 .document-footer {
-	margin-top: 0px;
+	
+	margin-top: 5px;
 	height: 60px;
 	text-align: center;
 	border-bottom: 1px solid #bbe8f9;
