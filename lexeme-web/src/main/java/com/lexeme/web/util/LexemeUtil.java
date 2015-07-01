@@ -104,7 +104,7 @@ public class LexemeUtil {
 		String[] splitQuery = query.split(delimiter);
 		List<String> list =  new ArrayList<String>();
 		for(String q : splitQuery){
-			if(StringUtils.isNotBlank(q)){
+			if(StringUtils.isNotBlank(q) && q.length()>=3){
 				list.add(q.trim().toLowerCase());	
 			}
 		}
