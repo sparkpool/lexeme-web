@@ -191,7 +191,7 @@ $(document)
 															.val();
 													formData.append(
 															"description",
-															description + ' ');
+															description.replace(",","") + ' ');
 												});
 										$
 												.ajax({

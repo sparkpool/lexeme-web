@@ -30,6 +30,7 @@ public class SearchController {
 	public ModelAndView getSearchResults(@RequestParam("q") String query){
 		ModelAndView model = new ModelAndView();
 		model.setViewName("library");
+		model.addObject("divHide", true);
 		try{
 			if(StringUtils.isBlank(query) || query.length() < 3){
 				return model;
