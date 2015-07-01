@@ -46,7 +46,7 @@ public class EmailSentPojo implements Runnable{
 	private String getFromEmailFromProperties(){
 		String fromEmail = PropertiesUtil.getProjectProperty("from.email");
 		if(fromEmail == null || fromEmail.trim().length() == 0){
-			fromEmail = "mail-noreply@lexeme.com";
+			fromEmail = "no-reply@lexeme.com";
 		}
 		return fromEmail;
 	}
