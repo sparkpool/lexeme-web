@@ -1,4 +1,4 @@
-package com.lexeme.web.search.other;
+package com.lexeme.web.comparator.search;
 
 import java.util.Comparator;
 import java.util.Map;

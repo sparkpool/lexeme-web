@@ -168,7 +168,7 @@
 	</bean>
 
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		<property name="username" value="lexemec@gmail.com" />
+		<property name="username" value="lexemec@studydoer.com" />
 		<property name="password" value="lexeme@123" />
 
 		<property name="javaMailProperties">
