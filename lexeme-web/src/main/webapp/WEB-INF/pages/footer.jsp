@@ -8,7 +8,7 @@
 						<h3>Company</h3>
 						<li><a href="${pageContext.request.contextPath}/aboutUs">About
 								Us</a></li>
-						<li><a href="${pageContext.request.contextPath}/solution">Library</a></li>
+						<li><a href="${pageContext.request.contextPath}/library">Library</a></li>
 						<li><a href="/sitemap/">Sitemap</a> <!--<a href="/api/intro.php">API</a>-->
 					</ul>
 				</div>
@@ -45,7 +45,7 @@
 
 	<div class="footer-bottom">
 		<div class="container">
-			<p class="pull-left">Copyright © NotoHub 2015. All right
+			<p class="pull-left">Copyright © StudyDoer 2015. All right
 				reserved.</p>
 			<div class="pull-right">
 				<ul class="nav nav-pills payments">

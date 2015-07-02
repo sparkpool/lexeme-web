@@ -4,10 +4,8 @@
 	<!-- Open Page conatiner -->
 	<div class="container">
 		<!-- Container -->
-		<div class="row">
-			<h1>Our mission is to help students learn and succeed by
-				delivering supplemental educational resources for their specific
-				courses.</h1>
+		<div class="title">
+			ABOUT US
 		</div>
 
 	</div>
@@ -17,7 +15,7 @@
 
 	<div class="container">
 		<div class="row">
-			<ul class="nav navbar-nav navbar-center">
+			<ul class="nav navbar-nav">
 				<li><a href="${pageContext.request.contextPath}/library"
 					id="#res">About us</a></li>
 				<li><a href="${pageContext.request.contextPath}/library"
@@ -30,4 +28,12 @@
 	</div>
 </div>
 
+
+<div class="content">
+	<div class="container">
+	
+	
+	</div>
+
+</div>
 <%@ include file="footer.jsp"%>
