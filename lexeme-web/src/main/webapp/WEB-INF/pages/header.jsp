@@ -94,6 +94,8 @@
 		src="${pageContext.request.contextPath}/resources/js/sidebar.js"></script>
 	
 	
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/resources/js/document.js"></script>
 	
 	<script>
 		var _contextPath = "${pageContext.request.contextPath}";

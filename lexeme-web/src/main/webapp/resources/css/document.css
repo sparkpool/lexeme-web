@@ -24,7 +24,7 @@
 .search-add-new{
 	position: relative;
 	padding-top:20px;
-    background-color: beige;
+	background-image: linear-gradient(89deg, #30BDED 0px, beige 100%);
    	
 }
 
@@ -64,7 +64,7 @@
 	font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console",
 		Terminal, "Courier New", Courier;
 	display: inline-block;
-	height: 228px;
+	height: 263px;
 	text-align: left;
 	width: 200px;
 	border-radius: 5px;
@@ -86,12 +86,61 @@
 .document p {
 	position:relative;
 	font-size: 12px; 
-	font-size: 1vw;
+	font-size: .8vw;
 	text-transform: capitalize;	
-	font-size: 1.5vh;
+	font-size: 1vh;
 
 }
 
+
+fieldset, label { 
+	margin: 0; 
+	padding: 0; 
+}
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  	
+  border: none;
+  float: left;
+}
+
+.rating > input { 
+  display: none; 
+  padding-left: 5px;
+
+} 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+
+
+.rating > label { 
+  color: #ddd; 
+  float: right; 
+  width: 15%;
+  margin-left: 8px;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { 
+	color: #FFD700;  
+} /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+	color: #FFED85;  
+} 
 /****
 *
 */
@@ -117,10 +166,12 @@
 	border-bottom: 1px solid #bbe8f9;
 }
 
+
+
+
 .document-footer {
 	font-size-adjust: 0.58;	
 	position:relative;
-	
 	margin-top: 5px;
 	height: 30px;
 	text-align: center;
@@ -139,6 +190,10 @@
 ****/
 
 .document-rating{
+	position: relative;
+	height:30px;
+	margin-top: 5px;
+	border-bottom: 1px solid #bbe8f9;
 	
 	
 }
@@ -148,6 +203,14 @@
 */
 
 @media ( min-width : 320px) and (max-width: 480px) {
+
+.rating > label { 
+  color: #ddd; 
+  float: right; 
+  width: 15%;
+  margin-left: 10px;
+  padding-left: 8px;
+}
 
 .search-content {
 	position: relative;
@@ -202,4 +265,62 @@
 	padding-bottom: 50px;
 }
 
+}
+
+
+
+
+/****
+*About us banner
+*/
+.aboutus-content {
+	position: relative;
+	background-image: linear-gradient(89deg, #30BDED 0px, beige 100%);
+	padding-top:20%;
+	margin-top: 20px;
+    height: 50%;
+    
+   	
+}
+
+
+
+
+.aboutus-heading{
+	
+	
+}
+
+.aboutus-banner {
+	padding: 15px 20px;
+	color: #777;
+	background-color: #FAFAFA;
+	border-top: 1px solid #FFF;
+	border-bottom: 1px solid #E5E5E5;
+	font-size: 20px;
+}
+/****
+*Contact Us banner
+*
+*/
+
+.contactus-content {
+	position: relative;
+	background-image: linear-gradient(89deg, #30BDED 0px, beige 100%);
+	padding-top:20%;
+	margin-top: 20px;
+    height: 50%;
+    
+   	
+}
+
+
+.fqq-content {
+	position: relative;
+	background-image: linear-gradient(89deg, #30BDED 0px, beige 100%);
+	padding-top:20%;
+	margin-top: 20px;
+    height: 50%;
+    
+   	
 }

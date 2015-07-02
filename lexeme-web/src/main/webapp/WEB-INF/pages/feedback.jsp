@@ -1,4 +1,5 @@
 <%@ include file="header.jsp"%>
+
 <div id="page-content1">
 	<div class="container">
 		<section id="content">
@@ -90,4 +91,7 @@
 		</section>
 	</div>
 </div>
+
+
+
 <%@ include file="footer.jsp"%>

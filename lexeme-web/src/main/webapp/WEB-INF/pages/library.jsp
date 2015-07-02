@@ -15,6 +15,10 @@
 					<div class="feedback-support-text">
 						<h1>Looking for best solution,we have one</h1>
 					</div>
+					<i class="fa fa-download fa-5x" style="color:orange;"></i>
+					<br/>
+					<h2>Start Searching Documents</h2>
+		
 				</div>
 			</div>
 		</div>
@@ -86,6 +90,20 @@
 								<p>${document.key.description}</p>
 							</div>
 
+
+							<!-- Document Rating -->
+							
+							<div class="document-rating" id="${document.key.id}">
+							
+					<fieldset class="rating" id="${document.key.id}" >
+					    <input type="radio" id='star5${document.key.id}' name="rating${document.key.id}" value="1" /><label  for="star5${document.key.id}" title="Awesome - 5 stars"></label>
+					    <input type="radio" id='star4${document.key.id}' name="rating${document.key.id}" value="4" /><label  for="star4${document.key.id}" title="Pretty good - 4 stars"></label>
+					    <input type="radio" id='star3${document.key.id}' name="rating${document.key.id}" value="3" /><label  for="star3${document.key.id}" title="Meh - 3 stars"></label>
+					    <input type="radio" id='star2${document.key.id}' name="rating${document.key.id}" value="2" /><label  for="star2${document.key.id}" title="Kinda bad - 2 stars"></label>
+					    <input type="radio" id='star1${document.key.id}' name="rating${document.key.id}" value="1" /><label  for="star1${document.key.id}" title="Sucks big time - 1 star"></label>
+   
+					</fieldset>
+							</div>
 							<!-- Document footer -->
 							<div class="document-footer">
 								<div class="row">
@@ -115,7 +133,6 @@
 	</div>
 </div>
 
-</div>
 
 <!-- /.page-content -->
 

@@ -3,6 +3,9 @@ var app = angular.module('myApp', [ 'ngRoute' ]);
 /*******************************************************************************
  * It will validate that username/email is exist or not
  */
+
+
+
 app.controller('validateCtrl', function($scope, $http) {
 	// array of edited fields (optional)
 	$scope.focusField1 = false;
