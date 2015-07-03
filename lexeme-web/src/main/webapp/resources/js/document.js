@@ -12,12 +12,12 @@ $(document)
 		.ready(
 				function() {
 
+				        
 					var divHide = $('#divHide').val();
 
 					if (divHide=="true") {
-						document.getElementById("searchContent").className = '';
-						document.getElementsByName("container").className = '';
-						document.getElementById("searchContent").className = "search-add-new";
+						document.getElementById("searchContent").style.display = 'none';
+						document.getElementById("banner").className='searchbanner';
 						document.getElementsByName("container").className = "container-new";
 					} 
 					
@@ -32,5 +32,16 @@ $(document)
 						//do nothing
 					}
 
+					 $(".tabs-menu a").click(function(event) {
+					     event.preventDefault();
+					      $(this).parent().addClass("current");
+					      var removedClass=$(this).parent().siblings().removeClass("current");
+					      console.log(removedClass);
+					      var tab = $(this).attr("href");
+					      $(".tab-content").not(tab).css("display", "none");
+				 
+					        $(tab).fadeIn();
+					    });
+					
 				});
 
