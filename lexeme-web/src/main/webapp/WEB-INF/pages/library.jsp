@@ -84,14 +84,20 @@
 								</fieldset>
 							</div>
 							<!-- Document footer -->
-							<div class="document-footer">
+							<div class="document-footer" ng-controller="documentCtrl"
+								ng-app="myApp">
 								<div class="row">
 									<div class="col-md-12">
 										<div class="col-md-4 col-xs-4">
-											<span><a href="#"><i class="fa fa-eye"></i></a></span>
+											<span><a href="#" ng-init="view=${document.key.id}"
+												ng-model="view" ng-click="setLike();" data-toggle="modal"
+												data-target="#show"><i class="fa fa-eye"></i></a></span>
 										</div>
 										<div class="col-md-4 col-xs-4">
-											<span><a href="#"><i class="fa fa-thumbs-o-up"></i></a></span>
+											<span><a
+												href="${pageContext.request.contextPath}/doc/analysis/like?docId=${document.key.id}"
+												data-id="${document.key.id}"><i
+													class="fa fa-thumbs-o-up"></i></a></span>
 										</div>
 										<div class="col-xs-4">
 											<span><a
@@ -114,8 +120,34 @@
 </div>
 
 
-<!-- /.page-content -->
+<!-- Tool tip for like -->
 
 
 
-<%@ include file="footer.jsp"%>
+<!-- Tool tip for view -->
+
+<!-- Tool tip for download -->
+
+<!-- Data modal -->
+<div class='modal fade' id="show" tabindex='-1' role='dialog'
+	aria-labelledby='myModalLabel' ng-controller="documentCtrl" ng-app="myApp" ng-hide="flagShow">
+	<div class='modal-dialog' role='document'>
+		<div class='modal-content'>
+			<div class='modal-header'>
+				<button type='button' class='close' data-dismiss='modal'
+					aria-label='Close'>
+					<span aria-hidden='true'>&times;</span>
+				</button>
+				<h4 class='modal-title' id='exampleModalLabel'>You are not Logged in.<a href="${pageContext.request.contextPath}/user/login">Login here</a></h4>
+			</div>
+			</div>
+			
+		</div>
+</div>
+
+
+	<!-- /.page-content -->
+
+
+
+	<%@ include file="footer.jsp"%>

@@ -29,10 +29,10 @@
 						<h3>Legal</h3>
 						<li><a href="${pageContext.request.contextPath}/policy">Privacy
 								Policy</a></li>
-						<li><a href="${pageContext.request.contextPath}/copyrights">Copy
+						<li><a href="${pageContext.request.contextPath}/policy">Copy
 								Rights Policy</a></li>
 
-						<li><a href="${pageContext.request.contextPath}/termofuse">Term
+						<li><a href="${pageContext.request.contextPath}/policy">Term
 								of Use uS</a></li>
 					</ul>
 				</div>
