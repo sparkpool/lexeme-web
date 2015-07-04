@@ -105,18 +105,19 @@
 		</property>
 	</bean>
 
-	<bean id="passthruAuthcFilter"
-		class="org.apache.shiro.web.filter.authc.PassThruAuthenticationFilter">
-		<property name="loginUrl" value="/user/login" />
+ 	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.apache.shiro.authz.UnauthorizedException">login</prop>
+				<prop key="org.apache.shiro.authz.UnauthenticatedException">login</prop>
+				<prop key="org.apache.shiro.authz.AuthorizationException">login</prop>
+			</props>
+		</property>
 	</bean>
-	
+
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />
-		<property name="filters">
-			<util:map>
-				<entry key="authc" value-ref="passthruAuthcFilter" />
-			</util:map>
-		</property>
 	</bean>
 
 	<bean id="securityManager" class="com.lexeme.web.auth.ShiroSecurityManager">
@@ -140,11 +141,6 @@
 	<bean
 		class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
 		depends-on="lifecycleBeanPostProcessor" />
-
-	<bean
-		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
-		<property name="securityManager" ref="securityManager" />
-	</bean>
 
 	<!-- Secure Spring remoting: Ensure any Spring Remoting method invocations -->
 	<!-- can be associated with a Subject for security checks. -->
