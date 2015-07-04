@@ -112,8 +112,9 @@
 				</c:when>
 				<c:otherwise>
 		    	
-	
-		  		No Result Found
+			<c:if test="${divHide!='false'}">
+		  		<h2 style="text-align:center; padding-top:40px;">No Result Found</h2>
+		  		</c:if>
  			</c:otherwise>
 			</c:choose>
 		</div>
