@@ -12,22 +12,36 @@ $(document)
 		.ready(
 				function() {
 
+				        
 					var divHide = $('#divHide').val();
 
 					if (divHide=="true") {
-						document.getElementById("searchContent").className = "";
-						document.getElementsByName("container").className = "";
-						document.getElementById("searchContent").className = "search-add-new";
+						document.getElementById("searchContent").style.display = 'none';
+						document.getElementById("banner").className='searchbanner';
 						document.getElementsByName("container").className = "container-new";
 					} 
 					
-					else {
-						document.getElementById("search-add-new").className = "";
-						document.getElementsByName("container-new").className = "";
+					else if(divHide=="false"){
+						document.getElementById("search-add-new").display = '';
+						document.getElementsByName("container-new").display = '';
 						document.getElementById("search-add-new").className = "searchContent";
 						document.getElementsByName("container-new").className = "container-new";
 
+					}else{
+						
+						//do nothing
 					}
 
+					 $(".tabs-menu a").click(function(event) {
+					     event.preventDefault();
+					      $(this).parent().addClass("current");
+					      var removedClass=$(this).parent().siblings().removeClass("current");
+					      console.log(removedClass);
+					      var tab = $(this).attr("href");
+					      $(".tab-content").not(tab).css("display", "none");
+				 
+					        $(tab).fadeIn();
+					    });
+					
 				});
 

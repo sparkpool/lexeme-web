@@ -4,12 +4,7 @@
 
 $(document).ready(function () {
 
-	var _contextPath = "${pageContext.request.contextPath}";
 	
-		$('#menu-button').click(function() {
-			$('#container').toggleClass('active');
-		});
-
 	
     //stick in the fixed 100% height behind the navbar but don't wrap it
  //   $('#slide-nav.navbar .container').append($('<div id="navbar-height-col"></div>'));

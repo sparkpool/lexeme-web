@@ -895,19 +895,15 @@ header {
 	margin-left: 0;
 }
 
-.navbar-default .navbar-nav>li>a {
-	color: #404040;
+
+/****
+*Hover added
+*/
+.navbar-default .navbar-nav>li:hover ul {
 	display: block;
-	font-size: 14px;
-	font-weight: 300;
-	overflow: hidden;
-	transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-webkit-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
 }
 
-
+.navbar-default .navbar-nav>li
 
 .navbar-default .navbar-nav>li>a.active,.navbar-default .navbar-nav>li:hover>a
 	{

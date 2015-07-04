@@ -45,9 +45,9 @@
 
 		<div class="container">
 			<div class="home-body">
-				<div class="lead">Study Doer offers students crowd-sourced study
-					documents, expert tutors and customizable flashcards, accessible
-					anywhere, at any</div>
+				<div class="lead">Study Doer offers students crowd-sourced
+					study documents, expert tutors and customizable flashcards,
+					accessible anywhere, at any</div>
 
 				<hr>
 
@@ -119,92 +119,4 @@
 		</div>
 
 
-
-		<div class="container">
-			<div class="home-body">
-				<section class="text-center">
-					<h2 style="text-align: center;">How it works!</h2>
-					<p>Anyone can download, read and share the Documents</p>
-					<br />
-
-					<hr>
-
-					<div class="row">
-
-						<div class="col-md-4">
-							<div class="howitWork">
-
-								<div class="row" align="left">
-									<div class="col-md-8" align="justify">
-
-										<img
-											src="${pageContext.request.contextPath}/resources/images/docu.png"
-											class="pull-right" width="150px" />
-									</div>
-								</div>
-
-								<div class="row">
-
-									<div class="btn-group">
-										<a href="" class="btn btn-claim btn-lg"> Dowload Documents
-										</a>
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-						<div class="col-md-4">
-							<div class="howitWork">
-
-								<div class="row" align="left">
-									<div class="col-md-8" align="justify">
-
-										<img
-											src="${pageContext.request.contextPath}/resources/images/upload.jpg"
-											class="pull-right" width="150px" />
-									</div>
-								</div>
-
-								<div class="row">
-
-									<div class="btn-group">
-										<a href="" class="btn btn-claim btn-lg">Upload Documents </a>
-									</div>
-								</div>
-
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="howitWork">
-								<div class="row" align="left">
-									<div class="col-md-8" align="justify">
-										<img
-											src="${pageContext.request.contextPath}/resources/images/earnMoney.jpg"
-											class="pull-right" width="150px" />
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="btn-group">
-										<a href="" class="btn btn-claim btn-lg"> Earn Money </a>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-
-					<br />
-					<br />
-					<br />
-
-
-				</section>
-
-
-			</div>
-		</div>
-
-
-		<%@include file="footer.jsp"%>
+<%@include file="footer.jsp"%>
