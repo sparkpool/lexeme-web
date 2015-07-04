@@ -323,9 +323,6 @@ input[type="submit"] {
 	font-size: 20px;
 }
 
-.lead {
-	font-size: 32px;
-}
 
 body {
 	font-family: 'Open Sans', sans-serif;
@@ -335,13 +332,13 @@ body {
 }
 
 .lead {
-	font-weight: 200;
-	font-size: 28px;
 	line-height: 1.3;
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
 	margin: 0;
 	color: #444;
+		font-size: 2.2vh;
+	font-size: 4.8vw;
+	
 }
 
 @media ( min-width :768px) {

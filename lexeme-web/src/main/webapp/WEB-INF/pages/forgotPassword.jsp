@@ -10,7 +10,7 @@
 		
 			<h1>Forgot Password</h1>
 			<p>Enter your email address to reset your password. 
-			You may need to check your spam folder or unblock no-reply@lexeme.com.</p>
+			You may need to check your spam folder or unblock no-reply@studydoer.com.</p>
 			<br/>
 			<form class="ui form" action="${pageContext.request.contextPath}/user/fp" method="POST">
 
