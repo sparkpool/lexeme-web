@@ -23,9 +23,7 @@ $(document)
 					} 
 					
 					else if(divHide=="false"){
-						document.getElementById("search-add-new").display = '';
 						document.getElementsByName("container-new").display = '';
-						document.getElementById("search-add-new").className = "searchContent";
 						document.getElementsByName("container-new").className = "container-new";
 
 					}else{
