@@ -15,7 +15,7 @@
 
 
 <link rel="stylesheet"
-	href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
 <!--Angular script for UI/DO Rendering-->
 <script
 	src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>
@@ -27,20 +27,20 @@
 
 
 <script
-	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+	src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
 <script
-	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
 
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+	href="${pageContext.request.contextPath}/resources/css/bootstrap-theme.min.css">
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 
 <!--Company css-->
 <script
-	src="http://patrickgawron.com/wp/wp-content/uploads/2013/11/jquery.address.js"></script>
+	src="${pageContext.request.contextPath}/resources/js/jquery.address.js"></script>
 
 <link
 	href="${pageContext.request.contextPath}/resources/semantic/css/semantic.css"
@@ -162,8 +162,7 @@
 					<shiro:authenticated>
 						<shiro:hasRole name="<%=EnumRoles.MODERATOR.getRole() %>">
 							<li><a
-								href="${pageContext.request.contextPath}/admin/docs/unverified/"><i
-									class="fa fa-tachometer"></i> DashBord</a></li>
+								href="${pageContext.request.contextPath}/admin/docs/unverified/">DashBord</a></li>
 						</shiro:hasRole>
 					</shiro:authenticated>
 					<shiro:authenticated>
