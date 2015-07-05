@@ -1658,11 +1658,20 @@ h4 {
 	display: inline
 }
 
+.container {
+  max-width: 1026px;
+  _width: 1026px;
+  padding-left: 18px;
+  padding-right: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 320px;
+}
 @media ( min-width : 320px) and (max-width: 767px) {
 	.feedback-form-right {
 		width: 100%;
 		float: right;
-		margin-right: 0; #
+		margin-right: 0; 
 		margin-left: -18px;
 		display: inline
 	}
@@ -1670,10 +1679,9 @@ h4 {
 
 @media ( min-width : 320px) and (max-width: 767px) {
 	#feedback-form {
-		width: 100%;
-		float: right;
-		margin-right: 0; #
-		margin-left: -18px;
+		width: 50%;
+		margin-left: 100px;
+
 		display: inline
 	}
 }
