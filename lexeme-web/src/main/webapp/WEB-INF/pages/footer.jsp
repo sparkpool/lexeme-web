@@ -33,7 +33,7 @@
 								Rights Policy</a></li>
 
 						<li><a href="${pageContext.request.contextPath}/policy">Term
-								of Use uS</a></li>
+								of Use</a></li>
 					</ul>
 				</div>
 			</div>

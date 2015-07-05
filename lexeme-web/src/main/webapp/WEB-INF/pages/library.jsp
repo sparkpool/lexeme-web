@@ -28,7 +28,7 @@
 
 						<input type="text" name="q" class="form-control" aria-label=" "
 							id="searchString" ng-model="searchString"
-							placeholder="Search documents( by Couser name, Subject Name, University)"
+							placeholder="Search documents"
 							value="Search Here" /> <span class="input-group-btn">
 							<button type="submit" id="searchBox" name="searchBox"
 								class="btn btn-info" ng-click="setUiRender();">Search</button>

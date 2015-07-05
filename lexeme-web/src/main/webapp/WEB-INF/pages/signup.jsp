@@ -78,7 +78,7 @@
 
 								<div class="two field">
 									<label>Account Type</label> <select name="role"
-										class="ui search dropdown" style="width: 18em;">
+										class="ui search dropdown"  style="width: 18em;">
 										<c:forEach items="<%=EnumRoles.getRolesForSignUP()%>"
 											var="role">
 											<option value="${role.role}">${role.displayName}</option>
@@ -92,7 +92,7 @@
 								<div class="inline field">
 									<p>
 										Already have an account? <a
-											href="${pageContext.request.contextPath}/user/login">SignIn</a>
+											href="${pageContext.request.contextPath}/user/login" ng-valid="true">SignIn</a>
 									</p>
 								</div>
 								<input class="ui blue submit button" type="submit"

@@ -152,9 +152,8 @@
 							Money</a></li>
 
 					<shiro:notAuthenticated>
-						<li class="active"><a
-							href="${pageContext.request.contextPath}/user/login"><i
-								class="glyphicon glyphicon-cloud"></i> Login</a></li>
+						<li ><a
+							href="${pageContext.request.contextPath}/user/login"> Login</a></li>
 						<li><a href="${pageContext.request.contextPath}/user/signup">Sign
 								up</a></li>
 
