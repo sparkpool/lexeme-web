@@ -9,7 +9,7 @@
 						<li><a href="${pageContext.request.contextPath}/aboutUs">About
 								Us</a></li>
 						<li><a href="${pageContext.request.contextPath}/library">Library</a></li>
-						<li><a href="/sitemap/">Sitemap</a> <!--<a href="/api/intro.php">API</a>-->
+						<li><a href="${pageContext.request.contextPath}/sitemap/">Sitemap</a> <!--<a href="/api/intro.php">API</a>-->
 					</ul>
 				</div>
 				<div class="col-lg-4  col-md-4 col-sm-4 col-xs-6">
@@ -33,7 +33,7 @@
 								Rights Policy</a></li>
 
 						<li><a href="${pageContext.request.contextPath}/policy">Term
-								of Use uS</a></li>
+								of Use</a></li>
 					</ul>
 				</div>
 			</div>

@@ -28,7 +28,7 @@
 
 						<input type="text" name="q" class="form-control" aria-label=" "
 							id="searchString" ng-model="searchString"
-							placeholder="Search documents( by Couser name, Subject Name, University)"
+							placeholder="Search documents"
 							value="Search Here" /> <span class="input-group-btn">
 							<button type="submit" id="searchBox" name="searchBox"
 								class="btn btn-info" ng-click="setUiRender();">Search</button>
@@ -112,8 +112,9 @@
 				</c:when>
 				<c:otherwise>
 		    	
-	
-		  		No Result Found
+			<c:if test="${divHide!='false'}">
+		  		<h2 style="text-align:center; padding-top:40px;">No Result Found</h2>
+		  		</c:if>
  			</c:otherwise>
 			</c:choose>
 		</div>

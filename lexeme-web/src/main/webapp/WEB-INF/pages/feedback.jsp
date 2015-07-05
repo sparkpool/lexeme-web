@@ -37,7 +37,7 @@
 							<div class="field">
 								<label>Email</label> 
 								<input placeholder="Email" name="email"
-									type="email" style="width: 20em;">
+									type="email" style="width: 18em;">
 
 							</div>
 
@@ -45,7 +45,7 @@
 							<!-- Subject -->
 							<div class="field">
 								<label>Subject</label> <input name="subject" type="text"
-									placeholder="Subject " style="width: 20em;">
+									placeholder="Subject " style="width: 18em;">
 
 
 							</div>

@@ -7,97 +7,98 @@
 <html ng-app="myApp" style="height: 158px;">
 
 <!-- Full Body Container -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=0">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=0">
 
 <head>
 
-	<link rel="stylesheet"
-		href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<!--Angular script for UI/DO Rendering-->
-	<script
-		src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/js/angular-route.min.js"></script>
-	
-	
-	<!-- Semantic-ui -->
-	
-	
-	<script
-		src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
-	<script
-		src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	
-	<!--Company css-->
-	<script
-		src="http://patrickgawron.com/wp/wp-content/uploads/2013/11/jquery.address.js"></script>
-	
-	<link
-		href="${pageContext.request.contextPath}/resources/semantic/css/semantic.css"
-		rel="stylesheet">
-	<link
-		href="${pageContext.request.contextPath}/resources/semantic/css/semantic.min.css"
-		rel="stylesheet">
-	
-	
-	<!--  -->
-	
-	<link
-		href="${pageContext.request.contextPath}/resources/css/document.css"
-		rel="stylesheet">
-	
-	<script
-		src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/semantic/javascript/profile.js"></script>
-	
-	
-	
-	<script
-		src="${pageContext.request.contextPath}/resources/semantic/javascript/validate-form.js"></script>
-	<link
-		href="${pageContext.request.contextPath}/resources/css/lexememain.css"
-		rel="stylesheet">
-	<!-- Responsive CSS Styles  -->
-	<link rel="stylesheet" type="text/css"
-		href="${pageContext.request.contextPath}/resources/css/responsive.css"
-		media="screen">
-	
-	<!-- Css3 Transitions Styles  -->
-	<!-- Color CSS Styles  -->
-	
-	<!--Angular Js-->
-	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/resources/angular/app.js"></script>
-	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/resources/angular/authCtrl.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/angular/adminCtrl.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/angular/DocumentCtrl.js"></script>
-	
-	
-	
-	<!-- Add side bar -->
-	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/resources/js/sidebar.js"></script>
-	
-	
-	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/resources/js/document.js"></script>
-	
-	<script>
+
+<link rel="stylesheet"
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<!--Angular script for UI/DO Rendering-->
+<script
+	src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/angular-route.min.js"></script>
+
+
+<!-- Semantic-ui -->
+
+
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<!--Company css-->
+<script
+	src="http://patrickgawron.com/wp/wp-content/uploads/2013/11/jquery.address.js"></script>
+
+<link
+	href="${pageContext.request.contextPath}/resources/semantic/css/semantic.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/resources/semantic/css/semantic.min.css"
+	rel="stylesheet">
+
+
+<!--  -->
+
+<link
+	href="${pageContext.request.contextPath}/resources/css/document.css"
+	rel="stylesheet">
+
+<script
+	src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/semantic/javascript/profile.js"></script>
+
+
+
+<script
+	src="${pageContext.request.contextPath}/resources/semantic/javascript/validate-form.js"></script>
+<link
+	href="${pageContext.request.contextPath}/resources/css/lexememain.css"
+	rel="stylesheet">
+<!-- Responsive CSS Styles  -->
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/responsive.css"
+	media="screen">
+
+<!-- Css3 Transitions Styles  -->
+<!-- Color CSS Styles  -->
+
+<!--Angular Js-->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/resources/angular/app.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/resources/angular/authCtrl.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/angular/adminCtrl.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/angular/DocumentCtrl.js"></script>
+
+
+
+<!-- Add side bar -->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/resources/js/sidebar.js"></script>
+
+
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/resources/js/document.js"></script>
+
+<script>
 		var _contextPath = "${pageContext.request.contextPath}";
 	
 		$(document).ready(function() {
@@ -116,7 +117,18 @@
 </head>
 
 <body>
-
+	<noscript>
+		<div class="row" style="padding-top: 5%;">
+			<div class="col-xs-8 col-xs-offset-2">
+				<div class="alert alert-danger " role="alert">
+				It appears that
+					your web browser does not support JavaScript, or you have
+					temporarily disabled scripting. Either way, this site won't work
+					without it. Please enable the JavaScript!</div>
+			</div>
+		</div>
+		
+	</noscript>
 	<!-- Start Header Section -->
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation"
 		id="slide-nav">
@@ -134,13 +146,14 @@
 			<div id="slidemenu">
 				<ul class="nav navbar-nav navbar-right">
 
-					<li><a href="${pageContext.request.contextPath}/library" id="#res">Library</a></li>
-					<li><a href="${pageContext.request.contextPath}/doc/upload">Earn Money</a></li>
+					<li><a href="${pageContext.request.contextPath}/library"
+						id="#res">Library</a></li>
+					<li><a href="${pageContext.request.contextPath}/doc/upload">Earn
+							Money</a></li>
 
 					<shiro:notAuthenticated>
-						<li class="active"><a
-							href="${pageContext.request.contextPath}/user/login"><i
-								class="glyphicon glyphicon-cloud"></i> Login</a></li>
+						<li ><a
+							href="${pageContext.request.contextPath}/user/login"> Login</a></li>
 						<li><a href="${pageContext.request.contextPath}/user/signup">Sign
 								up</a></li>
 
@@ -148,11 +161,11 @@
 					</shiro:notAuthenticated>
 					<shiro:authenticated>
 						<shiro:hasRole name="<%=EnumRoles.MODERATOR.getRole() %>">
-						<li><a
-							href="${pageContext.request.contextPath}/admin/docs/unverified/"><i
-								class="fa fa-tachometer"></i> DashBord</a></li>
-					</shiro:hasRole>
-                    </shiro:authenticated>
+							<li><a
+								href="${pageContext.request.contextPath}/admin/docs/unverified/"><i
+									class="fa fa-tachometer"></i> DashBord</a></li>
+						</shiro:hasRole>
+					</shiro:authenticated>
 					<shiro:authenticated>
 
 

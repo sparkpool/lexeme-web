@@ -5,7 +5,7 @@
 
 <div id="page-content1">
 
-	<div class="container-fluid">
+	<div class="container">
 	<section id="content">
 		<div class="row">
 
@@ -29,18 +29,18 @@
 
 			<!-- Form -->
 		<div class="row">
-			<div class="col-md-12 ">
+			<div class="col-xs-12 ">
 				<div class="ui center aligned two column grid">
 					<div class="left aligned column">
 						<form id="feedback-form" class="ui form "
 							action="${pageContext.request.contextPath}/user/login"
-							method="POST">
+							method="POST" >
 
 							<!-- Email-address -->
 							<div class="field">
 								<label>Email</label> 
 								<input placeholder="Email" name="email"
-									type="email" style="width: 20em;">
+									type="email" style="width: 18em;">
 
 							</div>
 
@@ -48,16 +48,14 @@
 							<!-- Password -->
 							<div class="field">
 								<label>Password</label> <input name="password" type="password"
-									placeholder="Password " style="width: 20em;">
+									placeholder="Password " style="width: 18em;">
 
 
 							</div>
 
-							<div class="inline field">
-
-
+							<div class="ui field">
 								<p>
-									<a href="${pageContext.request.contextPath}/user/fp">Forgot
+									<a href="${pageContext.request.contextPath}/user/fp" >Forgot
 										your password</a>
 
 								</p>
@@ -69,11 +67,9 @@
 							</div>
 
 							<div class="inline field">
-
-
 								<p>
 									Not a member? <a
-										href="${pageContext.request.contextPath}/user/signup">Join
+										href="${pageContext.request.contextPath}/user/signup" >Join
 										Today</a>
 
 								</p>

@@ -8,6 +8,8 @@
 $(document)
 		.ready(
 				function() {
+					
+					document.getElementById("uploadButton").style.display="none";
 					// Get form
 					var form = document.getElementById('uploadData');
 					// Prepare the form data object
@@ -81,7 +83,7 @@ $(document)
 															+ "</select>"
 															+ "</div><div class='col-md-2'><strong><span><i class='fa fa-pencil-square'></i>Edit Info</span></strong><br/><a href=''  data-toggle='modal' data-target='#my"
 															+ divID
-															+ "'>Edit Information</a></div></div><br/>";
+															+ "'>Edit Information</a></div></div>";
 													// Get
 													// selected
 													// category
@@ -121,7 +123,7 @@ $(document)
 															+ "</div>"
 															+ "</div>"
 															+ "<div class='modal-footer'>"
-															+ "<div class='col-md-5 col-md-offset-2'><button type='button' class='ui orange submit button' data-dismiss='modal'>Save</button></div>"
+															+ "<div class='col-md-5 col-md-offset-2' ><button type='button' class='ui orange submit button' data-dismiss='modal'>Save</button></div>"
 															+
 
 															"</div></div></div>";
@@ -131,8 +133,11 @@ $(document)
 
 												}
 
+												document.getElementById("uploadButton").style.display="block";
+
 											});
 						}
+
 
 					};
 

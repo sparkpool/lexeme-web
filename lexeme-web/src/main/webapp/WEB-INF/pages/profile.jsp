@@ -26,7 +26,7 @@
 			<div class="col-lg-5 col-lg-offset-1">
 				<!-- Brief description about user -->
 				<div class="content" id="profile">
-					<a class="header">Shrey Arora</a>
+					<a class="header">${userTO.userProfile.firstName} ${userTO.userProfile.lastName}</a>
 					<div class="meta">
 						<span class="date">Create in Sep 2014</span> <br /> <br /> <br />
 
@@ -77,7 +77,7 @@
 					<a class="header">Credit</a>
 					<hr>
 					<div class="creditBox">
-						<span class="date">$69</span>
+						<span class="date">$0</span>
 					</div>
 
 					<!--  -->

@@ -144,7 +144,7 @@ body.slide-active {
 	}
 }
 
-@media ( min-width : 320px) and (max-width: 767px) {
+@media ( min-width : 220px) and (max-width: 767px) {
 	.span {
 		font-size: 8px;
 	}

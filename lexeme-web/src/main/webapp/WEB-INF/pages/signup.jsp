@@ -40,7 +40,7 @@
 									ng-class="{ error: form.email.$error.unique }">
 									<label>Email</label> <input placeholder="Email" name="email"
 										type="email" ng-model="email" my-blur="checkEmail()" required
-										style="width: 20em;"> <span
+										style="width: 18em;"> <span
 										class="ui red pointing above ui label error"
 										style="color: red;"
 										ng-show="form.email.$dirty && form.email.$error.unique">
@@ -52,7 +52,7 @@
 									ng-class="{ error: form.userName.$error.unique }">
 									<label>Username</label> <input placeholder="Username"
 										name="userName" type="text" ng-model="userName"
-										my-blur="checkUserName()" required style="width: 20em;">
+										my-blur="checkUserName()" required style="width: 18em;">
 
 									<span class="ui red pointing above ui label error"
 										ng-show="form.userName.$dirty && form.userName.$error.unique">
@@ -62,14 +62,14 @@
 								<!-- Password -->
 								<div class="field">
 									<label>Password</label> <input name="password" type="password"
-										placeholder="Password " style="width: 20em;">
+										placeholder="Password " style="width: 18em;">
 								</div>
 
 								<!-- Confirm Password -->
 								<div class="field">
 									<label>Confirm Password</label> <input name="confirmPassword"
 										type="password" id="password-confirm"
-										placeholder="Confirm Password" style="width: 20em;">
+										placeholder="Confirm Password" style="width: 18em;">
 								</div>
 
 
@@ -78,7 +78,7 @@
 
 								<div class="two field">
 									<label>Account Type</label> <select name="role"
-										class="ui search dropdown" style="width: 20em;">
+										class="ui search dropdown"  style="width: 18em;">
 										<c:forEach items="<%=EnumRoles.getRolesForSignUP()%>"
 											var="role">
 											<option value="${role.role}">${role.displayName}</option>
@@ -92,7 +92,7 @@
 								<div class="inline field">
 									<p>
 										Already have an account? <a
-											href="${pageContext.request.contextPath}/user/login">SignIn</a>
+											href="${pageContext.request.contextPath}/user/login" ng-valid="true">SignIn</a>
 									</p>
 								</div>
 								<input class="ui blue submit button" type="submit"
