@@ -45,18 +45,17 @@ public class ACLServiceImpl implements IACLService{
 		Set<Roles> roles = user.getRoles();
 		logger.info("Roles from DB is " + roles);
 		if(roles!=null && roles.size() > 0){
-			Roles role = roles.iterator().next();
-			EnumRoles enumRoles = EnumRoles.getVerifiedRole(role);
-			logger.info("Verified Role from Enum is " + enumRoles);
-			if(enumRoles!=null){
-				roles = getRolesFromDB(enumRoles.getRole());
-				if(roles!=null && roles.size() > 0){
-					updateRoleInDB(user, roles);
-				}else{
-					throw new InvalidParameterException("INVALID VERIFIED ROLE");
-				}
-			}else{
-				throw new InvalidParameterException("INVALID VERIFIED ROLE");
+			for(Roles role : roles){
+				EnumRoles enumRoles = EnumRoles.getVerifiedRole(role);
+				logger.info("Verified Role from Enum is " + enumRoles);
+				if(enumRoles!=null){
+					roles = getRolesFromDB(enumRoles.getRole());
+					if(roles!=null && roles.size() > 0){
+						updateRoleInDB(user, roles);
+					}else{
+						throw new InvalidParameterException("INVALID VERIFIED ROLE");
+					}
+				}				
 			}
 		}
 	}
