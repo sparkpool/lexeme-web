@@ -1543,15 +1543,7 @@ h4 {
 	display: inline
 }
 
-.container {
-  max-width: 1026px;
-  _width: 1026px;
-  padding-left: 18px;
-  padding-right: 18px;
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 320px;
-}
+
 @media ( min-width : 320px) and (max-width: 767px) {
 	.feedback-form-right {
 		width: 100%;
