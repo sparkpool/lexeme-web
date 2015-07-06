@@ -42,15 +42,22 @@ app.controller('validateCtrl', function($scope, $http) {
 			// this callback will be called asynchronously
 			// when the response is available
 			console.log(status);
-			$scope.emailMsg = '';
-			$scope.form.email.$setValidity("unique", true);
+			
+			
+			if(data=="EMAIL ALREADY EXIST"){
+				$scope.emailMsg = 'Email already exists';
+				$scope.form.email.$setValidity("unique", false);
+			}else{
+				$scope.emailMsg = '';
+				$scope.form.email.$setValidity("unique", true);
+				
+			}
 
+		
 		}).error(function(data, status, headers, config) {
 			// called asynchronously if an error occurs
 			// or server returns response with an error status.
-			$scope.form.email.$setValidity("unique", false);
-			$scope.emailMsg = 'Email address already exists';
-
+	
 		});
 	};
 
@@ -59,18 +66,21 @@ app.controller('validateCtrl', function($scope, $http) {
 		.success(function(data, status, headers, config) {
 			// this callback will be called asynchronously
 			// when the response is available
-
+			if(data=="USERNAME ALREADY EXIST"){
+				$scope.userMsg = 'UserName already exists';
+				$scope.form.userName.$setValidity("unique", false);
+			}else{
+				$scope.userMsg = '';
+				$scope.form.userName.$setValidity("unique", true);
+				
+			}
+	
 			console.log(status);
-			$scope.userMsg = '';
-			$scope.form.userName.$setValidity("unique", true);
 
 		}).error(function(data, status, headers, config) {
 			// called asynchronously if an error occurs
 			// or server returns response with an error status.
-			$scope.form.userName.$setValidity("unique", false);
-
-			$scope.userMsg = 'UserName already exists';
-
+	
 		});
 	};
 

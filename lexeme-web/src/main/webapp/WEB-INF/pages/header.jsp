@@ -6,6 +6,8 @@
 
 <html ng-app="myApp" style="height: 158px;">
 
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.png" type="image/x-icon">
+
 <!-- Full Body Container -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -138,7 +140,7 @@
 				<a class="navbar-toggle"> <span class="sr-only">Toggle
 						navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-				</a> <a class="logo" href="${pageContext.request.contextPath}">StudyDoer</a>
+				</a> 	<a class="logo" href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/resources/images/favicon.png" width="32px" height="32px;" alt="Study Doer's logo"/>StudyDoer</a>
 
 
 

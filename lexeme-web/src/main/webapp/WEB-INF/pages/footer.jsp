@@ -9,7 +9,8 @@
 						<li><a href="${pageContext.request.contextPath}/aboutUs">About
 								Us</a></li>
 						<li><a href="${pageContext.request.contextPath}/library">Library</a></li>
-						<li><a href="${pageContext.request.contextPath}/sitemap/">Sitemap</a> <!--<a href="/api/intro.php">API</a>-->
+						<li><a href="${pageContext.request.contextPath}/sitemap/">Sitemap</a>
+							<!--<a href="/api/intro.php">API</a>-->
 					</ul>
 				</div>
 				<div class="col-lg-4  col-md-4 col-sm-4 col-xs-6">
@@ -49,15 +50,17 @@
 				reserved.</p>
 			<div class="pull-right">
 				<ul class="nav nav-pills payments">
-					<li><i class="fa fa-cc-visa fa-2x"></i></li>
-					<li><i class="fa fa-cc-mastercard fa-2x"></i></li>
-					<li><i class="fa fa-cc-amex fa-2x"></i></li>
-					<li><i class="fa fa-cc-paypal fa-2x"></i></li>
+					<li><span id="siteseal"><script type="text/javascript"
+								src="https://seal.godaddy.com/getSeal?sealID=PYmsbMwZnQZPaOqG5wA62gTZPpHz3pjeaHnekKarPjIuZB0IN9vVzCVfoMJ8"></script></span>
+					</li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<!--/.footer-bottom-->
 </footer>
+
+</body>
+</html>
 
 

@@ -68,30 +68,30 @@ body.slide-active {
 		width: 40%;
 		min-width: 0;
 		color:white;
+	
 		font-family:sans-serif;;
 		position: absolute;
 		padding-left: 0;
 		text-align: left;
 		z-index: 2;
-		margin-top: 10px;
+		margin-top: 3px;
 		height:700px;
-		background: none repeat scroll 0% 0% beige;
+		background: none repeat scroll 0% 0% #009cde;
 	}
 	#slide-nav #slidemenu .navbar-nav {
 		min-width: 0;
 		width: 100%;
-		margin-top: 9px;
+		margin-top: 0px;
 		text-align: left;
 		height: 100%;
 	}
 	#slide-nav #slidemenu .navbar-nav .sideUL li a {
-		background: none repeat scroll 0% 0% beige;
+		background: none repeat scroll 0% 0% #009cde;
 		min-width: 0;
 		width: 100%;
 		padding-left:30px;
 		font-size:15px;
-		 color: #999;
-
+		color: #fff;
 		display: list-item;
 	}
 	
@@ -186,7 +186,7 @@ body.slide-active {
 		text-align: left;
 		font-size: 11px;
 	}
-	sidebar {
+	.sidebar {
 		position: absolute;
 		left: 0;
 		top: 1px;
@@ -209,7 +209,7 @@ body.slide-active {
 		padding: 8px 5px 6px 5px;
 	}
 	.navbar-default .navbar-toggle i {
-		color: #bbb;
+		color: #fff;
 		font-size: 2em;
 		position: absolute;
 		left: 0;
@@ -263,6 +263,8 @@ body.slide-active {
 		display: block;
 		border: none !important;
 		padding-right: 0;
+		color: #fff;
+		
 	}
 	.navbar-default .navbar-nav>li>a:after {
 		display: none;
