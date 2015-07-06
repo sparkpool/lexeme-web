@@ -19,6 +19,12 @@ app
 			//Hold form data
 			$scope.formData = {};
 
+			
+			$scope.changePassword=function(){
+				$scope.form.password.$setValidity("unique", true);
+				
+				
+			};
 			/***
 			 * Upload Document
 			 * 
@@ -123,12 +129,16 @@ app
 			 * This function will be called,once userexp information has
 			 * been updated.
 			 ***********************************************************/
+		
 			
-			$scope.$watch('formData.toTime',function(){
-				  var date = $scope.ticket.StartDate;
+			$scope.$watch('formData.dob',function(){
+				  var date = $scope.formData.dob;
 				  console.log(date);
 				});
+			
+			
 			$scope.userExperience = function() {
+				
 				$http(
 						{
 							method : 'POST',
@@ -162,6 +172,8 @@ app
 			 * been updated.
 			 ***********************************************************/
 			$scope.userGenInfo = function() {
+				var val=document.getElementById('date1');
+				console.log(val);
 				$http(
 						{
 							method : 'POST',

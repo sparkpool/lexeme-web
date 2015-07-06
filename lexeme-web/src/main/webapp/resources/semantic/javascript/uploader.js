@@ -127,7 +127,7 @@ $.fn.api.settings.api = {
  **********************************************************************/
     $('.ui.form')
       .form(validationRules, {
-        on: 'blur',
+        on: 'change',
         inline: 'true'
       });
 

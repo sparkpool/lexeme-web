@@ -10,7 +10,6 @@
 		
 
 
-
 		<div class="row">
 			<div class="profile-header">
 	
@@ -61,6 +60,10 @@
 
 
 					</div>
+								<div class="row">
+			<%@ include file="message.jsp"%>
+			</div>
+					
 
 				</div>
 
@@ -83,7 +86,7 @@
 
 			</div>
 
-			<%@ include file="message.jsp"%>
+			
 		</div>
 
 

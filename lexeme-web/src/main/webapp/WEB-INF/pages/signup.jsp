@@ -39,8 +39,8 @@
 								<div class="field"
 									ng-class="{ error: form.email.$error.unique }">
 									<label>Email</label> <input placeholder="Email" name="email"
-										type="email" ng-model="email" my-blur="checkEmail()" required
-										style="width: 18em;"> <span
+										type="email" ng-model="email" my-blur="checkEmail()" 
+										style="width: 18em;" > <span
 										class="ui red pointing above ui label error"
 										style="color: red;"
 										ng-show="form.email.$dirty && form.email.$error.unique">
@@ -91,8 +91,9 @@
 								<!-- Already has an account -->
 								<div class="inline field">
 									<p>
-										Already have an account? <a
-											href="${pageContext.request.contextPath}/user/login" ng-valid="true">SignIn</a>
+										Already have an account? 
+										<a
+											href="${pageContext.request.contextPath}/user/login" tabindex="-1" >SignIn</a>
 									</p>
 								</div>
 								<input class="ui blue submit button" type="submit"

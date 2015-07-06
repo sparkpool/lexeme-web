@@ -1,5 +1,5 @@
 <html>
-    <body>
+<body>
 <table border="0" cellspacing="0" cellpadding="0" width="100%"
 	style="padding: 20px; background: #eef9fd; background: -moz-linear-gradient(top, #eef9fd 0%, #ddf3fc 100%); background: -webkit-linear-gradient(top, #eef9fd 0%, #ddf3fc 100%); background: -o-linear-gradient(top, #eef9fd 0%, #ddf3fc 100%); background: -ms-linear-gradient(top, #eef9fd 0%, #ddf3fc 100%); background: linear-gradient(to bottom, #eef9fd 0%, #ddf3fc 100%)">
 	<tbody>
@@ -24,15 +24,15 @@
 													style="width: 100%; display: block; background: #eef9fd; text-align: center; border-top: 1px solid #ddf3fc; border-bottom: 1px solid #ddf3fc">
 													<a
 														style="color: #0aaaed; display: -moz-inline-stack; display: inline-block; vertical-align: middle; padding: 10px 12px; text-decoration: none; font-size: 13px; border-right: 1px solid #ddf3fc"
-														href="http://click.mail.Study Doer.com/?qs=99fdfdeff460dbebf7db5b0f04e1d20854473e3886b3e76f38b8df3e49a7b7472f665bb9a33a3764"
+														href=""
 														target="_blank">Library</a><a
 														style="color: #0aaaed; display: -moz-inline-stack; display: inline-block; vertical-align: middle; padding: 10px 12px; text-decoration: none; font-size: 13px; border-right: 1px solid #ddf3fc"
-														href="http://click.mail.Study Doer.com/?qs=6951a470bdffffc17fed291d8e2db739277ab91b42ce47b471876c13d7f864374013a5c6418c007b"
+														href=""
 														target="_blank">Earn Money</a> 
 														
 														<a
 														style="color: #0aaaed; display: -moz-inline-stack; display: inline-block; vertical-align: middle; padding: 10px 12px; text-decoration: none; font-size: 13px; border-right: 1px solid #ddf3fc"
-														href="http://click.mail.Study Doer.com/?qs=6951a470bdffffc17fed291d8e2db739277ab91b42ce47b471876c13d7f864374013a5c6418c007b"
+														href=""
 														target="_blank">Share Documents</a> 
 												</div>
 											</td>
@@ -62,7 +62,9 @@
 									style="margin: 10px 0px 20px 0px; text-align: left; font-size: 16px">
 									Hi <a href="mailto:mukulrajput.30@gmail.com" target="_blank">${userName}</a>,
 								</h4>
-								
+								<p>Thank you for your registration on our platform. This email confirms our receipt of your registration.
+								If you made this request, click the button below. If you didn't make this request, you can ignore this email.
+								</p>
 								<div
 									style="text-align: center; margin-top: 20px; margin-bottom: 20px">
 									<a
@@ -106,18 +108,7 @@
 										target="_blank">support@<span class="il">StudyDoer</span>.com
 									</a>
 								</p>
-								<p>
-									Add <a
-										href="http://click.mail.Study Doer.com/?qs=7f56b00580b2b70fc054e997d2050ae779b2d5dd8b95ccb9d253fc97874ca7aee9b4b8d880b842ba"
-										style="color: #0aaaed" target="_blank">email@mail.<span
-										class="il">StudyDoer</span>.com
-									</a> to your contacts list to stay updated on the latest content
-									and features
-								</p>
-								<p>
-									<span class="il">Study</span> <span class="il">Doer Inc.</span>
-									<br/>Sector 4,Noida, India.
-								</p>
+								
 							</td>
 						</tr>
 					</tbody>
