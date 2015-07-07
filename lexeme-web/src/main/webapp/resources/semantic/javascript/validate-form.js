@@ -307,6 +307,7 @@ $(document).ready(function() {
 		},
 		password : {
 			identifier : 'password',
+			
 			rules : [ {
 				type : 'empty',
 				prompt : 'Please enter a password'
