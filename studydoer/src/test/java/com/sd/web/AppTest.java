@@ -1,4 +1,4 @@
-package com.lexeme.web;
+package com.sd.web;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
