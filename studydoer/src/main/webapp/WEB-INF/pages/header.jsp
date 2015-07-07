@@ -45,7 +45,7 @@
 	src="${pageContext.request.contextPath}/resources/js/jquery.address.js"></script>
 
 <link
-	href="$https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.0/semantic.css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.0/semantic.css"
 	rel="stylesheet">
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.0/semantic.min.css"
