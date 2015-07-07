@@ -4,6 +4,15 @@
 
 	<div class="container">
 		<section id="content">
+		
+				<div class="row">
+					<div class="col-xs-12">
+					
+						<%@include file="message.jsp"%>
+					
+					</div>
+				
+				</div>
 				<div class="row">
 				<div class="col-md-12" align="center">
 					<div class="feedback-form-center">
@@ -19,19 +28,15 @@
 		
 			<div class="row">
 				<div class="col-xs-12">
-					<div class="ui center aligned three column grid">
-						<div class="column">
-							<%@include file="message.jsp"%>
-
-							
-							<br />
-							<form class="ui form"
+					<div class="ui center aligned two column grid">
+						<div class="left aligned column">
+							<form id="feedback-form" class="ui form"
 								action="${pageContext.request.contextPath}/user/fp"
 								method="POST">
 
 								<!-- Email-address -->
 								<div class="field">
-									<input placeholder="Email" name="email" type="email">
+									<input placeholder="Email" name="email" type="email" style="width=18em;">
 								</div>
 
 								<!-- Submit Button -->

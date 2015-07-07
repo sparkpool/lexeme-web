@@ -9,9 +9,15 @@
 	<!-- Upload solution form -->
 	
 	<div id="page-content1">
-		<div class="container-fluid">
+		<div class="container">
 			<section id="content">
-				<div class="right aligned column">
+
+			<div id="spinner" class="spinner" style="display: none;">
+				<i class="fa fa-spinner fa-spin fa-5x"></i>
+
+			</div>
+
+			<div class="right aligned column">
 					<%@ include file="message.jsp"%>
 				</div>
 				<div class="responseMsg" style="font-size: 15px; text-align: center;">
@@ -55,7 +61,7 @@
 									</div>
 				
 				</div>			</form>
-	
+					
 						</div>
 				
 			</section>

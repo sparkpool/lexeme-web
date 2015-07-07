@@ -1,6 +1,9 @@
 /***
 *Document Box 
 */
+
+
+
 .lbraryheading {
 	font-size: 30px;
 	margin-left: 25%;
@@ -56,6 +59,7 @@
 }
 
 .title {
+	
 	font-size: 38px;
 	margin-left: 25%;
 	margin-right: 25%;
@@ -311,7 +315,7 @@ min-width
 480px)
 {
 .lbraryheading {
-	padding-top:px;
+
 	font-size: 20px;
 	margin-left: 20%;
 	margin-right: 20%;
@@ -341,27 +345,8 @@ min-width
 	text-indent: .3em;
 }
 
-.heading {
-	font-family: "Roboto Slab", sans-serif;
-	color: #06476b;
-	font-size: 20px;
-	margin-top: 0px;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	padding-bottom: 17px;
-	margin-bottom: 18px;
-	border-color: orange;
-}
 
-.title {
-	font-size: 24px;
-	margin-left: 25%;
-	margin-right: 25%;
-	text-transform: capitalize;
-	text-align: center;
-	color: #FFF;
-	text-indent: 1.2em;
-}
+
 
 }
 /***
@@ -461,6 +446,7 @@ min-width
 		border-color: orange;
 	}
 	.title {
+	margin-top:30%;
 		font-size: 18px;
 		margin-left: 25%;
 		margin-right: 25%;

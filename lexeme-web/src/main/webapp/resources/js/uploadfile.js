@@ -9,6 +9,8 @@ $(document)
 		.ready(
 				function() {
 					
+					
+					
 					document.getElementById("uploadButton").style.display="none";
 					// Get form
 					var form = document.getElementById('uploadData');
@@ -18,6 +20,16 @@ $(document)
 					var fileList = [];
 					// div identifier
 					var divID = 1;
+					
+					$("#spinner").bind("ajaxSend", function() {
+				        $(this).show();
+				    }).bind("ajaxStop", function() {
+				        $(this).hide();
+				    }).bind("ajaxError", function() {
+				        $(this).hide();
+				    });
+				 
+				     
 					// On-load event
 					window.onload = function() {
 						if (window.File && window.FileList && window.FileReader) {
@@ -142,7 +154,7 @@ $(document)
 							function() {
 								var selectedDiv = document.getElementById($(
 										this).attr('id'));
-
+									
 								$(selectedDiv).remove();
 
 								// Delete
@@ -165,11 +177,21 @@ $(document)
 					$('form')
 							.submit(
 									function(e) {
-
+										
+										document.getElementById("uploadButton").style.display="none";
+										
+										//Show spinner once  submit button clicked
+										$('#spinner').show();
+										
+										
+										//Scroll top once page is toolong
+										$('html, body').animate({scrollTop : 0},800);
+										
 										// append file here
 										for (var fileIndex = 0; fileIndex < fileList.length; fileIndex++) {
 											formData.append("file",
 													fileList[fileIndex]);
+											
 										}
 
 										// append Couser ID
@@ -198,8 +220,8 @@ $(document)
 															"description",
 															description.replace(",","") + ' ');
 												});
-										$
-												.ajax({
+										
+												$.ajax({
 													// set the accept data
 													headers : {
 														Accept : "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
@@ -217,6 +239,7 @@ $(document)
 
 													success : function(data) {
 														// Show response
+														$('#spinner').hide();
 														$(".form-group")
 																.empty();
 														$(
