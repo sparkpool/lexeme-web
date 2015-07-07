@@ -18,35 +18,35 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 <!--Angular script for UI/DO Rendering-->
 <script
-	src="${pageContext.request.contextPath}/resources/js/angular.min.js"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
 <script
-	src="${pageContext.request.contextPath}/resources/js/angular-route.min.js"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-route.min.js"></script>
 
 
 <!-- Semantic-ui -->
 
 
 <script
-	src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 <script
-	src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/bootstrap-theme.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 <script
-	src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <!--Company css-->
 <script
 	src="${pageContext.request.contextPath}/resources/js/jquery.address.js"></script>
 
 <link
-	href="${pageContext.request.contextPath}/resources/semantic/css/semantic.css"
+	href="$https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.0/semantic.css"
 	rel="stylesheet">
 <link
-	href="${pageContext.request.contextPath}/resources/semantic/css/semantic.min.css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.0/semantic.min.css"
 	rel="stylesheet">
 
 
@@ -57,9 +57,9 @@
 	rel="stylesheet">
 
 <script
-	src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.js"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.0/semantic.js"></script>
 <script
-	src="${pageContext.request.contextPath}/resources/semantic/javascript/semantic.min.js"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.0/semantic.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/semantic/javascript/profile.js"></script>
 
