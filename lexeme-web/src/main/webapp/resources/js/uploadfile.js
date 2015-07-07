@@ -38,11 +38,6 @@ $(document)
 												for (var j = 0; j < files.length; j++) {
 													var getFile = files[j];
 													fileList.push(getFile);
-													// check
-													// file
-													// type
-													// is
-													// image
 
 													var extension = getFile.name
 															.split('.').pop()
@@ -155,9 +150,14 @@ $(document)
 								// slice the
 								// array after
 								// deletion
-								fileList.splice(
+								fileList=fileList.splice(
 
 								1);
+								
+								//Remove the button
+								if(fileList.length==0){
+									document.getElementById("uploadButton").style.display="none";
+								}
 
 							});
 

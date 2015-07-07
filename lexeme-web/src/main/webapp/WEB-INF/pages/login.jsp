@@ -4,7 +4,6 @@
 
 
 <div id="page-content1">
-
 	<div class="container">
 	<section id="content">
 		<div class="row">
@@ -55,7 +54,7 @@
 
 							<div class="ui field">
 								<p>
-									<a href="${pageContext.request.contextPath}/user/fp" >Forgot
+									<a href="${pageContext.request.contextPath}/user/fp" onclick="${pageContext.request.contextPath}/user/fp" >Forgot
 										your password</a>
 
 								</p>

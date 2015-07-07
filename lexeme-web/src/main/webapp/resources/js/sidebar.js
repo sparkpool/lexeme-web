@@ -17,7 +17,7 @@ $(document).ready(function () {
     var menuneg = '-100%';
     var slideneg = '80%';
 
-
+    
     $("#slide-nav").on("click", toggler, function (e) {
 
         var selected = $(this).hasClass('slide-active');

@@ -45,10 +45,12 @@
 									<div class="result" >
 									</div>
 								</div>
+								
 								<div class="row" style="margin-top: 5px;">
 									<div class="col-md-12">
 										<input class="ui orange save button" type="submit"
-											name="SAVE" placeholder="Edit" id="uploadButton">
+											name="SAVE" placeholder="Edit" id="uploadButton"
+											>
 									</div>
 									</div>
 				

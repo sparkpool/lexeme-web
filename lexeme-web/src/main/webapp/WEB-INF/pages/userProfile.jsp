@@ -90,11 +90,11 @@
 					<!-- Date of Birth -->
 					<div class="field">
 						<label>DOB</label>
-						<div class="input-group input-append date" >
+						
 							<input type="text" 
 								class="form-control" 
 								name="dob" 
-								id="date1"
+								id="dob"
 								value="${userTO.userProfile.dob}" 
 								placeholder="Date of Birth(dd/mm/yyyy)" 
 								
@@ -103,9 +103,8 @@
 							
 								
 								/>
-							<span class="input-group-addon add-on"><span
-								class="glyphicon glyphicon-calendar"></span></span>
-						</div>
+							
+						
 					</div>
 
 					<!-- Country -->

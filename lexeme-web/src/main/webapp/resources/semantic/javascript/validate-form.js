@@ -307,6 +307,7 @@ $(document).ready(function() {
 		},
 		password : {
 			identifier : 'password',
+			
 			rules : [ {
 				type : 'empty',
 				prompt : 'Please enter a password'
@@ -358,10 +359,20 @@ $(document).ready(function() {
 	 * Apply defined validation rule of form data
 	 **************************************************************************/
 	$('.ui.form').form(validationRules, {
-		on : 'blur',
-		inline : 'true'
+		on : 'change',
+		inline : 'true',
+		
+		
 	});
 
+	/***
+	 * Work Around: 
+	 * Bug:
+	 */
+	$( "input" ).mouseenter(function(  ) {
+	}).mouseleave(function() {
+	    this.blur()  ;      
+	});
 	/***************************************************************************
 	 * Card Api
 	 **************************************************************************/

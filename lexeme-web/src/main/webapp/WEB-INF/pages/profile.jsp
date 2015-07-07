@@ -10,7 +10,6 @@
 		
 
 
-
 		<div class="row">
 			<div class="profile-header">
 	
@@ -28,8 +27,6 @@
 				<div class="content" id="profile">
 					<a class="header">${userTO.userProfile.firstName} ${userTO.userProfile.lastName}</a>
 					<div class="meta">
-						<span class="date">Create in Sep 2014</span> <br /> <br /> <br />
-
 
 						<shiro:hasAnyRoles name="<%=EnumRoles.getUnverifiedRoles()%>">
 
@@ -63,6 +60,10 @@
 
 
 					</div>
+								<div class="row">
+			<%@ include file="message.jsp"%>
+			</div>
+					
 
 				</div>
 
@@ -85,7 +86,7 @@
 
 			</div>
 
-			<%@ include file="message.jsp"%>
+			
 		</div>
 
 

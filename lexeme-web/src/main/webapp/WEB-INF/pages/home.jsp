@@ -17,12 +17,18 @@
 			</div>
 		</div>
 		<div class="btn-group btn-group-claim">
-			<a href="${pageContext.request.contextPath}/library"
-				class="btn btn-claim btn-lg"> Get Solution </a> <a
+				
+				<shiro:notAuthenticated>
+				<a
 				href="${pageContext.request.contextPath}/user/login"
 				class="btn btn-claim btn-lg"> <i class="fa fa-eye"> </i>
 				SignIn/Login
 			</a>
+		
+			</shiro:notAuthenticated>
+			<a href="${pageContext.request.contextPath}/library"
+				class="btn btn-claim btn-lg"> Get Solution </a> 
+		
 		</div>
 	</div>
 </div>

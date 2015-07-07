@@ -39,8 +39,8 @@
 								<div class="field"
 									ng-class="{ error: form.email.$error.unique }">
 									<label>Email</label> <input placeholder="Email" name="email"
-										type="email" ng-model="email" my-blur="checkEmail()" required
-										style="width: 18em;"> <span
+										type="email" ng-model="email" my-blur="checkEmail()" 
+										style="width: 18em;" > <span
 										class="ui red pointing above ui label error"
 										style="color: red;"
 										ng-show="form.email.$dirty && form.email.$error.unique">
@@ -60,16 +60,20 @@
 								</div>
 
 								<!-- Password -->
-								<div class="field">
+								<div class="field" ng-class="{ error: form.password.$error.pattern }">
 									<label>Password</label> <input name="password" type="password"
-										placeholder="Password " style="width: 18em;">
+										placeholder="Password " style="width: 18em;"  ng-model="formData.password"  ng-pattern="/(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[A-Z])(?=.*[^a-zA-Z])(?=.*[0-9])/" required>
+										
+										<span class="ui red pointing above ui label error"
+										ng-show="form.password.$dirty && form.password.$error.pattern">
+										Password must contain at least 1 uppercase alphabet, 1 lowercase alphabet, 1 number and 1 special character</span>
 								</div>
 
 								<!-- Confirm Password -->
 								<div class="field">
 									<label>Confirm Password</label> <input name="confirmPassword"
 										type="password" id="password-confirm"
-										placeholder="Confirm Password" style="width: 18em;">
+										placeholder="Confirm Password" style="width: 18em;"  >
 								</div>
 
 
@@ -91,8 +95,9 @@
 								<!-- Already has an account -->
 								<div class="inline field">
 									<p>
-										Already have an account? <a
-											href="${pageContext.request.contextPath}/user/login" ng-valid="true">SignIn</a>
+										Already have an account? 
+										<a
+											href="${pageContext.request.contextPath}/user/login" tabindex="-1" >SignIn</a>
 									</p>
 								</div>
 								<input class="ui blue submit button" type="submit"
