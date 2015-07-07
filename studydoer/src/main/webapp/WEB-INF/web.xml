@@ -40,7 +40,7 @@
   
   <listener>
         <listener-class>
-		com.lexeme.web.listener.LexemeStartupListener
+		com.sd.web.listener.StudyDoerStartupListener
         </listener-class>
   </listener>
   

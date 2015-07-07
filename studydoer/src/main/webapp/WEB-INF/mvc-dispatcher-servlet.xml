@@ -18,7 +18,7 @@
 
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.lexeme.*" />
+	<context:component-scan base-package="com.sd.*" />
 
 	<!-- To include resources relative path -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
@@ -48,7 +48,7 @@
 
 		<property name="packagesToScan">
 			<list>
-				<value>com.lexeme.web.domain</value>
+				<value>com.sd.web.domain</value>
 			</list>
 		</property>
 
@@ -120,14 +120,14 @@
 		<property name="securityManager" ref="securityManager" />
 	</bean>
 
-	<bean id="securityManager" class="com.lexeme.web.auth.ShiroSecurityManager">
+	<bean id="securityManager" class="com.sd.web.auth.ShiroSecurityManager">
 		<!-- Single realm app. If you have multiple realms, use the 'realms' property 
 			instead. -->
 		<property name="realm" ref="remoteUserRealm" />
 		<property name="sessionMode" value="http" />
 	</bean>
 
-	<bean id="remoteUserRealm" class="com.lexeme.web.auth.RemoteUserRealm"></bean>
+	<bean id="remoteUserRealm" class="com.sd.web.auth.RemoteUserRealm"></bean>
 
 	<bean
 		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
