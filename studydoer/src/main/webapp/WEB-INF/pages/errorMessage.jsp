@@ -1,30 +1,17 @@
 
 <!-- WIll SHOW THE ERROR MESSAGE -->
-<div>
-	<p>
-		<div ng-show="errorMsg">
-			<div class="alert alert-success" role="alert">
-				<button type="button" class="close" data-dismiss="alert"
-					aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			<div  style="
-			    background-repeat: no-repeat;
-				color: red; ">{{errorMsg}}</div>
-				</div>
+	<div ng-show="errorMsg">
+		<div class="ui green message">
+			<i class="close icon"></i>
+			<div class="header">{{errorMsg}}</div>
 		</div>
+	</div>
 
-		<div ng-show="successMsg" style="background-color: green;">
-			<div class="alert alert-success" role="alert" >
-				<button type="button" class="close" data-dismiss="alert"
-					aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			<div  style="
-			    background-repeat: no-repeat;
-				color: #4F8A10;  ">{{successMsg}}</div>
-				</div>
+
+	<!-- Show Successful response  -->
+	<div ng-show="successMsg">
+		<div class="ui green message">
+			<i class="close icon"></i>
+			<div class="header">{{successMsg}}</div>
 		</div>
-	</p>
-
-</div>
+	</div>

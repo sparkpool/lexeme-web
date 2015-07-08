@@ -40,7 +40,7 @@
 								enctype="multipart/form-data">
 					<div class="form-group" align="center">
 			
-								<div class="row">
+								<div class="row ">
 									<span class="btn btn-info btn-file">
 									upload from computer
 										<input type="file" id="files" name="file[]" multiple="multiple">
@@ -52,10 +52,10 @@
 									</div>
 								</div>
 								
-								<div class="row" style="margin-top: 5px;">
-									<div class="col-md-12">
+								<div class="row" style="margin-top: 5px;" id="uploadButton">
+									<div class="col-md-12" >
 										<input class="ui orange save button" type="submit"
-											name="SAVE" placeholder="Edit" id="uploadButton"
+											name="SAVE" placeholder="Edit" 
 											>
 									</div>
 									</div>

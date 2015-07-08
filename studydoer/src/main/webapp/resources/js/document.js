@@ -15,6 +15,32 @@ $(document)
 					
 				        
 					var divHide = $('#divHide').val();
+					
+					
+					
+					/*************************************
+					 * Activated link selected
+					 **************************************/
+					function stripTrailingSlash(str) {
+					    if(str.substr(-1) == '/') {
+					      return str.substr(0, str.length - 1);
+					    }
+					    return str;
+					  }
+
+					
+					  var url = window.location.pathname;  
+					  var activePage = stripTrailingSlash(url);
+
+					  $('.nav li a').each(function(){  
+					    var currentPage = stripTrailingSlash($(this).attr('href'));
+
+					    if (activePage == currentPage) {
+					    	console.log(activePage);
+					      $(this).parent().addClass('active'); 
+					    } 
+					  });
+
 
 					if (divHide=="true") {
 						document.getElementById("searchContent").style.display = 'none';

@@ -25,9 +25,8 @@
 	url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic)
 	;
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
-
-
+@import
+	url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 
 /*------------------------------------------*/
 /*	     01 - General & Basic Styles
@@ -241,8 +240,6 @@ input[type="submit"] {
 	background-size: auto !important;
 }
 
-
-
 .light-section {
 	color: #fff;
 }
@@ -258,7 +255,6 @@ input[type="submit"] {
 #container {
 	background: none repeat scroll 0% 0% #ECF6FB;
 }
-
 
 #loader {
 	position: fixed;
@@ -281,8 +277,6 @@ input[type="submit"] {
 	-webkit-animation: rotatee 2.0s infinite linear;
 	animation: rotatee 2.0s infinite linear;
 }
-
-
 
 /*****
 *Home Page
@@ -323,7 +317,6 @@ input[type="submit"] {
 	font-size: 20px;
 }
 
-
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 12px;
@@ -336,9 +329,8 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
 	color: #444;
-		font-size: 2.2vh;
+	font-size: 2.2vh;
 	font-size: 4.8vw;
-	
 }
 
 @media ( min-width :768px) {
@@ -867,12 +859,12 @@ header {
 .navbar {
 	margin-bottom: 0;
 	background: #fff;
-	border: none;
-	border-radius: 0;
+	border: none; border-radius : 0;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	-o-border-radius: 0;
 	border: thick;
+	border-radius: 0;
 }
 
 .navbar-default .navbar-nav {
@@ -892,7 +884,6 @@ header {
 	margin-left: 0;
 }
 
-
 /****
 *Hover added
 */
@@ -900,13 +891,23 @@ header {
 	display: block;
 }
 
+
+/***
+*/
+.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.open>a{
+	border-bottom: 2px solid;
+	color: orange;
+	background-color: #fff;
+	box-shadow: inset 0 0px 0px #fff;
+	background-image: linear-gradient(to bottom, #fff 0, #fff 100%);
+}
+
 .navbar-default .navbar-nav>li
 
 .navbar-default .navbar-nav>li>a.active,.navbar-default .navbar-nav>li:hover>a
 	{
-	
 	border-bottom: 2px solid;
-	color:orange;
+	color: orange;
 }
 
 .navbar-default .navbar-nav>li>a i {
@@ -1118,13 +1119,13 @@ input[type="submit"] {
 	-moz-box-shadow: 0 0 3px #eee;
 	-webkit-box-shadow: 0 0 3px #eee;
 }
-span.no_selection {
-    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
-    -moz-user-select: none; /* mozilla browsers */
-    -khtml-user-select: none; /* webkit (konqueror) browsers */
-    -ms-user-select: none; /* IE10+ */
-}
 
+span.no_selection {
+	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+	-moz-user-select: none; /* mozilla browsers */
+	-khtml-user-select: none; /* webkit (konqueror) browsers */
+	-ms-user-select: none; /* IE10+ */
+}
 
 /*------------------------------------------*/
 /*			 11 - Footer Styles
@@ -1141,7 +1142,7 @@ span.no_selection {
 }
 
 .footer {
-	clear:both;
+	clear: both;
 	height: auto;
 	padding-bottom: 20px;
 	position: relative;
@@ -1159,7 +1160,6 @@ span.no_selection {
 
 .footer h3 {
 	color: #FFFFFF;
-	
 	font-size: 12px;
 	font-weight: 600;
 	line-height: 10px;
@@ -1172,7 +1172,7 @@ span.no_selection {
 	margin-left: 0;
 	padding-left: 0;
 	margin-top: -10px;
-	margin-left:20px;
+	margin-left: 20px;
 	color: #FFFFFF;
 }
 
@@ -1420,8 +1420,6 @@ input {
 	margin-bottom: 1em
 }
 
-
-
 .feedback-support-text {
 	width: 100%;
 	float: right;
@@ -1543,12 +1541,11 @@ h4 {
 	display: inline
 }
 
-
 @media ( min-width : 320px) and (max-width: 767px) {
 	.feedback-form-right {
 		width: 100%;
 		float: right;
-		margin-right: 0; 
+		margin-right: 0;
 		margin-left: -18px;
 		display: inline
 	}
@@ -1558,7 +1555,6 @@ h4 {
 	#feedback-form {
 		width: 50%;
 		margin-left: 100px;
-
 		display: inline
 	}
 }
@@ -1584,10 +1580,6 @@ h4 {
 		padding-left: 1.5em
 	}
 }
-
-
-
-
 
 /****
 *Contact US

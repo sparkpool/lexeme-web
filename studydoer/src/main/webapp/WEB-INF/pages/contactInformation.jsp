@@ -1,5 +1,5 @@
 
-<div class="ui  segment" ng-controller="authCtrl" ng-app='myApp'>
+<hr>	
 	<div class="right aligned column" 
 		ng-controller="authCtrl"
 		ng-app="myApp">
@@ -40,26 +40,6 @@
 
 	</div>
 	
-	<script type="text/javascript">
-            // When the document is ready
-            $(document).ready(function () {
-                
-                $('#date1').datepicker({
-                    format: "dd/mm/yyyy"
-                });  
-                
-                $('#date2').datepicker({
-                    format: "dd/mm/yyyy"
-                });  
-                
-                $('#date3').datepicker({
-                    format: "dd/mm/yyyy"
-                });  
-                
-                
-            
-            });
-            
-            </script>
+
 	
 </div>

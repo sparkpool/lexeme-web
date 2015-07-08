@@ -2,7 +2,10 @@
 *Document Box 
 */
 
-
+.hidden
+{
+ display:none;   
+}
 
 .lbraryheading {
 	font-size: 30px;
