@@ -55,8 +55,8 @@
 								</div>
 								<h1
 									style="padding: 10px 0px 15px 0; margin: 0; font-size: 32px; color: #099dd7; text-align: center">
-									<span class="il">Welcome</span> to <span class="il">Study</span>
-									<span class="il">Doer</span> 
+									<span class="il">Thank</span> to <span class="il">you</span>
+									<span class="il">to contact us</span> 
 								</h1>
 								<h4
 									style="margin: 10px 0px 20px 0px; text-align: left; font-size: 16px">

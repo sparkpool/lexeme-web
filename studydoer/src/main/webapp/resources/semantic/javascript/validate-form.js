@@ -1,13 +1,6 @@
 $(document).ready(function() {
 
-	/***************************************************************************
-	 * Define the api for action
-	 * 
-	 **************************************************************************/
-	$.fn.api.settings.api = {
-		'login' : '/login',
-		'signup' : '/signup'
-	};
+
 
 	/***************************************************************************
 	 * Define validation Rules
@@ -358,33 +351,36 @@ $(document).ready(function() {
 	/***************************************************************************
 	 * Apply defined validation rule of form data
 	 **************************************************************************/
-	$('.ui.form').form(validationRules, {
+	$('.ui.form').form({
+		fields : validationRules,
 		on : 'change',
 		inline : 'true',
 		
 		
 	});
+	
+	/***
+	 * Message
+	 */
+	
+	$('.message .close')
+	  .on('click', function() {
+	    $(this)
+	      .closest('.message')
+	      .transition('fade')
+	    ;
+	  })
+	;
 
 	/***
 	 * Work Around: 
 	 * Bug:
 	 */
+	
 	$( "input" ).mouseenter(function(  ) {
 	}).mouseleave(function() {
 	    this.blur()  ;      
 	});
-	/***************************************************************************
-	 * Card Api
-	 **************************************************************************/
 
-	$icon = $('.card .corner.label');
-
-	$('.ui.rating').rating();
-
-	$icon.state();
-
-	$('.special.cards .image').dimmer({
-		on : 'hover'
-	});
 
 });

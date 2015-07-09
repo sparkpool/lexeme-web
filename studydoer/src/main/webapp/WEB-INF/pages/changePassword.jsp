@@ -1,19 +1,14 @@
 
-<div class="ui bottom attached  tab segment" data-tab="forth">
+<div class="ui bottom attached  tab segment" data-tab="fourth">
 
 	<!-- Change password section -->
-	<div class="ui  segment">
 
 
 		<div class="right aligned column">
 			<h5 align="left">Change Password</h5>
 
-		</div>
 
 		<hr>
-		<div class="column">
-			<div class="ui horizontal segment">
-
 				<!-- Chnage password -->
 				<form
 					action="${pageContext.request.contextPath}/profile/changePassword"
@@ -45,7 +40,6 @@
 
 				</form>
 
-			</div>
-		</div>
-
-	</div>
+				</div>
+				
+				

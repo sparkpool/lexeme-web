@@ -55,18 +55,15 @@
 								</div>
 								<h1
 									style="padding: 10px 0px 15px 0; margin: 0; font-size: 32px; color: #099dd7; text-align: center">
-									<span class="il">Welcome</span> to <span class="il">Study</span>
-									<span class="il">Doer</span> 
+									<span class="il">Reset</span> your <span class="il">password</span>
+									
 								</h1>
 								<h4
 									style="margin: 10px 0px 20px 0px; text-align: left; font-size: 16px">
 									Hi <a href="mailto:mukulrajput.30@gmail.com" target="_blank">${userName}</a>,
 								</h4>
 								<p>
-								We received a request to reset the password for your account, ${userName}.
-If you made this request, click the button below. If you didn't make this request, you can ignore this email.
-								
-								
+								We were told that you forgot your password. Don't worry it happens to everyone. Please click the link below to reset your password.
 								</p>
 								
 								<div

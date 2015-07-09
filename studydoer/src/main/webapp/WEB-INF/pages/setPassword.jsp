@@ -1,39 +1,72 @@
 
 <!--Header--->
+
+
+
 <%@ include file="header.jsp"%>
-<br />
-<br />
-	<section id="content">
-	<div class="ui center aligned three column grid">
-	<br/>
-	<br/>
-	<br/>
 
-	<div class="left aligned column">
-		<div class="inline example" >
-			<h1>Set New Password</h1>
+<div id="page-content1">
+	<div class="container">
+		<section id="content">
+			<div class="row">
 
-			<form class="ui form" action="${pageContext.request.contextPath}/user/setPassword" method="POST">
-				<!-- New Password -->
-				<div class="field">
-					<label>Password</label> <input name="password" type="password"
-						placeholder="Password ">
+				<!-- Error Message -->
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4" align="center">
+						<%@ include file="message.jsp"%>
+					</div>
 				</div>
 
-				<!-- Confirm Password -->
-				<div class="field">
-					<label>Confirm Password</label> <input name="confirmPassword"
-						type="password" id="password-confirm"
-						placeholder="Confirm Password">
+				<!-- Heading -->
+				<div class="row">
+					<div class="col-md-12" align="center">
+						<div class="feedback-form-center">
+							<div class="feedback-support-text">
+								<h1>Set New Password</h1>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="ui field">
-				<input class="ui blue submit button" type="submit" name="SAVE">
- 				</div>
 
-			</form>
-		</div>
+				<!-- Form -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="ui center aligned two column grid">
+							<div class="left aligned column">
+								<form id="feedback-form" class="ui form "
+									action="${pageContext.request.contextPath}/user/setPassword"
+									method="POST">
+
+									<!-- Email-address -->
+									<div class="field">
+										<label>Password</label> <input name="password" type="password"
+											placeholder="Password ">
+									</div>
+
+									<!-- Confirm Password -->
+									<div class="field">
+										<label>Confirm Password</label> <input name="confirmPassword"
+											type="password" id="password-confirm"
+											placeholder="Confirm Password">
+									</div>
+									<div class="ui field">
+										<input class="ui blue submit button" type="submit" name="SAVE"
+											value="Submit" id="btnclick">
+									</div>
+
+
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
 	</div>
 </div>
-</section>
+
+
 
 <%@ include file="footer.jsp"%>

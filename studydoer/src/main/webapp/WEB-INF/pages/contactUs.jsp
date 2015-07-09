@@ -1,57 +1,77 @@
 <%@ include file="header.jsp"%>
-<!DOCTYPE html>
-<%@ include file="header.jsp"%>
-<div class="contactus">
-	<!-- Open Page conatiner -->
+
+<div id="page-content1">
 	<div class="container">
-		<!-- Container -->
+		<section id="content">
 		<div class="row">
-			<div class="title">CONTACT US</div>
 
+		<!-- Error Message -->
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4" align="center">
+					<%@ include file="message.jsp"%>
+				</div>
+			</div>
+
+			<!-- Heading -->
+			<div class="row">
+				<div class="col-md-12" align="center">
+				<i class="fa fa-envelope fa-3x" style="color:orange;"></i>
+					<div class="feedback-form-center">
+						<div class="feedback-support-text">
+							<h1 >Contact us</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Form -->
+		<div class="row">
+			<div class="col-md-12 ">
+				<div class="ui center aligned two column grid">
+					<div class="left aligned column">
+						<form id="feedback-form" class="ui form "
+							action="${pageContext.request.contextPath}/user/login"
+							method="POST">
+
+							<!-- Email-address -->
+							<div class="field">
+								<label>Email</label> 
+								<input placeholder="Email" name="email"
+									type="email" style="width: 18em;">
+
+							</div>
+
+
+						
+						
+							<!-- Comment -->
+							<div class="field">
+								<label><i class="fa fa-comments"></i>Comments</label> 
+								<textarea rows="5" cols="20" placeholder="Type your feedback here"></textarea>
+
+
+							</div>
+
+							
+
+							<div class="ui field">
+								<input class="ui blue submit button" type="submit" name="SAVE"
+									value="Submit" id="btnclick">
+							</div>
+
+							
+
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
+	</div>
 
+		</section>
 	</div>
 </div>
 
-<!-- Banner -->
-<div class="aboutus-banner">
-	<ul class="nav nav-tabs">
-		<li class="active"><a href="#emailSupport" data-toggle="tab">Email
-				Support</a></li>
-		<li><a href="#phSupport" data-toggle="tab">Phone Support</a></li>
-		<li><a href="#chatSupport" data-toggle="tab">Chat Support</a></li>
-	</ul>
-
-</div>
-
-
-<!-- Content Page -->
-<div class="content-page">
-	<div class="tab-content">
-		<!-- Privacy -->
-		<div id="emailSupport" class="tab-pane fade in active">
-
-			<h1 class="heading">General enquiry</h1> 
-			<i class="fa fa-envelope fa-3x"
-				style="color: orange;"></i><br /> <a
-				href="mailto:support@studydoer.com"><p>support@studydoer.com</p>
-			</a>
-		</div>
-		<div id="phSupport" class="tab-pane fade ">
-			<h1 class="heading">Phone Support</h1>
-			<i class="fa fa-mobile fa-3x" style="color: orange;"></i>
-			<p>956-789-9090</p>
-		</div>
-
-		<div id="chatSupport" class="tab-pane fade ">
-			<h1 class="heading">Media Inquiries </h1>
-			<i class="fa fa-briefcase fa-3x"
-				style="color: orange;"></i>
-		</div>
-	</div>
-
-</div>
 
 
 <%@ include file="footer.jsp"%>
-

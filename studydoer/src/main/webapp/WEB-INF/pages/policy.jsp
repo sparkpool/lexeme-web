@@ -16,7 +16,7 @@
 	<ul class="nav nav-tabs">
 		<li class="active"><a href="#privacy" data-toggle="tab">PrivacyPolicy</a></li>
 		<li><a href="#copyRights" data-toggle="tab">Copy Rights Policy</a></li>
-		<li><a href="#honerOfCode" data-toggle="tab">Honer of Code</a></li>
+		<li><a href="#honerOfCode" data-toggle="tab">Term of Use</a></li>
 	</ul>
 </div>
 
@@ -68,7 +68,7 @@
 		</div>
 		<!-- Honer of Code -->
 		<div id="honerOfCode" class="tab-pane fade">
-			<h1 class="heading">Honer of Code</h1>
+			<h1 class="heading">Term of Use</h1>
 			<p class="pclass">XYZ provides a platform to expand your knowledge and an
 				opportunity to reach new topics, concepts and ideas. We are
 				committed to provide high quality education material to help

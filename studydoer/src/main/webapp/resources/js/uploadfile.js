@@ -8,10 +8,6 @@
 $(document)
 		.ready(
 				function() {
-					
-					
-					
-					document.getElementById("uploadButton").style.display="none";
 					// Get form
 					var form = document.getElementById('uploadData');
 					// Prepare the form data object
@@ -20,6 +16,7 @@ $(document)
 					var fileList = [];
 					// div identifier
 					var divID = 1;
+					$("#uploadButton").hide();
 					
 					$("#spinner").bind("ajaxSend", function() {
 				        $(this).show();
@@ -32,6 +29,7 @@ $(document)
 				     
 					// On-load event
 					window.onload = function() {
+						
 						if (window.File && window.FileList && window.FileReader) {
 							// Get Number of Files
 							var filesInput = document.getElementById("files");
@@ -139,8 +137,9 @@ $(document)
 													$(".result").append(div);
 
 												}
-
-												document.getElementById("uploadButton").style.display="block";
+												
+												$("#uploadButton").show();
+									///			document.getElementById("uploadButton").style.display="block";
 
 											});
 						}
@@ -168,7 +167,8 @@ $(document)
 								
 								//Remove the button
 								if(fileList.length==0){
-									document.getElementById("uploadButton").style.display="none";
+									$("#uploadButton").hide();
+								//	document.getElementById("uploadButton").style.display="none";
 								}
 
 							});
