@@ -107,6 +107,7 @@ public class UserValidationServiceImpl implements IUserValidationService{
 			if(activationLink != null){
 				getEmailManager().sendForgotPasswordEmail(user, activationLink);
 			}
+			return true;
 		}
 		return false;
 	}

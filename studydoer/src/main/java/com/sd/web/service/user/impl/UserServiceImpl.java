@@ -155,8 +155,12 @@ public class UserServiceImpl implements IUserService{
 			Long id = (Long)getSessionFactory().getCurrentSession().save(user);
 			if(id !=null){
 				UserToken userToken = getUserTokenFromUserId(userIdLng, EnumTokenType.FP);
-				getSessionFactory().getCurrentSession().delete(userToken);
-				return true;
+				if(userToken!=null){
+					getSessionFactory().getCurrentSession().delete(userToken);
+					return true;
+				}else{
+					return false;
+				}
 			}
 		}
 		return false;

@@ -125,7 +125,7 @@ public class UserController {
 			} else {
 				userPojo = getUserService().login(userPojo);
 				if (userPojo != null && userPojo.getId() != null) {
-					model.setViewName("home");
+					model.setViewName("redirect:home");
 				} else {
 					model.setViewName("login");
 					model.addObject("errorMsg", userPojo.getMsg());
@@ -190,11 +190,15 @@ public class UserController {
 			}else{
 				String userId = (String) httpSession.getAttribute("userId");
 				if(StringUtils.isNotBlank(userId)){
+					httpSession.removeAttribute("userId");
 					bool = getUserService().setPassword(userPojo.getPassword(), userId);
 					if(bool){
 						model.setViewName("login");
 						model.addObject("msg",MessageConstants.PASSWORD_RESET_SUCCESS);
 						getUserService().logout();
+					}else{
+						model.setViewName("login");
+						model.addObject("msg",MessageConstants.INVALID_SESSION_PASSWORD);
 					}
 				}else{
 					model.addObject("errorMsg",MessageConstants.INVALID_SESSION);
@@ -203,7 +207,6 @@ public class UserController {
 		}catch(Exception e){
 			logger.error("Exception Occured " + e.getMessage());
 			model.addObject("errorMsg",MessageConstants.SOMETHING_WRONG);
-			model.setViewName("setPassword");
 		}
 		return model;
 	}
