@@ -98,7 +98,7 @@ public class UserController {
 					}else{
 						userPojo = getUserService().signupUser(userPojo, getServletContext().getContextPath());
 						if (userPojo != null && userPojo.getId() != null) {
-							model.addObject("message",MessageConstants.SIGNUP_SUCCESS);
+							model.addObject("msg",MessageConstants.SIGNUP_SUCCESS);
 							model.setViewName("login");
 						} else {
 							model.setViewName("signup");
@@ -125,7 +125,7 @@ public class UserController {
 			} else {
 				userPojo = getUserService().login(userPojo);
 				if (userPojo != null && userPojo.getId() != null) {
-					model.setViewName("redirect:home");
+					model.setViewName("redirect:/");
 				} else {
 					model.setViewName("login");
 					model.addObject("errorMsg", userPojo.getMsg());
@@ -218,7 +218,7 @@ public class UserController {
 		}catch(Exception e){
 	        logger.error("Exception occured during logout " + e.getMessage());		
 		}
-		return "login";
+		return "redirect:login";
 	}
 	
 	@RequestMapping(value = "/resendActLink", method = RequestMethod.GET, produces = { "text/plain" })
