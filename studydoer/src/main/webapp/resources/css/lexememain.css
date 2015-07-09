@@ -3,19 +3,9 @@
 /*
 	Version: 0.0
 	Author: Lexeme
-
-
 1. Home page
 2. Document
 3. Uploader
-4. 
-
-
-
-
-
-
-
 */
 @import
 	url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800)
@@ -30,7 +20,7 @@
 
 /*------------------------------------------*/
 /*	     01 - General & Basic Styles
-/*------------------------------------------*/
+/*-----------------------------			------------*/
 html {
 	position: relative;
 	min-height: 100%;
@@ -859,7 +849,8 @@ header {
 .navbar {
 	margin-bottom: 0;
 	background: #fff;
-	border: none; border-radius : 0;
+	border: none;
+	border-radius: 0;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	-o-border-radius: 0;
@@ -891,10 +882,10 @@ header {
 	display: block;
 }
 
-
 /***
 */
-.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.open>a{
+.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.open>a
+	{
 	border-bottom: 2px solid;
 	color: orange;
 	background-color: #fff;
@@ -903,11 +894,7 @@ header {
 }
 
 .navbar-default .navbar-nav>li
-
-.navbar-default .navbar-nav>li>a.active,.navbar-default .navbar-nav>li:hover>a
-	{
-	border-bottom: 2px solid;
-	color: orange;
+.navbar-default .navbar-nav>li>a.active,.navbar-default .navbar-nav>li:hover>a{
 }
 
 .navbar-default .navbar-nav>li>a i {

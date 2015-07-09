@@ -28,12 +28,12 @@
 					<ul>
 
 						<h3>Legal</h3>
-						<li><a href="${pageContext.request.contextPath}/policy">Privacy
+						<li><a href="${pageContext.request.contextPath}/policy" >Privacy
 								Policy</a></li>
-						<li><a href="${pageContext.request.contextPath}/policy">Copy
+						<li><a href="${pageContext.request.contextPath}/policy" >Copy
 								Rights Policy</a></li>
 
-						<li><a href="${pageContext.request.contextPath}/policy">Term
+						<li><a href="${pageContext.request.contextPath}/policy" >Term
 								of Use</a></li>
 					</ul>
 				</div>

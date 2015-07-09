@@ -42,6 +42,11 @@ $(document)
 					  });
 
 
+					  
+					  
+					/*****
+					 * To hider Libaray banner
+					 ***/
 					if (divHide=="true") {
 						document.getElementById("searchContent").style.display = 'none';
 						document.getElementById("banner").className='searchbanner';

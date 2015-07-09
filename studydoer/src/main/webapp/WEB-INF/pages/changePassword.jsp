@@ -1,5 +1,5 @@
 
-<div class="ui bottom attached  tab segment" data-tab="forth">
+<div class="ui bottom attached  tab segment" data-tab="fourth">
 
 	<!-- Change password section -->
 
@@ -39,3 +39,7 @@
 					</div>
 
 				</form>
+
+				</div>
+				
+				
