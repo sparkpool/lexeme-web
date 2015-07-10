@@ -48,7 +48,11 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
-		return "login";
+		Long userId = getUserService().getUserIdFromPrincipal();
+		if(userId == null){
+			return "login";
+		}
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/fp", method = RequestMethod.GET)
@@ -144,11 +148,11 @@ public class UserController {
 		model.setViewName("login");
 		logger.info("Activation Link is " + activationLink);
 		try{
+			getUserService().logout();  
 			boolean bool = getUserTokenService().validateTokenAndDoOperationForAccountActivation(activationLink);
 			if(!bool){
 				model.addObject("errorMsg",MessageConstants.INVALID_TOKEN);
 			}else{
-				getUserService().logout();
 				model.addObject("msg",MessageConstants.ACCOUNT_ACTIVATED);
 			}
 		}catch(Exception e){
