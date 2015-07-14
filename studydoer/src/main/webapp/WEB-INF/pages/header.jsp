@@ -142,7 +142,7 @@
 				<a class="navbar-toggle"> <span class="sr-only">Toggle
 						navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-				</a> 	<a class="logo" href="${pageContext.request.contextPath}">StudyDoer</a>
+				</a> 	<a class="logo" href="${pageContext.request.contextPath}/">StudyDoer</a>
 
 
 
