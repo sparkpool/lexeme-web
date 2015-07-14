@@ -31,7 +31,7 @@
 			<div class="col-xs-12 ">
 				<div class="ui center aligned two column grid">
 					<div class="left aligned column">
-						<form id="feedback-form" class="ui form "
+						<form id="feedback-form" class="ui form"
 							action="${pageContext.request.contextPath}/user/login"
 							method="POST" >
 
