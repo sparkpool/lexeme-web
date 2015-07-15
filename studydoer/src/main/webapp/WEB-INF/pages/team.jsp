@@ -99,37 +99,6 @@
 
 
 </div>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('a.multivio-preview').enableMultivio({
-			method : 'overlay',
-			downloadButton : true,
-			quickViewButton : true,
-			previewAttr : 'href'
-		});
-	});
-	// selector for the second example
-	$('.multivio-preview-example-2 a').enableMultivio({
-		className : 'dark-and-bold',
-		method : 'overlay',
-		previewWidth : 120,
-		previewHeight : 120,
-		downloadButton : false,
-		quickViewButton : true,
-		previewAttr : 'href',
-		language : 'fr'
-	});
-	// selector for the third example
-	$('.multivio-preview-example-3 a').enableMultivio({
-		className : 'light-and-soft',
-		method : 'newwindow',
-		previewWidth : 120,
-		previewHeight : 80,
-		downloadButton : true,
-		quickViewButton : true,
-		previewAttr : 'href',
-		language : 'en'
-	});
-</script>
+
 
 <%@ include file="footer.jsp"%>

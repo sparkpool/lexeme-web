@@ -3,17 +3,13 @@
 <div class="main-page">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4 col-md-3">
-				<div class="claim lead">
-					StudyDoer
-					<p>Read, Share & Earn
-					<p>
+		<div class="col-xs-12">
+				<div class="maintitle" align="center">
+					Study Doer
+					
 				</div>
 			</div>
 			<div class="col-sm-8 col-md-9">
-				<img
-					src="${pageContext.request.contextPath}/resources/images/open_book_large_T.png"
-					class="pull-right" />
 			</div>
 		</div>
 		<div class="btn-group btn-group-claim">
@@ -21,13 +17,13 @@
 				<shiro:notAuthenticated>
 				<a
 				href="${pageContext.request.contextPath}/user/login"
-				class="btn btn-claim btn-lg"> <i class="fa fa-eye"> </i>
-				SignIn/Login
+				class="btn btn-claim btn-lg"> 
+				Get Started
 			</a>
 		
 			</shiro:notAuthenticated>
 			<a href="${pageContext.request.contextPath}/library"
-				class="btn btn-claim btn-lg"> Get Solution </a> 
+				class="btn btn-claim btn-lg"> Browse Solution </a> 
 		
 		</div>
 	</div>
@@ -63,7 +59,7 @@
 							<li>Course Specification</li>
 							<li>Notes</li>
 							<li>Labs</li>
-							<li>Reseach Paper</li>
+							<li>Research Paper</li>
 							<li>Essay</li>
 						</ul>
 					</div>
@@ -81,8 +77,8 @@
 						<ul>
 							<li>Make money by sharing your study resources with other
 								students!</li>
-							<li>Create Q&As and earn money when students unlock your
-								answers.</li>
+							<li>Earn money when students unlock your
+								answers/notes.</li>
 						</ul>
 					</div>
 				</section>
