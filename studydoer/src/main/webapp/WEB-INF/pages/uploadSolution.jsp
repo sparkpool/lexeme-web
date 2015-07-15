@@ -52,14 +52,12 @@
 									</div>
 								</div>
 								
-								<div class="row" style="margin-top: 5px;" id="uploadButton">
-									<div class="col-md-12" >
-										<input class="ui orange save button" type="submit"
-											name="SAVE" placeholder="Edit" 
-											>
+								<div class="row" style="margin-top: 5px;"  >
+									<div class="uploadResult">
+										
 									</div>
 									</div>
-				
+
 				</div>			</form>
 					
 						</div>

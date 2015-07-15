@@ -8,6 +8,8 @@
 $(document)
 		.ready(
 				function() {
+					
+					
 					// Get form
 					var form = document.getElementById('uploadData');
 					// Prepare the form data object
@@ -16,7 +18,6 @@ $(document)
 					var fileList = [];
 					// div identifier
 					var divID = 1;
-					$("#uploadButton").hide();
 					
 					$("#spinner").bind("ajaxSend", function() {
 				        $(this).show();
@@ -25,7 +26,11 @@ $(document)
 				    }).bind("ajaxError", function() {
 				        $(this).hide();
 				    });
-				 
+
+					
+					
+					
+					
 				     
 					// On-load event
 					window.onload = function() {
@@ -128,19 +133,27 @@ $(document)
 															+ "</div>"
 															+ "</div>"
 															+ "<div class='modal-footer'>"
-															+ "<div class='col-md-5 col-md-offset-2' ><button type='button' class='ui orange submit button' data-dismiss='modal'>Save</button></div>"
+															+ "<div class='col-md-5 col-md-offset-2' ><button type='button' class='btn btn-warning-lg' data-dismiss='modal'>Save</button></div>"
 															+
 
 															"</div></div></div>";
 
 													divID++;
 													$(".result").append(div);
-
+												//	 document.getElementById('uploadButton').visibility ="visible";
+													console.log(fileList);
+													
+													if(fileList.length==1){
+														console.log(fileList);
+													
+														$(".uploadResult").append("<input class='ui orange save button' type='submit'" +
+																	"name='SAVE' placeholder='Edit' >");
+														
+													}
 												}
 												
-												$("#uploadButton").show();
-									///			document.getElementById("uploadButton").style.display="block";
-
+												
+						
 											});
 						}
 
@@ -149,8 +162,9 @@ $(document)
 
 					$("body").on(
 							"click",
-							"a",
-							function() {
+							".del",
+							function(e) {
+								e.preventDefault();
 								var selectedDiv = document.getElementById($(
 										this).attr('id'));
 									
@@ -167,8 +181,7 @@ $(document)
 								
 								//Remove the button
 								if(fileList.length==0){
-									$("#uploadButton").hide();
-								//	document.getElementById("uploadButton").style.display="none";
+									$('.uploadResult').hide();
 								}
 
 							});
@@ -178,8 +191,7 @@ $(document)
 							.submit(
 									function(e) {
 										
-										document.getElementById("uploadButton").style.display="none";
-										
+										$('.uploadResult').hide();
 										//Show spinner once  submit button clicked
 										$('#spinner').show();
 										
