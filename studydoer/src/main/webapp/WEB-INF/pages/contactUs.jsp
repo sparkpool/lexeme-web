@@ -37,7 +37,7 @@
 							<div class="field">
 								<label>Email</label> 
 								<input placeholder="Email" name="email"
-									type="email" style="width: 18em;">
+									type="email" value="${email}" style="width: 18em;">
 
 							</div>
 

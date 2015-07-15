@@ -270,4 +270,12 @@ public class UserServiceImpl implements IUserService{
 		return null;
 	}
 
+	@Override
+	public String getEmailFromPrincipal(){
+		Principal principal = getPrincipal();
+		if(principal!=null){
+			return principal.getEmail();
+		}
+		return null;
+	}
 }

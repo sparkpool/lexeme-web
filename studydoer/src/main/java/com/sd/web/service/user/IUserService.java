@@ -19,4 +19,5 @@ public interface IUserService {
 	public String resendActivationLinkToUser(String contextPath)
 			throws NoSuchAlgorithmException;
 	public User getUSerFromPrincipal();
+	public String getEmailFromPrincipal();
 }

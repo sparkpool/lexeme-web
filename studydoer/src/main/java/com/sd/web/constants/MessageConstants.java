@@ -42,4 +42,6 @@ public class MessageConstants {
 	public static final String ERROR_DOCUMENT_DELETED = "Problem occured in deleting file, please try again !!";
 	public static final String INVALID_DOCUMENT = "Invalid Document, please select valid document";
 	public static final String DOCUMENT_VERIFIED = "Document Verified Successfully !!";
+	public static final String FEEDBACK_SUCCESS = "Thanks for your feedback, we have successfully saved your feedback !!";
+	public static final String CONTACT_US = "We have received your request and we will get back to you with 4 hours !!";
 }
