@@ -17,10 +17,7 @@ public class GeneralController {
 		return "team";
 	}
 	
-	@RequestMapping(value = "/contactUs", method = RequestMethod.GET)
-	public String contactUs(){
-		return "contactUs";
-	}
+	
 	
 	@RequestMapping(value = "/policy", method = RequestMethod.GET)
 	public String policy(){

@@ -15,7 +15,7 @@
 
 
 			<div class="ui active tab" data-tab="expert">
-				<h1>FAQ's For Expert</h1>
+				<h1 class="tabheading">FAQ's For Expert</h1>
 				<hr>
 				<p>Not define yet</p>
 
@@ -24,14 +24,14 @@
 			</div>
 
 			<div class="ui tab" data-tab="student">
-				<h1>FAQ's For Student</h1>
+				<h1 class="tabheading">FAQ's For Student</h1>
 				<hr>
 				<p>Not define yet</p>
 
 			</div>
 
 			<div class="ui tab" data-tab="general">
-				<h1>General FAQ's</h1>
+				<h1 class="tabheading">General FAQ's</h1>
 				<hr>
 
 				<div class="ui styled fluid accordion">

@@ -40,7 +40,7 @@
 									ng-class="{ error: form.email.$error.unique }">
 									<label>Email</label> <input placeholder="Email" name="email"
 										type="email" ng-model="email" my-blur="checkEmail()" 
-										style="width: 18em;" > <span
+										 > <span
 										class="ui red pointing above ui label error"
 										style="color: red;"
 										ng-show="form.email.$dirty && form.email.$error.unique">
@@ -52,7 +52,7 @@
 									ng-class="{ error: form.userName.$error.unique }">
 									<label>Username</label> <input placeholder="Username"
 										name="userName" type="text" ng-model="userName"
-										my-blur="checkUserName()" required style="width: 18em;">
+										my-blur="checkUserName()" required >
 
 									<span class="ui red pointing above ui label error"
 										ng-show="form.userName.$dirty && form.userName.$error.unique">
@@ -62,7 +62,7 @@
 								<!-- Password -->
 								<div class="field" ng-class="{ error: form.password.$error.pattern }">
 									<label>Password</label> <input name="password" type="password"
-										placeholder="Password " style="width: 18em;"  ng-model="formData.password"  ng-pattern="/(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[A-Z])(?=.*[^a-zA-Z])(?=.*[0-9])/" required>
+										placeholder="Password "   ng-model="formData.password"  ng-pattern="/(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[A-Z])(?=.*[^a-zA-Z])(?=.*[0-9])/" required>
 										
 										<span class="ui red pointing above ui label error"
 										ng-show="form.password.$dirty && form.password.$error.pattern">
@@ -73,7 +73,7 @@
 								<div class="field">
 									<label>Confirm Password</label> <input name="confirmPassword"
 										type="password" id="password-confirm"
-										placeholder="Confirm Password" style="width: 18em;"  >
+										placeholder="Confirm Password"   >
 								</div>
 
 
@@ -82,7 +82,7 @@
 
 								<div class="two field">
 									<label>Account Type</label> <select name="role"
-										class="ui search dropdown"  style="width: 18em;">
+										class="ui search dropdown"  >
 										<c:forEach items="<%=EnumRoles.getRolesForSignUP()%>"
 											var="role">
 											<option value="${role.role}">${role.displayName}</option>

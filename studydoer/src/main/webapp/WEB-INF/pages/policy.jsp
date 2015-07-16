@@ -15,7 +15,7 @@
 
 
 			<div class="ui active tab" data-tab="privacy">
-				<h1 style="color:#2085C5; text-align:center; text-indent: inherit; ">Privacy</h1>
+				<h1 class="tabheading">Privacy</h1>
 				<hr>
 				<p>Not define yet</p>
 
@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="ui tab" data-tab="rights">
-				<h1 style="color:#2085C5; text-align:center; text-indent: inherit; ">Copyright Dispute Policy</h1>
+				<h1 class="tabheading">Copyright Dispute Policy</h1>
 
 
 				<hr>
@@ -32,7 +32,7 @@
 			</div>
 
 			<div class="ui tab" data-tab="term">
-				<h1 style="color:#2085C5; text-align:center; text-indent: inherit; ">Term of Use</h1>
+				<h1 class="tabheading">Term of Use</h1>
 				<hr>
 				<p>Not define yet</p>
 		</div>

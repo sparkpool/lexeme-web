@@ -39,7 +39,7 @@
 							<div class="field">
 								<label>Email</label> 
 								<input placeholder="Email" name="email"
-									type="email" style="width: 18em;">
+									type="email" >
 
 							</div>
 
@@ -47,7 +47,7 @@
 							<!-- Password -->
 							<div class="field">
 								<label>Password</label> <input name="password" type="password"
-									placeholder="Password " style="width: 18em;">
+									placeholder="Password " >
 
 
 							</div>
