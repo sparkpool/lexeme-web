@@ -6,7 +6,7 @@
 
 	
 	<appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="File" value="/logs/lexemeWeb.log" />
+		<param name="File" value="/logs/sd.log" />
 		<param name="Append" value="true" />
 		<param name="DatePattern" value="'.'MM-dd-yyyy-HH" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -29,7 +29,7 @@
      <level value="off"/>  
    </logger>
        
-    <logger name="com.lexeme" additivity="true" >   
+    <logger name="com.sd" additivity="true" >   
      	<level value="ALL" />
 		<appender-ref ref="ASYNC" />
     </logger>
