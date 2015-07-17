@@ -3,7 +3,7 @@
 <div class="main-page">
 	<div class="container">
 		<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-12 ">
 				<div class="maintitle" align="center">
 					Study Doer
 					
@@ -12,20 +12,7 @@
 			<div class="col-sm-8 col-md-9">
 			</div>
 		</div>
-		<div class="btn-group btn-group-claim">
-				
-				<shiro:notAuthenticated>
-				<a
-				href="${pageContext.request.contextPath}/user/login"
-				class="btn btn-claim btn-lg"> 
-				Get Started
-			</a>
 		
-			</shiro:notAuthenticated>
-			<a href="${pageContext.request.contextPath}/library"
-				class="btn btn-claim btn-lg"> Browse Solution </a> 
-		
-		</div>
 	</div>
 </div>
 

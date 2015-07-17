@@ -18,10 +18,11 @@ body.slide-active {
 	line-height: 0;
 	float: left;
 	margin: 0;
+	margin-top:7px;
 	width: 30px;
 	height: 40px;
 	padding: 10px 0 0 0;
-	border: 0;
+	border: 1px;
 }
 
 /* icon bar prettyup - optional */
@@ -154,6 +155,8 @@ body.slide-active {
 		margin-left: 8px;
 		display: inline
 	}
+	
+	
 }
 
 .logo {
@@ -169,7 +172,7 @@ body.slide-active {
 	font-weight: 300;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (min-width:320px) {
 	.logo {
 		float: none;
 		margin-top: 15px;
@@ -257,6 +260,8 @@ body.slide-active {
 		padding: 15px 0;
 		display: block;
 	}
+	
+	
 	.navbar-default .navbar-nav>li>a {
 		border: none;
 		padding: 5px 10px;
