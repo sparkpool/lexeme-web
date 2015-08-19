@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 import org.springframework.web.multipart.MultipartFile;
 
 public class FileOperationsUtil {
+	
 
 	private static Map<String, Boolean> validFileExtensions = new HashMap<String, Boolean>();
 
@@ -70,6 +71,42 @@ public class FileOperationsUtil {
 		}
 		return null;
 	}
+	
+	
+	
+	public static String uploadUserFile(Long documentId, MultipartFile file, Long userID) {
+		InputStream inputStream = null;
+		OutputStream outputStream = null;
+		try {
+			inputStream = file.getInputStream();
+            String filePath = PropertiesUtil.getProjectProperty("verified.prefix") + userID + "/";
+            String fileFullName = documentId + "#" + file.getOriginalFilename();
+            String fileFullPath = filePath + fileFullName;
+			File newFile = new File(fileFullPath);
+			if (!newFile.exists()) {
+				newFile.createNewFile();
+			}
+			outputStream = new FileOutputStream(newFile);
+			int read = 0;
+			byte[] bytes = new byte[1024];
+
+			while ((read = inputStream.read(bytes)) != -1) {
+				outputStream.write(bytes, 0, read);
+			}
+			return fileFullName;
+		} catch (IOException e) {
+			logger.error("Exception occured : " + e.getMessage());
+		}finally{
+			try {
+				inputStream.close();
+				outputStream.close();
+			} catch (IOException e) {
+				logger.error("Exception occured : " + e.getMessage());
+			}
+		}
+		return null;
+	}
+	
 	
 	public static boolean moveFile(String oldFile, String newFile){
 		logger.info("Old and New File to move is " + oldFile + " " + newFile);
