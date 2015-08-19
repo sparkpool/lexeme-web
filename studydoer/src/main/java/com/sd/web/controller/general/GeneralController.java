@@ -39,5 +39,10 @@ public class GeneralController {
 		return "termofuse";
 	}
 	
+	@RequestMapping(value = "/askQuestion", method = RequestMethod.GET)
+	public String askQuestion(){
+		return "askQuestion";
+	}
+	
 	
 }

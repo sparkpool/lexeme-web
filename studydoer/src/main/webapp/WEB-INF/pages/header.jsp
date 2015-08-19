@@ -6,7 +6,9 @@
 
 <html ng-app="myApp" style="height: 158px;">
 
-<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.png"  width ="56" height="56" type="image/x-icon">
+<link rel="shortcut icon"
+	href="${pageContext.request.contextPath}/resources/images/favicon.png"
+	width="56" height="56" type="image/x-icon">
 
 <!-- Full Body Container -->
 <meta charset="utf-8">
@@ -124,14 +126,13 @@
 	<noscript>
 		<div class="row" style="padding-top: 5%;">
 			<div class="col-xs-8 col-xs-offset-2">
-				<div class="alert alert-danger " role="alert">
-				It appears that
+				<div class="alert alert-danger " role="alert">It appears that
 					your web browser does not support JavaScript, or you have
 					temporarily disabled scripting. Either way, this site won't work
 					without it. Please enable the JavaScript!</div>
 			</div>
 		</div>
-		
+
 	</noscript>
 	<!-- Start Header Section -->
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation"
@@ -142,7 +143,7 @@
 				<a class="navbar-toggle"> <span class="sr-only">Toggle
 						navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-				</a> 	<a class="logo" href="${pageContext.request.contextPath}/">StudyDoer</a>
+				</a> <a class="logo" href="${pageContext.request.contextPath}/">StudyDoer</a>
 
 
 
@@ -150,14 +151,16 @@
 			<div id="slidemenu">
 				<ul class="nav navbar-nav navbar-right">
 
+					<li><a href="${pageContext.request.contextPath}/askQuestion">Q/A
+					</a></li>
 					<li><a href="${pageContext.request.contextPath}/library"
 						id="#res">Library</a></li>
 					<li><a href="${pageContext.request.contextPath}/doc/upload">Earn
 							Money</a></li>
 
 					<shiro:notAuthenticated>
-						<li ><a
-							href="${pageContext.request.contextPath}/user/login"> Login</a></li>
+						<li><a href="${pageContext.request.contextPath}/user/login">
+								Login</a></li>
 						<li><a href="${pageContext.request.contextPath}/user/signup">Sign
 								up</a></li>
 

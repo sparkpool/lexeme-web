@@ -10,7 +10,35 @@ select.ui.dropdown {
 }
 
 
+#question{
+	background-color: #f8f8f8;
+	margin-left: 10%;
+	margin-right: 10%;
+	box-shadow:40px 40px 40px 40px rgba(0, 0, 0, 0.2);
+	display: inline-block;
+	height: 50%;
+	border-left: 10%;
+	border-bottom: 1px solid #28a4c9;
+	border-top: 1px solid #28a4c9;
+	border-left: 1px solid #28a4c9;
+	border-right: 1px solid #28a4c9;
+	
+}
 
+#question h1, h2{
+	margin-top:10px;
+	text-align: center;
+	color:#28a4c9;
+	size:20px;
+	margin-bottom:10px;
+	
+}
+
+#question .btn{
+	margin-top:20%;
+	margin-left: 100%;
+	
+}
 .tabheading {
 	color: #2085C5;
 	text-align: center;
