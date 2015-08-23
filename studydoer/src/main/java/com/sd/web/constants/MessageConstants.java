@@ -44,4 +44,6 @@ public class MessageConstants {
 	public static final String DOCUMENT_VERIFIED = "Document Verified Successfully !!";
 	public static final String FEEDBACK_SUCCESS = "Thanks for your feedback, we have successfully saved your feedback !!";
 	public static final String CONTACT_US = "We have received your request and we will get back to you with 4 hours !!";
+	public static final String SUBJECT_LENGTH = "Subject Length can not be greater than 100";
+	public static final String COMMENT_LENGTH = "Comment Length can not be greater than 250";
 }

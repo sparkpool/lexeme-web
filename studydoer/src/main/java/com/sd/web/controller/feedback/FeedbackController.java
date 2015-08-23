@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sd.web.constants.MessageConstants;
 import com.sd.web.pojo.feedback.FeedbackPojo;
+import com.sd.web.service.feedback.IFeedbackService;
 import com.sd.web.service.user.IUserService;
 
 @Controller
@@ -21,6 +22,13 @@ public class FeedbackController {
 
 	@Autowired
 	private IUserService userService;
+
+	@Autowired
+	private IFeedbackService feedbackService;
+	
+	public IFeedbackService getFeedbackService() {
+		return feedbackService;
+	}
 
 	public IUserService getUserService() {
 		return userService;
@@ -45,9 +53,15 @@ public class FeedbackController {
 			logger.info("Feedback request is " + feedbackPojo);
 			if (!feedbackPojo.validate()) {
 				model.addObject("errorMsg", MessageConstants.MANDATORY_PARAMS);
+			} else if(StringUtils.isNotBlank(feedbackPojo.validateParams())){
+				model.addObject("errorMsg", feedbackPojo.validateParams());
 			} else {
-				//TODO# Save Feedback into DB
-				model.addObject("msg", MessageConstants.FEEDBACK_SUCCESS);
+				String msg = getFeedbackService().saveFeedback(feedbackPojo);
+				if(StringUtils.isBlank(msg)){
+					model.addObject("msg", MessageConstants.FEEDBACK_SUCCESS);	
+				}else{
+					model.addObject("errorMsg", msg);
+				}
 			}
 		} catch (Exception e) {
 			logger.error("Exception occured : " + e.getMessage());

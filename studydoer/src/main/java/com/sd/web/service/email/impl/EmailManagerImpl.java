@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sd.web.domain.user.User;
+import com.sd.web.pojo.feedback.FeedbackPojo;
 import com.sd.web.service.email.IEmailManager;
 import com.sd.web.service.email.IEmailSentService;
 import com.sd.web.util.PropertiesUtil;
@@ -86,6 +87,31 @@ public class EmailManagerImpl implements IEmailManager{
 		String subject = PropertiesUtil.getProjectProperty("resend.activation.subject");
 		if(subject == null || subject.trim().length() == 0){
 			subject = "Activate Your Account !!";
+		}
+		return subject;
+	}
+
+	@Override
+	public void sendFeedbackEmail(String email, String userName,
+			FeedbackPojo feedbackPojo) {
+        try {
+        	Map<String, Object> values = new HashMap<String, Object>();
+    		values.put("userName", userName);
+    		values.put("emailAddress", email);
+            values.put("subject", feedbackPojo.getSubject());
+            values.put("comment", feedbackPojo.getComment());
+            values.put("category", feedbackPojo.getCategory());
+            
+			getEmailSentService().sentEmail(values, email, getFeedbackSubjectFromProperties(), "userFeedback");
+		} catch (Exception e) {
+			logger.error("Exception occured during sending email " + e.getMessage());
+		}
+	}
+	
+	private String getFeedbackSubjectFromProperties(){
+		String subject = PropertiesUtil.getProjectProperty("feedback.subject");
+		if(subject == null || subject.trim().length() == 0){
+			subject = "Thanku for your feedback !!";
 		}
 		return subject;
 	}

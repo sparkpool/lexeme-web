@@ -17,7 +17,7 @@ import com.sd.web.constants.MessageConstants;
 import com.sd.web.domain.document.DocumentDB;
 import com.sd.web.domain.user.User;
 import com.sd.web.enums.EnumDocumentStatus;
-import com.sd.web.exception.LexemeWebException;
+import com.sd.web.exception.SDWebException;
 import com.sd.web.pojo.document.DocumentPojo;
 import com.sd.web.service.course.ICourseService;
 import com.sd.web.service.document.impl.DocumentServiceImpl;
@@ -104,7 +104,7 @@ public class DocumentAdminServiceImpl implements IDocumentAdminService{
 		oldFileName = folderPath + oldFileName;
 		boolean fileMoved = FileOperationsUtil.moveFile(oldFileName, newFileName);
 		if(!fileMoved){
-			throw new LexemeWebException(MessageConstants.ERROR_DOCUMENT_DELETED);
+			throw new SDWebException(MessageConstants.ERROR_DOCUMENT_DELETED);
 		}
 	}
 	
@@ -153,7 +153,7 @@ public class DocumentAdminServiceImpl implements IDocumentAdminService{
 			if(id!=null){
 				return MessageConstants.DOCUMENT_VERIFIED;
 			}
-			throw new LexemeWebException(MessageConstants.SOMETHING_WRONG);
+			throw new SDWebException(MessageConstants.SOMETHING_WRONG);
 		}
 		return null;
 	}
@@ -177,7 +177,7 @@ public class DocumentAdminServiceImpl implements IDocumentAdminService{
 		boolean moveDone = FileOperationsUtil.moveFile(unverifiedFolderPath,
 				verifiedFolderPrefix);
 		if (!moveDone) {
-			throw new LexemeWebException(MessageConstants.SOMETHING_WRONG);
+			throw new SDWebException(MessageConstants.SOMETHING_WRONG);
 		}
 		return verifiedFolderPrefix;
 	}
