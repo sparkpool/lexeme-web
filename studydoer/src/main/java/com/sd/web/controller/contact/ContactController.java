@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sd.web.constants.MessageConstants;
-import com.sd.web.pojo.feedback.FeedbackPojo;
+import com.sd.web.pojo.contact.ContactUsPojo;
+import com.sd.web.service.contact.IContactService;
 import com.sd.web.service.user.IUserService;
 
 @Controller
@@ -19,7 +20,15 @@ public class ContactController {
 	
 	@Autowired
 	private IUserService userService;
+
+	@Autowired
+	private IContactService contactService;
 	
+	
+	public IContactService getContactService() {
+		return contactService;
+	}
+
 	@RequestMapping(value = "/contactUs", method = RequestMethod.GET)
 	public ModelAndView contactUs() {
 		ModelAndView model = new ModelAndView();
@@ -32,12 +41,12 @@ public class ContactController {
 	}
 
 	@RequestMapping(value = "/contactUs", method = RequestMethod.POST)
-	public ModelAndView contactUs(FeedbackPojo feedbackPojo) {
+	public ModelAndView contactUs(ContactUsPojo contactUsPojo) {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("contactUs");
 		try {
-			logger.info("ContactUs request is " + feedbackPojo);
-			if (!feedbackPojo.validate()) {
+			logger.info("ContactUs request is " + contactUsPojo);
+			if (!contactUsPojo.validate()) {
 				model.addObject("errorMsg", MessageConstants.MANDATORY_PARAMS);
 			} else {
 				//TODO# Send Email to both User and Admin

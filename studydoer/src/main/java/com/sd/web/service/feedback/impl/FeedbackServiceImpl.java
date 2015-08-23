@@ -36,7 +36,7 @@ public class FeedbackServiceImpl implements IFeedbackService{
 		if(id!=null){
 			//Now Need to send Email to user
 			User user = getUserService().getUSerFromPrincipal();
-			getEmailManager().sendFeedbackEmail(user.getEmail(), user.getUserName(), feedbackPojo);
+			getEmailManager().sendFeedbackEmail(feedbackPojo.getEmail(), user.getUserName(), feedbackPojo);
 			return null;
 		}
 		return MessageConstants.SOMETHING_WRONG;
