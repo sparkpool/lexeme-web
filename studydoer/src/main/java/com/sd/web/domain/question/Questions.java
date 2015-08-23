@@ -5,26 +5,23 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import com.sd.web.domain.user.User;
+
 
 
 @Entity
 @Table (name ="QUESTION")
-/*@NamedQueries({
-	@NamedQuery(name = "GET.QUESTION", query="SELECT q FROM Question q WHERE q.ID = :ID"),
-	@NamedQuery(name="UPDATE.QUESTION", query="")
-})*/
+@NamedQueries({
+	@NamedQuery(name = "GET.QUESTION", query="SELECT q FROM Question q WHERE q.ID = :ID")
+//	@NamedQuery(name="UPDATE.QUESTION", query="")
+})
 
 public class Questions implements Serializable {
 	/**
@@ -37,13 +34,6 @@ public class Questions implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@Column(name="USER_ID", length=45)
-	private User userID;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "REVIEW_BY")
-	private User reviewBy;
 	
 	@Column(name="STATUS", length=50)
 	private Long status;
@@ -51,8 +41,6 @@ public class Questions implements Serializable {
 	@Column(name = "DESCRIPTION")
 	private String description;
 	
-	@Column(name = "DISPLAY_NAME", length = 100)
-	private String displayName;
 	
 	@Column(name = "SUBJECT", length = 100)
 	private String subject;
@@ -84,14 +72,7 @@ public class Questions implements Serializable {
 		this.id = id;
 	}
 
-	public User getUserID() {
-		return userID;
-	}
-
-	public void setUserID(User user) {
-		this.userID = user;
-	}
-
+	
 	public String getAttachment() {
 		return attachment;
 	}
@@ -100,14 +81,6 @@ public class Questions implements Serializable {
 		this.attachment = attachment;
 	}
 
-	public String getDisplayName() {
-		return displayName;
-	}
-
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
-	}
-	
 	public String getSubject() {
 		return subject;
 	}
@@ -133,14 +106,7 @@ public class Questions implements Serializable {
 	}
 
 
-	public User getReviewBy() {
-		return reviewBy;
-	}
-
-	public void setReviewBy(User reviewBy) {
-		this.reviewBy = reviewBy;
-	}
-
+	
 	public Date getDeadlineDt() {
 		return deadlineDt;
 	}
