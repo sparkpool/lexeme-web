@@ -4,7 +4,8 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 
 
-<html ng-app="myApp" style="height: 158px;">
+<html ng-app="myApp"
+	class="ltr js flexbox flexboxlegacy cssanimations csstransforms csstransforms3d csstransitions no-flexboxtweener">
 
 <link rel="shortcut icon"
 	href="${pageContext.request.contextPath}/resources/images/favicon.png"
@@ -77,9 +78,7 @@
 	href="${pageContext.request.contextPath}/resources/css/lexememain.css"
 	rel="stylesheet">
 <!-- Responsive CSS Styles  -->
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/responsive.css"
-	media="screen">
+
 
 <!-- Css3 Transitions Styles  -->
 <!-- Color CSS Styles  -->
@@ -105,16 +104,16 @@
 	src="${pageContext.request.contextPath}/resources/js/document.js"></script>
 
 <script>
-		var _contextPath = "${pageContext.request.contextPath}";
-	
-		$(document).ready(function() {
-	
-			$('#menu-button').click(function() {
-				$('#container').toggleClass('active');
-			});
-	
+	var _contextPath = "${pageContext.request.contextPath}";
+
+	$(document).ready(function() {
+
+		$('#menu-button').click(function() {
+			$('#container').toggleClass('active');
 		});
-	</script>
+
+	});
+</script>
 
 
 
@@ -122,7 +121,7 @@
 	content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 </head>
 
-<body>
+<body class="site">
 	<noscript>
 		<div class="row" style="padding-top: 5%;">
 			<div class="col-xs-8 col-xs-offset-2">
@@ -135,52 +134,104 @@
 
 	</noscript>
 	<!-- Start Header Section -->
-	<div class="navbar navbar-default navbar-fixed-top" role="navigation"
-		id="slide-nav">
-
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-toggle"> <span class="sr-only">Toggle
-						navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a> <a class="logo" href="${pageContext.request.contextPath}/">StudyDoer</a>
 
 
+	<header>
+		<nav class="navbar navbar--desktop">
+			<div class="navbar__inner">
+				<div class="navbar__logo">
+					<a href="${pageContext.request.contextPath}"> StudyDoer </a>
+				</div>
+				<!-- Menu Item -->
+				<div class="navbar__menu">
+					<ul>
+						<!-- Ask Question -->
+						<li><a href="${pageContext.request.contextPath}/askQuestion">Q/A</a></li>
+						<!-- Library -->
+						<li><a href="${pageContext.request.contextPath}/library">Library</a></li>
 
+						<shiro:notAuthenticated>
+
+							<!-- Login -->
+							<!-- Sign up -->
+							<li><a href="${pageContext.request.contextPath}/user/signup">Sign
+									Up</a></li>
+
+							<li><a href="${pageContext.request.contextPath}/user/login">SignIn</a></li>
+						</shiro:notAuthenticated>
+
+						<shiro:authenticated>
+
+							<shiro:hasRole name="<%=EnumRoles.MODERATOR.getRole() %>">
+								<li><a
+									href="${pageContext.request.contextPath}/admin/docs/unverified/">DashBord</a></li>
+							</shiro:hasRole>
+						</shiro:authenticated>
+
+						<shiro:authenticated>
+
+
+							<li class="navbar__menu--dropdown" align="left"><a href=""
+								data-toggle="dropdown" class="dropdown-toggle"> <img
+									src="${pageContext.request.contextPath}/resources/images/nophoto_pic.gif"
+									width="20px" height="20px"> <shiro:principal
+										property="firstName" /> <b class="caret"></b></a>
+								<ul>
+									<li><a
+										href="${pageContext.request.contextPath}/profile/view">My
+											Account</a></li>
+									<li><a
+										href="${pageContext.request.contextPath}/user/logout">Logout</a></li>
+								</ul></li>
+
+						</shiro:authenticated>
+
+					</ul>
+				</div>
 			</div>
-			<div id="slidemenu">
-				<ul class="nav navbar-nav navbar-right">
+		</nav>
 
-					<li><a href="${pageContext.request.contextPath}/askQuestion">Q/A
-					</a></li>
-					<li><a href="${pageContext.request.contextPath}/library"
-						id="#res">Library</a></li>
-					<li><a href="${pageContext.request.contextPath}/doc/upload">Earn
-							Money</a></li>
+
+
+
+		<nav class="navbar navbar--mobile">
+			<div class="navbar__logo">
+				<a href="${pageContext.request.contextPath}"> StudyDoer </a>
+			</div>
+			<div class="navbar__menu-button">
+				<span></span>
+			</div>
+			<div class="navbar__menu">
+				<ul>
+					<!-- Ask Question -->
+					<li><a href="${pageContext.request.contextPath}/askQuestion">Q/A</a></li>
+					<!-- Library -->
+					<li><a href="${pageContext.request.contextPath}/library">Library</a></li>
 
 					<shiro:notAuthenticated>
-						<li><a href="${pageContext.request.contextPath}/user/login">
-								Login</a></li>
+
+						<!-- Login -->
+						<!-- Sign up -->
 						<li><a href="${pageContext.request.contextPath}/user/signup">Sign
-								up</a></li>
+								Up</a></li>
 
-
+						<li><a href="${pageContext.request.contextPath}/user/login">SignIn</a></li>
 					</shiro:notAuthenticated>
+
 					<shiro:authenticated>
-						<shiro:hasRole name="<%=EnumRoles.MODERATOR.getRole() %>">
-							<li><a
+<li><a
 								href="${pageContext.request.contextPath}/admin/docs/unverified/">DashBord</a></li>
-						</shiro:hasRole>
 					</shiro:authenticated>
+
 					<shiro:authenticated>
 
 
-						<li id="dropdown" align="left"><a href=""
+						<li class="navbar__menu--dropdown" align="left"><a href=""
 							data-toggle="dropdown" class="dropdown-toggle"> <img
 								src="${pageContext.request.contextPath}/resources/images/nophoto_pic.gif"
 								width="20px" height="20px"> <shiro:principal
 									property="firstName" /> <b class="caret"></b></a>
-							<ul class="dropdown-menu">
+							<ul>
 								<li><a
 									href="${pageContext.request.contextPath}/profile/view">My
 										Account</a></li>
@@ -189,7 +240,8 @@
 							</ul></li>
 
 					</shiro:authenticated>
+
 				</ul>
 			</div>
-		</div>
-	</div>
+		</nav>
+	</header>

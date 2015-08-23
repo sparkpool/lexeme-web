@@ -9,6 +9,9 @@
 		4. Subject
 		5. Additional Information
 	 -->
+	 
+	 <nav></nav>
+	 <main>
 <div class="pagecontent">
 	 
 <div class="container">
@@ -114,5 +117,5 @@
 
 
 <div class="feedback"></div>
-
+</main>
 <%@ include file="footer.jsp"%>

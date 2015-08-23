@@ -3,6 +3,8 @@
 	src="${pageContext.request.contextPath}/resources/js/document.js"></script>
 
 
+<nav></nav>
+<main>
 <input type="hidden" name="divHide" id="divHide" value="${divHide}" />
 <div class="aboutus-content" id="searchContent">
 	<div class="container">
@@ -151,5 +153,5 @@
 	<!-- /.page-content -->
 
 
-
+</main>
 	<%@ include file="footer.jsp"%>

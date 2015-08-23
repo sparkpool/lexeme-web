@@ -6,6 +6,10 @@
 	<%@ include file="header.jsp"%>
 	<link href="${pageContext.request.contextPath}/resources/css/upload.css"
 		rel="stylesheet">
+
+
+<nav></nav>
+<main>
 	<!-- Upload solution form -->
 	
 	<div id="page-content1">
@@ -70,7 +74,7 @@
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/resources/js/uploadfile.js"></script>
 	
-	
+	</main>
 	
 	<!-- Add footer -->
 	<%@ include file="footer.jsp"%>

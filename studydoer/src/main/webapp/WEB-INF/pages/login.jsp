@@ -2,88 +2,53 @@
 <!--Header--->
 <%@ include file="header.jsp"%>
 
+<nav></nav>
+<main> <!-- Error Message -->
+<section class="page page--contact">
+	<div class="container container--large container--centered">
+		<div class="container container--medium">
 
-<div id="page-content1">
-	<div class="container">
-	<section id="content">
-		<div class="row">
-
-		<!-- Error Message -->
-			<div class="row">
-				<div class="col-md-4 col-md-offset-4" align="center">
-					<%@ include file="message.jsp"%>
-				</div>
-			</div>
-
-			<!-- Heading -->
-			<div class="row">
-				<div class="col-md-12" align="center">
-					<div class="feedback-form-center">
-						<div class="feedback-support-text">
-							<h1 >Login</h1>
-						</div>
+			<h1 class="title--large">Login</h1>
+			
+			<hr>
+			<div class="container container--medium" id="contact-form">
+				<p class="title--small">Login</p>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4" align="center">
+						<%@ include file="message.jsp"%>
 					</div>
 				</div>
-			</div>
 
-			<!-- Form -->
-		<div class="row">
-			<div class="col-xs-12 ">
-				<div class="ui center aligned two column grid">
-					<div class="left aligned column">
-						<form id="feedback-form" class="ui form"
-							action="${pageContext.request.contextPath}/user/login"
-							method="POST" >
-
-							<!-- Email-address -->
-							<div class="field">
-								<label>Email</label> 
-								<input placeholder="Email" name="email"
-									type="email" >
-
-							</div>
+				<form id="supportForm" data-ajax=""
+					action="${pageContext.request.contextPath}/user/login"
+					method="POST" novalidate="" autocomplete="off"
+					class="ng-pristine ng-valid"
+					>
 
 
-							<!-- Password -->
-							<div class="field">
-								<label>Password</label> <input name="password" type="password"
-									placeholder="Password " >
-
-
-							</div>
-
-							<div class="ui field">
-								<p>
-									<a href="${pageContext.request.contextPath}/user/fp" onclick="${pageContext.request.contextPath}/user/fp" >Forgot
-										your password</a>
-
-								</p>
-							</div>
-
-							<div class="ui field">
-								<input class="ui blue submit button" type="submit" name="SAVE"
-									value="Login" id="btnclick">
-							</div>
-
-							<div class="inline field">
-								<p>
-									Not a member? <a
-										href="${pageContext.request.contextPath}/user/signup" >Join
-										Today</a>
-
-								</p>
-							</div>
-
-						</form>
+					<div class="input-group input-group--inline">
+						<label for="name">Email</label> <input type="text" name="email"
+							placeholder="e.g. john.doe@example.com" data-validate="required"
+							ng-model="contact.name" class="ng-pristine ng-untouched ng-valid">
+						<div class="validation-message">Is required</div>
 					</div>
-				</div>
+
+					<div class="input-group input-group--inline">
+						<label for="name">Password</label> <input type="password"
+							name="password" placeholder="Password"
+							data-validate="password|required" ng-model=form.Password"
+							class="ng-pristine ng-untouched ng-valid">
+						<div class="validation-message">Is required | The format is
+							invalid</div>
+					</div>
+
+					<div class="input-group input-group--submit">
+						<button type="submit" >Send</button>
+					</div>
+				</form>
+
 			</div>
 		</div>
 	</div>
-	</section>
-	</div>
-
-</div>
-
-
-<%@ include file="footer.jsp"%>
+</section>
+</main> <%@ include file="footer.jsp"%>
