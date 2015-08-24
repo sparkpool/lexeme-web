@@ -3,6 +3,7 @@ package com.sd.web.pojo.email;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -16,12 +17,14 @@ public class EmailSentPojo implements Runnable{
 	private String subject;
 	private String content;
 	private String toEmail;
+	private String replyTo;
 	private JavaMailSender mailSender;
 	
-	public EmailSentPojo(String subject, String content, String toEmail, JavaMailSender mailSender) {
+	public EmailSentPojo(String subject, String content, String toEmail, JavaMailSender mailSender, String replyTo) {
 		this.subject = subject;
 		this.content = content;
 		this.toEmail = toEmail;
+		this.replyTo = replyTo;
 		this.mailSender = mailSender;
 	}
 	
@@ -36,6 +39,9 @@ public class EmailSentPojo implements Runnable{
 			helper.setText(content,true);
 			helper.setFrom(getFromEmailFromProperties());
 			helper.setTo(toEmail);
+			if(StringUtils.isNotBlank(replyTo)){
+				helper.setReplyTo(replyTo);	
+			}
 			mailSender.send(msg);
 		} catch (MessagingException e) {
 			logger.error("Exception occured during sending email " + e.getMessage());

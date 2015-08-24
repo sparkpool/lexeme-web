@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sd.web.domain.user.User;
+import com.sd.web.enums.EnumContactUsReason;
+import com.sd.web.pojo.contact.ContactUsPojo;
+import com.sd.web.pojo.feedback.FeedbackPojo;
 import com.sd.web.service.email.IEmailManager;
 import com.sd.web.service.email.IEmailSentService;
 import com.sd.web.util.PropertiesUtil;
@@ -88,5 +91,69 @@ public class EmailManagerImpl implements IEmailManager{
 			subject = "Activate Your Account !!";
 		}
 		return subject;
+	}
+
+	@Override
+	public void sendFeedbackEmail(String email, String userName,
+			FeedbackPojo feedbackPojo) {
+        try {
+        	Map<String, Object> values = new HashMap<String, Object>();
+    		values.put("userName", userName);
+    		values.put("emailAddress", email);
+            values.put("subject", feedbackPojo.getSubject());
+            values.put("comment", feedbackPojo.getComment());
+            values.put("category", feedbackPojo.getCategory());
+            
+			getEmailSentService().sentEmail(values, email, getFeedbackSubjectFromProperties(), "userFeedback");
+		} catch (Exception e) {
+			logger.error("Exception occured during sending email " + e.getMessage());
+		}
+	}
+	
+	private String getFeedbackSubjectFromProperties(){
+		String subject = PropertiesUtil.getProjectProperty("feedback.subject");
+		if(subject == null || subject.trim().length() == 0){
+			subject = "Thanku for your feedback !!";
+		}
+		return subject;
+	}
+
+	@Override
+	public void sendContactUsEmail(ContactUsPojo contactUsPojo) {
+		try{
+			String reason = EnumContactUsReason.getReasonById(contactUsPojo.getReason());
+			Map<String, Object> values = new HashMap<String, Object>();
+    		values.put("name", contactUsPojo.getName());
+    		values.put("email", contactUsPojo.getEmail());
+            values.put("phone", contactUsPojo.getPhone());
+            values.put("comment", contactUsPojo.getComment());
+            values.put("reason", reason);
+            
+            getEmailSentService().sentEmail(values, contactUsPojo.getEmail(), getContactUsFeedbackSubjectForUser(reason), "contactUs");
+            getEmailSentService().sentEmail(values, getModeratorEmailFromProperties(), getContactUsFeedbackForModerator(reason), "contactUs");
+            		   	
+		} catch (Exception e) {
+			logger.error("Exception occured during sending email " + e.getMessage());
+		}
+	}
+	
+	private String getContactUsFeedbackSubjectForUser(String reason){
+		String subject = PropertiesUtil.getProjectProperty("contactUs.subject");
+		if(subject == null || subject.trim().length() == 0){
+			subject = "Thanku for contacting StudyDoer for";
+		}
+		return (subject + " " + reason);
+	}
+	
+	private String getContactUsFeedbackForModerator(String reason){
+		return ("Incident : " + reason);
+	}
+	
+	private String getModeratorEmailFromProperties(){
+		String email = PropertiesUtil.getProjectProperty("moderator.email");
+		if(email == null || email.trim().length() == 0){
+			email = "moderator@studydoer.com";
+		}
+		return email;
 	}
 }

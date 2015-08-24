@@ -17,8 +17,11 @@ public class GeneralController {
 		return "team";
 	}
 	
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> master
 	@RequestMapping(value = "/policy", method = RequestMethod.GET)
 	public String policy(){
 		return "policy";

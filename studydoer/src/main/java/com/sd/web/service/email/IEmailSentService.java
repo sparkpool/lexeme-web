@@ -10,9 +10,15 @@ import freemarker.template.TemplateException;
 
 public interface IEmailSentService {
 
-	public void sentEmail(Map<String, Object> values, String toEmail, String subject, String ftl) 
-			throws IOException, TemplateException, MessagingException;
-	
-	public void sentEmail(Map<String, Object> values, List<String> toEmails, List<String> ccEmails,
-			List<String> bccEmails, String subject, String ftl) throws IOException, TemplateException;
+	public void sentEmail(Map<String, Object> values, String toEmail,
+			String subject, String ftl) throws IOException, TemplateException,
+			MessagingException;
+
+	public void sentEmail(Map<String, Object> values, List<String> toEmails,
+			List<String> ccEmails, List<String> bccEmails, String subject,
+			String ftl) throws IOException, TemplateException;
+
+	void sentEmail(Map<String, Object> values, String toEmail, String subject,
+			String ftl, String replyTo) throws IOException, TemplateException,
+			MessagingException;
 }
