@@ -8,47 +8,50 @@
 	<div class="container container--large container--centered">
 		<div class="container container--medium">
 
-			<h1 class="title--large">Login</h1>
+			<h1 class="title--small">Login to your Account</h1>
 			
-			<hr>
+			
 			<div class="container container--medium" id="contact-form">
-				<p class="title--small">Login</p>
-				<div class="row">
-					<div class="col-md-4 col-md-offset-4" align="center">
-						<%@ include file="message.jsp"%>
-					</div>
-				</div>
 
 				<form id="supportForm" data-ajax=""
 					action="${pageContext.request.contextPath}/user/login"
 					method="POST" novalidate="" autocomplete="off"
-					class="ng-pristine ng-valid"
-					>
+					class="ng-pristine ng-valid" name="form" ng-app="myApp">
+					<p class="align-center">
+						<%@ include file="message.jsp"%>
+					</p>
 
 
 					<div class="input-group input-group--inline">
-						<label for="name">Email</label> <input type="text" name="email"
-							placeholder="Email" data-validate="required"
-							ng-model="form.password" class="ng-pristine ng-untouched ng-valid">
-						<div class="validation-message">Is required</div>
+						<label></label> <input type="email" name="email"
+							placeholder="Email" data-validate="required" ng-model="email">
+
 					</div>
 
 					<div class="input-group input-group--inline">
-						<label for="name">Password</label> <input type="password"
-							name="password" placeholder="Password"
-							data-validate="password|required" ng-model=form.Password"
+						<label for="name"></label> <input type="password" name="password"
+							placeholder="Password" data-validate="password|required"
+							ng-model=form.Password
+							"
 							class="ng-pristine ng-untouched ng-valid">
 						<div class="validation-message">Is required | The format is
 							invalid</div>
 					</div>
+					<p class="align-right">
 
-					<div class="input-group input-group--submit" align="center">
-						<button type="submit" >Login</button>
-					</div>
+						<a href="${pageContext.request.contextPath}/user/fp" tabindex="-1">Forgot
+							your password?</a>
+
+					</p>
+					<p class="align-center">
+						<button type="submit" class="button button--orange button--large">Login</button>
+					</p>
+
 				</form>
 
 			</div>
 		</div>
 	</div>
 </section>
-</main> <%@ include file="footer.jsp"%>
+</main>
+<%@ include file="footer.jsp"%>

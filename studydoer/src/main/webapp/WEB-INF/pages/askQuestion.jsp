@@ -9,82 +9,70 @@
 		4. Subject
 		5. Additional Information
 	 -->
-	 
-	 <nav></nav>
-	 <main>
-<div class="pagecontent">
-	 
-<div class="container">
-<section id="content">
-		
-	<!-- Q/A Module -->
-	<div id="question">
-		
-		
-	<div class="col-lg-12 col-md-12 col-sm-12">
-		<h1>Get Help | Q/A</h1>
-		<form class="form-group" action="comments.php" method="post">
-			<div class="col-lg-12">
-				<textarea class="form-control"
-					placeholder="Ask Question | Request Any Help" rows="6"
-					name="description">
-			</textarea>
-			</div>
 
-			<div class="span10"
-				style="padding-top: 20px; border-color: #006666; border: thin;">
+<nav></nav>
+<main>
 
-				<div class="col-lg-2">
-					<select id="qa_subject_id" class="form-control" name="subject">
-						<option>choose any subject?</option>
-						<option value="5">Accounting</option>
-						<option value="Computer Science">Computer Science</option>
-						<option value="Computer Science">Writing Help</option>
-						<option value="10">Business</option>
-						<option value="12">Math</option>
-						<option value="19">Physics</option>
-					</select>
-				</div>
+<section class="page page--contact">
+	<div class="container container--large container--centered">
+		<div class="container container--large">
 
-				<!--- Date And Time-->
-				<div class="col-lg-3">
-					<div class="input-group date">
-						<input type="text" class="form-control" name="deadline"> <span
-							class="input-group-addon"><i
-							class="glyphicon glyphicon-th"></i></span>
+			<h1 class="title--small">Get Help | Q/A</h1>
+			<hr>
+					<p class="align-center">
+						<%@ include file="message.jsp"%>
+					</p>
+			
+			<div class="container container--large" id="contact-form">
 
-					</div>
-				</div>
+				<form id="supportForm" data-ajax=""
+					action="${pageContext.request.contextPath}/question/askQuestion"
+					method="POST" novalidate="" autocomplete="off"
+					class="ng-pristine ng-valid" name="form" ng-app="myApp">
 
-				<div class="col-lg-4">
-					<span class="glyphicon glyphicon-file"> Attach file </span> <input
-						name="Upload Files:" id="file" type="file" name="files"
-						class="form-group" id="file">
-				</div>
-
-				<div class="col-lg-3">
-					</span><input type="text"
-						class="form-control" name="price" width="20%" placeholder="set price">
-
-				</div>
-				<div class="col-lg-5" align="right">
+					<div class="input-group input-group--inline">
 					
-					<div class="btn-group" align="right">
-						<button class="btn btn-info btn-sm" data-toggle="modal"
-							data-target="#makePayment" onClick="addQuestion()">Get
-							Solution</button>
+					<select id="qa_subject_id" class="ui search dropdown"
+							name="subject">
+							<option>choose any subject?</option>
+							<option value="5">Accounting</option>
+							<option value="Computer Science">Computer Science</option>
+							<option value="Computer Science">Writing Help</option>
+							<option value="10">Business</option>
+							<option value="12">Math</option>
+							<option value="19">Physics</option>
+						</select>
 					</div>
-				</div>
-				<!--span2-->
-			</div>
-		</form>
+			
 
-	</div>
+					<!-- QUestion Description -->
+					<textarea 
+						placeholder="Ask Question | Request Any Help" rows="15" cols="40"
+						name="description"></textarea>
+
+					<div class="input-group input-group--inline">
+
+						 <input type="date" name="deadline" placeholder="Start Date"> 
+						 <input type="date" name="deadline" placeholder="Start Date"> 
+					
+						<input type="text"
+							name="price" placeholder="set price">
+								 <input type="text" name="pages" placeholder="Additional info"> 
+					
+					</div>
+
+
+					<p class="align-center">
+						<button type="submit" class="button button--orange button--large">Get Solution</button>
+					</p>
+
+				</form>
+
+			</div>
+		</div>
 	</div>
 </section>
-</div>
-</div>
-
+</main>
 
 
 

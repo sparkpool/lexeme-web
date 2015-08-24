@@ -13,7 +13,7 @@ app.controller('validateCtrl', function($scope, $http) {
 	$scope.userMsg = '';
 	$scope.emailMsg = '';
 	$scope.link = false;
-
+	
 	$scope.sendActivationLink = function() {
 		console.log("Hello");
 

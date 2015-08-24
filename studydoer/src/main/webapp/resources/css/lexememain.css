@@ -500,7 +500,7 @@ input,textarea {
 	display: inline-block;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	font-size: .8em;
+	font-size: 1.0em;
 	padding: .95em 2em;
 	line-height: 1;
 	outline: none;
@@ -508,6 +508,7 @@ input,textarea {
 	border-left: 0px;
 	border-right: 0px;
 	border-top: 0px;
+	color:#ff6d1c;
 }
 
 
@@ -517,9 +518,9 @@ input:focus,textarea:focus {
 	box-shadow: inset 0 1px #fff;
 	border: 1px solid #0091ea;
 	background: rgba(0, 145, 234, 0.03);
-	border-left: 0px;
-	border-right: 0px;
-	border-top: 0px;
+	border-left: 5px;
+	border-right: 5px;
+	border-top: 5px;
 }
 
 input.validation-error,textarea.validation-error {
@@ -582,6 +583,15 @@ button,input[type="submit"] {
 	-webkit-transition: background-color 0.15s ease-in-out;
 	transition: background-color 0.15s ease-in-out;
 }
+
+
+input[type=date] { 
+
+}
+
+
+
+
 
 button:hover,input[type="submit"]:hover {
 	-webkit-transition: background-color 0.15s ease-in-out;
