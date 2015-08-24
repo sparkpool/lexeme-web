@@ -6,7 +6,9 @@
 				href="${pageContext.request.contextPath}/library">Library</a> <a
 				href="${pageContext.request.contextPath}/policy">Legal</a> <a
 				href="${pageContext.request.contextPath}/contactUs">Contact us</a> <a
-				href="${pageContext.request.contextPath}/faq">FAQ</a>
+				href="${pageContext.request.contextPath}/feedback/overall">Feedback</a>
+
+				<a href="${pageContext.request.contextPath}/faq">FAQ</a>
 		</div>
 		
 	</nav>

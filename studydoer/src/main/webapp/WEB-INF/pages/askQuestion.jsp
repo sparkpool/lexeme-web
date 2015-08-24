@@ -58,7 +58,7 @@
 
 				<div class="col-lg-4">
 					<span class="glyphicon glyphicon-file"> Attach file </span> <input
-						name="Upload Files:" id="file" type="file" name="Attach Files:"
+						name="Upload Files:" id="file" type="file" name="files"
 						class="form-group" id="file">
 				</div>
 

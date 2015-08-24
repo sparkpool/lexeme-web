@@ -86,6 +86,38 @@ app.controller('validateCtrl', function($scope, $http) {
 
 });
 
+
+app.directive("passwordCheck", function() {
+	   return {
+	      require: "ngModel",
+	      scope: {
+	    	  passwordCheck: '='
+	      },
+	      link: function(scope, element, attrs, ctrl) {
+	        scope.$watch(function() {
+	            var combined;
+
+	            if (scope.passwordCheck || ctrl.$viewValue) {
+	               combined = scope.passwordCheck + '_' + ctrl.$viewValue; 
+	            }                    
+	            return combined;
+	        }, function(value) {
+	            if (value) {
+	                ctrl.$parsers.unshift(function(viewValue) {
+	                    var origin = scope.passwordCheck;
+	                    if (origin !== viewValue) {
+	                        ctrl.$setValidity("passwordCheck", false);
+	                        return undefined;
+	                    } else {
+	                        ctrl.$setValidity("passwordCheck", true);
+	                        return viewValue;
+	                    }
+	                });
+	            }
+	        });
+	     }
+	   };
+	});
 //blur directive
 app.directive('myBlur', function() {
 	return {

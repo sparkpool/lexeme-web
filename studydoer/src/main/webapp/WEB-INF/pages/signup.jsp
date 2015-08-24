@@ -24,22 +24,21 @@
 					name="form">
 
 					<!-- Error Message -->
-					<div class="row">
-						<div class="col-md-4 col-md-offset-4" align="center">
-							<%@ include file="message.jsp"%>
-						</div>
+
+					<div class="input-group input-group--inline">
+						<label></label>
+						<%@ include file="message.jsp"%>
 					</div>
-
-
-
 
 					<!-- Email-address -->
 					<div class="input-group input-group--inline"
 						ng-class="{ error: form.email.$error.unique }">
 						<label>Email</label> <input placeholder="Email" name="email"
 							type="email" ng-model="email" my-blur="checkEmail()"> <span
-							class="ui red pointing above ui label error" style="color: red;"
-							ng-show="form.email.$dirty && form.email.$error.unique">
+							class="ui green pointing left ui label error"
+							ng-show="form.email.$error.email"> Not valid email!</span> <span
+							class="ui green pointing left ui label error"
+							ng-show="form.email.$dirty&& form.email.$error.unique">
 							Email already in use </span>
 					</div>
 
@@ -48,8 +47,14 @@
 						ng-class="{ error: form.userName.$error.unique }">
 						<label>Username</label> <input placeholder="Username"
 							name="userName" type="text" ng-model="userName"
-							my-blur="checkUserName()" required> <span
-							class="ui red pointing above ui label error"
+							my-blur="checkUserName()" ng-minlength="6" ng-maxlength="12"
+							required> <span
+							class="ui green pointing left ui label error"
+							ng-show="form.userName.$error.minlength"> Too short!Must
+							be greater than 5 character </span> <span
+							class="ui green pointing left ui label error"
+							ng-show="form.userName.$error.maxlength"> Too long!Must be
+							Less then 13</span> <span class="ui green pointing left ui label error"
 							ng-show="form.userName.$dirty && form.userName.$error.unique">
 							UserName already in use </span>
 					</div>
@@ -61,17 +66,22 @@
 							placeholder="Password " ng-model="formData.password"
 							ng-pattern="/(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[A-Z])(?=.*[^a-zA-Z])(?=.*[0-9])/"
 							required> <span
-							class="ui red pointing above ui label error"
+							class="ui green pointing left ui label error"
 							ng-show="form.password.$dirty && form.password.$error.pattern">
-							Password must contain at least 1 uppercase alphabet, 1 lowercase
-							alphabet, 1 number and 1 special character</span>
+							Password must contain at least 1 uppercase alphabet, <br>1
+							lowercase alphabet, 1 number and 1 special character
+						</span>
 					</div>
 
 					<!-- Confirm Password -->
 					<div class="input-group input-group--inline">
 						<label>Confirm Password</label> <input name="confirmPassword"
-							type="password" id="password-confirm"
-							placeholder="Confirm Password">
+							type="password" id="confirmPassword" ng-model="confirmPassword"
+							ng-required data-password-Check="formData.password"
+							placeholder="Confirm Password"> <span
+							class="ui green pointing left ui label error"
+							ng-show="form.confirmPassword.$error.passwordCheck">
+							Passwords don't match.</span>
 					</div>
 
 
@@ -108,7 +118,7 @@
 				</form>
 			</div>
 
-			
+
 		</div>
 	</div>
 

@@ -28,8 +28,8 @@
 
 					<div class="input-group input-group--inline">
 						<label for="name">Email</label> <input type="text" name="email"
-							placeholder="e.g. john.doe@example.com" data-validate="required"
-							ng-model="contact.name" class="ng-pristine ng-untouched ng-valid">
+							placeholder="Email" data-validate="required"
+							ng-model="form.password" class="ng-pristine ng-untouched ng-valid">
 						<div class="validation-message">Is required</div>
 					</div>
 
@@ -42,8 +42,8 @@
 							invalid</div>
 					</div>
 
-					<div class="input-group input-group--submit">
-						<button type="submit" >Send</button>
+					<div class="input-group input-group--submit" align="center">
+						<button type="submit" >Login</button>
 					</div>
 				</form>
 
