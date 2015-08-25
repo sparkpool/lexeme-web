@@ -7,14 +7,10 @@
 <main> <input type="hidden" name="divHide" id="divHide"
 	value="${divHide}" />
 <section class="page page--home">
-
-
 	<div class="container container--medium">
 		<h1 class="title--large">Search Douments</h1>
 		<div class="search-form">
 			<form action="${pageContext.request.contextPath}/search" method="GET">
-
-
 				<div class="search-form__number-field">
 					<input class="search-form__input" dirty
 						placeholder="Search Solution" value="" autofocus="" type="text"
@@ -23,10 +19,6 @@
 						data-validate="required|q|min:4" value="Search Here">
 					<button class="button button--orange search-form__submit-button"
 						type="submit" >Search</button>
-
-
-
-
 				</div>
 			</form>
 
@@ -34,10 +26,7 @@
 
 	</div>
 
-
-
 	<div class="search-result">
-
 		<div class="container">
 			<div class="row">
 				<c:choose>
@@ -57,20 +46,25 @@
 								<!-- Document Rating -->
 
 								<div class="document-rating" id="${document.key.id}">
-
 									<fieldset class="rating" id="${document.key.id}">
 										<input type="radio" id='star5${document.key.id}'
-											name="rating${document.key.id}" value="1" /><label
+											name="rating${document.key.id}" value="1" />
+											<label
 											for="star5${document.key.id}" title="Awesome - 5 stars"></label>
+										
 										<input type="radio" id='star4${document.key.id}'
-											name="rating${document.key.id}" value="4" /><label
+											name="rating${document.key.id}" value="4" />
+											<label
 											for="star4${document.key.id}" title="Pretty good - 4 stars"></label>
 										<input type="radio" id='star3${document.key.id}'
-											name="rating${document.key.id}" value="3" /><label
+											name="rating${document.key.id}" value="3" />
+											<label
 											for="star3${document.key.id}" title="Meh - 3 stars"></label>
+										
 										<input type="radio" id='star2${document.key.id}'
 											name="rating${document.key.id}" value="2" /><label
 											for="star2${document.key.id}" title="Kinda bad - 2 stars"></label>
+										
 										<input type="radio" id='star1${document.key.id}'
 											name="rating${document.key.id}" value="1" /><label
 											for="star1${document.key.id}" title="Sucks big time - 1 star"></label>

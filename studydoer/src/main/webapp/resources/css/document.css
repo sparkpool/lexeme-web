@@ -268,7 +268,6 @@ p {
 
 .search-result {
 	position: relative;
-	margin-bottom: 10%;
 }
 
 .document {
@@ -282,18 +281,15 @@ p {
 	height: 263px;
 	text-align: left;
 	width: 200px;
-	border-radius: 5px;
-	padding-left: 12px;
-	padding-right: 12px;
-	padding-top: 12px;
-	border-bottom: 1px solid orange;
-	border-left: 1px solid orange;
-	border-right: 1px solid orange;
-	border-top: 1px solid orange;
 	box-sizing: border-box;
 	margin-left: 25px;
 	margin-bottom: 25px;
 	margin-top: 25px;
+	border-left: .08em solid #ff6d1c;
+	border-right: .08em solid #ff6d1c;
+	border-bottom: .08em solid #ff6d1c;
+	border-top: .08em solid #ff6d1c;
+
 }
 
 .document p {
@@ -302,6 +298,7 @@ p {
 	font-size: .8vw;
 	text-transform: capitalize;
 	font-size: 1vh;
+	text-align: center;
 }
 
 fieldset,label {
@@ -320,7 +317,7 @@ fieldset,label {
 }
 
 .rating>label:before {
-	margin: 5px;
+	margin: 8px;
 	font-size: 1.25em;
 	font-family: Fontawesome;
 	display: inline-block;
@@ -331,7 +328,7 @@ fieldset,label {
 	color: #ddd;
 	float: right;
 	width: 15%;
-	margin-left: 8px;
+	margin-left: 5px;
 }
 /***** CSS Magic to Highlight Stars on Hover *****/
 .rating>input:checked ~ label, /* show gold star when clicked */ .rating:not
@@ -350,16 +347,23 @@ fieldset,label {
 *
 */
 .document h1 {
-	font-size: 12px;
-	font-size: .8vw;
+	font-size: .7em;
 	text-transform: capitalize;
-	font-size: 1.2vh;
+	color:#fff;
+	padding-top: .5em;
+}
+
+.document p {
+	font-size: .7em;
+	text-transform: capitalize;
+	padding-top: .5em;
 }
 
 .document .document-header {
 	position: relative;
 	height: 30px;
 	text-align: center;
+	background-color:#ff6d1c !important;
 	border-bottom: 1px solid #bbe8f9;
 }
 
@@ -368,17 +372,42 @@ fieldset,label {
 	height: 160px;
 	text-align: left;
 	border-color: red;
-	border-bottom: 1px solid #bbe8f9;
+	border-bottom: 1px solid #ff6d1c;
 }
 
 .document-footer {
 	font-size-adjust: 0.58;
 	position: relative;
-	margin-top: 5px;
+	margin-top: 10px;
 	height: 30px;
 	text-align: center;
+	
 }
 
+.document-footer  a{
+	text-decoration: none;
+    color: #ff6d1c;
+    cursor: pointer;
+	
+}
+
+.document-rating:hover{
+	direction:rtl;	
+	border-color: #e3e3e3;
+	color: #666;
+	font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console",
+		Terminal, "Courier New", Courier, "Roboto Slab", sans-serif;
+	height: 100px;
+	text-align: left;
+	width: 200px;
+	margin-left: 200px;
+	margin-bottom: 100px;
+	border-left: .08em solid #ff6d1c;
+	border-right: .08em solid #ff6d1c;
+	border-bottom: .08em solid #ff6d1c;
+	border-top: .08em solid #ff6d1c;
+	
+}
 .document:hover {
 	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
@@ -389,7 +418,8 @@ fieldset,label {
 .document-rating {
 	position: relative;
 	height: 30px;
-	margin-top: 5px;
+	width:100%;
+	
 	border-bottom: 1px solid #bbe8f9;
 }
 
@@ -683,94 +713,3 @@ fieldset,label {
 	height: 50%;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width
-	: 480px) { /* Smartphones (portrait and landscape) ----------- */
-}
-
-@media only screen and (min-width : 321px) {
-	/* Smartphones (landscape) ----------- */
-}
-
-@media only screen and (max-width : 320px) {
-	/* Smartphones (portrait) ----------- */
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width
-	: 1024px) { /* iPads (portrait and landscape) ----------- */
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width
-	: 1024px) and (orientation : landscape) {
-	/* iPads (landscape) ----------- */
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width
-	: 1024px) and (orientation : portrait) {
-	/* iPads (portrait) ----------- */
-}
-
-@media only screen and (min-width : 1200px) {
-	/* Desktops and laptops ----------- */
-}
-
-@media only screen and (min-width : 1700px) {
-	/* Large screens ----------- */
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5) , only
-	screen and (min-device-pixel-ratio : 1.5) { /* iPhone 4 ----------- */
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width
-	: 480px) { /* Smartphones (portrait and landscape) ----------- */
-}
-
-@media only screen and (min-device-width:480px) and
-	(max-device-width:780px) {
-	.maintitle {
-		padding-top: 30%;
-		font-size: 38px;
-		margin-left: -1%;
-		margin-right: 1%;
-		text-transform: capitalize;
-		text-align: center;
-		color: #FFF;
-		width: 100%;
-		padding-bottom: 50px;
-	}
-}
-
-}
-@media only screen and (min-width : 321px) {
-	/* Smartphones (landscape) ----------- */
-}
-
-@media only screen and (max-width : 320px) {
-	/* Smartphones (portrait) ----------- */
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width
-	: 1024px) { /* iPads (portrait and landscape) ----------- */
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width
-	: 1024px) and (orientation : landscape) {
-	/* iPads (landscape) ----------- */
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width
-	: 1024px) and (orientation : portrait) {
-	/* iPads (portrait) ----------- */
-}
-
-@media only screen and (min-width : 1200px) {
-	/* Desktops and laptops ----------- */
-}
-
-@media only screen and (min-width : 1700px) {
-	/* Large screens ----------- */
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5) , only
-	screen and (min-device-pixel-ratio : 1.5) { /* iPhone 4 ----------- */
-}
