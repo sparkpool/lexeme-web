@@ -326,6 +326,20 @@ img {
 	vertical-align: middle;
 }
 
+.ui.selection.dropdown .menu>.item {
+	border-top: 1px solid #fafafa;
+	padding: .71428571rem 1.14285714rem !important;
+	white-space: normal;
+	background: #0aaae7;
+	word-wrap: normal;
+	color: #fff;
+}
+
+.ui.multiple.dropdown>.label {
+	background: #0aaae7;
+	color: #fff;
+}
+
 .arrow.arrow--small {
 	background-size: auto 8px;
 	line-height: 1
@@ -508,10 +522,8 @@ input,textarea {
 	border-left: 0px;
 	border-right: 0px;
 	border-top: 0px;
-	color:#ff6d1c;
+	color: #ff6d1c;
 }
-
-
 
 input:focus,textarea:focus {
 	outline: none;
@@ -584,14 +596,9 @@ button,input[type="submit"] {
 	transition: background-color 0.15s ease-in-out;
 }
 
-
-input[type=date] { 
-
+input[type=date] {
+	
 }
-
-
-
-
 
 button:hover,input[type="submit"]:hover {
 	-webkit-transition: background-color 0.15s ease-in-out;
@@ -1304,29 +1311,48 @@ button:disabled,input[type="submit"]:disabled {
 height
 
 
+
+
 :
+
+
 
 
 30
 px
-;-webkit-transform
+
+
+;
+-webkit-transform
+
+
 
 
 :translateY(15px)
+
+
 
 
 ;
 -ms-transform
 
 
+
+
 :translateY(15px)
+
+
 
 
 ;
 transform
 
 
+
+
 :translateY(15px)
+
+
 
 
 }
@@ -1334,29 +1360,48 @@ transform
 height
 
 
+
+
 :
+
+
 
 
 5
 px
-;-webkit-transform
+
+
+;
+-webkit-transform
+
+
 
 
 :translateY(0)
+
+
 
 
 ;
 -ms-transform
 
 
+
+
 :translateY(0)
+
+
 
 
 ;
 transform
 
 
+
+
 :translateY(0)
+
+
 
 
 }
@@ -1364,29 +1409,48 @@ transform
 height
 
 
+
+
 :
+
+
 
 
 5
 px
-;-webkit-transform
+
+
+;
+-webkit-transform
+
+
 
 
 :translateY(0)
+
+
 
 
 ;
 -ms-transform
 
 
+
+
 :translateY(0)
+
+
 
 
 ;
 transform
 
 
+
+
 :translateY(0)
+
+
 
 
 }
@@ -1403,29 +1467,48 @@ keyframes preloader { 0%{
 height
 
 
+
+
 :
+
+
 
 
 30
 px
-;-webkit-transform
+
+
+;
+-webkit-transform
+
+
 
 
 :translateY(15px)
+
+
 
 
 ;
 -ms-transform
 
 
+
+
 :translateY(15px)
+
+
 
 
 ;
 transform
 
 
+
+
 :translateY(15px)
+
+
 
 
 }
@@ -1433,29 +1516,48 @@ transform
 height
 
 
+
+
 :
+
+
 
 
 5
 px
-;-webkit-transform
+
+
+;
+-webkit-transform
+
+
 
 
 :translateY(0)
+
+
 
 
 ;
 -ms-transform
 
 
+
+
 :translateY(0)
+
+
 
 
 ;
 transform
 
 
+
+
 :translateY(0)
+
+
 
 
 }
@@ -1463,29 +1565,48 @@ transform
 height
 
 
+
+
 :
+
+
 
 
 5
 px
-;-webkit-transform
+
+
+;
+-webkit-transform
+
+
 
 
 :translateY(0)
+
+
 
 
 ;
 -ms-transform
 
 
+
+
 :translateY(0)
+
+
 
 
 ;
 transform
 
 
+
+
 :translateY(0)
+
+
 
 
 }
@@ -1733,7 +1854,6 @@ transform
 
 footer {
 	padding: 1em 2em;
-	
 }
 
 footer nav {
@@ -1788,8 +1908,6 @@ footer nav a {
 		display: inline-block
 	}
 }
-
-
 
 .copyright-and-social {
 	width: 100%;
@@ -1937,7 +2055,6 @@ footer nav a {
 
 .navbar.navbar--desktop .navbar__menu li.navbar__menu--dropdown ul li a
 	{
-	
 	width: 100%;
 	padding: 1em 1.5em;
 }
@@ -5115,7 +5232,6 @@ html.rtl .search-form .search-form__number-field .search-form__submit-button
 		background-image: url('resources/images/tcland.min.png');
 	}
 }
-
 
 .rtl .modal .providers .button {
 	text-align: right
