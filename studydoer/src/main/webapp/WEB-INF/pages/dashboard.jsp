@@ -2,17 +2,16 @@
 
 <!-- It will show all question which are present in pool-->
 <!--DashBoard Implementation start-->
-<div class="container">
-	<div class="row-fluid">
-		<div ng-controller="customersCrtl">
-			<div class="container">
+<nav></nav>
+<main>
 
-				<br />
-				<blockquote class="text-warning">
-					<h4 class="text-warning">DashBoard</h4>
-				</blockquote>
-				<br />
-			</div>
+<section class="page page--contact">
+	<div class="container container--large container--centered">
+		<div class="container container--large">
+			<hr>
+					<p class="align-center">
+						<%@ include file="message.jsp"%>
+					</p>
 			<div class="row">
 				<div class="col-md-2">
 					No of Quesrion: <select ng-model="entryLimit" class="form-control">
@@ -73,6 +72,6 @@
 			</div>
 		</div>
 	</div>
-</div>
-
+</section>
+</main>
 <%@ include file="footer.jsp"%>

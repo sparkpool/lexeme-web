@@ -38,8 +38,9 @@
 									<h1>${document.key.name}|${document.key.category}</h1>
 								</div>
 								<!-- Document Body -->
-								<div class="document-body">
+								<div class="document-body" >
 									<p>${document.key.description}</p>
+									
 								</div>
 
 

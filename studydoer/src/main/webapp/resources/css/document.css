@@ -1,9 +1,6 @@
 /***
 *Document Box 
 */
-#feedback-form input[type=email],#feedback-form input[type=text],#feedback-form input[type=password],#feedback-form input[type=search]{
-	width: 18em;
-}
 
 select.ui.dropdown {
 	width: 18em;
@@ -39,169 +36,7 @@ select.ui.dropdown {
 	margin-left: 100%;
 	
 }
-.tabheading {
-	color: #2085C5;
-	text-align: center;
-	text-indent: inherit;
-	margin: 0 0 1em 0;
-	line-height: 1.6em;
-}
 
-.tabp {
-	margin: 0 0 1em 0;
-	line-height: 1.6em;
-	color: #47525d;
-}
-
-
-
-#accordin_sd {
-	background: beige;
-}
-
-.blue-bullets {
-	margin: 0 0 0 0.5em;
-	padding: 0;
-}
-
-p {
-	display: block;
-	-webkit-margin-before: 1em;
-	-webkit-margin-after: 1em;
-	-webkit-margin-start: 0px;
-	-webkit-margin-end: 0px;
-}
-
-.lbraryheading {
-	font-size: 30px;
-	margin-left: 25%;
-	margin-right: 25%;
-	text-transform: capitalize;
-	text-align: center;
-	color: #FFF;
-	text-indent: 1.2em;
-}
-
-.subheading {
-	font-size: 15px;
-	text-indent: 1.5em;
-	margin-left: 25%;
-	line-height: 2em;
-	margin-right: 25%;
-	text-transform: capitalize;
-	text-align: center;
-	color: #FFF;
-	margin-right: 25%;
-}
-
-.pclass {
-	font-size: 14px;
-	font-family: sans-serif;
-	color: black;
-	text-align: justify;
-	text-indent: .3em;
-}
-
-.heading {
-	font-family: "Roboto Slab", sans-serif;
-	color: #06476b;
-	font-size: 20px;
-	margin-top: 0px;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	padding-bottom: 17px;
-	margin-bottom: 18px;
-	border-color: orange;
-}
-
-.tabs-menu {
-	float: left;
-	clear: both;
-}
-
-.contactus {
-	position: relative;
-	padding-top: 20%;
-	height: 60%;
-	background-color: rgba(30, 53, 78, .7);
-}
-
-.maintitle {
-	padding-top: 20%;
-	font-size: 58px;
-	margin-left: 20%;
-	margin-right: 25%;
-	text-transform: capitalize;
-	text-align: center;
-	color: #FFF;
-	text-indent: 1.2em;
-	padding-bottom: 20px;
-}
-
-
-
-
-
-.title {
-	font-size: 38px;
-	margin-left: 25%;
-	margin-right: 25%;
-	text-transform: capitalize;
-	text-align: center;
-	color: #FFF;
-	text-indent: 1.2em;
-}
-
-.contactus-banner {
-	color: #fff;
-	background: #0890c4 none repeat scroll 0% 0%;
-	border-top: 1px solid #FFF;
-	font-size: 12px;
-	width: 100%;
-	margin-bottom: 20px;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-	/* IE 8 */
-	filter: alpha(opacity = 50); /* IE 5-7 */
-	-moz-opacity: 0.5; /* Netscape */
-	-khtml-opacity: 0.5; /* Safari 1.x */
-	opacity: 0.6; /* Good browsers */
-}
-
-.contactus-banner .navbar-nav>li {
-	text-align: center;
-	display: inline-block;
-	margin-left: 18px;
-	margin-right: 18px;
-	padding-left: 150px;
-	padding-right: 50px;
-}
-
-.contactus-banner .navbar-nav {
-	margin-right: 10px !important;
-	position: relative;
-	transition: all 0.4s ease-in-out;
-	-moz-transition: all 0.4s ease-in-out;
-	-webkit-transition: all 0.4s ease-in-out;
-	-o-transition: all 0.4s ease-in-out;
-}
-
-.contactus-banner .navbar-nav>li>a:after {
-	position: absolute;
-	bottom: 0;
-	content: '';
-	left: 50%;
-	display: list-item;
-	height: 1px;
-	width: 5px;
-	opacity: 0;
-	margin: 0 0 -3px -2px;
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	transform: rotate(45deg);
-	position: absolute;
-}
 
 .searchbanner {
 	padding: 15px 20px;
@@ -228,50 +63,13 @@ p {
 	color: #fff;
 }
 
-.contactus-banner p {
-	font-family: "Roboto Slab", sans-serif;
-}
-
-.search-banner {
-	
-}
-
-.search-content {
-	position: relative;
-	padding-top: 20%;
-	padding-top: 20%;
-	height: 80%;
-	background: rgba(30, 53, 78, .7);
-}
-
-.search-add-new {
-	position: relative;
-	padding-top: 20px;
-	background-image: linear-gradient(89deg, #30BDED 0px, beige 100%);
-}
-
-.container-new {
-	position: relative;
-	margin-top: -10px;
-}
-
-.searchingProgess {
-	position: relative;
-	margin-left: 50%;
-}
-
-.search-heading {
-	font-size: 10px;
-	color: orange;
-	text-align: center;
-}
 
 .search-result {
 	position: relative;
 }
 
 .document {
-	postion: relative;
+	postion: fixed;
 	background: white;
 	border-color: #e3e3e3;
 	color: #666;
@@ -279,7 +77,6 @@ p {
 		Terminal, "Courier New", Courier, "Roboto Slab", sans-serif;
 	display: inline-block;
 	height: 263px;
-	text-align: left;
 	width: 200px;
 	box-sizing: border-box;
 	margin-left: 25px;
@@ -293,12 +90,7 @@ p {
 }
 
 .document p {
-	position: relative;
-	font-size: 12px;
-	font-size: .8vw;
-	text-transform: capitalize;
-	font-size: 1vh;
-	text-align: center;
+	text-align: inherit;
 }
 
 fieldset,label {
@@ -356,7 +148,6 @@ fieldset,label {
 .document p {
 	font-size: .7em;
 	text-transform: capitalize;
-	padding-top: .5em;
 }
 
 .document .document-header {

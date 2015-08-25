@@ -160,13 +160,6 @@
 							<li><a href="${pageContext.request.contextPath}/user/login">SignIn</a></li>
 						</shiro:notAuthenticated>
 
-						<shiro:authenticated>
-
-							<shiro:hasRole name="<%=EnumRoles.MODERATOR.getRole() %>">
-								<li><a
-									href="${pageContext.request.contextPath}/admin/docs/unverified/">DashBord</a></li>
-							</shiro:hasRole>
-						</shiro:authenticated>
 
 						<shiro:authenticated>
 
@@ -180,9 +173,17 @@
 									<li><a
 										href="${pageContext.request.contextPath}/profile/view">My
 											Account</a></li>
-									<li><a
-										href="${pageContext.request.contextPath}/user/logout">Logout</a></li>
-								</ul></li>
+									<li><shiro:hasRole
+											name="<%=EnumRoles.MODERATOR.getRole()%>">
+											<li><a
+												href="${pageContext.request.contextPath}/admin/docs/unverified/">DashBord</a></li>
+										</shiro:hasRole> 
+										
+										
+										<li><a href="${pageContext.request.contextPath}/user/logout">Logout</a></li>
+								</ul>
+								
+								</li>
 
 						</shiro:authenticated>
 
@@ -219,8 +220,8 @@
 					</shiro:notAuthenticated>
 
 					<shiro:authenticated>
-<li><a
-								href="${pageContext.request.contextPath}/admin/docs/unverified/">DashBord</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/admin/docs/unverified/">DashBord</a></li>
 					</shiro:authenticated>
 
 					<shiro:authenticated>

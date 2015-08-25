@@ -1924,7 +1924,7 @@ footer nav a {
 	background: #fff;
 	border: 1px solid rgba(25, 157, 217, 0.2);
 	border-top: none;
-	border-radius: 0 0 5px 5px;
+	border-radius: 1px 1px 2px 2px;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
 	white-space: normal;
 }
@@ -1937,13 +1937,14 @@ footer nav a {
 
 .navbar.navbar--desktop .navbar__menu li.navbar__menu--dropdown ul li a
 	{
+	
 	width: 100%;
 	padding: 1em 1.5em;
 }
 
 .navbar.navbar--desktop .navbar__menu li.navbar__menu--dropdown ul li a.navbar__item-with-image
 	{
-	padding: 1em 3em 1em 1.5em;
+	padding: 1em 1em 1em 1.5em;
 }
 
 .navbar.navbar--desktop .navbar__menu li.navbar__menu--dropdown ul li a.navbar__item-with-image img
