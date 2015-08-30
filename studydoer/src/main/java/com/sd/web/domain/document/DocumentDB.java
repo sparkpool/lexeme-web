@@ -35,11 +35,6 @@ public class DocumentDB implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Override
-	public String toString() {
-		return "DocumentDB [id=" + id + "]";
-	}
-
 	@Column(name = "CATEGORY", length = 50, nullable = false)
 	private String category;
 	
