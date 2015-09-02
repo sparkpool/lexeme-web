@@ -83,7 +83,7 @@
 
 					<div class="two input-group input-group--inline">
 						<label></label> <select name="role"
-							class="ui search dropdown">
+							class="ui selection dropdown" multiple="" id="multi-select">
 							<c:forEach items="<%=EnumRoles.getRolesForSignUP()%>" var="role">
 								<option value="${role.role}">${role.displayName}</option>
 							</c:forEach>

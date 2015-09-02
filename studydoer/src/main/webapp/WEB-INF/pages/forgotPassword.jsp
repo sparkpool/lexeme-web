@@ -20,12 +20,13 @@
 					</p>
 
 
-					<div class="input-group input-group--inline">
-						<label></label> <input type="email" name="email"
-							placeholder="Email" data-validate="required" ng-model="email">
-
+						<div class="input-group input-group--inline"
+						ng-class="{ error: form.email.$error.unique }">
+						<label></label> <input placeholder="Email" name="email"
+							type="email" ng-model="email" > <span
+							class="ui green pointing left ui label error"
+							ng-show="form.email.$error.email"> Not valid email!</span>
 					</div>
-
 
 					<p class="align-center">
 						<button type="submit" class="button button--orange button--large">Submit</button>

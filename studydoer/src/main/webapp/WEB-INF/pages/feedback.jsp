@@ -14,13 +14,19 @@
 				<form id="supportForm" data-ajax=""
 					action="${pageContext.request.contextPath}/feedback/overall"
 					method="POST" novalidate="" autocomplete="off"
-					class="ng-pristine ng-valid">
+					class="ng-pristine ng-valid"
+					name="form"
+					>
 					<p class="align-center">
 						<%@ include file="message.jsp"%>
 					</p>
 					<div class="input-group input-group--inline">
-						<label for="name"></label> <input type="text" name="email"
-							placeholder="Email" value="${email}">
+						<label for="name"></label> <input type="email" name="email"
+							placeholder="Email" value="${email}" ng-model="email">
+							
+							<span
+							class="ui green pointing left ui label error"
+							ng-show="form.email.$error.email"> Not valid email!</span>
 					</div>
 					<div class="input-group input-group--inline">
 						<label></label> <input type="text" name="subject"
@@ -37,7 +43,7 @@
 					</div>
 <div class="input-group input-group--inline">
 						<label></label> <select name="category"
-							class="ui search dropdown"> +
+							class="ui selection dropdown" multiple="" id="multi-select"> +
 							<c:forEach items="<%=EnumFeedbackCategory.values()%>"
 								var="category">
 +                                 <option value="${category.id}">${category.category}</option>

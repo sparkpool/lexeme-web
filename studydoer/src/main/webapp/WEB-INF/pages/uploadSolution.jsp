@@ -52,8 +52,7 @@
 					<p class="align-center">
 
 						<span class="btn btn-info btn-file"> upload from computer 
-						<input
-							type="file" id="files" name="file[]" multiple="multiple">
+						<input type="file" id="files" name="file[]" multiple="multiple">
 						</span>
 						</p>
 						

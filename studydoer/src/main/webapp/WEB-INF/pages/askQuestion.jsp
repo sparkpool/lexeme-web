@@ -29,7 +29,7 @@
 					action="${pageContext.request.contextPath}/question/askQuestion"
 					method="POST" 
 					class="ng-pristine ng-valid" 
-					>
+					enctype="multipart/form-data">
 
 					<div class="input-group input-group--inline">
 
@@ -42,6 +42,10 @@
 							<option value="12">Math</option>
 							<option value="19">Physics</option>
 						</select>
+						
+						<p class="align-center">
+							<input type="file" id="files" name="file[]" multiple="multiple" class="button button--white button--large" placeholder="Upload">
+						</p>
 						
 					</div>
 
@@ -60,6 +64,7 @@
 
 					</div>
 
+					
 
 					<p class="align-center">
 						<button type="submit" class="button button--orange button--large">Get
@@ -87,7 +92,8 @@
 <!-- Bootstrap core JavaScript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/resources/js/uploadfile.js"></script>
 <script
 	src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
 <script>
