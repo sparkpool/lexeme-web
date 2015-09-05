@@ -40,10 +40,6 @@
 
 		</div>
 
-		<hr>
-
-	
-		<p class="title--small">team</p>
 
 
 

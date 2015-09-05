@@ -22,7 +22,7 @@
 					</p>
 					<div class="input-group input-group--inline">
 						<label for="name"></label> <input type="email" name="email"
-							placeholder="Email" value="${email}" ng-model="email">
+							placeholder="Email" value="${email}"  ng-init="form.email">
 							
 							<span
 							class="ui green pointing left ui label error"

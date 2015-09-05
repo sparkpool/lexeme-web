@@ -21,7 +21,21 @@
 	
 	background-color:white;
 }
-
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity = 0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
 
 input[type="file"] {
 	display:none;
@@ -31,6 +45,14 @@ input[type="file"] {
 	background: white;
 	cursor: inherit;
 	display: block;
+	border-radius: 4px;
+    width: 10px;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1.0em;
+    line-height: 1;
+    color: #ff6d1c;
 }
 
 .file-preview {

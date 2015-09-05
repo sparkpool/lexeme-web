@@ -38,11 +38,9 @@ $(document)
 									.addEventListener(
 											"change",
 											function(event) {
-
 												// Get liste of
 												var files = event.target.files; // FileList
 												// object
-
 												// append the form data
 												for (var j = 0; j < files.length; j++) {
 													var getFile = files[j];
@@ -145,8 +143,8 @@ $(document)
 
 														$(".uploadResult")
 																.append(
-																		"<input class='ui orange save button' type='submit'"
-																				+ "name='SAVE' placeholder='Edit' >");
+																		"<button class='button button--orange button--large' type='submit'"
+																				+ "name='SAVE' placeholder='Edit' >Submit</button>");
 
 													}
 												}

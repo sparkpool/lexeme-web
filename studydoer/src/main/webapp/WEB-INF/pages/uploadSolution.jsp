@@ -12,27 +12,29 @@
 <nav></nav>
 <main>
 
-<section class="page page--contact">
-	<div class="container container--large container--centered">
-		<div class="container container--large">
+<div id="page-content1">
+	<div class="container">
+		<section id="content">
 
 			<div id="spinner" class="spinner" style="display: none;">
 				<i class="fa fa-spinner fa-spin fa-5x"></i>
 
 			</div>
-			<p class="align-center">
-				<%@ include file="message.jsp"%>
-			</p>
-
 
 			<div class="right aligned column">
-				<%@ include file="message.jsp"%>
+
+				<!-- WIll SHOW THE ERROR MESSAGE -->
+				<div>
+					<p></p>
+
+				</div>
+
 			</div>
 			<div class="responseMsg" style="font-size: 15px; text-align: center;">
 			</div>
 			<div class="feedback-form-center" align="center">
 				<div class="feedback-support-text">
-					<i class='fa fa-cloud-upload fa-4x' style="color: orange;"></i>
+					<i class="fa fa-cloud-upload fa-4x" style="color: orange;"></i>
 					<h1>Start Uploading Documents</h1>
 					<hr>
 					<p>If you’re not sure whether or not you’re the copyright owner
@@ -44,23 +46,21 @@
 			</div>
 
 			<div class="row">
-				<form name="form" 
-					id="uploadData" class="supportForm"
-					enctype="multipart/form-data" >
+				<form name="form" id="uploadData"
+					class="ui form ng-pristine ng-valid" enctype="multipart/form-data">
+					<div class="form-group" align="center">
 
+						<div class="row ">
+							<span class="btn btn-info btn-file"> upload from computer
+								<input type="file" id="files" name="file[]" multiple="multiple">
+							</span>
+						</div>
 
-					<p class="align-center">
-
-						<span class="btn btn-info btn-file"> upload from computer 
-						<input type="file" id="files" name="file[]" multiple="multiple">
-						</span>
-						</p>
-						
-						<div class="input-group input-group--inline">
+						<div class="row" style="margin-top: 5px;">
 							<div class="result"></div>
 						</div>
 
-						<div class="input-group input-group--inline">
+						<div class="row" style="margin-top: 5px;">
 							<div class="uploadResult"></div>
 						</div>
 
@@ -68,9 +68,11 @@
 				</form>
 
 			</div>
-		</div>
-	
-</section>
+
+		</section>
+		<!-- Button trigger modal -->
+	</div>
+</div>
 <!-- Button trigger modal --> <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/js/uploadfile.js"></script>
 

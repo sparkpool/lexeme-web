@@ -149,6 +149,8 @@
 						<li><a href="${pageContext.request.contextPath}/askQuestion">Q/A</a></li>
 						<!-- Library -->
 						<li><a href="${pageContext.request.contextPath}/library">Library</a></li>
+						<li><a href="${pageContext.request.contextPath}/doc/upload">Earn
+								Money</a></li>
 
 						<shiro:notAuthenticated>
 
@@ -177,13 +179,10 @@
 											name="<%=EnumRoles.MODERATOR.getRole()%>">
 											<li><a
 												href="${pageContext.request.contextPath}/admin/docs/unverified/">DashBord</a></li>
-										</shiro:hasRole> 
-										
-										
-										<li><a href="${pageContext.request.contextPath}/user/logout">Logout</a></li>
-								</ul>
-								
-								</li>
+										</shiro:hasRole>
+									<li><a
+										href="${pageContext.request.contextPath}/user/logout">Logout</a></li>
+								</ul></li>
 
 						</shiro:authenticated>
 
