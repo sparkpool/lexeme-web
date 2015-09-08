@@ -23,7 +23,7 @@
 
 					<div class="input-group input-group--inline">
 						<label for="name"></label> <input type="email" name="email"
-							placeholder="Email" value="${email}" > <span
+							placeholder="Email" value="${email}"> <span
 							class="ui green pointing left ui label error"
 							ng-show="form.email.$error.email"> Not valid email!</span>
 					</div>
