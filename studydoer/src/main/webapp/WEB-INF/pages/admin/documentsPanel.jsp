@@ -1,18 +1,21 @@
 <%@ include file="../header.jsp"%>
-<div class="page-content">
-	<div class="container">
-		<section id="content">
-			<div class="col-md-12">
-				<blockquote>
-					<h1 style="text-align: center;">Document Verification Panel</h1>
-				</blockquote>
-			</div>
+<nav></nav>
+<main>
+
+<section class="page page--contact">
+	<div class="container container--large container--centered">
+		<div class="container container--large">
+			<h1 style="text-align: center;"></h1>
+
+			<h1 class="title--small">Document Verification Panel</h1>
+			<hr>
+
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4" align="center">
 					<%@ include file="../message.jsp"%>
 				</div>
 			</div>
-			
+
 			<!-- Personal Information -->
 			<table class="table table-hover">
 				<thead>
@@ -33,18 +36,21 @@
 									<form name="form" method="POST" class="ui form"
 										action="${pageContext.request.contextPath}/admin/docs/verify">
 										<input type="hidden" name="docId"
-											value="${document.documentId}" /> <input
-											class="ui orange submit button" type="submit" value="Verify"
-											name="SAVE" />
+											value="${document.documentId}" />
+
+										<button type="submit"
+											class="button button--white button--small" value="Verify">Verify</button>
+
 									</form>
 								</div>
 								<div class="col-md-3 ">
 									<form name="form" method="POST" class="ui form"
 										action="${pageContext.request.contextPath}/admin/docs/del">
 										<input type="hidden" name="docId"
-											value="${document.documentId}" /> <input
-											class="ui red submit button" type="submit" value="Delete"
-											name="SAVE" />
+											value="${document.documentId}" />
+										<button type="submit"
+											class="button button--orange button--small" value="Delete">Delete</button>
+
 									</form>
 								</div>
 
@@ -54,9 +60,11 @@
 					</c:forEach>
 				</tbody>
 			</table>
-		</section>
+
+		</div>
 	</div>
-</div>
 
+</section>
 
+</main>
 <%@ include file="../footer.jsp"%>

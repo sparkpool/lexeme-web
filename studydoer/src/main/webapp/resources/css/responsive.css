@@ -18,10 +18,11 @@ body.slide-active {
 	line-height: 0;
 	float: left;
 	margin: 0;
+	margin-top: 7px;
 	width: 30px;
 	height: 40px;
 	padding: 10px 0 0 0;
-	border: 0;
+	border: 1px;
 }
 
 /* icon bar prettyup - optional */
@@ -67,15 +68,14 @@ body.slide-active {
 		left: -50%;
 		width: 40%;
 		min-width: 0;
-		color:white;
-	
-		font-family:sans-serif;;
+		color: white;
+		font-family: sans-serif;;
 		position: absolute;
 		padding-left: 0;
 		text-align: left;
 		z-index: 2;
 		margin-top: 3px;
-		height:700px;
+		height: 700px;
 		background: none repeat scroll 0% 0% #009cde;
 	}
 	#slide-nav #slidemenu .navbar-nav {
@@ -89,15 +89,13 @@ body.slide-active {
 		background: none repeat scroll 0% 0% #009cde;
 		min-width: 0;
 		width: 100%;
-		padding-left:30px;
-		font-size:15px;
+		padding-left: 30px;
+		font-size: 15px;
 		color: #fff;
 		display: list-item;
 	}
-	
 	#slide-nav {
 		border-top: 0;
-		
 	}
 	#slide-nav.navbar-inverse #slidemenu {
 		background: none repeat scroll 0% 0% #06476B;
@@ -167,9 +165,11 @@ body.slide-active {
 	font-size: 21px;
 	font-style: bold;
 	font-weight: 300;
+	color: #0091ea;
+	cursor: pointer;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (min-width:320px) {
 	.logo {
 		float: none;
 		margin-top: 15px;
@@ -181,11 +181,10 @@ body.slide-active {
 		font-size: 21px;
 		font-style: bold;
 		font-weight: 300;
+		color: #0091ea;
+		cursor: pointer;
 	}
-	a {
-		text-align: left;
-		font-size: 11px;
-	}
+}
 	.sidebar {
 		position: absolute;
 		left: 0;
@@ -197,7 +196,7 @@ body.slide-active {
 		overflow: hidden;
 		background: #2c3e50;
 		background: rgba(44, 62, 80, 0.4);
-		color: #eee;
+		color: #333;
 		min-height: 600px;
 	}
 }
@@ -264,7 +263,6 @@ body.slide-active {
 		border: none !important;
 		padding-right: 0;
 		color: #fff;
-		
 	}
 	.navbar-default .navbar-nav>li>a:after {
 		display: none;

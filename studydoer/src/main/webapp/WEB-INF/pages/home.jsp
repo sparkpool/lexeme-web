@@ -1,90 +1,39 @@
 <%@include file="header.jsp"%>
 
-<div class="main-page">
-	<div class="container">
-		<div class="row">
-		<div class="col-xs-12">
-				<div class="maintitle" align="center">
-					Study Doer
+<nav></nav>
+<main>
+<section class="page page--home">
+	<div class="truecaller-land" style="display: block;">
+		<div class="TruecallerLand"></div>
+	</div>
+	<div class="container container--medium">
+		<h1 class="title--large">Search Doument/Answer from library</h1>
+		<div class="search-form">
+			<form action="" method="POST"
+				autocomplete="off" name="search_form">
+				<div class="search-form__number-field">
+					<input class="search-form__input" name="phone_number"
+						data-validate="required|phone_number|min:4|max:20" type="tel"
+						placeholder="Search Solution" value="" autofocus="">
 					
 				</div>
-			</div>
-			<div class="col-sm-8 col-md-9">
-			</div>
-		</div>
-		<div class="btn-group btn-group-claim">
-				
-				<shiro:notAuthenticated>
-				<a
-				href="${pageContext.request.contextPath}/user/login"
-				class="btn btn-claim btn-lg"> 
-				Get Started
-			</a>
-		
-			</shiro:notAuthenticated>
-			<a href="${pageContext.request.contextPath}/library"
-				class="btn btn-claim btn-lg"> Browse Solution </a> 
-		
-		</div>
-	</div>
-</div>
 
-<div class="banner">
-	<div class="container">
-		<div class="row">
-			<div class="text-center">Study Resources</div>
-			<div class="visible-xs">
-				<br />
-			</div>
+			</form>
 		</div>
-		<div class="col-sm-6"></div>
-	</div>
-</div>
+		<p class="align-center">
+			Earn Money by uploading Documents <br> 
+		</p>
 
-<div class="home">
-	<div class="content">
-		<div class="container">
-			<div class="home-body">
-				<div class="lead">Study Doer offers students crowd-sourced
-					study documents accessible anywhere, at anytime</div>
-				<hr>
-				<section class="feature row">
-					<div class="col-sm-4 col-sm-push-8 feature-figure">
-						<img src="${pageContext.request.contextPath}/resources/images/docu.png" class="pull-right" />
-					</div>
-					<div class="col-sm-8 col-sm-pull-4 feature-text">
-						<h2 id="awesome-mobile-components">Documents</h2>
-						<p>Homework Solution</p>
-						<ul>
-							<li>Course Specification</li>
-							<li>Notes</li>
-							<li>Labs</li>
-							<li>Research Paper</li>
-							<li>Essay</li>
-						</ul>
-					</div>
-				</section>
-				<section class="feature row">
-					<div class="col-sm-4 col-sm-push-8 feature-figure">
-						<img
-							src="${pageContext.request.contextPath}/resources/images/sec-desktop-fig.png"
-							class="pull-right" />
-					</div>
-					<div class="col-sm-8 col-sm-pull-4 feature-text">
-						<h2 id="bootstrap-tailored-for-your-needs">Share/Earn</h2>
-						<p>Easy! Share your knowledge to start earning.</p>
-						<hr>
-						<ul>
-							<li>Make money by sharing your study resources with other
-								students!</li>
-							<li>Earn money when students unlock your
-								answers/notes.</li>
-						</ul>
-					</div>
-				</section>
-			</div>
-		</div>
-
+		<p class="align-center"></p>
+		<p class="align-center">
+			<a href="${pageContext.request.contextPath}/doc/upload"
+				class="button button--white button--medium">Earn Money</a>
+		</p>
 	</div>
-</div>
+
+</section>
+
+</main>
+
+
 <%@include file="footer.jsp"%>

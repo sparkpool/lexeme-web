@@ -1,91 +1,112 @@
 <!DOCTYPE html>
 <%@ include file="header.jsp"%>
 
-<!-- Upper banner -->
+<main>
 
 
-<div class="pagecontent1">
-	<div class="container">
-		<section id="content">
-			<div class="ui blue three item menu">
-				<a class="active green item" data-tab="expert">Expert</a> <a
-					class=" item" data-tab="student">Student</a> <a class="item"
-					data-tab="general">General </a>
+<section class="page page--support">
+	<div class="container container--large">
+		<div class="container container--small container--centered">
+			<h1 class="title--large">FAQ</h1>
+
+			<p>This is our frequently asked questions. Search or browse to
+				find what you’re looking for.</p>
+
+		</div>
+
+
+
+		<div class="support__nav">
+			<div class="support__nav-inner">
+				<a class="button button--small button--round button--blue"
+					ng-class="{'button--blue':!category}" href="#/"> All </a>
+				<!-- ngRepeat: (cat, val) in qaByCat | orderBy:val -->
+				<a class="button button--small button--round ng-binding ng-scope"
+					ng-class="{'button--blue':cat == category}" href="#/Android">
+					Experts </a><a
+					class="button button--small button--round ng-binding ng-scope"
+					ng-class="{'button--blue':cat == category}" href="#/BlackBerry">
+					Students </a><a
+					class="button button--small button--round ng-binding ng-scope"
+					ng-class="{'button--blue':cat == category}" href="#/BlackBerry 10">
+					Other</a>
 			</div>
+		</div>
 
-
-			<div class="ui active tab" data-tab="expert">
-				<h1>FAQ's For Expert</h1>
-				<hr>
-				<p>Not define yet</p>
-
-
-
+		<div class="support__nav-mobile">
+			<div class="select">
+				<select ng-model="select_path"
+					ng-change="faq.selectbar(select_path)"
+					style="opacity: 0; -webkit-appearance: menulist-button; width: 100px; position: absolute; height: 100px; font-size: 11.1999998092651px;"
+					class="hasCustomSelect ng-pristine ng-untouched ng-valid">
+					<option value="" ng-selected="!category" selected="selected">All</option>
+					<!-- ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="Android"
+						class="ng-binding ng-scope">Android</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="BlackBerry"
+						class="ng-binding ng-scope">BlackBerry</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="BlackBerry 10"
+						class="ng-binding ng-scope">BlackBerry 10</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="General"
+						class="ng-binding ng-scope">General</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="Nokia X"
+						class="ng-binding ng-scope">Nokia X</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="Premium"
+						class="ng-binding ng-scope">Premium</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="Series 40"
+						class="ng-binding ng-scope">Series 40</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="Symbian"
+						class="ng-binding ng-scope">Symbian</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="Tizen"
+						class="ng-binding ng-scope">Tizen</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="Truedialer"
+						class="ng-binding ng-scope">Truedialer</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="Truemessenger"
+						class="ng-binding ng-scope">Truemessenger</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="Windows Phone 8"
+						class="ng-binding ng-scope">Windows Phone 8</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="firefoxos"
+						class="ng-binding ng-scope">Firefox OS</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+					<option ng-repeat="(cat, val) in qaByCat"
+						ng-selected="category == cat" value="iPhone"
+						class="ng-binding ng-scope">iPhone</option>
+					<!-- end ngRepeat: (cat, val) in qaByCat -->
+				</select><span class="customSelect"
+					style="opacity: 1; display: inline-block;"><span
+					class="customSelectInner"
+					style="width: 100px; display: inline-block;">All</span></span>
 			</div>
+		</div>
+		<hr>
 
-			<div class="ui tab" data-tab="student">
-				<h1>FAQ's For Student</h1>
-				<hr>
-				<p>Not define yet</p>
-
-			</div>
-
-			<div class="ui tab" data-tab="general">
-				<h1>General FAQ's</h1>
-				<hr>
-
-				<div class="ui styled fluid accordion">
-					<div class="title" id="accordin_sd">
-						<i class="dropdown icon"></i> How can I create effective profile?
-					</div>
-					<div class="content">
-						<p class="transition hidden">For this you need to sign up with
-							your valid email id and unique user name. After activating your
-							profile from the mail received by us you can login and update all
-							profile data with the accurate information to create the good
-							impression among the other users.</p>
-					</div>
-					<div class="title" id="accordin_sd">
-
-						<i class="dropdown icon"></i> Can I get free download?
-
-					</div>
-					<div class="content">
-						<p class="transition hidden">Yes, you can get free download by
-							uploading the document which you think can help other students.
-							You simply need to sign up and upload the document under the
-							“Earn Money” section and once document will be approved by
-							administrator your account will be credited with the number of
-							free downloads. For more detail refer out documents upload policy
-							and plan page.</p>
-					</div>
-					<div class="title" id="accordin_sd">
-						<i class="dropdown icon"></i> What is procedure to access the
-						documents?
-					</div>
-					<div class="content">
-						<p class="transition hidden">Here we have different kind of
-							packages to access the document. Each plan comes with some
-							definite number of download per month and if you don’t use that
-							particular number of download then it will be lapsed. We also
-							have yearly plan in which you can use your free provided download
-							in the whole year.</p>
-					</div>
-					<div class="title active" id="accordin_sd">
-						<i class="dropdown icon"></i> How can I top up my document
-						download number if I exhausted my subscribed plan?
-					</div>
-					<div class="content ">
-
-						<p class="transition visible">Here you can top-up your account
-							with the definite number of document download by following out
-							top up plans which suite you better.</p>
-					</div>
-				</div>
-
-			</div>
-		</section>
 	</div>
-</div>
+</section>
+</main>
 
 <%@ include file="footer.jsp"%>

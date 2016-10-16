@@ -25,9 +25,10 @@
 
 		<div class="field">
 
-			<input class="ui orange save button" type="submit" name="SAVE"
-				ng-disabled="!form.$dirty" placeholder="Edit">
-
+				<p class="align-center">
+						<button type="submit" class="button button--white button--large"  ng-disabled="!form.$dirty">Save</button>
+					</p>
+				
 		</div>
 	</form>
 

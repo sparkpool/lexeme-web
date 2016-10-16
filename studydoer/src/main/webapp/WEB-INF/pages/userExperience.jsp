@@ -110,12 +110,10 @@
 
 			</div>
 
-			<input class="ui orange save button" 
-					type="submit" 
-					name="SAVE"
-					placeholder="Edit"
-					ng-disabled="!form.$dirty"
-					>
+				<p class="align-center">
+						<button type="submit" class="button button--white button--large"  ng-disabled="!form.$dirty">Save</button>
+					</p>
+				
 
 		</form> <!-- End form -->
 		

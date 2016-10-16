@@ -8,8 +8,7 @@
 $(document)
 		.ready(
 				function() {
-					
-					
+
 					// Get form
 					var form = document.getElementById('uploadData');
 					// Prepare the form data object
@@ -18,23 +17,18 @@ $(document)
 					var fileList = [];
 					// div identifier
 					var divID = 1;
-					
-					$("#spinner").bind("ajaxSend", function() {
-				        $(this).show();
-				    }).bind("ajaxStop", function() {
-				        $(this).hide();
-				    }).bind("ajaxError", function() {
-				        $(this).hide();
-				    });
 
-					
-					
-					
-					
-				     
+					$("#spinner").bind("ajaxSend", function() {
+						$(this).show();
+					}).bind("ajaxStop", function() {
+						$(this).hide();
+					}).bind("ajaxError", function() {
+						$(this).hide();
+					});
+
 					// On-load event
 					window.onload = function() {
-						
+
 						if (window.File && window.FileList && window.FileReader) {
 							// Get Number of Files
 							var filesInput = document.getElementById("files");
@@ -44,11 +38,9 @@ $(document)
 									.addEventListener(
 											"change",
 											function(event) {
-
 												// Get liste of
 												var files = event.target.files; // FileList
 												// object
-
 												// append the form data
 												for (var j = 0; j < files.length; j++) {
 													var getFile = files[j];
@@ -67,23 +59,25 @@ $(document)
 													div.setAttribute("class",
 															"uploadDivDel");
 
-													div.innerHTML = "<div class='col-md-8 col-md-offset-2'  col-md-offset-1' id='"
+													div.innerHTML = "<div class='col-xs-8 col-xs-offset-2'  col-xs-offset-1' id='"
 															+ divID
 															+ "' name='uploadDiv' style='outline: 1px solid aqua;'>"
-															+ "<div class='col-md-1'>" +
-																	"<br/><br/><a class='del' href='#' name='checked' id='"
+															+ "<div class='col-xs-1'>"
+															+ "<br/><br/><a class='del' href='#' name='checked' id='"
 															+ divID
 															+ "'><i class='fa fa-trash-o fa-lg'></i></a>"
 															+ "</div>"
-															+ "<div class='col-md-4'>"
-															+ "<span>"+iconType+"</span>"
+															+ "<div class='col-xs-4'>"
+															+ "<span>"
+															+ iconType
+															+ "</span>"
 															+ "<p>"
 															+ getFile.name
 															+ "</p>"
 
 															+ "</div>"
 
-															+ "<div class='col-md-3 '>"
+															+ "<div class='col-xs-3'>"
 															+ "<span><strong>Doument Type</strong></span> "
 															+ "<select class='myselect' name='category'>"
 															+ "<option value='Homework'>Homework</option>"
@@ -91,7 +85,7 @@ $(document)
 															+ "<option value='Essay'>Essay</option>"
 															+ "<option value='Other'>Other</option>"
 															+ "</select>"
-															+ "</div><div class='col-md-2'><strong><span><i class='fa fa-pencil-square'></i>Edit Info</span></strong><br/><a href=''  data-toggle='modal' data-target='#my"
+															+ "</div><div class='col-xs-2'><strong><span><i class='fa fa-pencil-square'></i>Edit Info</span></strong><br/><a href=''  data-toggle='modal' data-target='#my"
 															+ divID
 															+ "'>Edit Information</a></div></div>";
 													// Get
@@ -116,15 +110,15 @@ $(document)
 															"<div class='modal-body'>"
 															+ "<div class='form-group'>"
 															+ "<div class='row'>"
-															+ "<div class='col-md-6'>Course ID"
+															+ "<div class='col-xs-6'>Course ID"
 															+ "<input type='text' name='courseId' class='courseID' id='courseId' focus />"
 															+ "</div>"
-															
+
 															+ "</div>"
 															+ "</div>"
 															+ "<div class='form-group'>"
 															+ "<div class='row'>"
-															+ "<div class='col-md-12'>Description"
+															+ "<div class='col-xs-12'>Description"
 															+ "<p align='left'>You can tell us more about document </p>"
 															+ "<textarea name='description' class='description' rows='2' cols='10'>"
 															+ "</textarea>"
@@ -133,30 +127,30 @@ $(document)
 															+ "</div>"
 															+ "</div>"
 															+ "<div class='modal-footer'>"
-															+ "<div class='col-md-5 col-md-offset-2' ><button type='button' class='btn btn-warning-lg' data-dismiss='modal'>Save</button></div>"
+															+ "<p class='align-center'><button type='button' class='button button--orange button--large' data-dismiss='modal'>Save</button></p>"
 															+
 
 															"</div></div></div>";
 
 													divID++;
 													$(".result").append(div);
-												//	 document.getElementById('uploadButton').visibility ="visible";
+													// document.getElementById('uploadButton').visibility
+													// ="visible";
 													console.log(fileList);
-													
-													if(fileList.length==1){
+
+													if (fileList.length == 1) {
 														console.log(fileList);
-													
-														$(".uploadResult").append("<input class='ui orange save button' type='submit'" +
-																	"name='SAVE' placeholder='Edit' >");
-														
+
+														$(".uploadResult")
+																.append(
+																		"<button class='button button--orange button--large' type='submit'"
+																				+ "name='SAVE' placeholder='Edit' >Submit</button>");
+
 													}
 												}
-												
-												
-						
+
 											});
 						}
-
 
 					};
 
@@ -167,7 +161,7 @@ $(document)
 								e.preventDefault();
 								var selectedDiv = document.getElementById($(
 										this).attr('id'));
-									
+
 								$(selectedDiv).remove();
 
 								// Delete
@@ -175,12 +169,12 @@ $(document)
 								// slice the
 								// array after
 								// deletion
-								fileList=fileList.splice(
+								fileList = fileList.splice(
 
 								1);
-								
-								//Remove the button
-								if(fileList.length==0){
+
+								// Remove the button
+								if (fileList.length == 0) {
 									$('.uploadResult').hide();
 								}
 
@@ -190,20 +184,22 @@ $(document)
 					$('form')
 							.submit(
 									function(e) {
-										
+
 										$('.uploadResult').hide();
-										//Show spinner once  submit button clicked
+										// Show spinner once submit button
+										// clicked
 										$('#spinner').show();
-										
-										
-										//Scroll top once page is toolong
-										$('html, body').animate({scrollTop : 0},800);
-										
+
+										// Scroll top once page is toolong
+										$('html, body').animate({
+											scrollTop : 0
+										}, 800);
+
 										// append file here
 										for (var fileIndex = 0; fileIndex < fileList.length; fileIndex++) {
 											formData.append("file",
 													fileList[fileIndex]);
-											
+
 										}
 
 										// append Couser ID
@@ -224,16 +220,23 @@ $(document)
 												});
 
 										// append description
-										$('.description').each(
-												function() {
-													var description = $(this)
-															.val();
-													formData.append(
-															"description",
-															description.replace(",","") + ' ');
-												});
-										
-												$.ajax({
+										$('.description')
+												.each(
+														function() {
+															var description = $(
+																	this).val();
+															formData
+																	.append(
+																			"description",
+																			description
+																					.replace(
+																							",",
+																							"")
+																					+ ' ');
+														});
+
+										$
+												.ajax({
 													// set the accept data
 													headers : {
 														Accept : "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
@@ -285,24 +288,24 @@ $(document)
 																				+ fileList.length
 																				+ " document.</p>"
 																				+ "<p style='color:black;'>It takes up to 1 business days for your documents to be approved</p>"
-																				
-																				);
+
+																);
 
 													}
 												});
 									});
 
 					// Return Icon type
-					
-					/***
+
+					/***********************************************************
 					 * Validation Rules
 					 */
-					function getValidation(){
-						
-					};
-					
-					
-					/***
+					function getValidation() {
+
+					}
+					;
+
+					/***********************************************************
 					 * Return the Icon Type
 					 */
 					function getIconType(fileExtension) {

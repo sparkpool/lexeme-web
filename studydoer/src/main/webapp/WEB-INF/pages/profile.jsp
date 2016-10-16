@@ -1,10 +1,10 @@
 <%@page import="com.sd.web.enums.EnumRoles"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="header.jsp"%>
-
-<div id="page-content1">
-	<div class=" container">
-		<section id="content">
+<nav></nav>
+<main>
+<section class="page page--blog">
+	<div class="container container--large">
 			<!-- Profile Picture -->
 			<div class="row">
 				<div class="profile-header">
@@ -75,27 +75,23 @@
 			<div class="row">
 				<div class="col-md-2 ">
 					<!-- Show number of followers -->
-					<div class="row">
-						<div class="col-md-2 ">
-							<a href="">Followers</a>
-						</div>
-					</div>
-					<hr>
+					<p class="align-left">
+						
+							<a href="" class="button button--white button--medium">Followers</a>
+							
+							
+				
+						
+					</p>
 					<!-- Show number of following -->
-					<div class="row">
-						<div class="col-lg-2 ">
-							<a href="">Following</a>
-						</div>
-					</div>
-					<hr>
+					<p class="align-left">
+							<a href="" class="button button--white button--medium">Following</a>
+					</p>
 					<!-- Show of downloaded documents -->
-					<div class="row">
-						<div class="col-md-2 ">
-							<a href="">Downloads</a>
-						</div>
-					</div>
-					<hr>
-					</div>
+				<p class="align-left">
+								<a href="" class="button button--white button--medium">Downloads</a>
+				</p>
+				</div>
 
 
 				<!-- User profile Data section -->
@@ -130,19 +126,19 @@
 						<!-- Contact Information -->
 						<%@ include file="contactInformation.jsp"%>
 						<!-- Payment Information -->
-						
+
 						<!-- Document history Information -->
 						<!-- Close profile section -->
 					</div>
-					</div>
-					</div>
-					
-			
-			<!-- end user profile data section -->
-		</section>
-	</div>
-</div>
+				</div>
+			</div>
 
+
+			<!-- end user profile data section -->
+		</div>
+
+</section>
+</main>
 
 
 <%@ include file="footer.jsp"%>

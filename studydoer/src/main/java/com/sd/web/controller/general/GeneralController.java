@@ -17,6 +17,7 @@ public class GeneralController {
 		return "team";
 	}
 	
+
 	@RequestMapping(value = "/policy", method = RequestMethod.GET)
 	public String policy(){
 		return "policy";
@@ -36,6 +37,9 @@ public class GeneralController {
 	public String termofuse(){
 		return "termofuse";
 	}
-	
+	@RequestMapping(value = "/askQuestion", method = RequestMethod.GET)
+	public String askQuestion(){
+		return "askQuestion";
+	}
 	
 }

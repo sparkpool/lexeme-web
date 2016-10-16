@@ -1,62 +1,42 @@
+
+<!--Header--->
 <%@ include file="header.jsp"%>
 
-<div id="page-content1">
-	<div class="container">
-		<section id="content">
-			<div class="row">
+<nav></nav>
+<main> <!-- Error Message -->
+<section class="page page--contact">
+	<div class="container container--large container--centered">
+		<div class="container container--medium">
 
-				<!-- Error Message -->
-				<div class="row">
-					<div class="col-md-4 col-md-offset-4" align="center">
+			<h1 class="title--small">Forgot Your Password</h1>
+			<div class="container container--medium" id="contact-form">
+
+				<form id="supportForm" data-ajax=""
+					action="${pageContext.request.contextPath}/user/fp" method="POST"
+					novalidate="" autocomplete="off" class="ng-pristine ng-valid"
+					name="form" ng-app="myApp">
+					<p class="align-center">
 						<%@ include file="message.jsp"%>
+					</p>
+
+
+						<div class="input-group input-group--inline"
+						ng-class="{ error: form.email.$error.unique }">
+						<label></label> <input placeholder="Email" name="email"
+							type="email" ng-model="email" > <span
+							class="ui green pointing left ui label error"
+							ng-show="form.email.$error.email"> Not valid email!</span>
 					</div>
-				</div>
 
-				<!-- Heading -->
-				<div class="row">
-					<div class="col-xs-12" align="center">
-						<div class="feedback-form-center">
-							<div class="feedback-support-text">
-								<h1>Forgot Password</h1>
-								<p>Enter your email address to reset your password. </p>
-							</div>
-						</div>
-					</div>
-				</div>
+					<p class="align-center">
+						<button type="submit" class="button button--orange button--large">Submit</button>
+					</p>
 
-				<!-- Form -->
-				<div class="row">
-					<div class="col-md-12 ">
-						<div class="ui center aligned two column grid">
-							<div class="left aligned column">
-								<form id="feedback-form" class="ui form "
-									action="${pageContext.request.contextPath}/user/fp"
-									method="POST">
+				</form>
 
-									<!-- Email-address -->
-									<div class="field">
-										<label>Email</label> <input placeholder="Email" name="email"
-											type="email" style="width: 18em;">
-
-									</div>
-									<div class="ui field">
-										<input class="ui blue submit button" type="submit" name="SAVE"
-											value="Submit" id="btnclick">
-									</div>
-
-
-
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
-
-		</section>
+		</div>
 	</div>
-</div>
-
-
-
+</section>
+</main>
 <%@ include file="footer.jsp"%>
